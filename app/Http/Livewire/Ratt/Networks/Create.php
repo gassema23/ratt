@@ -37,6 +37,7 @@ class Create extends ModalComponent
 
     public function save()
     {
+        $this->authorize('networks-create');
         $this->validate();
         $network = Network::create([
             'project_id' => $this->project_id,
@@ -53,6 +54,7 @@ class Create extends ModalComponent
     }
     public function render()
     {
+        $this->authorize('networks-create');
         return view('livewire.ratt.networks.create',[
             'sites'=>Site::orderBy('clli')->orderBy('name')->select(['id','clli','name'])->get()
         ]);

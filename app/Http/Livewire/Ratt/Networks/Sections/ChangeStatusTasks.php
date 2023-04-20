@@ -19,6 +19,7 @@ class ChangeStatusTasks extends ModalComponent
 
     public function mount($id)
     {
+        $this->authorize('change-status-tasks');
         $this->task = NetworkTask::findOrFail($id);
     }
 
@@ -29,6 +30,7 @@ class ChangeStatusTasks extends ModalComponent
 
     public function save()
     {
+        $this->authorize('change-status-tasks');
         $this->validate();
         $this->task->setStatus($this->status, $this->reason);
 
@@ -52,6 +54,7 @@ class ChangeStatusTasks extends ModalComponent
 
     public function render()
     {
+        $this->authorize('change-status-tasks');
         return view('livewire.ratt.networks.sections.change-status-tasks');
     }
 }

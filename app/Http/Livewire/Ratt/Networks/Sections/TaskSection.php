@@ -3,15 +3,18 @@
 namespace App\Http\Livewire\Ratt\Networks\Sections;
 
 use App\Models\NetworkTask;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 
 class TaskSection extends Component
 {
+    use AuthorizesRequests;
     protected $listeners = ['refresh' => '$refresh'];
     public $network, $taskInfoSection;
 
     public function mount($network)
     {
+        $this->authorize('task-section');
         $this->network = $network;
     }
 
@@ -32,6 +35,7 @@ class TaskSection extends Component
 
     public function render()
     {
+        $this->authorize('task-section');
         if (auth()->user()->hasRole(['Super-Admin', 'Admin'])) {
             $tasks = NetworkTask::with(['network', 'task', 'comments', 'team', 'statuses'])
                 ->withCount([

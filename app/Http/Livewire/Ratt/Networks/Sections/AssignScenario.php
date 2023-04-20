@@ -26,6 +26,7 @@ class AssignScenario extends ModalComponent
     public $inputs = [];
     public function mount($id)
     {
+        $this->authorize('assign-scenarios');
         $this->network = Network::findOrFail($id);
         $this->scenarios = Scenario::orderBy('name')
             ->select('id', 'name')
@@ -46,6 +47,7 @@ class AssignScenario extends ModalComponent
 
     public function save()
     {
+        $this->authorize('assign-scenarios');
         $this->validate();
         foreach ($this->inputs as $data) {
             NetworkTask::create([
@@ -62,6 +64,7 @@ class AssignScenario extends ModalComponent
 
     public function render()
     {
+        $this->authorize('assign-scenarios');
         return view('livewire.ratt.networks.sections.assign-scenario');
     }
 }

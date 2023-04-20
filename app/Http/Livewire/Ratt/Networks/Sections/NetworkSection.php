@@ -2,10 +2,12 @@
 
 namespace App\Http\Livewire\Ratt\Networks\Sections;
 
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Livewire\Component;
 
 class NetworkSection extends Component
 {
+    use AuthorizesRequests;
     protected $listeners = [
         'refresh'  => '$refresh',
         'refreshAttachmentNetwork'  => '$refresh',
@@ -15,11 +17,13 @@ class NetworkSection extends Component
 
     public function mount($network)
     {
+        $this->authorize('networks-sections');
         $this->network = $network;
     }
 
     public function render()
     {
+        $this->authorize('networks-sections');
         return view('livewire.ratt.networks.sections.network-section');
     }
 }
