@@ -115,7 +115,7 @@
                         @lang('Documentations')
                     </button>
                     <div
-                        class="absolute top-9 left-0 transition shadow group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-full transform">
+                        class="absolute top-8 left-0 transition shadow group-hover:translate-y-5 translate-y-0 opacity-0 invisible group-hover:opacity-100 group-hover:visible duration-500 ease-in-out group-hover:transform z-50 w-full transform">
                         <div class="relative top-6 p-6 bg-white shadow w-full lg:px-10">
                             <div
                                 class="w-10 h-10 bg-white transform rotate-45 absolute top-0 z-0 translate-x-0 transition-transform group-hover:translate-x-[12rem] duration-500 ease-in-out rounded-sm">
