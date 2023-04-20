@@ -1,0 +1,4 @@
+country_name,iso,region,sub_region,capital,latitude,longitude
+United States,USA,Americas,Northern America,Washington,38,-97
+Canada,CAD,Americas,Northern America,Ottawa,60,-95
+N/A,NA,,,,,

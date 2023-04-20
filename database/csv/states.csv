@@ -1,0 +1,80 @@
+country_name,type,name,state_code,latitude,longitude
+Canada,province,Alberta,AB,53.9332706,-116.576504
+Canada,province,British Columbia,BC,53.7266683,-127.647621
+Canada,province,Manitoba,MB,53.7608608,-98.8138762
+Canada,province,New Brunswick,NB,46.5653163,-66.4619164
+Canada,province,Newfoundland and Labrador,NL,53.1355091,-57.6604364
+Canada,territory,Northwest Territories,NT,64.8255441,-124.845733
+Canada,province,Nova Scotia,NS,44.6819866,-63.744311
+Canada,territory,Nunavut,NU,70.2997711,-83.107577
+Canada,province,Ontario,ON,51.253775,-85.323214
+Canada,province,Prince Edward Island,PE,46.510712,-63.4168136
+Canada,province,Quebec,QC,52.9399159,-73.5491361
+Canada,province,Saskatchewan,SK,52.9399159,-106.450864
+Canada,territory,Yukon,YT,35.5067215,-97.7625441
+United States,state,Alabama,AL,32.3182314,-86.902298
+United States,state,Alaska,AK,64.2008413,-149.493673
+United States,outlying area,American Samoa,AS,-14.270972,-170.132217
+United States,state,Arizona,AZ,34.0489281,-111.093731
+United States,state,Arkansas,AR,35.20105,-91.8318334
+United States,islands / groups of islands,Baker Island,UM-81,0.1936266,-176.476908
+United States,state,California,CA,36.778261,-119.417932
+United States,state,Colorado,CO,39.5500507,-105.782067
+United States,state,Connecticut,CT,41.6032207,-73.087749
+United States,state,Delaware,DE,38.9108325,-75.5276699
+United States,district,District of Columbia,DC,38.9071923,-77.0368707
+United States,state,Florida,FL,27.6648274,-81.5157535
+United States,state,Georgia,GA,32.1656221,-82.9000751
+United States,outlying area,Guam,GU,13.444304,144.793731
+United States,state,Hawaii,HI,19.8967662,-155.582782
+United States,islands / groups of islands,Howland Island,UM-84,0.8113219,-176.618274
+United States,state,Idaho,ID,44.0682019,-114.742041
+United States,state,Illinois,IL,40.6331249,-89.3985283
+United States,state,Indiana,IN,40.2671941,-86.1349019
+United States,state,Iowa,IA,41.8780025,-93.097702
+United States,islands / groups of islands,Jarvis Island,UM-86,-0.3743503,-159.996721
+United States,islands / groups of islands,Johnston Atoll,UM-67,16.7295035,-169.533648
+United States,state,Kansas,KS,39.011902,-98.4842465
+United States,state,Kentucky,KY,37.8393332,-84.2700179
+United States,islands / groups of islands,Kingman Reef,UM-89,6.383333,-162.416667
+United States,state,Louisiana,LA,30.9842977,-91.9623327
+United States,state,Maine,ME,45.253783,-69.4454689
+United States,state,Maryland,MD,39.0457549,-76.6412712
+United States,state,Massachusetts,MA,42.4072107,-71.3824374
+United States,state,Michigan,MI,44.3148443,-85.6023643
+United States,islands / groups of islands,Midway Atoll,UM-71,28.2072168,-177.373493
+United States,state,Minnesota,MN,46.729553,-94.6858998
+United States,state,Mississippi,MS,32.3546679,-89.3985283
+United States,state,Missouri,MO,37.9642529,-91.8318334
+United States,state,Montana,MT,46.8796822,-110.362566
+United States,islands / groups of islands,Navassa Island,UM-76,18.4100689,-75.0114612
+United States,state,Nebraska,NE,41.4925374,-99.9018131
+United States,state,Nevada,NV,38.8026097,-116.419389
+United States,state,New Hampshire,NH,43.1938516,-71.5723953
+United States,state,New Jersey,NJ,40.0583238,-74.4056612
+United States,state,New Mexico,NM,34.5199402,-105.87009
+United States,state,New York,NY,40.7127753,-74.0059728
+United States,state,North Carolina,NC,35.7595731,-79.0192997
+United States,state,North Dakota,ND,47.5514926,-101.002012
+United States,outlying area,Northern Mariana Islands,MP,15.0979,145.6739
+United States,state,Ohio,OH,40.4172871,-82.907123
+United States,state,Oklahoma,OK,35.4675602,-97.5164276
+United States,state,Oregon,OR,43.8041334,-120.554201
+United States,islands / groups of islands,Palmyra Atoll,UM-95,5.8885026,-162.078666
+United States,state,Pennsylvania,PA,41.2033216,-77.1945247
+United States,outlying area,Puerto Rico,PR,18.220833,-66.590149
+United States,state,Rhode Island,RI,41.5800945,-71.4774291
+United States,state,South Carolina,SC,33.836081,-81.1637245
+United States,state,South Dakota,SD,43.9695148,-99.9018131
+United States,state,Tennessee,TN,35.5174913,-86.5804473
+United States,state,Texas,TX,31.9685988,-99.9018131
+United States,outlying area,United States Minor Outlying Islands,UM,19.2823192,166.647047
+United States,outlying area,United States Virgin Islands,VI,18.335765,-64.896335
+United States,state,Utah,UT,39.3209801,-111.093731
+United States,state,Vermont,VT,44.5588028,-72.5778415
+United States,state,Virginia,VA,37.4315734,-78.6568942
+United States,islands / groups of islands,Wake Island,UM-79,19.279619,166.649935
+United States,state,Washington,WA,47.7510741,-120.740139
+United States,state,West Virginia,WV,38.5976262,-80.4549026
+United States,state,Wisconsin,WI,43.7844397,-88.7878678
+United States,state,Wyoming,WY,43.0759678,-107.290284

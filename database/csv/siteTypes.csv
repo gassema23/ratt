@@ -1,0 +1,18 @@
+type,sub_type
+Building,
+Remote cabinet,
+Customer premise,Building
+Remote,Building
+RDAC,Remote cabinet
+CO,Building
+Compound,Building
+POP,Building
+FOT,Building
+MW Radio,Building
+Colocation,Building
+TA,Remote cabinet
+Remote Cabinet,Remote cabinet
+Remote Cabinet,Building
+RITP,Building
+N/A,Building
+N/A,Remote cabinet

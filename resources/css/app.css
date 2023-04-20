@@ -1,0 +1,51 @@
+/** Font : Helvetica Now Text */
+@import url('https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap');
+/** Tailwind css base (v.3.2.7) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/** PACE */
+.pace {
+    @apply select-none pointer-events-none;
+}
+.pace-inactive {
+    @apply hidden;
+}
+.pace .pace-progress {
+    @apply bg-teal-500 fixed z-50 top-0 right-full w-full h-1;
+}
+
+/** Calendar scrollbar */
+.fc-scroller-liquid-absolute::-webkit-scrollbar {
+    @apply cursor-pointer w-1 h-1;
+}
+.fc-scroller-liquid-absolute::-webkit-scrollbar-thumb {
+    @apply bg-slate-400 cursor-pointer;
+}
+.fc-scroller-liquid-absolute::-webkit-scrollbar-track {
+    @apply bg-slate-100 cursor-pointer;
+}
+
+.map-responsive {
+    overflow: hidden;
+
+    padding-bottom: 56.25%;
+
+    position: relative;
+
+    height: 0;
+}
+
+.map-responsive iframe {
+    left: 0;
+
+    top: 0;
+
+    height: 100%;
+
+    width: 100%;
+
+    position: absolute;
+}

@@ -1,0 +1,651 @@
+administrative_area_level_1,administrative_area_level_2,city,latitude,longitude,sa_clli
+New York,Albany County,Albany,42.65002288,-73.7521813,ALBYNYPS
+New York,Montgomery County,Amsterdam,42.914091,-74.155176,ALBYNYPS
+New York,Erie County,Buffalo,42.884116,-78.87762,BFLONYMP
+Connecticut,Hartford County,Berlin,41.63216076,-72.72390771,HRFRCTBE
+New York,Essex County,Essex,44.280991,-73.397278,ESSXNYAD
+New York,Herkimer County,Herkimer,43.0261969,-74.9888668,HRKMNYBV
+New York,Onondaga County,Salina,43.112473,-76.19481,LVRPNYEW
+Massachusetts,Berkshire County,Florida,42.70391722,-73.12730113,ALBYNYPS
+New York,Oneida County,Rome,43.137229,-75.494522,ROMENYFH
+New York,Clinton County,Rouses Point,44.994771,-73.370972,RSPNNYAE
+New York,Rockland County,Airmont,41.119808,-74.149223,ALBYNYPS
+New York,Ulster County,Saugerties,42.07645,-73.9739,ALBYNYPS
+Massachusetts,Franklin County,Shutesbury,42.42601403,-72.46605846,ALBYNYPS
+Massachusetts,Hampden County,Springfield,42.1092037,-72.57764037,HRFRCTBE
+New York,Saratoga County,Saratoga Springs,43.071838,-73.811112,SRSPNYEQ
+New York,Monroe County,West Henrietta,43.037693,-77.718749,ALBYNYPS
+New York,Westchester County,White Plains,41.0348931,-73.76719373,ALBYNYPS
+New York,Washington County,Whitehall,43.549158,-73.403093,WHTHNYAK
+New York,Seneca County,Waterloo,42.962396,-76.881282,WTRLNYBK
+Quebec,Côte-Nord,Baie-Comeau,49.228442,-68.189718,BACUPQ
+Quebec,Côte-Nord,Lamarche,49.32179107,-68.36543026,BACUPQ
+Quebec,Côte-Nord,Baie-Trinité,49.424,-67.303417,BATRPQ
+Quebec,Côte-Nord,Pessamit,48.949333,-68.653472,CAOAPQ
+Quebec,Côte-Nord,Chute-aux-Outardes,49.126901,-68.393197,CAOAPQ
+Quebec,Côte-Nord,Colombier,48.863611,-68.854278,COMBPQ
+Quebec,Côte-Nord,Franquelin,49.293194,-67.895528,BACUPQ
+Quebec,Côte-Nord,Forestville,48.735856,-69.094691,FSVLPQ
+Quebec,Côte-Nord,Godbout,49.323583,-67.605278,GDBTPQ
+Quebec,Côte-Nord,Baie-Comeau,49.2001871,-68.2642671,HTRVPQ
+Quebec,Côte-Nord,Pointe-Lebel,49.180774,-68.326501,HTRVPQ
+Quebec,Côte-Nord,Pointe-aux-Outardes,49.17844044,-68.4006286,HTRVPQ
+Quebec,Côte-Nord,Pointe-aux-Outardes,49.0986,-68.3772,CAOAPQ
+Quebec,Côte-Nord,Les Escoumins,48.349083,-69.412111,LESCPQ
+Quebec,Côte-Nord,Manic-Cinq,50.641083,-68.727556,MNCGPQ
+Quebec,Côte-Nord,Pointe-Lebel,49.159611,-68.199833,BACUPQ
+Quebec,Côte-Nord,Ragueneau,49.074139,-68.46572,CAOAPQ
+Quebec,Côte-Nord,Sacré-Coeur,48.239611,-69.803028,SCSYPQ
+Quebec,Saguenay--Lac-Saint-Jean,Sainte-Rose-du-Nord,48.410083,-70.575944,STRNPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Bonaventure,48.04821448,-65.48833999,BNVTPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Carleton-sur-mer,48.130838,-66.129241,CATNPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Caplan,48.10311124,-65.68331253,CPLNPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Escuminac,48.122717,-66.478132,PNCXPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Grande-Cascapédia,48.25562,-65.89237,NWMDPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Gascons,48.192311,-64.895987,PTDLPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,L'Ascension-de-Patapédia,47.93229699,-67.24964775,SALMPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Maria,48.20088843,-65.93821134,MARIPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Saint-André-de-Restigouche,48.03512988,-67.04468661,MTPDPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Matapédia,47.9747868,-66.94097139,MTPDPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Nouvelle,48.147928,-66.318369,NVLLPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,New Carlisle,48.00977964,-65.33634706,NWCRPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,New Richmond,48.23798936,-65.72776678,NWMDPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Pointe-à-la-Croix,48.01758706,-66.68482584,PNCXPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Pointe-à-la-Garde,48.075,-66.552215,PNCXPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Paspébiac,48.031632,-65.24958,NWCRPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Port-Daniel,48.13915,-64.985184,PTDLPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Matapédia,48.00837916,-66.76350832,PNCXPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Saint-Alphonse-de-Caplan,48.18892233,-65.62780241,CPLNPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Saint-Alexis-de-Matapédia,47.972233,-67.053423,SALMPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Saint-Elzéar-de-Bonaventure,48.15502603,-65.39620053,BNVTPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Saint-François-d'Assise,47.98008314,-67.15421517,SALMPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Saint-Godefroi,48.07788503,-65.10941441,NWCRPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Saint-Jogues,48.173902,-65.248532,NWCRPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Saint-Siméon-de-Bonaventure,48.072317,-65.581124,BNVTPQ
+Quebec,Côte-Nord,Harrington Harbour,50.612296,-59.461473,HNHRPQ
+Quebec,Côte-Nord,Chevery,50.271418,-60.135459,LRMNPQ
+Quebec,Côte-Nord,Chevery,50.463526,-59.626105,CHVRPQ
+Quebec,Côte-Nord,Lca Dufresne,51.72944,-65.68833,OT09PQ
+Quebec,Côte-Nord,Fermont,51.894556,-65.726323,OT09PQ
+Quebec,Côte-Nord,Blanc-Sablon,51.415706,-57.18983,BLSBPQ
+Quebec,Côte-Nord,La Romaine,50.215501,-60.684298,LRMNPQ
+Quebec,Côte-Nord,La Tabatière,50.821804,-58.969553,MNBAPQ
+Quebec,Côte-Nord,Rivière-Saint-Paul,51.464636,-57.49756,BNESPQ
+Quebec,Côte-Nord,Old Fort Bay,51.47984587,-57.71239356,BNESPQ
+Quebec,Côte-Nord,Pakuashipi,51.223693,-58.669344,STAGPQ
+Quebec,Côte-Nord,Saint-Augustin,51.238972,-58.642493,STAGPQ
+Quebec,Côte-Nord,Tête-à-la-Baleine,50.705047,-59.310036,TALBPQ
+Quebec,Côte-Nord,Tika,50.88106549,-65.95105324,OT09PQ
+Minnesota,Douglas County,Alexandria,45.82534622,-95.36826596,ALXNMNAP
+Minnesota,Wright County,Annandale,45.26144695,-94.12608341,ANDLMNAC
+Minnesota,Mahnomen County,Bejou,47.43972814,-95.97717807,BEJOMNAA
+Minnesota,Stearns County,Brooten,45.50268142,-95.12315542,BROTMNAB
+Michigan,Calhoun County,Battle Creek,42.33484965,-85.1434998,BTCKMIKI
+Illinois,Cook County,Chicago,41.8537024,-87.6190239,CHCGILDT
+Illinois,Cook County,Chicago,41.8730685,-87.6296159,CHCNIL23
+Michigan,Cass County,Cassopolis,41.9082582,-86.0066936,CSPLMIAS
+Michigan,Shiawassee County,Vernon,42.90847396,-83.98032559,DRNDMIAK
+Michigan,Wayne County,Detroit,42.3804867,-83.0568522,DTRVMIUC
+Minnesota,Goodhue County,Frontenac,44.50609446,-92.3363485,MPLSMNFD
+Wisconsin,La Crosse County,La Crosse,43.833056,-91.254167,LCRSWIKO
+Wisconsin,Milwaukee County,Milwaukee,43.027617,-87.937833,MILAWI95
+Minnesota,Hennepin County,Minneapolis,44.98092865,-93.26758498,MPLSMNFD
+Minnesota,Marshall County,Newfolden,48.356722,-96.324188,NWFLMNAB
+Wisconsin,Columbia County,Portage,43.546936,-89.466637,PRTGWIBD
+Wisconsin,Monroe County,Tomah,43.988377,-90.504219,TOMAWIAM
+Indiana,Porter County,Valparaiso,41.475207,-87.053383,VLPRINFD
+Minnesota,Otter Tail County,Vergas,46.65592,-95.804121,VRGSMNAA
+Illinois,Lake County,Wadsworth,42.42901,-87.89756,WSWOILAI
+Wisconsin,Jefferson County,Watertown,43.189844,-88.730943,WTTWWICE
+Quebec,Mauricie,Batiscan,46.497469,-72.251348,BTCNPQ
+Quebec,Capitale-Nationale,Cap-Santé,46.670577,-71.783547,DNNCPQ
+Quebec,Capitale-Nationale,Deschambault,46.693137,-71.94442,PTNFPQ
+Quebec,Capitale-Nationale,Donnacona,46.686866,-71.690211,DNNCPQ
+Quebec,Capitale-Nationale,Grondines,46.59215,-72.03784,PTNFPQ
+Quebec,Mauricie,Hérouxville,46.67871,-72.61695,STITPQ
+Quebec,Mauricie,Lac-aux-Sables,46.88562,-72.51314,LCSBPQ
+Quebec,Capitale-Nationale,Saint-Alban,46.81592,-72.08844,STMCPQ
+Quebec,Capitale-Nationale,Saint-Ubalde,46.82571,-72.27784,STUBPQ
+Quebec,Capitale-Nationale,St-Raymond,46.94205902,-71.76695568,STRYPQ
+Quebec,Mauricie,Notre-Dame-de-Montauban,46.87322,-72.31231,LCSBPQ
+Quebec,Capitale-Nationale,Neuville,46.70190048,-71.5694046,NUVLPQ
+Quebec,Capitale-Nationale,Pont-Rouge,46.794242,-71.695286,PORGPQ
+Quebec,Capitale-Nationale,Portneuf,46.71159,-71.8753,PTNFPQ
+Quebec,Mauricie,Proulxville,46.667742,-72.503087,STITPQ
+Quebec,Capitale-Nationale,Rivière-à-Pierre,46.9918,-72.181,RAPRPQ
+Quebec,Mauricie,Sainte-Thècle,46.92881,-72.46751,DNNCPQ
+Quebec,Capitale-Nationale,Quebec City,46.74064732,-71.45187825,SAGDPQ
+Quebec,Mauricie,Sainte-Anne-de-la-Pérade,46.57292,-72.202106,SANPPQ
+Quebec,Mauricie,Saint-Adelphe,46.735464,-72.427669,SAPHPQ
+Quebec,Capitale-Nationale,Saint-Basile,46.745845,-71.812198,SBLPPQ
+Quebec,Montérégie,Sainte-Catherine,45.401313,-73.581491,SCAQPQ
+Quebec,Capitale-Nationale,Saint-Thuribe,46.705,-72.15967,SCASPQ
+Quebec,Capitale-Nationale,Saint-Casimir,46.65792,-72.13861,SCASPQ
+Quebec,Mauricie,Sainte-Geneviève-de-Batiscan,46.532462,-72.339301,BTCNPQ
+Quebec,Mauricie,Saint-Prosper-de-Champlain,46.61296,-72.29182,SSCHPQ
+Quebec,Mauricie,Saint-Stanislas-de-Champlain,46.605745,-72.38559,SSCHPQ
+Quebec,Capitale-Nationale,Sainte-Christine-d'Auvergne,46.82481,-71.9333,PTNFPQ
+Quebec,Mauricie,Sainte-Thècle,46.8156,-72.50383,STHCPQ
+Quebec,Mauricie,St-Tite,46.73252221,-72.56244421,STITPQ
+Quebec,Capitale-Nationale,Saint-Léonard-de-Portneuf,46.90379,-72.00807,STRYPQ
+Quebec,Capitale-Nationale,Saint-Gilbert,46.70478,-72.00607,STMCPQ
+Quebec,Capitale-Nationale,Saint-Marc-des-Carrières,46.681457,-72.051451,STMCPQ
+Quebec,Mauricie,Saint-Narcisse,46.56588,-72.465,SSCHPQ
+Quebec,Mauricie,Saint-Ubalde,46.82225,-72.32433,STUBPQ
+Ontario,Hastings County,Belleville,44.1643948,-77.3808889,BLVLON24
+Ontario,Regional Municipality of Durham,Oshawa,43.8988,-78.86146,OSHWON95
+Ontario,Regional Municipality of Durham,Oshawa,43.87967,-78.854576,OSHWONFP
+Ontario,Regional Municipality of Durham,Oshawa,43.89749,-78.86298,OSHWONTD
+Ontario,Regional Municipality of Durham,Ajax,43.854991,-79.045026,PCNGON62
+Ontario,Regional Municipality of Durham,Pickering,43.84902,-79.07363,PCNGON62
+Ontario,Peterborough County,Peterborough,44.30551,-78.32129,PTBOON62
+Quebec,Gaspésie--Îles-de-la-Madeleine,Gaspé,48.932448,-64.307084,GASPPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Percé,48.617832,-64.277267,BRCHPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,"Newport, Chandler, Quebec",48.341746,-64.729289,CHNDPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Chandler,48.348467,-64.682103,CHNDPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Gaspé,48.835371,-64.336147,CPRSPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Percé,48.424345,-64.332408,PERCPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Cloridorme,49.17911381,-64.84101318,CRDRPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Grande-Rivière,48.398816,-64.498075,GDRVPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Grande-Vallée,49.223795,-65.130166,GDVAPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Madeleine-Centre,49.248428,-65.346436,GDVAPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Murdochville,48.95879566,-65.4953306,MDVLPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,"Newport, Chandler, Quebec",48.261593,-64.747946,NWPTPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Pabos,48.358204,-64.636935,CHNDPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Pabos Mills,48.306755,-64.70767,CHNDPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Sainte-Thérèse-de-Gaspé,48.410751,-64.419601,GDRVPQ
+Ontario,Simcoe County,New Tecumseth,44.15306,-79.86502,ALTOONBA
+Ontario,Simcoe County,Barrie,44.3931364,-79.693521,BARION18
+Ontario,Simcoe County,Barrie,44.4015101,-79.7028636,BARIONBF
+Ontario,Northumberland County,Brighton,44.0403245,-77.7305072,BITNONAL
+Ontario,Regional Municipality of Peel,Brampton,43.6873629,-79.756915,BMTNON13
+Ontario,Regional Municipality of Peel,Brampton,43.7393539,-79.6967902,BMTNON37
+Ontario,Simcoe County,Borden,44.2903648,-79.8974433,CPBDON20
+Ontario,Regional Municipality of Peel,Mississauga,43.608133,-79.654729,CKVLON01
+Ontario,Regional Municipality of Peel,Mississauga,43.5823682,-79.6158932,CKVLON17
+Ontario,Simcoe County,Borden,44.290758,-79.897809,CPBDONAA
+Ontario,Toronto,Toronto,43.719027,-79.603679,EBCKONDF
+Ontario,Sudbury District,Espanola,46.257395,-81.773967,ESPNON66
+Ontario,Toronto,Toronto,43.7048443,-79.3612142,EYRKONAE
+Ontario,Wellington County,Guelph,43.544913,-80.2498186,GLPHON22
+Ontario,Wellington County,Guelph,43.4848656,-80.1975963,GLPHONTF
+Ontario,Regional Municipality of Peel,Mississauga,43.70963,-79.63699,MALTON22
+Ontario,Regional Municipality of Peel,Mississauga,43.66349,-79.67237,MALTON23
+Ontario,Simcoe County,Port Severn,44.806111,-79.619722,MRDLONAA
+Ontario,Regional Municipality of York,Markham,43.81838,-79.33412,MRHMONBC
+Ontario,Regional Municipality of York,Markham,43.85076,-79.34263,UNVLON55
+Ontario,Regional Municipality of York,Markham,43.8352,-79.33105,MRHMONDR
+Ontario,Regional Municipality of Peel,Mississauga,43.6034,-79.73544,MSSGONAN
+Ontario,Regional Municipality of Peel,Mississauga,43.60135,-79.7463,MSSGONAP
+Ontario,Regional Municipality of Peel,Mississauga,43.604961,-79.739153,MSSGONFD
+Ontario,Regional Municipality of Peel,Mississauga,43.56758,-79.66412,MSSGONJR
+Ontario,Parry Sound District,McDougall,45.435278,-80.101111,NOBLONAD
+Ontario,Nipissing District,North Bay,46.313745,-79.465188,NRBAON24
+Ontario,Regional Municipality of York,Newmarket,44.05416,-79.45888,NWMKON85
+Ontario,Toronto,Toronto,43.77424,-79.32606,TOROON46
+Ontario,Regional Municipality of Halton,Oakville,43.45567,-79.66623,OKVLON30
+Ontario,Simcoe County,Orillia,44.603185,-79.419833,ORLLON11
+Ontario,Regional Municipality of York,Richmond Hill,43.87688,-79.43975,RMHLON34
+Ontario,Sudbury District,Alban,46.104167,-80.659444,RUTRONAA
+Ontario,Greater Sudbury,Greater Sudbury,46.489725,-80.990106,SDBRON98
+Ontario,Greater Sudbury,Greater Sudbury,46.491667,-80.9975,SDBRONGU
+Ontario,Sudbury District,Biscotasing,46.941111,-81.798056,SHHNONAA
+Ontario,Algoma District,Serpent River,46.212377,-82.538176,SPNHON46
+Ontario,Toronto,Toronto,43.77722,-79.25121,SRBHONBG
+Ontario,Algoma District,Sault Ste. Marie,46.51328,-84.33578,SSMRON94
+Ontario,Regional Municipality of Peel,Mississauga,43.58083,-79.71409,SSVLON39
+Ontario,Regional Municipality of Peel,Mississauga,43.5856,-79.7279,SSVLONAA
+Ontario,Regional Municipality of York,Markham,43.8413,-79.37557,TNHLON40
+Ontario,Regional Municipality of York,Vaughan,43.81518,-79.42496,TNHLON40
+Ontario,Toronto,Toronto,43.64023,-79.39331,TORDONDX
+Ontario,Toronto,Toronto,43.64342,-79.38117,TORDONYE
+Ontario,Toronto,Toronto,43.602733,-79.540032,TOROON27
+Ontario,Toronto,Toronto,43.65086,-79.36195,TOROON01
+Ontario,Toronto,Toronto,43.67139,-79.38587,TOROON02
+Ontario,Toronto,Toronto,43.67978,-79.29761,TOROON04
+Ontario,Toronto,Toronto,43.718267,-79.377704,TOROON05
+Ontario,Toronto,Toronto,43.70751,-79.39642,TOROON06
+Ontario,Toronto,Toronto,43.70481,-79.43922,TOROON07
+Ontario,Toronto,Toronto,43.66092,-79.43607,TOROON09
+Ontario,Toronto,Toronto,43.68412,-79.45322,TOROON10
+Ontario,Toronto,Toronto,43.78451,-79.28009,TOROON21
+Ontario,Toronto,Toronto,43.64537,-79.51974,TOROON26
+Ontario,Toronto,Toronto,43.64437,-79.57976,TOROON29
+Ontario,Toronto,Toronto,43.72125,-79.30079,TOROON36
+Ontario,Toronto,Toronto,43.7387,-79.56652,TOROON43
+Ontario,Toronto,Toronto,43.69927,-79.51589,TOROON44
+Ontario,Toronto,Toronto,43.75812,-79.46029,TOROON45
+Ontario,Toronto,Toronto,43.779037,-79.418232,TOROON47
+Ontario,Toronto,Toronto,43.79019,-79.33556,TOROON48
+Ontario,Toronto,Toronto,43.78232,-79.47756,TOROON61
+Ontario,Toronto,Toronto,43.6527,-79.38903,TOROON63
+Ontario,Toronto,Toronto,43.774382,-79.494066,TOROONAU
+Ontario,Toronto,Toronto,43.661037,-79.383947,TOROONDD
+Ontario,Toronto,Toronto,43.78039,-79.24513,TOROON50
+Ontario,Toronto,Toronto,43.64167,-79.41219,TOROONHB
+Ontario,Toronto,Toronto,43.64756,-79.37654,TOROONKW
+Ontario,Toronto,Toronto,43.64652,-79.37874,TOROONKX
+Ontario,Toronto,Toronto,43.65357,-79.38706,TOROONNL
+Ontario,Toronto,Toronto,43.76965,-79.331,TOROONPK
+Ontario,Toronto,Toronto,43.64721,-79.37933,TOROONSY
+Ontario,Toronto,Toronto,43.64272,-79.37405,TOROONTR
+Ontario,Toronto,Toronto,43.76602,-79.4124,TOROONUH
+Ontario,Toronto,Toronto,43.65399,-79.38717,TOROONWR
+Ontario,Toronto,Toronto,43.64476,-79.38391,TOROONXN
+Ontario,Toronto,Toronto,43.64786,-79.38202,TOROONZD
+Ontario,Toronto,Toronto,43.72932,-79.5271,TOROONZY
+Ontario,Toronto,Toronto,43.64823,-79.37952,TORTONXL
+Ontario,Toronto,Toronto,43.69607,-79.58804,TORUONVP
+Ontario,Nipissing District,Jocko,46.67003,-79.37937,TOROON63
+Ontario,Toronto,Toronto,43.7252921,-79.4875831,TORZONNC
+Ontario,Algoma District,Thessalon,46.255466,-83.55766,TSLNON82
+Ontario,Regional Municipality of York,Markham,43.83347,-79.32027,UNVLONAA
+Ontario,Regional Municipality of York,Markham,43.816584,-79.338284,UNVLONSA
+Ontario,Regional Municipality of York,Vaughan,43.781676,-79.583815,WDBGON48
+Ontario,Sudbury District,Ramsey,47.514167,-82.586944,WMLKONAA
+Nova Scotia,Cumberland County,Southampton,45.687889,-64.214832,ATHONSAA
+New Brunswick,Victoria County,Hazeldean,46.949245,-67.535047,BLUBNBAA
+New Brunswick,Queens County,Chipman,46.17633855,-65.87484477,CHMNNBAE
+Nova Scotia,Halifax Regional Municipality,Dartmouth,44.69755192,-63.58078223,DRMONSAP
+Nova Scotia,Halifax Regional Municipality,Dartmouth,44.66916,-63.5766,DRMONSHI
+Nova Scotia,Halifax Regional Municipality,Dartmouth,44.70721,-63.61255,DRMONS05
+New Brunswick,Madawaska County,Edmundston,47.360706,-68.341,EDMNNBAG
+New Brunswick,York County,Beaver Dam,45.9605274,-66.6422329,FCTNNBSC
+Nova Scotia,Halifax Regional Municipality,Halifax,44.6550143,-63.5943434,HLFXNS01
+Nova Scotia,Halifax Regional Municipality,Halifax,44.64974,-63.5763,HLFXNSAK
+Nova Scotia,Halifax Regional Municipality,Halifax,44.652417,-63.5748072,HLFXNSAL
+Nova Scotia,Halifax Regional Municipality,Halifax,44.65106,-63.57776,HLFXNSCG
+Nova Scotia,Halifax Regional Municipality,Halifax,44.65864504,-63.60278937,HLFXNSYT
+New Brunswick,Westmorland County,Moncton,46.078168,-64.793419,MCTNNBDS
+New Brunswick,Westmorland County,Moncton,46.08967,-64.77669,MCTNNBSA
+New Brunswick,Westmorland County,Moncton,46.134573,-64.718583,MCTONBCK
+New Brunswick,York County,Napadogan,46.412704,-66.933952,NPGNNBAA
+Newfoundland and Labrador,Newfoundland and Labrador,St. John's,47.56156927,-52.77533556,STJHNF01
+Nova Scotia,Colchester County,Truro,45.362575,-63.273801,TRURNSAQ
+Quebec,Côte-Nord,L'Île-Michon,50.23499939,-62.05903446,AGSHPQ
+Quebec,Côte-Nord,Baie-Johan-Beetz,50.293024,-62.801703,BJBTPQ
+Quebec,Côte-Nord,Havre-Saint-Pierre,50.24409891,-63.59176094,HSTPPQ
+Quebec,Côte-Nord,Longue-Pointe-de-Mingan,50.29803182,-63.88643978,HSTPPQ
+Quebec,Côte-Nord,Kegashka,50.180059,-61.266595,NTQNPQ
+Quebec,Côte-Nord,Longue-Pointe-de-Mingan,50.267272,-64.141161,RSTJPQ
+Quebec,Côte-Nord,Natashquan,50.18456549,-61.81453228,NTQNPQ
+Quebec,Côte-Nord,Port-Menier,49.8254292,-64.36447875,PTMRPQ
+Quebec,Côte-Nord,Rivière-au-Tonnerre,50.276296,-64.764302,RATRPQ
+Quebec,Côte-Nord,Rivière-Saint-Jean,50.31302324,-64.49841387,RSTJPQ
+California,Los Angeles County,Los Angeles,34.047901,-118.255524,LSANCARC
+Quebec,Chaudière-Appalaches,Armagh,46.717341,-70.591645,ARMGPQ
+Quebec,Chaudière-Appalaches,Notre-Dame-Auxiliatrice-de-Buckland,46.64635,-70.58199,STDBPQ
+Quebec,Chaudière-Appalaches,Berthier-sur-Mer,46.924809,-70.731643,SFSMPQ
+Quebec,Bas-Saint-Laurent,Témiscouata-sur-le-Lac,47.357737,-69.719195,MTMGPQ
+Quebec,Chaudière-Appalaches,Cap-Saint-Ignace,47.008357,-70.450749,CSTIPQ
+Quebec,Chaudière-Appalaches,Saint-Damase-de-L'Islet,47.117219,-70.130088,SJPJPQ
+Quebec,Chaudière-Appalaches,Saint-Antoine-de-l'Isle-aux-Grues,47.062211,-70.547912,IGRUPQ
+Quebec,Chaudière-Appalaches,Saint-Aubert,47.131233,-70.185636,SJPJPQ
+Quebec,Chaudière-Appalaches,Saint-Cyrille-de-Lessard,47.06611,-70.139036,STPRPQ
+Quebec,Chaudière-Appalaches,Saint-Vallier,46.868519,-70.796904,SMBLPQ
+Quebec,Chaudière-Appalaches,La Durantaye,46.800501,-70.864477,SMBLPQ
+Quebec,Chaudière-Appalaches,L'Islet,47.138551,-70.352197,LISTPQ
+Quebec,Bas-Saint-Laurent,La Pocatière,47.361029,-70.025203,LPCTPQ
+Quebec,Chaudière-Appalaches,Saint-Philémon,46.622842,-70.486565,SPMTPQ
+Quebec,Chaudière-Appalaches,Montmagny,46.970119,-70.573752,MTMGPQ
+Quebec,Chaudière-Appalaches,Notre-Dame-du-Rosaire,46.82178,-70.386164,SPMTPQ
+Quebec,Chaudière-Appalaches,Saint-Adalbert,46.823922,-69.956143,STPMPQ
+Quebec,Chaudière-Appalaches,Sainte-Apolline-de-Patton,46.782503,-70.232573,SPMTPQ
+Quebec,Chaudière-Appalaches,Saint-Charles-de-Bellechasse,46.761028,-70.950458,SCSBPQ
+Quebec,Chaudière-Appalaches,Saint-Cyrille-de-Lessard,47.036621,-70.274665,LISTPQ
+Quebec,Chaudière-Appalaches,Sainte-Euphémie-sur-Rivière-du-Sud,46.771144,-70.44337,SPMTPQ
+Quebec,Chaudière-Appalaches,Sainte-Félicité,46.964891,-69.949271,STPRPQ
+Quebec,Chaudière-Appalaches,Saint-François-de-la-Rivière-du-Sud,46.879085,-70.677162,SFSMPQ
+Quebec,Chaudière-Appalaches,Lamartine,47.084432,-70.337707,LISTPQ
+Quebec,Chaudière-Appalaches,Saint-Gervais,46.71355,-70.888204,SCSBPQ
+Quebec,Chaudière-Appalaches,Saint-Jean-Port-Joli,47.212925,-70.21697,SJPJPQ
+Quebec,Chaudière-Appalaches,Saint-Michel-de-Bellechasse,46.8743,-70.909935,SMBLPQ
+Quebec,Chaudière-Appalaches,Saint-Marcel,46.896181,-70.063843,STPMPQ
+Quebec,Chaudière-Appalaches,Saint-Nérée-de-Bellechasse,46.691584,-70.681827,ARMGPQ
+Quebec,Chaudière-Appalaches,Saint-Omer,47.056667,-69.731673,STPMPQ
+Quebec,Chaudière-Appalaches,Saint-Pierre-de-la-Rivière-du-Sud,46.916397,-70.628673,MTMGPQ
+Quebec,Chaudière-Appalaches,Saint-Paul-de-Montminy,46.724271,-70.367002,SPMTPQ
+Quebec,Chaudière-Appalaches,Saint-Roch-des-Aulnaies,47.309929,-70.174785,SRALPQ
+Quebec,Chaudière-Appalaches,Saint-Raphaël,46.819339,-70.788445,SRDBPQ
+Quebec,Chaudière-Appalaches,Saint-Damien-de-Buckland,46.623439,-70.655683,STDBPQ
+Quebec,Chaudière-Appalaches,Sainte-Louise,47.279622,-70.13424,SRALPQ
+Quebec,Chaudière-Appalaches,Saint-Pamphile,46.937321,-69.810993,STPMPQ
+Quebec,Chaudière-Appalaches,Sainte-Perpétue,47.086695,-69.929545,STPRPQ
+Quebec,Chaudière-Appalaches,Tourville,47.089432,-69.97687,STPRPQ
+Quebec,Abitibi-Témiscamingue,Amos,48.574867,-78.125521,AMOSPQ
+Quebec,Montérégie,Boucherville,45.6099,-73.452,BHVLPQ
+Quebec,Montérégie,Beloeil,45.573633,-73.201707,BLOLPQ
+Quebec,Lanaudière,Berthierville,46.085701,-73.178523,BRTVPQ
+Quebec,Montérégie,Brossard,45.47384,-73.469739,BSSDPQ
+Quebec,Laval,Laval,45.548425,-73.744238,CHOMPQ
+Quebec,Montérégie,Chambly,45.444202,-73.310652,CMBYPQ
+Quebec,Estrie,Coaticook,45.123989,-71.809924,CTCKPQ
+Quebec,Montérégie,Châteauguay,45.361337,-73.734691,CTGYPQ
+Quebec,Estrie,Cowansville,45.204772,-72.746995,CWVLPQ
+Quebec,Montérégie,La Prairie,45.3767194,-73.5370083,SCONPQ
+Quebec,Centre-du-Québec,Drummondville,45.881099,-72.482777,DRUMPQ
+Quebec,Montreal,Dorval,45.477726,-73.787953,PNCLPQ
+Quebec,Outaouais,Gracefield,46.089456,-76.05332,GRFDPQ
+Quebec,Estrie,Granby,45.400198,-72.722261,GRNBPQ
+Quebec,Outaouais,Gatineau,45.494029,-75.634646,HULLPQ
+Quebec,Lanaudière,Joliette,46.013893,-73.451092,JOLTPQ
+Quebec,Montreal,Montreal,45.457903,-73.704765,LCHNPQ
+Quebec,Montérégie,Lacolle,45.08713872,-73.37192667,LCOLPQ
+Quebec,Abitibi-Témiscamingue,Landrienne,48.547376,-77.80951,AMOSPQ
+Quebec,Montérégie,Longueuil,45.5371,-73.5068,LNGLPQ
+Quebec,Abitibi-Témiscamingue,La Sarre,48.801653,-79.203494,LSARPQ
+Quebec,Laval,Laval,45.584611,-73.753517,LVALPQ
+Quebec,Estrie,Magog,45.265146,-72.145178,MAGOPQ
+Quebec,Outaouais,Gatineau,45.5541333,-75.4231167,BCHMPQ
+Quebec,Montreal,Mount Royal,45.504918,-73.664124,MTR1PQ
+Quebec,Laurentides,Mont-Laurier,46.55101,-75.494528,MTLRPQ
+Quebec,Montreal,Montreal,45.59787,-73.570354,MTRLPQ
+Quebec,Laurentides,Mont-Tremblant,46.210858,-74.586439,SJOVPQ
+Quebec,Laurentides,Mont-Tremblant,46.1064,-74.58713,STATPQ
+Quebec,Laval,Laval,45.5359,-73.7431,MTRLPQ
+Quebec,Montreal,Dorval,45.443949,-73.740878,MTRLPQ
+Quebec,Montreal,Pointe-Claire,45.449489,-73.81819,MTRLPQ
+Quebec,Montreal,Montreal,45.6133901,-73.5850981,MTLEPQ
+Quebec,Centre-du-Québec,Nicolet,46.228362,-72.615938,NCLTPQ
+Quebec,Outaouais,Le Domaine,47.0459,-76.5334,PCVRPQ
+Quebec,Abitibi-Témiscamingue,Val-d'Or,47.8677,-77.3543,PCVRPQ
+Quebec,Abitibi-Témiscamingue,Rouyn-Noranda,48.239881,-79.020914,ROYNPQ
+Quebec,Montérégie,Longueuil,45.4819,-73.4388,SHBTPQ
+Quebec,Laurentides,Saint-Jérôme,45.781322,-74.000731,SJERPQ
+Quebec,Montérégie,Saint-Lambert,45.5001,-73.5104,SLAMPQ
+Quebec,Montreal,Montreal,45.495146,-73.69055,PNCLPQ
+Quebec,Montérégie,Saint-Jean-sur-Richelieu,45.35498,-73.293293,STJNPQ
+Quebec,Montérégie,Saint-Mathieu,45.321177,-73.526997,SCONPQ
+Quebec,Laurentides,Saint-Eustache,45.563703,-73.904107,STESPQ
+Quebec,Montérégie,Saint-Hyacinthe,45.6253,-72.9489,STHYPQ
+Quebec,Laurentides,Blainville,45.631731,-73.843317,STTRPQ
+Quebec,Lanaudière,Terrebonne,45.723993,-73.702233,TRRBPQ
+Quebec,Mauricie,Trois-Rivières,46.34675,-72.544527,TSRVPQ
+Quebec,Montérégie,Vaudreuil-Dorion,45.416467,-74.043324,VDRLPQ
+Quebec,Abitibi-Témiscamingue,Val-d'Or,48.105368,-77.788718,VLDRPQ
+Quebec,Laurentides,Val-David,46.03506,-74.23819,VLDVPQ
+Quebec,Lanaudière,Repentigny,45.757344,-73.47991,VLGDPQ
+Quebec,Montérégie,Sorel-Tracy,46.033858,-73.138463,SORLPQ
+Quebec,Montérégie,Salaberry-de-Valleyfield,45.268891,-74.097054,VYFDPQ
+Connecticut,New Haven County,Milford,41.20812485,-73.10603213,NYCMNYZR
+New York,New York County,New York,40.740734,-74.001881,NYCMNY83
+New York,New York County,New York,40.717788,-74.008905,NYCMNYZR
+Ontario,"Stormont, Dundas and Glengarry United Counties",Alexandria,45.3184825,-74.6384886,ALXNONAS
+Ontario,Leeds and Grenville United Counties,Brockville,44.588718,-75.6845363,BKVLON45
+Ontario,Leeds and Grenville United Counties,Addison,44.70361,-75.79222,BLMYONAA
+Ontario,"Stormont, Dundas and Glengarry United Counties",Cornwall,45.0220181,-74.7308502,CRNWON24
+Ontario,Frontenac County,Kingston,44.2338406,-76.493944,KGTNON08
+Ontario,Frontenac County,Kingston,44.2339536,-76.4806981,KGTNONAI
+Ontario,Frontenac County,Kingston,44.25991,-76.5086,KGTNONFB
+Ontario,Frontenac County,Kingston,44.2399614,-76.5650545,KGTNONGW
+Ontario,Ottawa,Ottawa,45.3256576,-75.893314,KNTAON16
+Ontario,Ottawa,Ottawa,45.3407112,-75.8982995,KNTAONEP
+Ontario,Ottawa,Ottawa,45.33913,-75.72329,OTWAON11
+Ontario,Ottawa,Ottawa,45.364409,-75.735085,NEPNONFL
+Ontario,Ottawa,Ottawa,45.34135,-75.7131,NEPNONHI
+Ontario,Ottawa,Ottawa,45.43617,-75.6626,OTWAON09
+Ontario,Ottawa,Ottawa,45.382,-75.66856,OTWAON10
+Ontario,Ottawa,Ottawa,45.43076,-75.682,OTWAON12
+Ontario,Ottawa,Ottawa,45.42031,-75.69884,OTWAON23
+Ontario,Ottawa,Ottawa,45.403543,-75.738318,OTWAON01
+Ontario,Ottawa,Ottawa,45.36539,-75.731033,OTWAONBS
+Ontario,Ottawa,Ottawa,45.345212,-75.880417,OTWAONPL
+Ontario,Ottawa,Ottawa,45.41957,-75.70051,OTWAONXH
+Ontario,Ottawa,Ottawa,45.41523,-75.64887,OTWAONXP
+Ontario,Lanark County,Perth,44.902644,-76.276256,PRTHON16
+Ontario,Hastings County,Tweed,44.474074,-77.312063,TWEDON40
+Quebec,Saguenay--Lac-Saint-Jean,Alma,48.564159,-71.642144,ALMAPQ
+Quebec,Capitale-Nationale,L'Ancienne-Lorette,46.799059,-71.350923,QUBCPQ
+Quebec,Saguenay--Lac-Saint-Jean,L'Anse-Saint-Jean,48.197953,-70.231478,ASTJPQ
+Quebec,Capitale-Nationale,Québec City,46.880681,-71.196285,QUBCPQ
+Quebec,Capitale-Nationale,Baie-Saint-Paul,47.3937889,-70.5348,BSTPPQ
+Quebec,Saguenay--Lac-Saint-Jean,Saguenay,48.422754,-71.057261,CCTMPQ
+Quebec,Saguenay--Lac-Saint-Jean,Dolbeau-Mistassini,48.88243,-72.23138,DLBUPQ
+Quebec,Saguenay--Lac-Saint-Jean,Saguenay,48.410056,-71.208358,JNQRPQ
+Quebec,Saguenay--Lac-Saint-Jean,Saguenay,48.31472,-70.90764,LABCPQ
+Quebec,Chaudière-Appalaches,Levis,46.807517,-71.184387,LEVSPQ
+Quebec,Capitale-Nationale,La Malbaie,47.655141,-70.151339,LMLBPQ
+Quebec,Capitale-Nationale,Saint-Ferréol-les-Neiges,47.349706,-71.17497,PCLRPQ
+Quebec,Saguenay--Lac-Saint-Jean,Saint-Charles-de-Bourget,48.000723,-71.237795,PCLRPQ
+Quebec,Saguenay--Lac-Saint-Jean,Roberval,48.5159,-72.22498,RBVLPQ
+Quebec,Saguenay--Lac-Saint-Jean,Saint-Félicien,48.6571111,-72.4494444,SFCNPQ
+Quebec,Capitale-Nationale,Saint-Joachim,47.06006253,-70.86928541,SANBPQ
+Saskatchewan,Chaplin No. 164,Chaplin,50.4627769,-106.6566682,CHPLSKAC
+Saskatchewan,Gull Lake No. 139,Tompkins,50.04992,-108.65002,CRMCSKAC
+Saskatchewan,Biggar No. 347,Biggar,52.044052,-107.81348,CZLTSKTS
+Saskatchewan,Estevan No. 5,Estevan,49.1400238,-102.9937174,ESTVSK01
+Saskatchewan,Dufferin No. 190,Findlater,50.779027,-105.400527,BTHNSK02
+Saskatchewan,Humboldt No. 370,Humboldt,52.2006497,-105.1227356,HMBLSK01
+Saskatchewan,N/A,Lloydminster,53.2816435,-110.0004545,LLYDSK01
+Saskatchewan,N/A,Melfort,52.860894,-104.608522,MLFTSK03
+Saskatchewan,Maple Creek No. 111,Maple Creek,49.909722,-109.478889,MPCKSKAC
+Saskatchewan,Langenburg No. 181,Langenburg,50.7932,-101.573332,MRWLSKTS
+Saskatchewan,Moose Jaw No. 161,Moose Jaw,50.393345,-105.536197,MSJWSK02
+Saskatchewan,Moose Jaw No. 161,Moose Jaw,50.389167,-105.54,MSJWSKAJ
+Saskatchewan,North Battleford No. 437,North Battleford,52.775659,-108.300293,NBFRSK02
+Saskatchewan,Hillsdale No. 440,Neilburg,52.829637,-109.616705,NLBGSKTS
+Saskatchewan,N/A,Plunkett,51.90584,-105.44913,PLNKSKTS
+Saskatchewan,Prince Albert No. 461,Prince Albert,53.202015,-105.752791,PRNASK01
+Saskatchewan,Prince Albert No. 461,MUSKODAY,53.215961,-105.676956,PRNASK01
+Saskatchewan,Sherwood No. 159,Regina,50.44946,-104.61329,REGNSK01
+Saskatchewan,Sherwood No. 159,Regina,50.41016,-104.61946,REGNSK03
+Saskatchewan,Edenwold No. 158,Pilot Butte,50.446426,-104.477592,REGNSK03
+Saskatchewan,Sherwood No. 159,Richardson,50.378467,-104.669267,RCTNSK01
+Saskatchewan,Sherwood No. 159,Regina,50.450575,-104.614995,REGNSKDB
+Saskatchewan,Sherwood No. 159,Regina,50.455,-104.596111,REGNSKDP
+Saskatchewan,N/A,Regina Beach,50.794075,-104.985781,RGBHSK01
+Saskatchewan,Corman Park No. 344,Saskatoon,52.1298,-106.66461,SKTNSK01
+Saskatchewan,Corman Park No. 344,Saskatoon,52.12958,-106.67228,SKTNSKBV
+Saskatchewan,Corman Park No. 344,Saskatoon,52.138426,-106.661714,SKTNSK07
+Saskatchewan,Orkney No. 244,Springside,51.352863,-102.738813,SPSDSKTS
+Saskatchewan,Swift Current No. 137,Swift Current,50.2849544,-107.8025623,SWCRSK02
+Saskatchewan,Swift Current No. 137,Wymark,50.281939,-107.818061,SWCRSKAE
+Saskatchewan,Gull Lake No. 139,Tompkins,50.07639,-108.73556,TPKNSK01
+Saskatchewan,Buffalo No. 409,Wilkie,52.415085,-108.73435,WILKSKTS
+Saskatchewan,Wolseley No. 155,Wolseley,50.422222,-103.2725,WLSLSKAC
+Saskatchewan,N/A,Wapella,50.262778,-101.973611,WPLLSKAB
+Saskatchewan,Weyburn No. 67,Weyburn,49.663067,-103.853047,WYBNSK03
+Saskatchewan,Orkney No. 244,Yorkton,51.212991,-102.462949,YKTNSK01
+Quebec,Bas-Saint-Laurent,Saint-Raphaël-d'Albertville,48.324157,-67.360289,CSPLPQ
+Quebec,Bas-Saint-Laurent,Amqui,48.451676,-67.405928,AMQUPQ
+Quebec,Bas-Saint-Laurent,Lac-au-Saumon,48.438086,-67.383598,AMQUPQ
+Quebec,Bas-Saint-Laurent,Baie-des-Sables,48.720089,-67.898448,BADSPQ
+Quebec,Bas-Saint-Laurent,Rimouski,48.38931,-68.6706,BICCPQ
+Quebec,Bas-Saint-Laurent,Causapscal,48.357611,-67.22502,CSPLPQ
+Quebec,Bas-Saint-Laurent,Esprit-Saint,48.078301,-68.546771,EPSTPQ
+Quebec,Bas-Saint-Laurent,Grosses-Roches,48.938514,-67.171869,SFCTPQ
+Quebec,Bas-Saint-Laurent,Métis-sur-Mer,48.683626,-67.969569,LBLSPQ
+Quebec,Bas-Saint-Laurent,Lac-des-Aigles,47.99545,-68.672258,EPSTPQ
+Quebec,Bas-Saint-Laurent,Lac-au-Saumon,48.421711,-67.345054,LCSMPQ
+Quebec,Bas-Saint-Laurent,Saint-Ulric,48.730662,-67.744961,STULPQ
+Quebec,Bas-Saint-Laurent,Les Hauteurs-de-Rimouski,48.377889,-68.112466,SGARPQ
+Quebec,Bas-Saint-Laurent,Saint-Éloi,48.05591,-69.284549,LISVPQ
+Quebec,Bas-Saint-Laurent,Les Méchins,49.000084,-66.981357,LMCNPQ
+Quebec,Bas-Saint-Laurent,La Rédemption,48.446835,-67.882151,STMOPQ
+Quebec,Bas-Saint-Laurent,Sainte-Luce,48.52732,-68.346494,LUVLPQ
+Quebec,Bas-Saint-Laurent,Matane,48.836405,-67.565961,MATNPQ
+Quebec,Bas-Saint-Laurent,Mont-Joli,48.586849,-68.190799,MTJLPQ
+Quebec,Bas-Saint-Laurent,Padoue,48.576806,-67.991778,MTJLPQ
+Quebec,Bas-Saint-Laurent,Rimouski,48.499055,-68.479886,RMKIPQ
+Quebec,Bas-Saint-Laurent,Price,48.634064,-68.115481,MTJLPQ
+Quebec,Bas-Saint-Laurent,Rivière-Bleue,47.4417,-69.0473,RBLUPQ
+Quebec,Bas-Saint-Laurent,Rivière-du-Loup,47.831503,-69.531202,RDLPPQ
+Quebec,Bas-Saint-Laurent,Saint-Antonin,47.815845,-69.518342,RDLPPQ
+Quebec,Bas-Saint-Laurent,Saint-Adelme,48.825924,-67.323017,SFCTPQ
+Quebec,Bas-Saint-Laurent,Saint-Anaclet,48.47241445,-68.43155537,RMKIPQ
+Quebec,Bas-Saint-Laurent,Saint-André-de-Kamouraska,47.630433,-69.687009,SANKPQ
+Quebec,Bas-Saint-Laurent,Sainte-Angèle-de-Mérici,48.524272,-68.079658,MTJLPQ
+Quebec,Bas-Saint-Laurent,Rimouski,48.36585944,-68.46392139,SBLNPQ
+Quebec,Bas-Saint-Laurent,Saint-Charles-Garnier,48.341753,-68.046275,SGARPQ
+Quebec,Bas-Saint-Laurent,Saint-Cléophas,48.492663,-67.742794,SYBCPQ
+Quebec,Bas-Saint-Laurent,Saint-Donat,48.495116,-68.244168,LUVLPQ
+Quebec,Bas-Saint-Laurent,Saint-Damase,48.660905,-67.826174,STMOPQ
+Quebec,Bas-Saint-Laurent,Saint-Eugène-de-Ladrière,48.254534,-68.794134,SFARPQ
+Quebec,Bas-Saint-Laurent,Saint-Fabien,48.312912,-68.869824,SFARPQ
+Quebec,Bas-Saint-Laurent,Sainte-Félicité,48.900055,-67.33337,SFCTPQ
+Quebec,Bas-Saint-Laurent,Sainte-Flavie,48.609278,-68.231972,MTJLPQ
+Quebec,Bas-Saint-Laurent,Sainte-Florence,48.266048,-67.234579,CSPLPQ
+Quebec,Bas-Saint-Laurent,Saint-Gabriel-de-Rimouski,48.424224,-68.172848,SGARPQ
+Quebec,Bas-Saint-Laurent,Sainte-Jeanne-d'Arc,48.493822,-67.9566,STMOPQ
+Quebec,Bas-Saint-Laurent,Saint-Jean-de-Cherbourg,48.860113,-67.111337,SFCTPQ
+Quebec,Bas-Saint-Laurent,Saint-Joseph-de-Lepage,48.563003,-68.190645,MTJLPQ
+Quebec,Bas-Saint-Laurent,Saint-Léandre,48.728454,-67.610743,STULPQ
+Quebec,Bas-Saint-Laurent,Saint-Léon-le-Grand,48.386066,-67.49993,SLLGPQ
+Quebec,Bas-Saint-Laurent,Sainte-Marguerite-Marie,48.316152,-67.085212,CSPLPQ
+Quebec,Bas-Saint-Laurent,Saint-Marcellin,48.337396,-68.292212,SGARPQ
+Quebec,Bas-Saint-Laurent,Saint-Mathieu-de-Rioux,48.180617,-68.993583,SSRMPQ
+Quebec,Bas-Saint-Laurent,Saint-René-de-Matane,48.705633,-67.386339,SRMTPQ
+Quebec,Bas-Saint-Laurent,Saint-Simon-de-Rimouski,48.205903,-69.040667,SSRMPQ
+Quebec,Bas-Saint-Laurent,Saint-Alexandre-des-Lacs,48.475813,-67.305245,LCSMPQ
+Quebec,Bas-Saint-Laurent,Pohenegamook,47.492885,-69.289945,STELPQ
+Quebec,Bas-Saint-Laurent,Saint-Tharcisius,48.545695,-67.338944,AMQUPQ
+Quebec,Bas-Saint-Laurent,Sainte-Irène,48.445953,-67.577489,AMQUPQ
+Quebec,Bas-Saint-Laurent,Saint-Moïse,48.560536,-67.772649,STMOPQ
+Quebec,Bas-Saint-Laurent,Saint-Narcisse-de-Rimouski,48.288661,-68.436981,RMKIPQ
+Quebec,Bas-Saint-Laurent,Saint-Noël,48.582094,-67.835551,STMOPQ
+Quebec,Bas-Saint-Laurent,Saint-Octave-de-Métis,48.600537,-68.079212,MTJLPQ
+Quebec,Bas-Saint-Laurent,Sainte-Paule,48.660256,-67.590508,STULPQ
+Quebec,Bas-Saint-Laurent,Saint-Vianney,48.615626,-67.412581,AMQUPQ
+Quebec,Bas-Saint-Laurent,Saint-Valérien,48.343165,-68.661901,RMKIPQ
+Quebec,Bas-Saint-Laurent,Sayabec,48.56292,-67.684278,SYBCPQ
+Quebec,Bas-Saint-Laurent,Lac-Humqui,48.304853,-67.580702,SLLGPQ
+Quebec,Bas-Saint-Laurent,Trois-Pistoles,48.126663,-69.174267,TRPSPQ
+Quebec,Bas-Saint-Laurent,Val-Brillant,48.531146,-67.546402,VLBLPQ
+Washington,King County,Seattle,47.614353,-122.33886,STTLWAWB
+Quebec,Côte-Nord,Sept-Iles,50.231573,-66.530473,CKCYPQ
+Quebec,Côte-Nord,Fermont,52.796324,-67.080948,FRMTPQ
+Quebec,Côte-Nord,Sept-Iles,50.144277,-66.613326,PTCRPQ
+Newfoundland and Labrador,Newfoundland and Labrador,Labrador City,52.943575,-66.906104,LBCYNF
+Quebec,Côte-Nord,Sept-Iles,50.2747,-66.0066,SPISPQ
+Quebec,Côte-Nord,Sept-Iles,50.250978,-66.070737,MOISPQ
+Quebec,Côte-Nord,Lamarche,50.17194732,-66.73752169,SPISPQ
+Quebec,Côte-Nord,Lamarche,50.030289,-66.803955,PTCRPQ
+Quebec,Côte-Nord,Port-Cartier,50.02795164,-66.85676336,PTCRPQ
+Quebec,Côte-Nord,,50.2897429,-67.2497289,PTCRPQ
+Quebec,Côte-Nord,Port-Cartier,49.7919,-67.1697,PTCTPQ
+Quebec,Côte-Nord,Rivière-au-Tonnerre,50.292327,-65.527198,SPISPQ
+Quebec,Côte-Nord,Sept-Îles,50.21425463,-66.39643192,SPISPQ
+Ontario,Brant County,Brantford,43.1415301,-80.2638458,BTFDON17
+Ontario,Regional Municipality of Halton,Burlington,43.3277884,-79.8009643,BURLON02
+Ontario,Regional Municipality of Halton,Burlington,43.3322622,-79.8091442,BURLONDH
+Ontario,Chatham-Kent,Chatham,42.402183,-82.1841445,CHHMON17
+Ontario,Chatham-Kent,Chatham,42.4092111,-82.1733474,CHHMONDE
+Ontario,Chatham-Kent,Chatham,42.4023223,-82.1843188,CHHMONDU
+Ontario,Waterloo Regional Municipality,Cambridge,43.358829,-80.3105785,CMBGONCZ
+Ontario,Waterloo Regional Municipality,Cambridge,43.3691749,-80.3106218,CMBGONGC
+Ontario,Essex County,Essex,42.1112139,-82.9466571,MCGRON09
+Ontario,Waterloo Regional Municipality,Cambridge,43.3639725,-80.3105466,GALTON04
+Ontario,Regional Municipality of Niagara,Grimsby,43.1962351,-79.5607302,GRMSONAU
+Ontario,Hamilton,Hamilton,43.2312471,-79.8585114,HMTNON02
+Ontario,Hamilton,Hamilton,43.2538692,-79.8712106,HMTNON14
+Ontario,Hamilton,Hamilton,43.2540814,-79.8702601,HMTNONAU
+Ontario,Essex County,Kingsville,42.134179,-82.7631162,COTMONXG
+Ontario,Waterloo Regional Municipality,Kitchener,43.4523557,-80.4942014,KTNRON06
+Ontario,Waterloo Regional Municipality,Kitchener,43.4310772,-80.4443484,KTNRON08
+Ontario,Waterloo Regional Municipality,Waterloo,43.4807391,-80.5366884,KTNRON09
+Ontario,Waterloo Regional Municipality,Kitchener,43.4512387,-80.5003344,KTNRONJF
+Ontario,Middlesex County,London,42.9866137,-81.2487429,LONDON14
+Ontario,Middlesex County,London,42.98623,-81.2527454,LONDONCL
+Ontario,Middlesex County,London,42.986635,-81.2513125,LONDONDP
+Ontario,Middlesex County,London,42.9857,-81.22141,LONDON15
+Ontario,Middlesex County,London,42.9968923,-81.2228397,LONDONHO
+Ontario,Regional Municipality of Niagara,Niagara Falls,43.09798,-79.0734,NGFLON05
+Ontario,Lambton County,Sarnia,42.973245,-82.404539,SARNON30
+Ontario,Perth County,Stratford,43.37021,-80.97886,SRFRON38
+Ontario,Regional Municipality of Niagara,St. Catharines,43.15826,-79.247,STCTON10
+Ontario,Regional Municipality of Niagara,St. Catharines,43.155712,-79.245952,STCTONAF
+Ontario,Essex County,Windsor,42.30714,-83.03062,WNDSON12
+Ontario,Essex County,Windsor,42.3136,-82.9749,WNDSON14
+Ontario,Essex County,Windsor,42.31517,-83.03711,WNDSONJU
+Quebec,Estrie,Brome,45.197114,-72.573774,KNTNPQ
+Quebec,Chaudière-Appalaches,Lac-Etchemin,46.401309,-70.495464,LCETPQ
+Quebec,Estrie,Lac-Mégantic,45.58758166,-70.90178209,LCMGPQ
+Quebec,Estrie,Nantes,45.59851465,-70.9198811,LCMGPQ
+Quebec,Estrie,La Patrie,45.40238939,-71.25081592,LPTRPQ
+Quebec,Chaudière-Appalaches,Sainte-Aurélie,46.176263,-70.360163,STZCPQ
+Quebec,Chaudière-Appalaches,Saint-Benjamin,46.28085998,-70.59856492,SPDRPQ
+Quebec,Chaudière-Appalaches,Saint-Benoît-Labre,46.06869001,-70.79069763,SGBCPQ
+Quebec,Chaudière-Appalaches,Saint-Côme-Linière,46.06265169,-70.51993119,SCKCPQ
+Quebec,Chaudière-Appalaches,Saint-Éphrem-de-Beauce,46.057829,-70.951799,SEPBPQ
+Quebec,Chaudière-Appalaches,Saint-Georges,46.10931845,-70.67665347,SGBCPQ
+Quebec,Chaudière-Appalaches,Saint-Benjamin,46.20175545,-70.61737562,SGBCPQ
+Quebec,Chaudière-Appalaches,Saint-Gédéon-de-Beauce,45.85067505,-70.63800618,SGEBPQ
+Quebec,Estrie,Sherbrooke,45.398277,-71.895819,SHBKPQ
+Quebec,Chaudière-Appalaches,Saint-Martin,45.95919972,-70.66877514,SMBCPQ
+Quebec,Chaudière-Appalaches,Saint-Prosper,46.21195575,-70.48149511,SPDRPQ
+Quebec,Chaudière-Appalaches,Saint-Philibert,46.136772,-70.546303,SGBCPQ
+Quebec,Chaudière-Appalaches,Saint-René,46.00851644,-70.61847654,SMBCPQ
+Quebec,Chaudière-Appalaches,Saint-Côme-Linière,46.06786777,-70.61254037,SMBCPQ
+Quebec,Chaudière-Appalaches,Saint-Magloire,46.579317,-70.287234,STMGPQ
+Quebec,Estrie,Saint-Malo,45.2072745,-71.57366139,STMLPQ
+Quebec,Estrie,Saint-Robert-Bellarmin,45.74866794,-70.58883971,SGEBPQ
+Quebec,Chaudière-Appalaches,Saint-Théophile,45.955237,-70.524502,STTHPQ
+Quebec,Chaudière-Appalaches,Thetford Mines,46.09531292,-71.32724256,THMNPQ
+Quebec,Estrie,Weedon,45.70835192,-71.46228431,WEDNPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Cap-Chat,49.092535,-66.695801,CPCTPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Cap-Chat-Est,49.10286,-66.662754,CPCTPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Cap-Chat-Est,49.022673,-66.396711,SAMOPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Gros-Morne,49.254732,-65.550002,MTLSPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,La Martre,49.205044,-66.158295,LAMRPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Marsoui,49.214906,-66.07196,LAMRPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,La Martre,48.946554,-66.120905,SAMOPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Mont-Saint-Pierre,49.21342,-65.773966,MTLSPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Saint-Maxime-du-Mont-Louis,49.229138,-65.725021,MTLSPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Rivière-à-Claude,49.217643,-65.887724,MTLSPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Sainte-Anne-des-Monts--Tourelle,49.132217,-66.463724,SAMOPQ
+Quebec,Gaspésie--Îles-de-la-Madeleine,Sainte-Anne-des-Monts,49.129632,-66.489472,SAMOPQ
+Quebec,Capitale-Nationale,Deschambault,46.648178,-71.931152,SEDLPQ
+Quebec,Capitale-Nationale,Grondines,46.628207,-71.978725,SEDLPQ
+Quebec,Chaudière-Appalaches,Dosquet,46.469469,-71.53026,SFLNPQ
+Quebec,Chaudière-Appalaches,Frampton,46.462461,-70.804696,FRMPPQ
+Quebec,Chaudière-Appalaches,Honfleur,46.653632,-70.882198,STASPQ
+Quebec,Chaudière-Appalaches,Notre-Dame-du-Sacré-Coeur-d'Issoudun,46.576145,-71.622063,SFLNPQ
+Quebec,Chaudière-Appalaches,Saint-Janvier-de-Joly,46.485832,-71.66653,SFLNPQ
+Quebec,Chaudière-Appalaches,Lotbinière,46.616171,-71.929674,SEDLPQ
+Quebec,Chaudière-Appalaches,Laurier-Station,46.541083,-71.619955,SFLNPQ
+Quebec,Chaudière-Appalaches,Saint-Sylvestre,46.336025,-71.142311,SPBRPQ
+Quebec,Chaudière-Appalaches,Saint-Agapit,46.55939146,-71.44778252,SCLDPQ
+Quebec,Chaudière-Appalaches,Saint-Agapit,46.56128,-71.433535,SAGAPQ
+Quebec,Chaudière-Appalaches,Sainte-Agathe-de-Lotbinière,46.38663,-71.411275,SAGLPQ
+Quebec,Chaudière-Appalaches,Saints-Anges,46.419362,-70.878457,VLJTPQ
+Quebec,Chaudière-Appalaches,Saint-Apollinaire,46.6198358,-71.4977789,SAPRPQ
+Quebec,Chaudière-Appalaches,Saint-Antoine-de-Tilly,46.66324668,-71.57455962,SATIPQ
+Quebec,Chaudière-Appalaches,Scott,46.500488,-71.066375,STMBPQ
+Quebec,Chaudière-Appalaches,Sainte-Claire,46.60179,-70.872384,SCLDPQ
+Quebec,Chaudière-Appalaches,St-Croix,46.622789,-71.734481,SCLRPQ
+Quebec,Chaudière-Appalaches,Saint-Édouard-de-Lotbinière,46.57135,-71.838779,SEDLPQ
+Quebec,Chaudière-Appalaches,Saint-Flavien,46.513261,-71.596444,SFLNPQ
+Quebec,Chaudière-Appalaches,Saint-Gilles,46.51148,-71.368582,SAGAPQ
+Quebec,Chaudière-Appalaches,Sainte-Hénédine,46.559144,-70.984211,SHDNPQ
+Quebec,Chaudière-Appalaches,Saint-Joseph-de-Beauce,46.31172293,-70.90361595,SJOBPQ
+Quebec,Chaudière-Appalaches,Saint-Jules,46.222231,-70.947883,SJOBPQ
+Quebec,Chaudière-Appalaches,Saint-Lazare-de-Bellechasse,46.62744446,-70.76904947,SCLDPQ
+Quebec,Chaudière-Appalaches,Saint-Lambert-de-Lauzon,46.60556028,-71.2378943,SLDLPQ
+Quebec,Chaudière-Appalaches,Sainte-Marguerite,46.511501,-70.940134,STMBPQ
+Quebec,Chaudière-Appalaches,Saint-Malachie,46.503463,-70.730302,SMLHPQ
+Quebec,Chaudière-Appalaches,Saint-Patrice-de-Beaurivage,46.410175,-71.241692,SPBRPQ
+Quebec,Chaudière-Appalaches,Saint-Anselme,46.615433,-71.002889,STASPQ
+Quebec,Chaudière-Appalaches,Saint-Bernard,46.499138,-71.139484,STBDPQ
+Quebec,Chaudière-Appalaches,Saint-Elzéar,46.408218,-71.061401,STMBPQ
+Quebec,Chaudière-Appalaches,Saint-Henri,46.709038,-71.107781,STHLPQ
+Quebec,Chaudière-Appalaches,Saint-Isidore,46.543953,-71.135896,STHLPQ
+Quebec,Chaudière-Appalaches,Saint-Léon-de-Standon,46.479578,-70.616633,SMLHPQ
+Quebec,Chaudière-Appalaches,Sainte-Marie,46.44891672,-71.02587104,STMBPQ
+Quebec,Chaudière-Appalaches,Saint-Narcisse-de-Beaurivage,46.482437,-71.233941,STBDPQ
+Quebec,Chaudière-Appalaches,Saint-Nazaire-de-Dorchester,46.552338,-70.661085,SMLHPQ
+Quebec,Centre-du-Québec,Victoriaville,46.049568,-71.935773,VCVLPQ
+Quebec,Chaudière-Appalaches,Val-Alain,46.412825,-71.752492,VLALPQ
+Quebec,Chaudière-Appalaches,Vallée-Jonction,46.374242,-70.921812,VLJTPQ
+Quebec,Centre-du-Québec,Villeroy,46.390058,-71.876646,VLRYPQ
+Yukon,N/A,Whitehorse,60.71876,-135.05289,WHTHYTXB
+Manitoba,N/A,Brandon,49.8417104,-99.9618007,BRNDMB02
+Manitoba,Elton,Douglas,49.8937273,-99.706724,DGLSMBAC
+Manitoba,Rural Municipality of Reynolds,Elma,49.92575,-95.82052,DRWNMBTB
+Ontario,Kenora District,Dryden,49.7837613,-92.8377091,DRYDONXD
+Manitoba,Emerson – Franklin,Rosa,49.008819,-97.208413,EMSNMBAB
+Ontario,Kenora District,Graham,49.219722,-90.991667,ERNOONAC
+Ontario,Sudbury District,Chapleau,47.849722,-83.557222,ESHRONAA
+Manitoba,Headingley,Headingley,49.8792719,-97.4316183,HDNLMBAI
+Ontario,Kenora District,Kenora,49.763186,-94.56429,KEWTONAB
+Ontario,Kenora District,Kenora,49.7669218,-94.4887673,KNRAONXA
+Ontario,Algoma District,Missanabie,48.351111,-84.263611,LCLSONAA
