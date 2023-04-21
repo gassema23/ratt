@@ -42,17 +42,7 @@ Steps to install and set up project:
 4. Run database migrations with `php artisan migrate`
 5. Serve the application with `php artisan serve`
 
-## Contributing
-
-Information on how others can contribute to your project, such as:
-
-- How to submit bug reports or feature requests
-- Guidelines for pull requests
-- Code of conduct
-
 ## License
-
-Information on the license:
 
 - [MIT license](https://opensource.org/licenses/MIT).
 
