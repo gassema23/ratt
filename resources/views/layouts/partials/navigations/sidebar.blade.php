@@ -15,7 +15,7 @@
                 {{-- BEAT --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                     <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 group-hover:bg-slate-700 justify-between w-full"
+                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full"
                         x-on:click="open = !open">
                         <div class="flex space-x-2">
                             <x-icon name="office-building" class="w-4" />
@@ -43,7 +43,7 @@
                 {{-- RATT --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                     <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 group-hover:bg-slate-700 justify-between w-full @if (Route::is('admin.ratt.*')) bg-slate-700 @endif"
+                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.ratt.*')) bg-slate-700 @endif"
                         x-on:click="open = !open">
                         <div class="flex space-x-2 items-center align-middle">
                             <img src="{{ asset('favicon/favicon-32x32.png') }}" alt="" class="h-4">
@@ -83,7 +83,7 @@
                 {{-- Documentations --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                     <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 group-hover:bg-slate-700 justify-between w-full @if (Route::is('admin.documentations.*')) bg-slate-700 @endif"
+                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.documentations.*')) bg-slate-700 @endif"
                         x-on:click="open = !open">
                         <div class="flex space-x-2">
                             <x-icon name="clipboard-list" class="w-4" />
@@ -111,7 +111,7 @@
                 {{-- Geographies --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                     <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 group-hover:bg-slate-700 justify-between w-full @if (Route::is('admin.geographics.*')) bg-slate-700 @endif"
+                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.geographics.*')) bg-slate-700 @endif"
                         x-on:click="open = !open">
                         <div class="flex space-x-2">
                             <x-icon name="map" class="w-4" />
@@ -169,7 +169,7 @@
                 {{-- Employees --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                     <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 group-hover:bg-slate-700 justify-between w-full @if (Route::is('admin.settings.users.*') || Route::is('admin.settings.teams.*')) bg-slate-700 @endif"
+                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.settings.users.*') || Route::is('admin.settings.teams.*')) bg-slate-700 @endif"
                         x-on:click="open = !open">
                         <div class="flex space-x-2">
                             <x-icon name="users" class="w-4" />
@@ -197,7 +197,7 @@
                 {{-- Settings --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                     <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 group-hover:bg-slate-700 justify-between w-full @if (Route::is('admin.settings.roles.*') ||
+                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.settings.roles.*') ||
                                 Route::is('admin.settings.permissions.*') ||
                                 Route::is('admin.settings.settings.*')) bg-slate-700 @endif"
                         x-on:click="open = !open">
