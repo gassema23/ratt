@@ -43,7 +43,7 @@
                     <x-input wire:model.defer="site.manager" :label="__('Manager')" />
                     <x-input wire:model.defer="site.plant" :label="__('Plant')" />
                     <x-select wire:loading.attr="disabled" wire:model.defer="site.type_id" :options="$types"
-                        option-value="id" option-label="name" option-description="parent" autocomplete="off"
+                        option-value="id" option-label="name" option-description="parent_name" autocomplete="off"
                         :placeholder="__('Make a selection')" :label="__('Type')" :hint="trans('Field required')" />
                 </div>
                 <div class="grid grid-cols-2 gap-2 my-2">

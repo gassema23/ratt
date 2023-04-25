@@ -19,9 +19,6 @@ class DocumentationCreateRequest extends FormRequest
                 'required',
                 'max:255'
             ],
-            'description' => [
-                'required'
-            ],
             'category_id' => [
                 'required'
             ]

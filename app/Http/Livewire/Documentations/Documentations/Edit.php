@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Documentations\Documentations;
 use Throwable;
 use App\Models\Category;
 use App\Traits\HasModal;
+use App\Http\Livewire\Trix;
 use App\Models\Documentation;
 use Livewire\WithFileUploads;
 use LivewireUI\Modal\ModalComponent;
@@ -16,8 +17,16 @@ class Edit extends ModalComponent
 {
     use HasModal, AuthorizesRequests, WithFileUploads;
     public $emits = ['refresh'];
-    public $documentation, $tags;
+    public $documentation, $tags, $description;
     public $attachment = [];
+    public $listeners = [
+        Trix::EVENT_VALUE_UPDATED // trix_value_updated()
+    ];
+
+    public function trix_value_updated($value)
+    {
+        $this->description = $value;
+    }
     public function mount($id)
     {
         $this->documentation = Documentation::findOrFail($id);
@@ -31,7 +40,11 @@ class Edit extends ModalComponent
     {
         //$this->authorize('documentations-create');
         $this->validate();
-        $this->documentation->update($this->validate());
+        $this->documentation->update([
+            'name' => $this->documentation->name,
+            'category_id' => $this->documentation->category_id,
+            'description' => $this->description,
+        ]);
         $this->documentation->retag($this->tags);
         $this->validate([
             'attachment' => [

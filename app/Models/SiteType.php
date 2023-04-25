@@ -10,6 +10,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Dyrynda\Database\Support\CascadeSoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 class SiteType extends Model
 {
@@ -27,8 +28,8 @@ class SiteType extends Model
     {
         return $this->hasMany(self::class, 'parent_id');
     }
-    public function parent(): HasMany
+    public function parent(): BelongsTo
     {
-        return $this->hasMany(self::class, 'id', 'parent_id');
+        return $this->belongsTo(self::class, 'parent_id');
     }
 }

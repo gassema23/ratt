@@ -65,6 +65,8 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
                     Route::get("/regions", Geographics\Regions\Index::class)->name("regions.index");
                     Route::get("/cities", Geographics\Cities\Index::class)->name("cities.index");
                     Route::get("/sites", Geographics\Sites\Index::class)->name("sites.index");
+                    Route::get('/sites/types', Settings\Sites\Index::class)->name("sites.types.index");
+                    Route::get('/geographics/types', Settings\Geographics\Index::class)->name("geographics.types.index");
                 });
                 /** END geographics area */
                 /** RATT */

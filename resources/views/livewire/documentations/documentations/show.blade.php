@@ -62,23 +62,22 @@
                 </div>
                 {{--  HEADER END --}}
                 <div class="w-full">
-                    @livewire('image-gallery', ['model' => $documentation])
                     {{-- Cat and tag --}}
                     <div
                         class="flex align-middle items-center font-semibold text-xs uppercase text-slate-600 my-4 border-b border-slate-200 pb-4 space-x-4">
                         <div>
-                            <span>@lang('Categories')</span>
+                            <span class=" font-bold mr-2">@lang('Categories:')</span>
                             <x-badge squared teal :label="$documentation->category->name" />
                         </div>
                         <div>
-                            <span>@lang('Tags')</span>
+                            <span class=" font-bold mr-2">@lang('Tags:')</span>
                             @foreach ($documentation->tags as $tag)
                                 <x-badge squared slate :label="$tag->name" />
                             @endforeach
                         </div>
                     </div>
                     <div class="prose prose-slate max-w-none">
-                        {{ $documentation->description }}
+                        {!! $documentation->description !!}
                     </div>
                     <div>
                         <livewire:comments.comments :model="$documentation" :wire:key="'comments-'.$documentation->id" />

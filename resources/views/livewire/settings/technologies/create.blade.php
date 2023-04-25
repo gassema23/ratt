@@ -2,7 +2,7 @@
     <x-app-modal>
         <form wire:submit.prevent="save">
             <x-slot name="title">
-                {{ trans('Create new technology') }}
+                {{ trans('New technology') }}
             </x-slot>
             <x-slot name="content">
                 <x-errors class="my-2 " />

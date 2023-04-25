@@ -51,11 +51,11 @@ class Edit extends ModalComponent
         $this->cities = City::orderBy('name')->select('id', 'name')
             ->where('region_id', $this->site->city->region_id)
             ->get();
-        $this->types = SiteType::orderBy('name')
-            ->with('parent')
+        $this->types = SiteType::with('parent')
             ->join('site_types as parent_types', 'parent_types.id', '=', 'site_types.parent_id')
-            ->select('site_types.id', 'site_types.name', 'parent_types.name->'.app()->getLocale().' as parent')
+            ->select('site_types.id', 'site_types.name', 'parent_types.name->'.app()->getLocale().' as parent_name')
             ->whereNotNull('site_types.parent_id')
+            ->orderBy('site_types.name')
             ->get();
         $this->country_id = $this->site->city->region->state->country_id;
         $this->state_id = $this->site->city->region->state_id;

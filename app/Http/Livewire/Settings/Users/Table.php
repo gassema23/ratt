@@ -6,8 +6,8 @@ use App\Models\User;
 use App\Traits\HasDelete;
 use App\Traits\HasInvite;
 use Illuminate\Support\Carbon;
-use App\Http\Livewire\Settings\Users;
 use Illuminate\Database\Eloquent\Builder;
+use PowerComponents\LivewirePowerGrid\Traits\Filter;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridEloquent};
@@ -16,28 +16,22 @@ final class Table extends PowerGridComponent
 {
     use ActionButton, HasDelete, HasInvite;
     public $model = User::class;
-    public $section_name;
     public $emits = ['refresh'];
-
+    public $filter_name = 'active';
     protected function getListeners(): array
     {
         return array_merge(
             parent::getListeners(),
             ['refresh' => '$refresh'],
-            ['sectionFilter'],
+            ['filter_status_table']
         );
     }
-    protected $queryString = [
-        'section_name' => ['except' => '', 'as' => 's']
-    ];
-    public function sectionFilter($section_name)
-    {
-        $this->reset('section_name');
-        $this->section_name = $section_name;
-        $this->emit('pg:eventRefresh-default');
-        $this->emitTo(Users\Index::class, 'change', $this->section_name);
-    }
 
+    public function filter_status_table($name)
+    {
+        $this->reset('filter_name');
+        $this->filter_name = $name;
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -48,12 +42,7 @@ final class Table extends PowerGridComponent
     */
     public function setUp(): array
     {
-        $this->showCheckBox();
-
         return [
-            Exportable::make('export')
-                ->striped()
-                ->type(Exportable::TYPE_XLS, Exportable::TYPE_CSV),
             Header::make()->showSearchInput(),
             Footer::make()
                 ->showPerPage()
@@ -77,12 +66,8 @@ final class Table extends PowerGridComponent
     public function datasource(): Builder
     {
         return User::query()
-            ->when($this->section_name, function ($q) {
-                $q->when($this->section_name == 'active', function ($query) {
-                    $query->active();
-                })->when($this->section_name == 'pending', function ($query) {
-                    $query->innactive();
-                });
+            ->when($this->filter_name, function ($query) {
+                $query->{$this->filter_name}();
             });
     }
 
@@ -177,12 +162,12 @@ final class Table extends PowerGridComponent
     public function actions(): array
     {
         return [
-            Button::add('resendinvite')
-                ->bladeComponent('resendinvite', ['id' => 'id']),
             Button::add('showrecord')
                 ->bladeComponent('showrecord', ['id' => 'id', 'route' => 'admin.settings.users.show']),
             Button::add('editrecord')
                 ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'settings.users.edit']),
+            Button::add('resendinvite')
+                ->bladeComponent('resendinvite', ['id' => 'id']),
             Button::add('deleterecord')
                 ->bladeComponent('deleterecord', ['id' => 'id']),
         ];
@@ -206,17 +191,17 @@ final class Table extends PowerGridComponent
     {
         return [
             //Hide button edit for ID 1
+            Rule::button('resendinvite')
+                ->when(fn ($user) => !auth()->user()->can('users-edit') || $this->filter_name != 'pending')
+                ->hide(),
             Rule::button('editrecord')
-                ->when(fn () => !auth()->user()->can('users-edit') || $this->section_name != 'active')
+                ->when(fn ($user) => !auth()->user()->can('users-edit') || $this->filter_name != 'active')
                 ->hide(),
             Rule::button('deleterecord')
                 ->when(fn () => !auth()->user()->can('users-delete'))
                 ->hide(),
             Rule::button('showrecord')
-                ->when(fn () => !auth()->user()->can('users-view') || $this->section_name != 'active')
-                ->hide(),
-            Rule::button('resendinvite')
-                ->when(fn () => !auth()->user()->can('users-edit') || $this->section_name != 'pending')
+                ->when(fn () => !auth()->user()->can('users-view'))
                 ->hide(),
         ];
     }

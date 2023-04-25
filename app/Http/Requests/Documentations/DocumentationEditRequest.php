@@ -15,19 +15,9 @@ class DocumentationEditRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'documentation.name.en' => [
+            'documentation.name' => [
                 'required',
                 'max:255'
-            ],
-            'documentation.name.fr' => [
-                'required',
-                'max:255'
-            ],
-            'documentation.description.en' => [
-                'required'
-            ],
-            'documentation.description.fr' => [
-                'required'
             ],
             'documentation.category_id' => [
                 'required'

@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Settings\Permissions;
 
-
 use App\Traits\HasModal;
 use Illuminate\Support\Str;
 use LivewireUI\Modal\ModalComponent;
@@ -13,6 +12,7 @@ use App\Http\Requests\Permissions\PermissionCreateRequest;
 class Create extends ModalComponent
 {
     use HasModal, AuthorizesRequests;
+
     public $emits = [
         'refresh'
     ];

@@ -37,12 +37,10 @@
                     </div>
                 </div>
                 <div class="my-2 grid grid-cols-2 gap-4">
-                    <x-input wire:model.defer="name.en" :label="__('Title [EN]')" :hint="trans('Field required')" />
-                    <x-input wire:model.defer="name.fr" :label="__('Title [FR]')" />
+                    <x-input wire:model.defer="name" :label="__('Title')" :hint="trans('Field required')" />
                 </div>
                 <div class="my-2 grid grid-cols-1 gap-4">
-                    <x-textarea wire:model.defer="description.en" :label="trans('Description[EN]')" />
-                    <x-textarea wire:model.defer="description.fr" :label="trans('Description [FR]')" />
+                    <livewire:trix >
                 </div>
                 <div class="my-2" x-data="{ isUploading: false, progress: 0 }" x-on:livewire-upload-start="isUploading = true"
                     x-on:livewire-upload-finish="isUploading = false" x-on:livewire-upload-error="isUploading = false"

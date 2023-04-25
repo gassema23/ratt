@@ -83,6 +83,21 @@ class User extends Authenticatable //implements MustVerifyEmail
             get: fn (mixed $value, array $attributes) => preg_replace("/^1?(\d{3})(\d{3})(\d{4})$/", "$1-$2-$3", $attributes['phone']),
         );
     }
+
+    public static function filterStatus()
+    {
+        return collect([
+            [
+                'id' => 'active',
+                'name' => __('Active'),
+            ],
+            [
+                'id' => 'pending',
+                'name' => __('Pending'),
+                'count' => self::CountInnactive()
+            ]
+        ]);
+    }
     // Scope
     public function scopePrime(Builder $query): void
     {
@@ -104,7 +119,7 @@ class User extends Authenticatable //implements MustVerifyEmail
     {
         return $query->whereNotNull('email_verified_at');
     }
-    public function scopeInnactive($query)
+    public function scopePending($query)
     {
         return $query->whereNull('email_verified_at');
     }
