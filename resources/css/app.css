@@ -14,7 +14,18 @@
 .pace .pace-progress {
     @apply bg-teal-500 fixed z-[9999] top-0 right-full w-full h-1;
 }
+trix-toolbar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: -0.1rem;
+    background-color: #fff;
+    z-index: 10;
+    padding: 1em 0;
+}
 
+trix-toolbar .trix-button-group {
+    margin-bottom: 0;
+}
 /** Calendar scrollbar */
 .fc-scroller-liquid-absolute::-webkit-scrollbar {
     @apply cursor-pointer w-1 h-1;

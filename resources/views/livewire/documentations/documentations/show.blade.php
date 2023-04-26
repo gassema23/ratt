@@ -1,89 +1,73 @@
 <div>
-    <div class="grid grid-cols-6 gap-4">
-        <div class="col-span-6 md:col-span-2 2xl:col-span-1">
-            <div class="flex space-y-4 flex-col">
-                <x-card>
-                    <div class="text-xl font-bold mb-4">@lang('Files')</div>
-                    @livewire('ratt.networks.attachments', ['model' => $documentation])
-                </x-card>
-                <x-card>
-                    <div class="text-xl font-bold mb-4">@lang('Categories')</div>
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="#"
-                                class="font-semibold flex items-center py-2 px-4 text-slate-800 hover:text-teal-600 hover:bg-teal-50">
-                                ddd
-                            </a>
-                        </li>
-                    </ul>
-                </x-card>
-                <x-card>
-                    <div class="text-xl font-bold mb-4">@lang('Tags')</div>
-                    <ul class="space-y-2">
-                        <li>
-                            <a href="#"
-                                class="font-semibold flex items-center py-2 px-4 text-slate-800 hover:text-teal-600 hover:bg-teal-50">
-                                ddd
-                            </a>
-                        </li>
-                    </ul>
-                </x-card>
+    <x-card>
+        <div class="flex justify-between">
+            <nav class="mb-8 text-sm">
+                <ol class="list-reset flex">
+                    <li class="text-slate-500">
+                        <a href="{{ route('admin.documentations.index') }}"
+                            class="text-teal-500 transition duration-150 ease-in-out hover:underline focus:text-teal-700 active:text-teal-700">
+                            @lang('Documentations')
+                        </a>
+                    </li>
+                    <li>
+                        <span class="mx-2 text-neutral-500 dark:text-neutral-400">/</span>
+                    </li>
+                    <li class="text-slate-500">{{ $documentation->name }}</li>
+                </ol>
+            </nav>
+            @can('edit-documentations')
+                <div>
+                    <x-button squared outline teal xs icon="pencil"
+                        wire:click="$emit('openModal', 'documentations.documentations.edit', {{ json_encode([$documentation->id]) }})" />
+                </div>
+            @endcan
+        </div>
+        {{--  HEADER --}}
+        <div class="">
+            <h2 class="text-3xl font-semibold text-slate-800 pb-1">{{ $documentation->name }}</h2>
+            <div class="flex">
+                <div class="flex align-middle items-center space-x-3 font-normal text-xs uppercase text-slate-400">
+                    <div class="flex align-middle items-center space-x-1">
+                        <x-icon name="user" class="w-4 h-4" />
+                        <span>@lang('By :name', ['name' => $documentation->creator->name])</span>
+                    </div>
+                    <div class="flex align-middle items-center space-x-1">
+                        <x-icon name="clock" class="w-4 h-4" />
+                        <span>{{ $documentation->created_at->isoFormat('LLLL') }}</span>
+                    </div>
+                    <div class="flex align-middle items-center space-x-1">
+                        <x-icon name="folder" class="w-4 h-4" />
+                        <span>{{ $documentation->category->name }}</span>
+                    </div>
+                    <div class="flex space-x-1 align-middle items-center">
+                        @foreach ($documentation->tags as $tag)
+                            <div class="flex align-middle items-center">
+                                <x-icon name="hashtag" class="w-4 h-4" />
+                                <span>{{ $tag->name }}</span>
+                            </div>
+                        @endforeach
+                    </div>
+                    <div class="flex align-middle items-center space-x-1">
+                        <x-icon name="annotation" class="w-4 h-4" />
+                        <span>
+                            @choice('[0,1]:n comment|[2,*]:n comments', $documentation->comments->count(), [
+                                'n' => $documentation->comments->count(),
+                            ])
+                        </span>
+                    </div>
+                </div>
             </div>
         </div>
-        <div class=" col-span-6 md:col-span-4 2xl:col-span-5">
-            <x-card>
-                {{--  HEADER --}}
-                <div>
-                    <h2 class="text-3xl font-semibold text-slate-800 pb-4">
-                        {{ $documentation->name }}
-                    </h2>
-                    <div class="flex justify-between pt-4">
-                        <div
-                            class="flex align-middle items-center space-x-2 font-semibold text-xs uppercase text-slate-600">
-                            <div>
-                                <x-avatar src="{{ $documentation->creator->gravatar }}" sm />
-                            </div>
-                            <div>
-                                @lang('By :name', ['name' => $documentation->creator->name])
-                            </div>
-                            <x-icon name="clock" class="w-5 h-5 text-slate-500 ml-5 text-teal-500" />
-                            <span>
-                                {{ $documentation->created_at }}
-                            </span>
-                        </div>
-                        <div class="flex align-middle items-center font-semibold text-xs uppercase text-slate-600">
-                            <div class="bg-slate-50 px-2 py-1 border border-slate-200 flex align-middle items-center hover:bg-slate-100 cursor-pointer"
-                                onclick='window.scrollTo({ left: 0, top: document.body.scrollHeight, behavior: "smooth" });'>
-                                <x-icon name="annotation" class="w-5 h-5 text-slate-500 pr-1 text-teal-500" />
-                                <span>{{ $documentation->comments->count() }}</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                {{--  HEADER END --}}
-                <div class="w-full">
-                    {{-- Cat and tag --}}
-                    <div
-                        class="flex align-middle items-center font-semibold text-xs uppercase text-slate-600 my-4 border-b border-slate-200 pb-4 space-x-4">
-                        <div>
-                            <span class=" font-bold mr-2">@lang('Categories:')</span>
-                            <x-badge squared teal :label="$documentation->category->name" />
-                        </div>
-                        <div>
-                            <span class=" font-bold mr-2">@lang('Tags:')</span>
-                            @foreach ($documentation->tags as $tag)
-                                <x-badge squared slate :label="$tag->name" />
-                            @endforeach
-                        </div>
-                    </div>
-                    <div class="prose prose-slate max-w-none">
-                        {!! $documentation->description !!}
-                    </div>
-                    <div>
-                        <livewire:comments.comments :model="$documentation" :wire:key="'comments-'.$documentation->id" />
-                    </div>
-                </div>
-            </x-card>
+        <hr class="my-8 h-px border-0 bg-gray-300" />
+        {{--  HEADER END --}}
+        <div class="w-full">
+            {{-- Cat and tag --}}
+            <div class="prose prose-slate max-w-none">
+                {!! $documentation->description !!}
+            </div>
+            <div>
+                <livewire:comments.comments :model="$documentation" :wire:key="'comments-'.$documentation->id" />
+            </div>
         </div>
-    </div>
+    </x-card>
 </div>

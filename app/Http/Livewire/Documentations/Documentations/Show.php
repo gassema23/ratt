@@ -8,7 +8,13 @@ use Livewire\Component;
 class Show extends Component
 {
     public $documentation;
+    protected function getListeners()
+    {
+        return [
+            'refreshDocument' => '$refresh'
 
+        ];
+    }
     public function mount(Documentation $slug)
     {
         $this->documentation = $slug->load(['category', 'tagged', 'creator','comments']);

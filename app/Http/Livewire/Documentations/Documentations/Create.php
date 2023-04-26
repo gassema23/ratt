@@ -4,12 +4,13 @@ namespace App\Http\Livewire\Documentations\Documentations;
 
 use App\Models\Category;
 use App\Traits\HasModal;
+use App\Http\Livewire\Trix;
 use App\Models\Documentation;
 use Livewire\WithFileUploads;
 use LivewireUI\Modal\ModalComponent;
+use App\Rules\ValidImportFileExtension;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use App\Http\Requests\Documentations\DocumentationCreateRequest;
-use App\Http\Livewire\Trix;
 
 class Create extends ModalComponent
 {
@@ -44,7 +45,7 @@ class Create extends ModalComponent
             $this->validate([
                 'attachment' => [
                     'nullable',
-                    'mimes:jpeg,jpg,png,pdf',
+                    new ValidImportFileExtension,
                     'max:7800'
                 ]
             ]);

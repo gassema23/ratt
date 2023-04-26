@@ -2,7 +2,6 @@
 
 namespace App\Http\Livewire\Documentations\Documentations;
 
-use Throwable;
 use App\Models\Category;
 use App\Traits\HasModal;
 use App\Http\Livewire\Trix;
@@ -16,13 +15,16 @@ use App\Http\Requests\Documentations\DocumentationEditRequest;
 class Edit extends ModalComponent
 {
     use HasModal, AuthorizesRequests, WithFileUploads;
-    public $emits = ['refresh'];
+    public $emits = ['refresh','refreshDocument'];
     public $documentation, $tags, $description;
     public $attachment = [];
-    public $listeners = [
-        Trix::EVENT_VALUE_UPDATED // trix_value_updated()
-    ];
+    protected function getListeners()
+    {
+        return [
+            Trix::EVENT_VALUE_UPDATED, // trix_value_updated(),
 
+        ];
+    }
     public function trix_value_updated($value)
     {
         $this->description = $value;

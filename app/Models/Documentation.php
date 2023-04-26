@@ -39,6 +39,8 @@ class Documentation extends Model implements HasMedia
     protected $casts = [
         'slug' => 'string',
         'deleted_at' => 'datetime',
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
     ];
     public function getActivitylogOptions(): LogOptions
     {
