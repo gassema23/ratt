@@ -22,12 +22,22 @@
                                 <div class="mr-1 my-4">
                                     @if (isset($action['permission']))
                                         @can($action['permission'])
-                                            <x-button teal squared :label="$action['name']" icon="{{ $action['icon'] }}"
-                                                onclick="Livewire.emit('openModal', '{{ $action['route'] }}')" />
+                                            @if (isset($action['id']))
+                                                <x-button teal squared :label="$action['name']" icon="{{ $action['icon'] }}"
+                                                    onclick="Livewire.emit('openModal', '{{ $action['route'] }}', {{ json_encode([$action['id']]) }})" />
+                                            @else
+                                                <x-button teal squared :label="$action['name']" icon="{{ $action['icon'] }}"
+                                                    onclick="Livewire.emit('openModal', '{{ $action['route'] }}')" />
+                                            @endif
                                         @endcan
                                     @else
-                                        <x-button teal squared :label="$action['name']" icon="{{ $action['icon'] }}"
-                                            onclick="Livewire.emit('openModal', '{{ $action['route'] }}')" />
+                                        @if (isset($action['id']))
+                                            <x-button teal squared :label="$action['name']" icon="{{ $action['icon'] }}"
+                                                onclick="Livewire.emit('openModal', '{{ $action['route'] }}', {{ json_encode([$action['id']]) }})" />
+                                        @else
+                                            <x-button teal squared :label="$action['name']" icon="{{ $action['icon'] }}"
+                                                onclick="Livewire.emit('openModal', '{{ $action['route'] }}')" />
+                                        @endif
                                     @endif
                                 </div>
                             @endif

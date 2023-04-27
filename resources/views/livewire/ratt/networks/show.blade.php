@@ -1,51 +1,59 @@
-<div class="grid grid-cols-1 md:grid-cols-4 xl:grid-cols-6 gap-4">
-    <div class="gap-4 col-span-1 xl:col-span-5 md:col-span-3">
-        @if ($openSection === 'network')
-            @livewire('ratt.networks.sections.network-section', ['network' => $network])
-        @elseif ($openSection === 'task')
-            @livewire('ratt.networks.sections.task-section', ['network' => $network])
-        @elseif ($openSection === 'timeline')
-            @livewire('ratt.networks.sections.timeline', ['network' => $network])
-        @endif
+<div class="grid grid-cols-6 gap-4">
+    <div class="col-span-6 md:col-span-2 2xl:col-span-1">
+        <div class="flex space-y-4 flex-col">
+            <x-card>
+                <ul class="space-y-1">
+                    <li>
+                        <a href="#" wire:click="openSection('network')"
+                            class="@if ($openSection === 'network') text-teal-600 bg-teal-50 @endif flex items-center py-2 px-4 text-slate-800 hover:text-teal-600 hover:bg-teal-50 w-full justify-between transition-all duration-300 ease-in-out">
+                            @lang('Network')
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" wire:click="openSection('scenarios')"
+                            class="@if ($openSection === 'scenarios') text-teal-600 bg-teal-50 @endif flex items-center py-2 px-4 text-slate-800 hover:text-teal-600 hover:bg-teal-50 w-full justify-between transition-all duration-300 ease-in-out">
+                            @lang('Scenarios')
+                            @if ($network->networktasks->count() > 0)
+                                <x-badge teal squared xs :label="$network->networktasks->count()" />
+                            @endif
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#" wire:click="openSection('timeline')" @class([
+                            'flex',
+                            'items-center',
+                            'py-2',
+                            'px-4',
+                            'text-slate-800',
+                            'hover:text-teal-600',
+                            'hover:bg-teal-50',
+                            'w-full',
+                            'justify-between',
+                            'transition-all',
+                            'duration-300',
+                            'ease-in-out',
+                            'text-teal-600' => $openSection === 'timeline',
+                            'bg-teal-50' => $openSection === 'timeline',
+                        ])>
+                            @lang('Timeline activities')
+                        </a>
+                    </li>
+                </ul>
+            </x-card>
+        </div>
+
     </div>
-    <div class="col-span-1 order-first md:order-last text-sm ">
+    <div class=" col-span-6 md:col-span-4 2xl:col-span-5">
         <x-card>
-            <div class="border-l-2 border-slate-50 text-slate-600 p-3 hover:border-l-2 hover:border-teal-500 transition ease-in-out duration-300 hover:bg-slate-50 cursor-pointer @if ($openSection === 'network') border-teal-400 text-teal-500 @endif"
-                wire:click="openSection('network')">
-                <div class="grid grid-cols-4">
-                    <div class="col-span-1">
-                        <x-icon name="globe-alt" class="w-6 h-6" />
-                    </div>
-                    <div class="col-span-3">
-                        <div class="font-medium">@lang('Network')</div>
-                        <div class="text-xs text-slate-400">@lang('Network description')</div>
-                    </div>
-                </div>
-            </div>
-            <div class="border-l-2 border-slate-50 text-slate-600 p-3 hover:border-l-2 hover:border-teal-500 transition ease-in-out duration-300 hover:bg-slate-50 cursor-pointer @if ($openSection === 'task') border-teal-400 text-teal-500 @endif"
-                wire:click="openSection('task')">
-                <div class="grid grid-cols-4">
-                    <div class="col-span-1">
-                        <x-icon name="clipboard-list" class="w-6 h-6" />
-                    </div>
-                    <div class="col-span-3">
-                        <div class="font-medium">@lang('Tasks')</div>
-                        <div class="text-xs text-slate-400">@lang('Assign network')</div>
-                    </div>
-                </div>
-            </div>
-            <div class="border-l-2 border-slate-50 p-3 hover:border-l-2 hover:border-teal-500 transition ease-in-out duration-300 hover:bg-slate-50 cursor-pointer @if ($openSection === 'timeline') border-teal-400 text-teal-500 @endif"
-                wire:click="openSection('timeline')">
-                <div class="grid grid-cols-4">
-                    <div class="col-span-1">
-                        <x-icon name="clock" class="w-6 h-6" />
-                    </div>
-                    <div class="col-span-3">
-                        <div class="font-medium">@lang('Timeline activity')</div>
-                        <div class="text-xs text-slate-400">@lang('Manage daily activity and updates')</div>
-                    </div>
-                </div>
-            </div>
+            @if ($openSection === 'network')
+                @livewire('ratt.networks.sections.network-section', [$network])
+            @endif
+            @if ($openSection === 'scenarios')
+                @livewire('ratt.networks.sections.scenario-section', [$network->id])
+            @endif
+            @if ($openSection === 'timeline')
+                @livewire('ratt.networks.sections.timeline', [$network])
+            @endif
         </x-card>
     </div>
 </div>

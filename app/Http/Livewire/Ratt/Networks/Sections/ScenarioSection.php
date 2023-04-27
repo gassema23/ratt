@@ -4,42 +4,45 @@ namespace App\Http\Livewire\Ratt\Networks\Sections;
 
 use App\Models\Task;
 use App\Models\Network;
+use Livewire\Component;
 use App\Models\Scenario;
-use App\Traits\HasModal;
 use App\Models\NetworkTask;
-use LivewireUI\Modal\ModalComponent;
 use App\Http\Requests\Networks\AssignScenarioRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class AssignScenario extends ModalComponent
+class ScenarioSection extends Component
 {
-    use AuthorizesRequests, HasModal;
-
-    public $scenarios, $network, $scenariosData, $scenario_id;
+    use AuthorizesRequests;
+    protected $listeners = [
+        'refresh'  => '$refresh',
+    ];
+    public $scenarios,
+        $network,
+        $scenariosData,
+        $scenario_id;
     public $inputs = [];
-    public $emits = ['refresh'];
     public function mount($id)
     {
         $this->authorize('networks-assignScenarios');
-        $this->network = Network::findOrFail($id);
+        $this->network = Network::with('networktasks')->findOrFail($id);
         $this->scenarios = Scenario::orderBy('name')
             ->select('id', 'name')
             ->get();
     }
+
     public function updatedScenarioId($value)
     {
         $this->reset(['scenariosData', 'inputs']);
-        $this->scenariosData = Scenario::with([
-            'tasks',
-            'tasks.team'
-        ])
+        $this->scenariosData = Scenario::with(['tasks', 'tasks.team'])
             ->where('id', $value)
             ->get();
     }
+
     protected function rules()
     {
         return (new AssignScenarioRequest)->rules($this->network);
     }
+
     public function save()
     {
         $this->authorize('networks-assignScenarios');
@@ -58,7 +61,6 @@ class AssignScenario extends ModalComponent
     }
     public function render()
     {
-        $this->authorize('networks-assignScenarios');
-        return view('livewire.ratt.networks.sections.assign-scenario');
+        return view('livewire.ratt.networks.sections.scenario-section');
     }
 }

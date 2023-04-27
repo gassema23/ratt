@@ -13,6 +13,7 @@
                     </a>
                 </li>
                 {{-- BEAT --}}
+                {{--
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                     <a href="#"
                         class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full"
@@ -40,11 +41,21 @@
                         </li>
                     </ul>
                 </li>
+                 --}}
                 {{-- RATT --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
-                    <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.ratt.*')) bg-slate-700 @endif"
-                        x-on:click="open = !open">
+                    <a href="#" @class([
+                        'flex',
+                        'items-center',
+                        'py-2',
+                        'px-4',
+                        'transition',
+                        'duration-300',
+                        'hover:bg-slate-700',
+                        'justify-between',
+                        'w-full',
+                        'bg-slate-700' => Route::is('admin.ratt.*'),
+                    ]) x-on:click="open = !open">
                         <div class="flex space-x-2 items-center align-middle">
                             <img src="{{ asset('favicon/favicon-32x32.png') }}" alt="" class="h-4">
                             <span>@lang('RATT')</span>
@@ -55,26 +66,64 @@
                     </a>
                     <ul x-show="open" x-collapse class="bg-slate-700">
                         <li>
-                            <a href="{{ route('admin.ratt.dashboard') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.ratt.dashboard')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.ratt.dashboard') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.ratt.dashboard'),
+                            ])>
                                 @lang('Dashboard')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.ratt.projects.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.ratt.projects.*')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.ratt.projects.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' =>
+                                    Route::is('admin.ratt.projects.*') ||
+                                    Route::is('admin.ratt.networks.*'),
+                            ])>
                                 @lang('Projects')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.ratt.scenarios.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10  @if (Route::is('admin.ratt.scenarios.*')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.ratt.scenarios.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.ratt.scenarios.*'),
+                            ])>
                                 @lang('Scenarios')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.ratt.tasks.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.ratt.tasks.*')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.ratt.tasks.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.ratt.tasks.*'),
+                            ])>
                                 @lang('Tasks')
                             </a>
                         </li>
@@ -82,9 +131,18 @@
                 </li>
                 {{-- Documentations --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
-                    <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.documentations.*')) bg-slate-700 @endif"
-                        x-on:click="open = !open">
+                    <a href="#" @class([
+                        'flex',
+                        'items-center',
+                        'py-2',
+                        'px-4',
+                        'transition',
+                        'duration-300',
+                        'hover:bg-slate-700',
+                        'justify-between',
+                        'w-full',
+                        'bg-slate-700' => Route::is('admin.documentations.*'),
+                    ]) x-on:click="open = !open">
                         <div class="flex space-x-2">
                             <x-icon name="clipboard-list" class="w-4" />
                             <span>@lang('Documentations')</span>
@@ -95,14 +153,32 @@
                     </a>
                     <ul x-show="open" x-collapse class="bg-slate-700">
                         <li>
-                            <a href="{{ route('admin.documentations.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.documentations.index')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.documentations.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.documentations.index'),
+                            ])>
                                 @lang('Documentations')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.documentations.categories.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.documentations.categories.*')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.documentations.categories.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.documentations.categories.*'),
+                            ])>
                                 @lang('Categories')
                             </a>
                         </li>
@@ -110,9 +186,18 @@
                 </li>
                 {{-- Geographies --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
-                    <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.geographics.*')) bg-slate-700 @endif"
-                        x-on:click="open = !open">
+                    <a href="#" @class([
+                        'flex',
+                        'items-center',
+                        'py-2',
+                        'px-4',
+                        'transition',
+                        'duration-300',
+                        'hover:bg-slate-700',
+                        'justify-between',
+                        'w-full',
+                        'bg-slate-700' => Route::is('admin.geographics.*'),
+                    ]) x-on:click="open = !open">
                         <div class="flex space-x-2">
                             <x-icon name="map" class="w-4" />
                             <span>@lang('Geographies')</span>
@@ -123,44 +208,108 @@
                     </a>
                     <ul x-show="open" x-collapse class="bg-slate-700">
                         <li>
-                            <a href="{{ route('admin.geographics.countries.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.geographics.countries.index')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.geographics.countries.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.geographics.countries.*'),
+                            ])>
                                 @lang('Countries')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.geographics.states.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.geographics.states.index')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.geographics.states.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.geographics.states.*'),
+                            ])>
                                 @lang('States')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.geographics.regions.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.geographics.regions.index')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.geographics.regions.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.geographics.regions.*'),
+                            ])>
                                 @lang('Regions')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.geographics.cities.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.geographics.cities.index')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.geographics.cities.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.geographics.cities.*'),
+                            ])>
                                 @lang('Cities')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.geographics.states.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.geographics.states.index')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.geographics.sites.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.geographics.sites.*'),
+                            ])>
                                 @lang('Sites')
                             </a>
                         </li>
                         <li>
                             <a href="{{ route('admin.geographics.geographics.types.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.geographics.geographics.types.index')) bg-slate-600 @endif">
+                                @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                    'bg-slate-600' => Route::is('admin.geographics.geographics.types.*'),
+                                ])>
                                 @lang('Geographics types')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.geographics.sites.types.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10 @if (Route::is('admin.geographics.sites.types.index')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.geographics.sites.types.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.geographics.sites.types.*'),
+                            ])>
                                 @lang('Sites types')
                             </a>
                         </li>
@@ -168,9 +317,18 @@
                 </li>
                 {{-- Employees --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
-                    <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.settings.users.*') || Route::is('admin.settings.teams.*')) bg-slate-700 @endif"
-                        x-on:click="open = !open">
+                    <a href="#" @class([
+                        'flex',
+                        'items-center',
+                        'py-2',
+                        'px-4',
+                        'transition',
+                        'duration-300',
+                        'hover:bg-slate-700',
+                        'justify-between',
+                        'w-full',
+                        'bg-slate-700' => Route::is('admin.settings.employees.*') || Route::is('admin.settings.teams.*'),
+                    ]) x-on:click="open = !open">
                         <div class="flex space-x-2">
                             <x-icon name="users" class="w-4" />
                             <span>@lang('Employees')</span>
@@ -181,14 +339,32 @@
                     </a>
                     <ul x-show="open" x-collapse class="bg-slate-700">
                         <li>
-                            <a href="{{ route('admin.settings.users.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10  @if (Route::is('admin.settings.users.*')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.settings.users.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.settings.users.*'),
+                            ])>
                                 @lang('Employees')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.settings.teams.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10  @if (Route::is('admin.settings.teams.*')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.settings.teams.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.settings.teams.*'),
+                            ])>
                                 @lang('Teams')
                             </a>
                         </li>
@@ -196,11 +372,21 @@
                 </li>
                 {{-- Settings --}}
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
-                    <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full @if (Route::is('admin.settings.roles.*') ||
-                                Route::is('admin.settings.permissions.*') ||
-                                Route::is('admin.settings.settings.*')) bg-slate-700 @endif"
-                        x-on:click="open = !open">
+                    <a href="#" @class([
+                        'flex',
+                        'items-center',
+                        'py-2',
+                        'px-4',
+                        'transition',
+                        'duration-300',
+                        'hover:bg-slate-700',
+                        'justify-between',
+                        'w-full',
+                        'bg-slate-700' =>
+                            Route::is('admin.settings.permissions.*') ||
+                            Route::is('admin.settings.roles.*') ||
+                            Route::is('admin.settings.settings.*'),
+                    ]) x-on:click="open = !open">
                         <div class="flex space-x-2">
                             <x-icon name="cog" class="w-4" />
                             <span>@lang('Settings')</span>
@@ -211,20 +397,47 @@
                     </a>
                     <ul x-show="open" x-collapse class="bg-slate-700">
                         <li>
-                            <a href="{{ route('admin.settings.settings.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10  @if (Route::is('admin.settings.settings.*')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.settings.settings.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.settings.settings.*'),
+                            ])>
                                 @lang('Settings')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.settings.roles.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10  @if (Route::is('admin.settings.roles.*')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.settings.roles.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.settings.roles.*'),
+                            ])>
                                 @lang('Roles')
                             </a>
                         </li>
                         <li>
-                            <a href="{{ route('admin.settings.permissions.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10  @if (Route::is('admin.settings.permissions.*')) bg-slate-600 @endif">
+                            <a href="{{ route('admin.settings.permissions.index') }}" @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'transition',
+                                'duration-300',
+                                'hover:bg-slate-600',
+                                'pl-10',
+                                'bg-slate-600' => Route::is('admin.settings.permissions.*'),
+                            ])>
                                 @lang('Permissions')
                             </a>
                         </li>

@@ -18,8 +18,7 @@ class Create extends ModalComponent
     public $emits = ['refresh'];
     public $description, $name, $category_id, $attachment;
     public $tags = [];
-
-    public $listeners = [
+    protected $listeners = [
         Trix::EVENT_VALUE_UPDATED // trix_value_updated()
     ];
 

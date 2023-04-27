@@ -19,19 +19,9 @@ class NetworkUpdateRequest extends FormRequest
             'site_id' => [
                 'required'
             ],
-            'network.name.en' => [
+            'network.name' => [
                 'required',
                 'max:125'
-            ],
-            'network.description.en' => [
-                'nullable'
-            ],
-            'network.name.fr' => [
-                'nullable',
-                'max:125'
-            ],
-            'network.description.fr' => [
-                'nullable'
             ],
             'network.priority' => [
                 'nullable'

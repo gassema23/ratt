@@ -2,14 +2,11 @@
 
 namespace App\Models;
 
-use Carbon\Carbon;
-use Illuminate\Support\Str;
 use Spatie\MediaLibrary\HasMedia;
 use Spatie\Activitylog\LogOptions;
 use Illuminate\Support\Facades\App;
 use Wildside\Userstamps\Userstamps;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\InteractsWithMedia;
 use Illuminate\Database\Eloquent\SoftDeletes;
@@ -24,7 +21,6 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Network extends Model implements HasMedia
 {
     use HasFactory,
-        HasTranslations,
         SoftDeletes,
         CascadeSoftDeletes,
         InteractsWithMedia,
@@ -32,39 +28,29 @@ class Network extends Model implements HasMedia
         LogsActivity,
         Followable;
 
-    public $translatable = ['name', 'description'];
     protected $guarded = ['id', 'created_at', 'updated_at'];
-
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'completed_at' => 'datetime',
+        'start_at' => 'date',
+        'ended_at' => 'date',
+    ];
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
             ->logAll()
-            ->setDescriptionForEvent(fn(string $eventName) => "Network {$eventName}")
+            ->setDescriptionForEvent(fn (string $eventName) => "Network {$eventName}")
             ->useLogName('NetworksLog');
     }
-
     // Attribute Getter / Setter
     protected function NetworkNo(): Attribute
     {
         return Attribute::make(
-        get: fn(string $value) => '#' . preg_replace('~\D~', '', $value),
-        set: fn(string $value) => str_replace('#', '', $value, $count)
+            get: fn (string $value) => '#' . preg_replace('~\D~', '', $value),
+            set: fn (string $value) => str_replace('#', '', $value, $count)
         );
     }
-
-    protected function EndedAt(): Attribute
-    {
-        return Attribute::make(
-        get: fn(string $value) => Carbon::parse($value)->toFormattedDateString(),
-        set: fn(string $value) => Carbon::parse($value)->format('Y-m-d')
-        );
-    }
-
-    public function getAvatarAttribute()
-    {
-        return Str::limit($this->name, 2, '');
-    }
-
     public function colorPercent($percent)
     {
         if ($percent < 35) {
@@ -75,46 +61,38 @@ class Network extends Model implements HasMedia
             return 'teal';
         }
     }
-
     public function getBadgePriorityNameAttribute()
     {
         return collect(config('biri.App_priority.' . App::getLocale()))->where('id', $this->priority)->first()['name'];
     }
-
     public function getBadgePriorityColorAttribute()
     {
         return collect(config('biri.App_priority.en'))->where('id', $this->priority)->first()['color'];
     }
-
     // Relationships
     public function project(): BelongsTo
     {
         return $this->belongsTo(Project::class)->withTrashed();
     }
-
     public function site(): BelongsTo
     {
         return $this->belongsTo(Site::class)->withTrashed();
     }
-
     public function comments(): MorphMany
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
-
     public function followersUsers()
     {
         return $this->followers()->where('user_id', auth()->user()->id)->first();
     }
-
     public function networktasks(): HasMany
     {
         return $this->hasMany(NetworkTask::class, 'network_id', 'id')->withTrashed();
     }
-
     public function getLocationsAttribute()
     {
-        return '<span class="font-medium text-lg">' . $this->site->name . '</span><br> ' .
+        return '<span class="font-medium text-slate-800">' . $this->site->name . '</span><br> ' .
             $this->site->clli . ', ' .
             $this->site->city->name . ', ' .
             $this->site->city->region->state->name . ', ' .

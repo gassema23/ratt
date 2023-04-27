@@ -41,7 +41,7 @@ class AttachFiles extends ModalComponent
 
     public function render()
     {
-        $this->authorize('attach-files');
+        $this->authorize('networks-attachFiles');
         return view('livewire.ratt.networks.attach-files');
     }
 }

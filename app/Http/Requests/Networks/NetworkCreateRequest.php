@@ -40,7 +40,7 @@ class NetworkCreateRequest extends FormRequest
             ],
             'started_at' => [
                 'required',
-                'after:'.$project->started_at,
+                'after:' . $project->started_at,
                 'before:' . $project->ended_at
             ],
             'ended_at' => [

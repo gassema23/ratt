@@ -2,33 +2,50 @@
 
 namespace App\Http\Livewire\Ratt\Networks;
 
-use App\Models\City;
 use App\Models\Site;
-use App\Models\State;
-use App\Models\Country;
 use App\Models\Network;
 use App\Models\Project;
 use App\Traits\HasModal;
+use App\Http\Livewire\Trix;
 use LivewireUI\Modal\ModalComponent;
 use App\Http\Requests\Networks\NetworkCreateRequest;
-use App\Models\Region;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Create extends ModalComponent
 {
     use AuthorizesRequests, HasModal;
 
-    public $project_id,
-    $site_id,
-    $technology_id,
-    $network_no,
-    $network_element,
-    $name,
-    $description,
-    $priority,
-    $started_at,
-    $ended_at,
-    $project;
+    public
+        $site_id,
+        $technology_id,
+        $network_no,
+        $network_element,
+        $name,
+        $description,
+        $priority,
+        $started_at,
+        $ended_at,
+        $project;
+    protected $listeners = [
+        Trix::EVENT_VALUE_UPDATED // trix_value_updated()
+    ];
+    public function trix_value_updated($value)
+    {
+        $this->description = $value;
+    }
+
+    public function mount($id)
+    {
+        $this->project = Project::findOrFail($id);
+    }
+    public function updatedSiteId($value)
+    {
+        $this->reset('network_element');
+        if ($value) {
+            $clli = Site::findOrFail($value);
+            $this->network_element = $clli->clli;
+        }
+    }
 
     protected function rules()
     {
@@ -40,7 +57,7 @@ class Create extends ModalComponent
         $this->authorize('networks-create');
         $this->validate();
         $network = Network::create([
-            'project_id' => $this->project_id,
+            'project_id' => $this->project->id,
             'site_id' => $this->site_id,
             'network_no' => $this->network_no,
             'network_element' => $this->network_element,
@@ -55,8 +72,8 @@ class Create extends ModalComponent
     public function render()
     {
         $this->authorize('networks-create');
-        return view('livewire.ratt.networks.create',[
-            'sites'=>Site::orderBy('clli')->orderBy('name')->select(['id','clli','name'])->get()
+        return view('livewire.ratt.networks.create', [
+            'sites' => Site::orderBy('clli')->orderBy('name')->select(['id', 'clli', 'name'])->get()
         ]);
     }
 }

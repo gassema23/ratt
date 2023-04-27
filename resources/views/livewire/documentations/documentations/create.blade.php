@@ -40,7 +40,7 @@
                     <x-input wire:model.defer="name" :label="__('Title')" :hint="trans('Field required')" />
                 </div>
                 <div class="my-2 grid grid-cols-1 gap-4">
-                    <livewire:trix >
+                    <livewire:trix>
                 </div>
                 <div wire:loading class="flex w-full gap-2">
                     <svg class="animate-spin w-4 h-4 shrink-0 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none"

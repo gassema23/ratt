@@ -2,7 +2,7 @@
 <div>
     <x-card >
         <div class="flex justify-between">
-            <div class="font-bold text-slate-600">{{ $title }}</div>
+            <div class="font-bold text-slate-600 text-lg">{{ $title }}</div>
             @if (isset($header))
                 {{ $header }}
             @endif

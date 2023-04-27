@@ -58,7 +58,7 @@
                 </div>
             </div>
         </div>
-        <hr class="my-8 h-px border-0 bg-gray-300" />
+        <hr class="my-8 h-px border-0 bg-slate-300" />
         {{--  HEADER END --}}
         <div class="w-full">
             {{-- Cat and tag --}}

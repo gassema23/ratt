@@ -10,14 +10,11 @@ class Show extends Component
     public $documentation;
     protected function getListeners()
     {
-        return [
-            'refreshDocument' => '$refresh'
-
-        ];
+        return ['refreshDocument' => '$refresh'];
     }
     public function mount(Documentation $slug)
     {
-        $this->documentation = $slug->load(['category', 'tagged', 'creator','comments']);
+        $this->documentation = $slug->load(['category', 'tagged', 'creator', 'comments']);
     }
     public function render()
     {

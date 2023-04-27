@@ -38,8 +38,13 @@ class ProjectEditRequest extends FormRequest
             ],
             'project.project_no' => [
                 'required',
-                'min:7',
-                'max:10',
+                function ($attribute, $value, $fail) {
+                    $pattern = 'P-\d{7}\.\d{2}';
+                    $regex = '/^(' . $pattern . ')$/u';
+                    if ($value != '' && !preg_match($regex, $value)) {
+                        $fail(__('The project number is invalid'));
+                    }
+                },
                 Rule::unique('projects', 'project_no')->ignore($project_id)
             ],
             'project.started_at' => [

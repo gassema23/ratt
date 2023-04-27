@@ -1,7 +1,7 @@
 <div class="py-2 px-4 bg-white flex justify-between w-full">
     <div class="flex-1 divide-y divide-slate-200">
         <div class="md:grid md:grid-cols-2 md:space-y-0 space-y-1 p-4">
-            <div class="text-gray-600 font-medium">
+            <div class="text-slate-600 font-medium">
                 @lang('Network')
             </div>
             <div>
@@ -9,7 +9,7 @@
             </div>
         </div>
         <div class="md:grid md:grid-cols-2 md:space-y-0 space-y-1 p-4">
-            <div class="text-gray-600 font-medium">
+            <div class="text-slate-600 font-medium">
                 @lang('Location')
             </div>
             <div>
@@ -18,7 +18,7 @@
             </div>
         </div>
         <div class="md:grid md:grid-cols-2 md:space-y-0 space-y-1 p-4 ">
-            <div class="text-gray-600 font-medium">
+            <div class="text-slate-600 font-medium">
                 @lang('Project manager')
             </div>
             <div>
@@ -32,7 +32,7 @@
             </div>
         </div>
         <div class="md:grid md:grid-cols-2 md:space-y-0 space-y-1 p-4 ">
-            <div class="text-gray-600 font-medium">
+            <div class="text-slate-600 font-medium">
                 @lang('Planner')
             </div>
             <div>
@@ -46,7 +46,7 @@
             </div>
         </div>
         <div class="md:grid md:grid-cols-2 md:space-y-0 space-y-1 p-4">
-            <div class="text-gray-600 font-medium">
+            <div class="text-slate-600 font-medium">
                 @lang('Description')
             </div>
             <div>

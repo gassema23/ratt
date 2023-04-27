@@ -10,7 +10,7 @@ use WireUi\Traits\Actions;
 
 class Show extends Component
 {
-    use AuthorizesRequests,Actions;
+    use AuthorizesRequests, Actions;
     protected $listeners = ['refresh'  => '$refresh'];
 
     public $project;
@@ -53,7 +53,15 @@ class Show extends Component
     {
         return view('livewire.ratt.projects.show')
             ->layoutData([
-                'header' => __('Project :number', ['number' => $this->project->project_no]),
+                'title' => __('Project :number', ['number' => $this->project->project_no]),
+                'subtitle' => trans('The role of communication in successful engineering project management'),
+                'action' => [
+                    'name' => trans('New network'),
+                    'icon' => 'plus',
+                    'id' => $this->project->id,
+                    'route' => 'ratt.networks.create',
+                    'permission' => 'networks-create'
+                ]
             ]);
     }
 }

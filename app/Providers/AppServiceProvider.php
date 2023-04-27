@@ -26,7 +26,7 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        Model::preventLazyLoading(! app()->isProduction());
+        //Model::preventLazyLoading(! app()->isProduction());
         Blade::component('mails.base', \App\View\Components\Mails\Base::class);
     }
 }

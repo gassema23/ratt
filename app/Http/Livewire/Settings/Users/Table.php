@@ -17,12 +17,13 @@ final class Table extends PowerGridComponent
     use ActionButton, HasDelete, HasInvite;
     public $model = User::class;
     public $emits = ['refresh'];
-    public $filter_name = 'active';
+    public $filter_name = '';
     protected function getListeners(): array
     {
         return array_merge(
             parent::getListeners(),
             ['refresh' => '$refresh'],
+            ['refreshTableUser' => '$refresh'],
             ['filter_status_table']
         );
     }
@@ -65,6 +66,15 @@ final class Table extends PowerGridComponent
      */
     public function datasource(): Builder
     {
+        if (!is_null(request()->query('filter'))) {
+            if (empty($this->filter_name)) {
+                $this->filter_name = request()->query('filter');
+            }
+        } else {
+            if (empty($this->filter_name)) {
+                $this->filter_name = 'active';
+            }
+        }
         return User::query()
             ->when($this->filter_name, function ($query) {
                 $query->{$this->filter_name}();
@@ -106,7 +116,7 @@ final class Table extends PowerGridComponent
             ->addColumn('employe_id')
             ->addColumn('name')
             ->addColumn('email')
-            ->addColumn('teamname', fn (User $model) => $model->currentTeam->name)
+            ->addColumn('teamname', fn (User $model) => $model->currentTeam->name ?? trans('Pending'))
             ->addColumn('updated_at_formatted', fn (User $model) => Carbon::parse($model->updated_at)->diffForHumans());
     }
 

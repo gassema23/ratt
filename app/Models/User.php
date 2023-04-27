@@ -4,7 +4,6 @@ namespace App\Models;
 
 use App\Casts\FullName;
 use App\Traits\HasGravatar;
-use Illuminate\Support\Carbon;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Activitylog\LogOptions;
 use Wildside\Userstamps\Userstamps;

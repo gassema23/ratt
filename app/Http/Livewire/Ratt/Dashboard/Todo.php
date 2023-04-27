@@ -35,7 +35,6 @@ class Todo extends Component
             ],
         ]);
     }
-
     public function complete($id)
     {
         $check = ModelChecklist::findOrFail($id);

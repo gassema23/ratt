@@ -3,7 +3,7 @@
         @foreach ($row->tasks as $task)
             <div class="md:grid md:grid-cols-2 md:space-y-0 space-y-1 p-4">
                 <div class="divide-y divide-slate-200">
-                    <div class="text-gray-600 font-medium pb-2">
+                    <div class="text-slate-600 font-medium pb-2">
                         @lang('Task')
                     </div>
                     <div class="pt-2">
@@ -11,7 +11,7 @@
                     </div>
                 </div>
                 <div class="divide-y divide-slate-200">
-                    <div class="text-gray-600 font-medium  pb-2">
+                    <div class="text-slate-600 font-medium  pb-2">
                         @lang('Team')
                     </div>
                     <div class="pt-2">

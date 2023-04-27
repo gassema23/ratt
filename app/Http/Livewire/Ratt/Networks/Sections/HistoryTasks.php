@@ -18,12 +18,12 @@ class HistoryTasks extends ModalComponent
 
     public function mount($id)
     {
-        $this->authorize('history-task');
+        $this->authorize('networks-historyTask');
         $this->activity_id = $id;
     }
     public function render()
     {
-        $this->authorize('history-task');
+        $this->authorize('networks-historyTask');
         return view('livewire.ratt.networks.sections.history-tasks', [
             'activities' => Activity::where('subject_id', $this->activity_id)
                 ->where('subject_type', 'like', '%Network%')

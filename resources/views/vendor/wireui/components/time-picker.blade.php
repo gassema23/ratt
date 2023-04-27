@@ -48,7 +48,7 @@
 
                         <x-dynamic-component
                             :component="WireUi::component('icon')"
-                            class="cursor-pointer w-5 h-5 text-gray-400 dark:text-gray-600"
+                            class="cursor-pointer w-5 h-5 text-slate-400 dark:text-slate-600"
                             name="clock"
                             x-show="!config.readonly && !config.disabled"
                             x-on:click="toggle"

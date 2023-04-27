@@ -8,6 +8,7 @@ class Index extends Component
 {
     public function render()
     {
+        $this->authorize('categories-list');
         return view('livewire.documentations.categories.index')
         ->layoutData([
             'title' => __('Categories list'),

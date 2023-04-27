@@ -16,7 +16,7 @@
             $theme->baseClass,
         ]) style="{{ $theme->baseStyle }}">
             @if(!$inline)
-                <label class="text-gray-700 dark:text-gray-300">{{ data_get($inputText, 'label') }}</label>
+                <label class="text-slate-700 dark:text-slate-300">{{ data_get($inputText, 'label') }}</label>
             @endif
             <div @class([
                 'sm:flex w-full' => !$inline,
@@ -35,7 +35,7 @@
                             @endforeach
                         </select>
                         <div class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-slate-700">
-                            <x-livewire-powergrid::icons.down class="w-4 h-4 dark:text-gray-300"/>
+                            <x-livewire-powergrid::icons.down class="w-4 h-4 dark:text-slate-300"/>
                         </div>
                     </div>
                 </div>

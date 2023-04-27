@@ -4,7 +4,6 @@
             packages: ["timeline"]
         });
         google.charts.setOnLoadCallback(drawChart);
-
         function drawChart() {
             var container = document.getElementById('timeline');
             var chart = new google.visualization.Timeline(container);
@@ -30,15 +29,19 @@
                     [
                         "{{ $task->team->name }}",
                         "{{ $task->task->name }}",
-                        new Date({{ \Carbon\Carbon::parse($task->network->started_at)->year }},{{ \Carbon\Carbon::parse($task->network->started_at)->month }},{{ \Carbon\Carbon::parse($task->network->started_at)->day }}),
-                        new Date({{ \Carbon\Carbon::parse($task->due_date)->year }},{{ \Carbon\Carbon::parse($task->due_date)->month }},{{ \Carbon\Carbon::parse($task->due_date)->day }})
+                        new Date({{ \Carbon\Carbon::parse($task->network->started_at)->year }},
+                            {{ \Carbon\Carbon::parse($task->network->started_at)->month }},
+                            {{ \Carbon\Carbon::parse($task->network->started_at)->day }}),
+                        new Date({{ \Carbon\Carbon::parse($task->due_date)->year }},
+                            {{ \Carbon\Carbon::parse($task->due_date)->month }},
+                            {{ \Carbon\Carbon::parse($task->due_date)->day }})
                     ],
                 @endforeach
             ]);
-            chart.draw(dataTable);
+            chart.draw(dataTable, {
+                height: "100%"
+            });
         }
     </script>
-    <x-card>
-        <div id="timeline"></div>
-    </x-card>
+    <div id="timeline" style=" height:100%"></div>
 </div>

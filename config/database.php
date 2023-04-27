@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Str;
 
+
+
 return [
 
     /*
@@ -34,7 +36,6 @@ return [
     */
 
     'connections' => [
-
         'sqlite' => [
             'driver' => 'sqlite',
             'url' => env('DATABASE_URL'),

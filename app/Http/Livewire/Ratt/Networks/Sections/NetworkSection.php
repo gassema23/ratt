@@ -17,13 +17,13 @@ class NetworkSection extends Component
 
     public function mount($network)
     {
-        $this->authorize('networks-sections');
+        $this->authorize('networks-networksSections');
         $this->network = $network;
     }
 
     public function render()
     {
-        $this->authorize('networks-sections');
+        $this->authorize('networks-networksSections');
         return view('livewire.ratt.networks.sections.network-section');
     }
 }

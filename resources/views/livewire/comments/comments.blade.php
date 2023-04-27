@@ -1,9 +1,6 @@
 <section>
-    <div class="bg-white sm:overflow-hidden p-4">
+    <div class="">
         <div class="divide-y divide-slate-200">
-            <div class="pb-4">
-                <h2 class="text-lg font-medium text-slate-900">@lang('Comments')</h2>
-            </div>
             <div class="pt-4">
                 <div class="space-y-8">
                     @if ($comments->isNotEmpty())

@@ -17,7 +17,7 @@
     @livewireStyles
 </head>
 
-<body class="font-sans text-gray-800 antialiased">
+<body class="font-sans text-slate-800 antialiased">
     <main class=" min-h-screen max-h-screen bg-white">
         <div class="flex">
             <div class="w-full lg:w-2/5 flex align-middle justify-center min-h-screen max-h-screen content-center items-center">

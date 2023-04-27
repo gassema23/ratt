@@ -18,14 +18,15 @@ class Show extends Component
 
     public function mount($id)
     {
-        $this->user_id = $id;
         $this->authorize('users-view');
+        $this->user_id = $id;
     }
 
     public function render()
     {
         $user = User::findOrFail($this->user_id);
         $activities = Activity::where('causer_id', $user->id)
+        ->with('subject')
             ->latest()
             ->take(10)
             ->get();

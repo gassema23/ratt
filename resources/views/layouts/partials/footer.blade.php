@@ -12,7 +12,6 @@
                 if (!file || file.type.indexOf('image/') === -1) return;
                 this.imgsrc = null;
                 let reader = new FileReader();
-
                 reader.onload = e => {
                     this.imgsrc = e.target.result;
                 }

@@ -77,7 +77,7 @@
                                 <x-dynamic-component
                                     :component="WireUi::component('icon')"
                                     :name="$icon"
-                                    class="h-5 w-5 mr-1 text-gray-400 dark:text-gray-600"
+                                    class="h-5 w-5 mr-1 text-slate-400 dark:text-slate-600"
                                 />
                             @endif
 
@@ -96,7 +96,7 @@
                                     <x-dynamic-component
                                         :component="WireUi::component('icon')"
                                         :name="$icon"
-                                        class="h-5 w-5 text-gray-400 dark:text-gray-600"
+                                        class="h-5 w-5 text-slate-400 dark:text-slate-600"
                                     />
                                 @endif
 
@@ -203,7 +203,7 @@
             x-on:keydown.arrow-up.prevent="getPrevFocusable().focus()">
             <div class="w-full h-0.5 rounded-full relative overflow-hidden"
                 :class="{
-                    'bg-gray-200 dark:bg-gray-700': asyncData.fetching
+                    'bg-slate-200 dark:bg-slate-700': asyncData.fetching
                 }">
                 <div class="bg-primary-500 h-0.5 rounded-full absolute animate-linear-progress"
                     style="width: 30%"

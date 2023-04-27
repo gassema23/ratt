@@ -6,7 +6,7 @@ namespace App\Http\Livewire\Settings\Roles;
 use App\Traits\HasModal;
 use Spatie\Permission\Models\Role;
 use LivewireUI\Modal\ModalComponent;
-use Spatie\Permission\Models\Permission;
+use App\Models\Permission;
 use App\Http\Requests\Roles\RoleEditRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
@@ -23,7 +23,7 @@ class Edit extends ModalComponent
     {
         $this->authorize('roles-edit');
         $this->role = Role::with('permissions')->findOrFail($id);
-        $this->permissions = Permission::orderBy('name')->select('id', 'name')->get();
+        $this->permissions = Permission::groupedPermission();
         $this->permission_id = collect($this->role->permissions->pluck('id', 'id'))->toArray();
         $this->name = $this->role->name;
     }

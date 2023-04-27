@@ -19,7 +19,7 @@ class Edit extends ModalComponent
 
     public function mount($id)
     {
-        $this->authorize('sitetype-edit');
+        $this->authorize('siteTypes-edit');
         $this->site_type = SiteType::findOrFail($id);
         $this->parents = SiteType::orderBy('name')->whereNull('parent_id')->select('id', 'name')->get();
     }
@@ -31,7 +31,7 @@ class Edit extends ModalComponent
 
     public function save()
     {
-        $this->authorize('sitetype-edit');
+        $this->authorize('siteTypes-edit');
         $this->validate();
         $this->site_type->update($this->validate());
         $this->saved();

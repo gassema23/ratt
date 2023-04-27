@@ -15,12 +15,12 @@ class Timeline extends Component
 
     public function mount($network)
     {
-        $this->authorize('network-timeline');
+        $this->authorize('networks-networkTimeline');
         $this->network = $network;
     }
     public function render()
     {
-        $this->authorize('network-timeline');
+        $this->authorize('networks-networkTimeline');
         return view('livewire.ratt.networks.sections.timeline',[
             'tasks' => NetworkTask::with(['network', 'task', 'comments', 'team', 'statuses'])
                 ->withCount([

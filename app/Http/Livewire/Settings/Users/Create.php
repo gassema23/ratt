@@ -20,7 +20,8 @@ class Create extends ModalComponent
     public $name, $email, $phone, $role_id, $team_id, $employe_id;
 
     public $emits = [
-        'refresh'
+        'refresh',
+        'refreshTableUser'
     ];
 
     public function mount()
@@ -43,8 +44,8 @@ class Create extends ModalComponent
 
     public function save()
     {
+        $this->authorize('users-create');
         $this->validate();
-
         $user = User::create([
             'name' => $this->name,
             'email' => $this->email,

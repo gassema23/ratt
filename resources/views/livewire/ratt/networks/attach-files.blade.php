@@ -8,7 +8,7 @@
                     x-on:livewire-upload-finish="isUploading = false" x-on:livewire-upload-error="isUploading = false"
                     x-on:livewire-upload-progress="progress = $event.detail.progress">
 
-                    <label class="border-2 border-gray-200 p-3 w-full block rounded cursor-pointer my-2"
+                    <label class="border-2 border-slate-200 p-3 w-full block rounded cursor-pointer my-2"
                         for="customFile" x-data="{ files: null }">
                         <input wire:model.defer="attachment" type="file" class="sr-only" id="customFile"
                             x-on:change="files = Object.values($event.target.files)">

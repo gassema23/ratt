@@ -25,7 +25,7 @@ class Create extends ModalComponent
 
     public function save()
     {
-        $this->authorize('sitetype-create');
+        $this->authorize('siteTypes-create');
         $this->validate();
         SiteType::create($this->validate());
         $this->saved();

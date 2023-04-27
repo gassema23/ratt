@@ -20,12 +20,10 @@
                     <x-datetime-picker :label="__('Ended date')" wire:model.defer="ended_at" without-time :hint="trans('Field required')" />
                 </div>
                 <div class="grid grid-cols-2 gap-2 my-2">
-                    <x-input wire:model.defer="name.en" :label="__('Name [EN]')" :hint="trans('Field required')" />
-                    <x-input wire:model.defer="name.fr" :label="__('Name [FR]')" />
+                    <x-input wire:model.defer="name.en" :label="__('Name')" :hint="trans('Field required')" />
                 </div>
                 <div class="grid grid-cols-1 gap-2 my-2">
-                    <x-textarea wire:model.defer="description.en" :label="__('Description [EN]')" />
-                    <x-textarea wire:model.defer="description.fr" :label="__('Description [FR]')" />
+                    <livewire:trix>
                 </div>
             </x-slot>
             <x-slot name="action">

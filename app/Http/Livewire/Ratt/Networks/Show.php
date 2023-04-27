@@ -25,7 +25,8 @@ class Show extends Component
             'site.city',
             'site.city.region',
             'site.city.region.state',
-            'site.city.region.state.country'
+            'site.city.region.state.country',
+            'networktasks'
         ])->findOrFail($id);
         if (is_null($this->openSection)) {
             $this->openSection = 'network';
@@ -41,8 +42,16 @@ class Show extends Component
 
     public function render()
     {
-        return view('livewire.ratt.networks.show')->layoutData([
-            'header' => __('Network :number', ['number' => $this->network->network_no]),
-        ]);
+        return view('livewire.ratt.networks.show')
+            ->layoutData([
+                'title' => __('Network :number', ['number' => $this->network->network_no]),
+                'action' => [
+                    'name' => trans('Edit'),
+                    'icon' => 'pencil',
+                    'id' => $this->network->id,
+                    'route' => 'ratt.networks.edit',
+                    'permission' => 'tasks-create'
+                ]
+            ]);
     }
 }

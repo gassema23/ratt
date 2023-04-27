@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire\Ratt\Networks;
 
+use App\Models\Site;
 use App\Models\Network;
+use App\Traits\HasModal;
+use App\Http\Livewire\Trix;
+use Illuminate\Support\Arr;
 use LivewireUI\Modal\ModalComponent;
 use App\Http\Requests\Networks\NetworkUpdateRequest;
-use App\Models\Site;
-use App\Traits\HasModal;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Edit extends ModalComponent
@@ -15,12 +17,18 @@ class Edit extends ModalComponent
     public $emits = [
         'refresh'
     ];
-    public
-    $network,
-    $sites,
-    $network_element,
-    $site_id;
-
+    public $network,
+        $sites,
+        $network_element,
+        $site_id,
+        $description;
+    protected $listeners = [
+        Trix::EVENT_VALUE_UPDATED // trix_value_updated()
+    ];
+    public function trix_value_updated($value)
+    {
+        $this->description = $value;
+    }
     public function mount($id)
     {
         $this->authorize('networks-edit');
@@ -47,7 +55,9 @@ class Edit extends ModalComponent
     public function save()
     {
         $this->validate();
-        $this->network->update($this->validate());
+        $val = $this->validate();
+        $arr = Arr::add($val, 'description' , $this->description);
+        $this->network->update($arr);
         $this->saved();
     }
 

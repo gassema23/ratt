@@ -24,14 +24,14 @@ class Create extends ModalComponent
 
     public function save()
     {
-        $this->authorize('geographictype-create');
+        $this->authorize('geographicType-create');
         $this->validate();
         GeographicType::create($this->validate());
         $this->saved();
     }
     public function render()
     {
-        $this->authorize('geographictype-create');
+        $this->authorize('geographicType-create');
         return view('livewire.settings.geographics.create');
     }
 }

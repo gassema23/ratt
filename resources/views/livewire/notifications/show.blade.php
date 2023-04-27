@@ -11,7 +11,7 @@
     @forelse ($notifications as $notification)
         <x-dropdown.item wire:click="see('{{ $notification->id }}')">
             <div class="flex items-center">
-                <p class="text-gray-600 text-sm mx-2">
+                <p class="text-slate-600 text-sm mx-2">
                     <span class="font-bold">{{ $notification->data['message'] }}</span>
                     {{ $notification->data['message_long'] }}
                 </p>

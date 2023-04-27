@@ -16,6 +16,7 @@ class Index extends Component
     }
     public function save()
     {
+        $this->authorize('settings-update');
         $validatedData = $this->validate([
             'values.*' => 'nullable'
         ]);

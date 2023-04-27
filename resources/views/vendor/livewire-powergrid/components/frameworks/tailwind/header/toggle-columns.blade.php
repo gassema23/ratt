@@ -25,7 +25,7 @@
                 @if(!$column->forceHidden)
                 <div wire:click="$emit('pg:toggleColumn-{{ $tableName }}', '{{ $column->field }}')"
                      wire:key="toggle-column-{{ $column->field }}"
-                     class="@if($column->hidden) opacity-40 bg-slate-300 dark:bg-slate-800 @endif cursor-pointer flex justify-start block px-4 py-2 text-slate-800 hover:bg-slate-50 hover:text-black-200 dark:text-slate-200 dark:hover:bg-gray-900 dark:hover:bg-slate-700">
+                     class="@if($column->hidden) opacity-40 bg-slate-300 dark:bg-slate-800 @endif cursor-pointer flex justify-start block px-4 py-2 text-slate-800 hover:bg-slate-50 hover:text-black-200 dark:text-slate-200 dark:hover:bg-slate-900 dark:hover:bg-slate-700">
                     @if(!$column->hidden)
                         <x-livewire-powergrid::icons.eye class="text-slate-500 dark:text-slate-300"/>
                     @else

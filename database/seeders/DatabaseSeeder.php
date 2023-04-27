@@ -13,6 +13,10 @@ class DatabaseSeeder extends Seeder
     public function run(): void
     {
         $this->call([
+            TeamsSeeder::class,
+            PermissionsSeeder::class,
+            RoleSeeder::class,
+            UsersPermissionsSeeder::class,
             GeographicTypesSeeder::class,
             SiteTypesSeeder::class,
             CountriesSeeder::class,
@@ -20,9 +24,6 @@ class DatabaseSeeder extends Seeder
             RegionsSeeder::class,
             CitiesSeeder::class,
             SitesSeeder::class,
-            TeamsSeeder::class,
-            RoleSeeder::class,
-            UsersPermissionsSeeder::class
         ]);
     }
 }

@@ -11,7 +11,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->authorize('teams-list');
+        $this->authorize('teams-viewAny');
         return view('livewire.settings.teams.index')
         ->layoutData([
             'title' => __('Teams'),

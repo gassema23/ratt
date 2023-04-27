@@ -11,7 +11,7 @@ class Index extends Component
     use AuthorizesRequests;
     public function render()
     {
-        $this->authorize('users-list');
+        $this->authorize('users-viewAny');
         return view('livewire.settings.users.index', [
             'innactiveCount' => User::countInnactive()
         ])->layoutData([

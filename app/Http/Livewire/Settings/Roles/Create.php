@@ -6,7 +6,7 @@ namespace App\Http\Livewire\Settings\Roles;
 use App\Traits\HasModal;
 use Spatie\Permission\Models\Role;
 use LivewireUI\Modal\ModalComponent;
-use Spatie\Permission\Models\Permission;
+use App\Models\Permission;
 use App\Http\Requests\Roles\RoleCreateRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
@@ -39,7 +39,7 @@ class Create extends ModalComponent
     {
         $this->authorize('roles-create');
         return view('livewire.settings.roles.create', [
-            'permissions' => Permission::orderBy('name')->select('id', 'name')->get()
+            'permissions' => Permission::groupedPermission()
         ]);
     }
 }
