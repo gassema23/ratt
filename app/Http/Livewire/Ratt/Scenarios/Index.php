@@ -11,7 +11,7 @@ class Index extends Component
     protected $listeners = ['refresh' => '$refresh'];
     public function render()
     {
-        $this->authorize('scenarios-list');
+        $this->authorize('scenarios-viewAny');
         return view('livewire.ratt.scenarios.index')
             ->layoutData([
                 'title' => __('Scenarios list'),

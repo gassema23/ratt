@@ -21,6 +21,7 @@ class Edit extends ModalComponent
 
     public function mount($id)
     {
+        $this->authorize('scenarios-update');
         $this->scenario = Scenario::findOrFail($id);
         $this->teams = Team::with('tasks')->has('tasks')->orderBy('name')->get();
         $this->task_id = ScenarioTask::where('scenario_id', $id)->pluck('task_id', 'task_id');
@@ -33,7 +34,7 @@ class Edit extends ModalComponent
 
     public function save()
     {
-        $this->authorize('scenarios-edit');
+        $this->authorize('scenarios-update');
         $this->validate();
         $this->scenario->update($this->validate());
         $this->scenario->tasks()->sync(array_filter(collect($this->task_id)->toArray()));

@@ -25,6 +25,7 @@ class Create extends ModalComponent
 
     public function save()
     {
+        $this->authorize('scenarios-create');
         $this->validate();
         $scenario = Scenario::create($this->validate());
         $scenario->tasks()->sync(array_filter(collect($this->task_id)->toArray()));
