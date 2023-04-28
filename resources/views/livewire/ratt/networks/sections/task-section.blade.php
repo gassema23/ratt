@@ -128,11 +128,44 @@
                     <div class="grid grid-cols-1">
                         <div class="font-medium pb-2 text-slate-600">@lang('Status history')</div>
                         <div class="text-sm flex space-x-4">
-                            @forelse($taskInfoSection->statuses as $status)
-                                <div>{{ $status->status_name }}</div>
-                                <div>{{ $status->reason }}</div>
-                            @empty
-                            @endforelse
+                            <table class="min-w-full leading-normal mb-5">
+                                <thead>
+                                    <tr>
+                                        <th
+                                            class="px-5 py-3 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                                            @lang('Status')</th>
+                                        <th
+                                            class="px-5 py-3 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                                            @lang('Employee')</th>
+                                        <th
+                                            class="px-5 py-3 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                                            @lang('Reason')</th>
+                                        <th
+                                            class="px-5 py-3 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                                            @lang('Created')</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @forelse($taskInfoSection->statuses as $status)
+                                        <tr>
+                                            <td class="px-5 py-5 border-b border-slate-200 bg-white text-sm">
+                                                <p class="text-slate-900 whitespace-no-wrap text-left">{{ $status->status_name }}</p>
+                                            </td>
+                                            <td class="px-5 py-5 border-b border-slate-200 bg-white text-sm">
+                                                <p class="text-slate-900 whitespace-no-wrap text-left">{{ $taskInfoSection->created_by->name }}</p>
+                                            </td>
+                                            <td class="px-5 py-5 border-b border-slate-200 bg-white text-sm">
+                                                <p class="text-slate-900 whitespace-no-wrap text-left">{{ $status->reason }}</p>
+                                            </td>
+                                            <td class="px-5 py-5 border-b border-slate-200 bg-white text-sm">
+                                                <p class="text-slate-900 whitespace-no-wrap text-left">
+                                                    {{ \Carbon\Carbon::parse($taskInfoSection->created_at)->diffForHumans() }}</p>
+                                            </td>
+                                        </tr>
+                                        @empty
+                                        @endforelse
+                                </tbody>
+                            </table>
                         </div>
                     </div>
                     <div class="grid grid-cols-1">
