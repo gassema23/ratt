@@ -14,11 +14,9 @@ class RoleSeeder extends Seeder
      */
     public function run(): void
     {
-
         // Super Admin
         $superAdmin = Role::firstOrCreate(['name' => 'Super-Admin']);
         $superAdmin->givePermissionTo(Permission::all());
-
         //Admin
         $admin = Role::firstOrCreate(['name' => 'Admin']);
         $admin->givePermissionTo([

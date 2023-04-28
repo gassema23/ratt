@@ -18,14 +18,14 @@ class UsersPermissionsSeeder extends Seeder
      */
     public function run()
     {
-        $user = User::factory()->create([
+        $admin = User::factory()->create([
             'name' => 'Mathieu Gasse',
             'employe_id' => 'T987679',
             'email' => 'mathieu.gasse2@telus.com',
             'password' => Hash::make('password'),
         ]);
-        $user->teams()->attach(3);
-        $user->switchTeam(3);
-        $user->assignRole('Super-Admin');
+        $admin->teams()->attach(3);
+        $admin->switchTeam(3);
+        $admin->assignRole('Super-Admin');
     }
 }
