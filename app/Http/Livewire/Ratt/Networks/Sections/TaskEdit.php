@@ -30,7 +30,9 @@ class TaskEdit extends ModalComponent
             'due_date' => $this->networkTask->due_date,
             'priority' => $this->networkTask->priority,
         ]);
-        $this->networkTask->setStatus($this->status, $this->reason);
+        if (!is_null($this->status)) {
+            $this->networkTask->setStatus($this->status, $this->reason);
+        }
         $this->saved();
     }
     public function render()
