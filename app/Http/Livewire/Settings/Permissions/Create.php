@@ -29,7 +29,7 @@ class Create extends ModalComponent
         $this->authorize('permissions-create');
         $this->validate();
         Permission::create([
-            'name' => Str::title($this->name),
+            'name' => $this->name,
             'guard' => 'web',
         ]);
         $this->saved();
