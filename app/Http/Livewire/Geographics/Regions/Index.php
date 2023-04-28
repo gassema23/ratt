@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Index extends Component
 {
+
     use AuthorizesRequests;
     public function render()
     {
