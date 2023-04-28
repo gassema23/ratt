@@ -11,7 +11,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->authorize('permissions-list');
+        $this->authorize('permissions-viewAll');
         return view('livewire.settings.permissions.index')
             ->layoutData([
                 'title' => __('Permissions'),

@@ -21,6 +21,7 @@ class Edit extends ModalComponent
 
     public function mount($id)
     {
+        $this->authorize('states-update');
         $this->state = State::findOrFail($id);
         $this->countries = Country::orderBy('name')->select('name', 'id')->get();
         $this->types = GeographicType::orderBy('name')->select('name', 'id')->get();
@@ -33,6 +34,7 @@ class Edit extends ModalComponent
 
     public function save()
     {
+        $this->authorize('states-update');
         $this->validate();
         $this->state->update($this->validate());
         $this->saved();

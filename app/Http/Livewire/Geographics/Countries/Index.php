@@ -10,7 +10,7 @@ class Index extends Component
     use  AuthorizesRequests;
     public function render()
     {
-        $this->authorize('countries-list');
+        $this->authorize('countries-viewAll');
         return view('livewire.geographics.countries.index')
             ->layoutData([
                 'title' => __('Countries list'),

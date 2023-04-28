@@ -3,11 +3,13 @@
 namespace App\Http\Livewire\Geographics\Regions;
 
 use Livewire\Component;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Index extends Component
 {
     public function render()
     {
+        $this->authorize('regions-viewAll');
         return view('livewire.geographics.regions.index')
         ->layoutData([
             'title' => __('Regions list'),
