@@ -34,7 +34,7 @@ class Edit extends ModalComponent
     {
         $this->authorize('permissions-edit');
         $this->validate();
-        $this->permission->update(['name' => Str::slug($this->permission->name)]);
+        $this->permission->update(['name' => Str::title($this->permission->name)]);
         $this->saved();
     }
     public function render()
