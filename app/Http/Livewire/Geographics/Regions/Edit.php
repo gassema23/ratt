@@ -22,7 +22,7 @@ class Edit extends ModalComponent
     public $emits = ['refresh'];
     public function mount($id)
     {
-        $this->authorize('states-edit');
+        $this->authorize('states-update');
         $this->region = Region::with(['state', 'state.country'])->findOrFail($id);
         $this->countries = Country::orderBy('name')->select('id', 'name')->get();
         $this->states = State::orderBy('name')->select('id', 'name')->where('country_id', $this->region->state->country_id)->get();
@@ -40,7 +40,7 @@ class Edit extends ModalComponent
     }
     public function save()
     {
-        $this->authorize('states-edit');
+        $this->authorize('states-update');
         $this->validate();
         $this->region->update($this->validate());
         $this->saved();
