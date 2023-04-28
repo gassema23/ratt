@@ -180,7 +180,7 @@ final class Table extends PowerGridComponent
     {
         return [
             Rule::button('editrecord')
-                ->when(fn() => !auth()->user()->can('tasks-edit'))
+                ->when(fn() => !auth()->user()->can('tasks-update'))
                 ->hide(),
             Rule::button('deleterecord')
                 ->when(fn() => !auth()->user()->can('tasks-delete'))

@@ -19,7 +19,7 @@ class Edit extends ModalComponent
 
     public function mount($id)
     {
-        $this->authorize('tasks-edit');
+        $this->authorize('tasks-update');
         $this->task = Task::findOrFail($id);
         $this->parents = Task::orderBy('name')
             ->select('id', 'name')
@@ -38,7 +38,7 @@ class Edit extends ModalComponent
 
     public function save()
     {
-        $this->authorize('tasks-edit');
+        $this->authorize('tasks-update');
         $this->validate();
         $this->task->update($this->validate());
         $this->saved();
