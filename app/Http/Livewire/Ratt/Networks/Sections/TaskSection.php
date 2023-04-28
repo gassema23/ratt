@@ -14,13 +14,13 @@ class TaskSection extends Component
 
     public function mount($network)
     {
-        //$this->authorize('networks-taskSection');
+        $this->authorize('networks-taskSection');
         $this->network = $network;
     }
 
     public function taskInfo($value)
     {
-        //$this->reset('taskInfoSection');
+        $this->reset('taskInfoSection');
         $this->taskInfoSection = NetworkTask::with([
             'network',
             'network.project',
@@ -43,7 +43,8 @@ class TaskSection extends Component
 
     public function render()
     {
-//        $this->authorize('networks-taskSection');
+        dd(auth()->user()->currentTeam->name->en);
+        $this->authorize('networks-taskSection');
         if (auth()->user()->hasRole(['Super-Admin', 'Admin'])) {
             $tasks = NetworkTask::with([
                 'network',
@@ -63,7 +64,7 @@ class TaskSection extends Component
                 ->paginate(12);
         } elseif (
             auth()->user()->hasRole('Manager') &&
-            auth()->user()->currentTeam->name === 'Planner'
+            auth()->user()->currentTeam->name->en === 'Planner'
         ) {
             dd(auth()->user()->currentTeam->name);
             $tasks = NetworkTask::with([
