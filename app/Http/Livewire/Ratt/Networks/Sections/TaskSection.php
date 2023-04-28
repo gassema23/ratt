@@ -43,7 +43,6 @@ class TaskSection extends Component
 
     public function render()
     {
-        dd(auth()->user()->currentTeam->getTranslation('name', 'en'));
         $this->authorize('networks-taskSection');
         if (auth()->user()->hasRole(['Super-Admin', 'Admin'])) {
             $tasks = NetworkTask::with([
@@ -64,7 +63,7 @@ class TaskSection extends Component
                 ->paginate(12);
         } elseif (
             auth()->user()->hasRole('Manager') &&
-            auth()->user()->currentTeam->name->en === 'Planner'
+            auth()->user()->currentTeam->getTranslation('name', 'en') === 'Planner'
         ) {
             $tasks = NetworkTask::with([
                 'network',
