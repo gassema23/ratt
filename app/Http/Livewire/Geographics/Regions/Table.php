@@ -171,6 +171,19 @@ final class Table extends PowerGridComponent
         ];
     }
 
+    public function actionRules(): array
+    {
+        return [
+            //Hide button edit for ID 1
+            Rule::button('editrecord')
+                ->when(fn () => !auth()->user()->can('regions-update'))
+                ->hide(),
+            Rule::button('deleterecord')
+                ->when(fn () => !auth()->user()->can('regions-delete'))
+                ->hide(),
+        ];
+    }
+
     /*
     |--------------------------------------------------------------------------
     | Actions Rules
