@@ -12,6 +12,11 @@ class Status extends SpatieStatus
     use HasTranslations, Userstamps;
     public $translatable = ['reason'];
 
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
+
     public function getStatusNameAttribute()
     {
         return collect(config('biri.App_statuses.' . App::getLocale()))->where('id', $this->name)->first()['name'];

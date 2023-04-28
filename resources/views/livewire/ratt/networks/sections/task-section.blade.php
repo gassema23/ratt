@@ -159,7 +159,7 @@
                                             </td>
                                             <td class="px-5 py-5 border-b border-slate-200 bg-white text-sm">
                                                 <p class="text-slate-900 whitespace-no-wrap text-left">
-                                                    {{ \Carbon\Carbon::parse($status->created_at)->diffForHumans() }}</p>
+                                                    {{ $status->created_at->toDayDateTimeString() }}</p>
                                             </td>
                                         </tr>
                                         @empty

@@ -31,6 +31,10 @@ class TaskEdit extends ModalComponent
             'priority' => $this->networkTask->priority,
         ]);
         if (!is_null($this->status)) {
+            $this->validate([
+                'status' => ['required'],
+                'reason' => ['required']
+            ]);
             $this->networkTask->setStatus($this->status, $this->reason);
         }
         $this->saved();
