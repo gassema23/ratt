@@ -9,7 +9,7 @@ class Index extends Component
 {
     public function render()
     {
-        $this->authorize('regions-viewAll');
+        $this->authorize('regions-viewAny');
         return view('livewire.geographics.regions.index')
         ->layoutData([
             'title' => __('Regions list'),

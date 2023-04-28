@@ -13,7 +13,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->authorize('technologies-viewAll');
+        $this->authorize('technologies-viewAny');
         return view('livewire.settings.technologies.index')->layoutData([
             'header' => __('Technologies'),
         ]);

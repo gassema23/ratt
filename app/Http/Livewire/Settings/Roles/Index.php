@@ -12,7 +12,7 @@ class Index extends Component
 
     public function render()
     {
-        $this->authorize('roles-viewAll');
+        $this->authorize('roles-viewAny');
         return view('livewire.settings.roles.index')
             ->layoutData([
                 'title' => __('Roles'),
