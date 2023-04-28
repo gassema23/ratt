@@ -9,7 +9,7 @@ use Wildside\Userstamps\Userstamps;
 
 class Status extends SpatieStatus
 {
-    use HasTranslations,Userstamps;
+    use HasTranslations, Userstamps;
     public $translatable = ['reason'];
 
     public function getStatusNameAttribute()
