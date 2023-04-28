@@ -127,8 +127,8 @@
                     </div>
                     <div class="grid grid-cols-1">
                         <div class="font-medium pb-2 text-slate-600">@lang('Status history')</div>
-                        <div class="text-sm flex space-x-4">
-                            <table class="min-w-full leading-normal mb-5">
+                        <div class="text-sm flex space-x-4 max-h-64 overflow-y-auto soft-scrollbar">
+                            <table class="min-w-full leading-normal mb-5 ">
                                 <thead>
                                     <tr>
                                         <th
