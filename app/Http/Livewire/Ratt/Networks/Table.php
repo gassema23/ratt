@@ -201,7 +201,7 @@ final class Table extends PowerGridComponent
                 ->when(fn() => !auth()->user()->can('networks-view'))
                 ->hide(),
             Rule::button('editrecord')
-                ->when(fn() => !auth()->user()->can('networks-edit'))
+                ->when(fn() => !auth()->user()->can('networks-update'))
                 ->hide(),
             Rule::button('deleterecord')
                 ->when(fn() => !auth()->user()->can('networks-delete'))

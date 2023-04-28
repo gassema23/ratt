@@ -28,7 +28,7 @@ class Edit extends ModalComponent
 
     public function mount($id)
     {
-        $this->authorize('cities-edit');
+        $this->authorize('cities-update');
         $this->city = City::with(['region', 'region.state', 'region.state.country'])->find($id);
 
         $this->countries = Country::orderBy('name')->select('id', 'name')->get();
@@ -57,7 +57,7 @@ class Edit extends ModalComponent
 
     public function save()
     {
-        $this->authorize('cities-edit');
+        $this->authorize('cities-update');
         $this->validate();
         $this->city->update($this->validate());
         $this->saved();

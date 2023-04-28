@@ -31,7 +31,7 @@ class Edit extends ModalComponent
     }
     public function mount($id)
     {
-        $this->authorize('networks-edit');
+        $this->authorize('networks-update');
         $this->network = Network::findOrFail($id);
         $this->sites = Site::orderBy('name')->select('id', 'name', 'clli')->get();
         $this->network_element = $this->network->network_element;

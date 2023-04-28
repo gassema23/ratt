@@ -30,7 +30,7 @@ class Create extends ModalComponent
 
     public function save()
     {
-        $this->authorize('countries-edit');
+        $this->authorize('countries-create');
         $this->validate();
         Country::create($this->validate());
         $this->saved();

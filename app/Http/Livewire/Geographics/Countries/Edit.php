@@ -19,7 +19,7 @@ class Edit extends ModalComponent
 
     public function mount($id)
     {
-        $this->authorize('countries-edit');
+        $this->authorize('countries-update');
         $this->country = Country::findOrFail($id);
     }
 
@@ -30,7 +30,7 @@ class Edit extends ModalComponent
 
     public function save()
     {
-        $this->authorize('countries-edit');
+        $this->authorize('countries-update');
         $this->validate();
         $this->country->update($this->validate());
         $this->saved();

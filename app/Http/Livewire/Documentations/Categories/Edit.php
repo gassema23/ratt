@@ -25,14 +25,14 @@ class Edit extends ModalComponent
     }
     public function save()
     {
-        $this->authorize('categories-edit');
+        $this->authorize('categories-update');
         $this->validate();
         $this->category->update($this->validate());
         $this->saved();
     }
     public function render()
     {
-        $this->authorize('categories-edit');
+        $this->authorize('categories-update');
         return view('livewire.documentations.categories.edit');
     }
 }

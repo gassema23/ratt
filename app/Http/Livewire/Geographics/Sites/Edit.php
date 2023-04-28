@@ -31,7 +31,7 @@ class Edit extends ModalComponent
     ];
     public function mount($id)
     {
-        $this->authorize('sites-edit');
+        $this->authorize('sites-update');
         $this->site = Site::with([
             'city',
             'city.region',
@@ -104,7 +104,7 @@ class Edit extends ModalComponent
     }
     public function save()
     {
-        $this->authorize('sites-edit');
+        $this->authorize('sites-update');
         $this->validate();
         $this->site->update($this->validate());
         $this->saved();

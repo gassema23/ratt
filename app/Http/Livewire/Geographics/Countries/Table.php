@@ -179,7 +179,7 @@ final class Table extends PowerGridComponent
         return [
             //Hide button edit for ID 1
             Rule::button('editrecord')
-                ->when(fn () => !auth()->user()->can('countries-edit'))
+                ->when(fn () => !auth()->user()->can('countries-update'))
                 ->hide(),
             Rule::button('deleterecord')
                 ->when(fn () => !auth()->user()->can('countries-delete'))

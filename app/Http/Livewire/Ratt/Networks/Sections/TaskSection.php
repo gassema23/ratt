@@ -65,6 +65,7 @@ class TaskSection extends Component
             auth()->user()->hasRole('Manager') &&
             auth()->user()->currentTeam->name === 'Planner'
         ) {
+            dd(auth()->user()->currentTeam->name);
             $tasks = NetworkTask::with([
                 'network',
                 'task',

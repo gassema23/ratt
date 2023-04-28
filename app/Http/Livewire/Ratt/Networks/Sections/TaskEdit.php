@@ -34,6 +34,6 @@ class TaskEdit extends ModalComponent
     }
     public function render()
     {
-        return view('livewire.ratt.networks.sections.task-edit');
+        return view('livewire.ratt.networks.sections.task-update');
     }
 }
