@@ -179,10 +179,10 @@ final class Table extends PowerGridComponent
         return [
             //Hide button edit for ID 1
             Rule::button('editrecord')
-                ->when(fn () => !auth()->user()->can('sitetypes-edit'))
+                ->when(fn () => !auth()->user()->can('siteTypes-edit'))
                 ->hide(),
             Rule::button('deleterecord')
-                ->when(fn ($model) => !auth()->user()->can('sitetypes-delete') || $model->childrens->count() > 0)
+                ->when(fn ($model) => !auth()->user()->can('siteTypes-delete') || $model->childrens->count() > 0)
                 ->hide(),
         ];
     }
