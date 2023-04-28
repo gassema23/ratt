@@ -24,13 +24,13 @@ class Edit extends ModalComponent
 
     public function mount($id)
     {
-        $this->authorize('geographicTypes-edit');
+        $this->authorize('geographictypes-edit');
         $this->geographic_type = GeographicType::findOrFail($id);
     }
 
     public function save()
     {
-        $this->authorize('geographicTypes-edit');
+        $this->authorize('geographictypes-edit');
         $this->validate();
         $this->geographic_type->update($this->validate());
         $this->saved();

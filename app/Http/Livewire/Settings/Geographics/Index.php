@@ -10,7 +10,7 @@ class Index extends Component
     use AuthorizesRequests;
     public function render()
     {
-        $this->authorize('geographicTypes-viewAny');
+        $this->authorize('geographictypes-viewAny');
         return view('livewire.settings.geographics.index')
             ->layoutData([
                 'title' => __('Geographic types'),
@@ -18,7 +18,7 @@ class Index extends Component
                     'name' => trans('New geographic type'),
                     'icon' => 'plus',
                     'route' => 'settings.geographics.create',
-                    'permission' => 'geographicTypes-create'
+                    'permission' => 'geographictypes-create'
                 ]
             ]);
     }
