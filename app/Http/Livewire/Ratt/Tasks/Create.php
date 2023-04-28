@@ -23,6 +23,7 @@ class Create extends ModalComponent
 
     public function save()
     {
+        $this->authorize('tasks-create');
         $this->validate();
         Task::create($this->validate());
         $this->saved();

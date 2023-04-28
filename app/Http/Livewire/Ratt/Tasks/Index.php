@@ -11,7 +11,7 @@ class Index extends Component
     protected $listeners = ['refresh' => '$refresh'];
     public function render()
     {
-        $this->authorize('tasks-list');
+        $this->authorize('tasks-viewAny');
         return view('livewire.ratt.tasks.index')
             ->layoutData([
                 'title' => __('Tasks list'),

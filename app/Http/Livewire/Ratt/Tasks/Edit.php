@@ -38,6 +38,7 @@ class Edit extends ModalComponent
 
     public function save()
     {
+        $this->authorize('tasks-edit');
         $this->validate();
         $this->task->update($this->validate());
         $this->saved();
