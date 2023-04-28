@@ -89,7 +89,7 @@
                                         <x-dropdown.item href="#" :label="trans('Change status')"
                                             onclick="Livewire.emit('openModal', 'ratt.networks.sections.change-status-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
                                     @endif
-                                    @can('networktasks-edit')
+                                    @can('tasks-update')
                                         <x-dropdown.item href="#" :label="trans('Edit task')"
                                             onclick="Livewire.emit('openModal', 'ratt.networks.sections.task-edit', {{ json_encode([$taskInfoSection->id]) }})" />
                                     @endcan
@@ -123,6 +123,16 @@
                                 <x-icon name="calendar" class="w-4 h-4 inline-block mr-1" />
                                 {{ $taskInfoSection->due_date }}
                             </div>
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-1">
+                        <div class="font-medium pb-2 text-slate-600">@lang('Status history')</div>
+                        <div class="text-sm flex space-x-4">
+                            @forelse($taskInfoSection->statuses as $status)
+                                <div>{{ $status->status_name }}</div>
+                                <div>{{ $status->reason }}</div>
+                            @empty
+                            @endforelse
                         </div>
                     </div>
                     <div class="grid grid-cols-1">

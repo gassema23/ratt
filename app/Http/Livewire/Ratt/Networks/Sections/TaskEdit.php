@@ -15,7 +15,7 @@ class TaskEdit extends ModalComponent
     public $emits = ['refresh'];
     public function mount($id)
     {
-        $this->authorize('networks-assignScenarios');
+        $this->authorize('tasks-update');
         $this->networkTask = NetworkTask::with(['task'])->findOrFail($id);
     }
     protected function rules()
@@ -24,6 +24,7 @@ class TaskEdit extends ModalComponent
     }
     public function save()
     {
+        $this->authorize('tasks-update');
         $this->validate();
         $this->networkTask->update([
             'due_date' => $this->networkTask->due_date,
