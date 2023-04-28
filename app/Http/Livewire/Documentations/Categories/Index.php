@@ -3,12 +3,14 @@
 namespace App\Http\Livewire\Documentations\Categories;
 
 use Livewire\Component;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Index extends Component
 {
+    use AuthorizesRequests;
     public function render()
     {
-        $this->authorize('categories-list');
+        $this->authorize('categories-viewAny');
         return view('livewire.documentations.categories.index')
         ->layoutData([
             'title' => __('Categories list'),
