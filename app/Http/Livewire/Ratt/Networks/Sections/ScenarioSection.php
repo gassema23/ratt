@@ -24,7 +24,7 @@ class ScenarioSection extends Component
     public function mount($id)
     {
         $this->authorize('networks-assignScenarios');
-        $this->network = Network::with('networktasks')->findOrFail($id);
+        $this->network = Network::with('networktasks','networktask','networktask.scenario')->findOrFail($id);
         $this->scenarios = Scenario::orderBy('name')
             ->select('id', 'name')
             ->get();

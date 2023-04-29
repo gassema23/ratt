@@ -8,7 +8,7 @@
                     @endforeach
                     {{ $comments->links() }}
                 @else
-                    <p class="inline-flex items-center gap-x-2 py-1.5 font-medium text-slate-400">
+                    <p class="text-sm inline-flex items-center gap-x-2 py-1.5 font-medium text-slate-400">
                         @lang('No comments yet.')
                     </p>
                 @endif

@@ -16,7 +16,6 @@ class Status extends SpatieStatus
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
     ];
-
     public function getStatusNameAttribute()
     {
         return collect(config('biri.App_statuses.' . App::getLocale()))->where('id', $this->name)->first()['name'];

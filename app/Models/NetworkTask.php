@@ -28,63 +28,66 @@ class NetworkTask extends Model implements HasMedia
     {
         return LogOptions::defaults()
             ->logAll()
-            ->setDescriptionForEvent(fn(string $eventName) => "Network task {$eventName}")
+            ->setDescriptionForEvent(fn (string $eventName) => "Network task {$eventName}")
             ->useLogName('NetworkTaskLog');
     }
     public function network(): BelongsTo
     {
         return $this->belongsTo(Network::class)->withTrashed();
     }
-
     public function task(): BelongsTo
     {
         return $this->belongsTo(Task::class)->withTrashed();
     }
-
     public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class)->withTrashed();
     }
-
     public function scenario(): BelongsTo
     {
         return $this->belongsTo(Scenario::class)->withTrashed();
     }
-
     public function comments(): MorphMany
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
-
     public function checklists(): MorphMany
     {
         return $this->morphMany(Checklist::class, 'checklistable');
     }
-
-    public function checklistscompletes(): MorphMany
+    public function checklistscompletes()
     {
         return $this->morphMany(Checklist::class, 'checklistable')->where('status', 1);
     }
-
     // Attribute Getter / Setter
     public function getBadgePriorityNameAttribute()
     {
         return collect(config('biri.App_priority.' . App::getLocale()))->where('id', $this->priority)->first()['name'];
     }
-
     public function getBadgePriorityColorAttribute()
     {
         return collect(config('biri.App_priority.en'))->where('id', $this->priority)->first()['color'];
     }
-
     public function getStatusNameAttribute()
     {
         return collect(config('biri.App_statuses.' . App::getLocale()))->where('id', $this->status)->first()['name'];
     }
-
     public function getStatusColorAttribute()
     {
         return collect(config('biri.App_statuses.en'))->where('id', $this->status)->first()['color'];
     }
-
+    public function getStatusBadgeAttribute()
+    {
+        if ($this->status) {
+            return $this->status_name;
+        }
+        return __('New');
+    }
+    public function getStatusBadgeColorAttribute()
+    {
+        if ($this->status) {
+            return $this->status_color;
+        }
+        return "slate";
+    }
 }

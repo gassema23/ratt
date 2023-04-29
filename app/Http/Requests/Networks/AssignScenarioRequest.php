@@ -14,6 +14,7 @@ class AssignScenarioRequest extends FormRequest
     public function rules($network): array
     {
         return [
+            'scenario_id'=>'required',
             'inputs.*.task' => 'required',
             'inputs.*.duedate' => [
                 'required_with:inputs.*.task',

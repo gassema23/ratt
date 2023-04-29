@@ -1,5 +1,5 @@
 <div class="w-full">
-    <div class="flex justify-end w-full px-4 py-2 -mb-px" wire:loading>
+    <div class="flex justify-end w-full pb-2 -mb-px" wire:loading>
         <svg class="animate-spin w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
             <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4">
             </circle>
@@ -10,11 +10,11 @@
     </div>
     <div wire:loading.remove>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
-            <div class=" divide-y divide-slate-200">
+            <div class="divide-y divide-slate-200">
                 @foreach ($tasks->groupBy('team.name') as $k_task => $v_task)
-                    <div class="font-medium py-4 text-lg">{{ $k_task }}</div>
+                    <div class="font-medium pb-2 text-lg">{{ $k_task }}</div>
                     @foreach ($v_task as $task)
-                        <div class="flex justify-between items-center space-x-4 py-4">
+                        <div class="flex justify-between items-center space-x-4 py-2">
                             <div class="w-1/3 text-sm flex-1 flex flex-row items-center">
                                 <div class="mr-2">
                                     <x-button slate xs squared flat icon="eye"
@@ -26,11 +26,7 @@
                             </div>
                             <div class="flex text-left text-slate-400 space-x-2 items-center align-middle">
                                 <div class="ml-2">
-                                    @if ($task->status)
-                                        <x-badge :label="$task->status_name" squared :color="$task->status_color" />
-                                    @else
-                                        <x-badge :label="trans('New')" squared slate />
-                                    @endif
+                                    <x-badge :label="$task->status_badge" squared :color="$task->status_badge_color" />
                                 </div>
                                 <div class=" text-slate-400">
                                     <x-icon name="chat-alt-2" class="w-5 h-5 inline-block" />
@@ -46,7 +42,7 @@
                 @endforeach
                 {{ $tasks->links() }}
             </div>
-            <div class="flex justify-end w-full px-2 py-2 -mb-px" wire:loading>
+            <div class="flex justify-end w-full py-2 -mb-px mt-5 " wire:loading>
                 <svg class="animate-spin w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none"
                     viewBox="0 0 24 24">
                     <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"
@@ -58,134 +54,124 @@
             </div>
             @if (!is_null($taskInfoSection))
                 <div wire:loading.remove>
-                    <div class="flex justify-between text-slate-500 border-b border-slate-200 text-xs py-4">
-                        <div class="px-2 font-medium ">
-                            @if (auth()->user()->id === $taskInfoSection->network->project->planner_id ||
-                                    auth()->user()->id === $taskInfoSection->network->project->prime_id ||
-                                    auth()->user()->hasRole('Super-Admin'))
-                                @if (
-                                    $taskInfoSection->complete_checklists_count === $taskInfoSection->checklists_count &&
-                                        $taskInfoSection->checklists_count > 0)
-                                    @if (is_null($taskInfoSection->is_complete) &&
-                                            auth()->user()->hasRole(['Super-Admin', 'Admin']))
-                                        @if ($taskInfoSection->status == 4)
-                                            <x-button :label="trans('Mark as complete')" sm squared flat />
-                                        @endif
-                                    @else
-                                        <x-badge :label="trans('Complete')" squared color="teal" />
+                    <div
+                        class="flex justify-between text-slate-500 border-b border-slate-200 text-xs mb-2 pb-2 align-middle items-center">
+                        <h3 class="font-medium text-lg">
+                            {{ $taskInfoSection->task->name }}
+                        </h3>
+                        <x-dropdown align="right">
+                            <x-dropdown.header :label="trans('Manage taks')">
+                                <x-slot name="trigger">
+                                    <x-icon name="dots-horizontal" class="w-4 h-4" />
+                                </x-slot>
+                                <x-dropdown.item href="#" :label="trans('Activities')"
+                                    onclick="Livewire.emit('openModal', 'ratt.networks.sections.history-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
+                                @if ($taskInfoSection->status != 4)
+                                    <x-dropdown.item href="#" :label="trans('Change status')"
+                                        onclick="Livewire.emit('openModal', 'ratt.networks.sections.change-status-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
+                                @endif
+                                @can('tasks-update')
+                                    <x-dropdown.item href="#" :label="trans('Edit task')"
+                                        onclick="Livewire.emit('openModal', 'ratt.networks.sections.task-edit', {{ json_encode([$taskInfoSection->id]) }})" />
+                                @endcan
+                            </x-dropdown.header>
+                        </x-dropdown>
+                    </div>
+                    <div class="font-medium ">
+                        @if (auth()->user()->id === $taskInfoSection->network->project->planner_id ||
+                                auth()->user()->id === $taskInfoSection->network->project->prime_id ||
+                                auth()->user()->hasRole('Super-Admin'))
+                            @if (
+                                $taskInfoSection->complete_checklists_count === $taskInfoSection->checklists_count &&
+                                    $taskInfoSection->checklists_count > 0)
+                                @if (is_null($taskInfoSection->is_complete) &&
+                                        auth()->user()->hasRole(['Super-Admin', 'Admin']))
+                                    @if ($taskInfoSection->status == 4)
+                                        <x-button :label="trans('Mark as complete')" sm squared flat />
                                     @endif
+                                @else
+                                    <x-badge :label="trans('Complete')" squared color="teal" />
                                 @endif
                             @endif
-                        </div>
-                        <div class="px-2">
-                            <x-dropdown align="right">
-                                <x-dropdown.header :label="trans('Manage taks')">
-                                    <x-slot name="trigger">
-                                        <x-icon name="dots-horizontal" class="w-4 h-4" />
-                                    </x-slot>
-                                    <x-dropdown.item href="#" :label="trans('Activities')"
-                                        onclick="Livewire.emit('openModal', 'ratt.networks.sections.history-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
-                                    @if ($taskInfoSection->status != 4)
-                                        <x-dropdown.item href="#" :label="trans('Change status')"
-                                            onclick="Livewire.emit('openModal', 'ratt.networks.sections.change-status-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
-                                    @endif
-                                    @can('tasks-update')
-                                        <x-dropdown.item href="#" :label="trans('Edit task')"
-                                            onclick="Livewire.emit('openModal', 'ratt.networks.sections.task-edit', {{ json_encode([$taskInfoSection->id]) }})" />
-                                    @endcan
-                                </x-dropdown.header>
-                            </x-dropdown>
-                        </div>
+                        @endif
                     </div>
-                    <div class="flex justify-between p-4">
-                        <div>
-                            <h3 class="text-lg font-medium text-slate-900">
-                                {{ $taskInfoSection->task->name }}
-                            </h3>
-                        </div>
-                        <div>
-                            @if ($taskInfoSection->status)
-                                <x-badge :label="$taskInfoSection->status_name" squared :color="$taskInfoSection->status_color" />
-                            @else
-                                <x-badge :label="trans('New')" squared slate />
-                            @endif
-                            <x-badge :label="$taskInfoSection->badgepriorityname" squared :color="$taskInfoSection->badgeprioritycolor" />
-                        </div>
+                    <div class="flex justify-start space-x-2 pb-4">
+                        <x-badge :label="$taskInfoSection->status_badge" squared :color="$taskInfoSection->status_badge_color" />
+                        <x-badge :label="$taskInfoSection->badgepriorityname" squared :color="$taskInfoSection->badgeprioritycolor" />
                     </div>
-                    <div class="flex justify-between p-4 text-slate-400">
+                    <div class="flex justify-between pb-4 text-slate-400">
                         <div class="grid grid-cols-1">
-                            <div class="font-medium pb-2 text-slate-600">@lang('Assign to')</div>
+                            <div class="font-medium text-slate-600">@lang('Assign to')</div>
                             <div class="text-sm">{{ $taskInfoSection->team->name }}</div>
                         </div>
                         <div class="grid grid-cols-1">
-                            <div class="font-medium pb-2 text-slate-600">@lang('Due to')</div>
+                            <div class="font-medium text-slate-600">@lang('Due to')</div>
                             <div class="text-sm ">
                                 <x-icon name="calendar" class="w-4 h-4 inline-block mr-1" />
                                 {{ $taskInfoSection->due_date }}
                             </div>
                         </div>
                     </div>
-                    <div class="p-4 grid grid-cols-1">
+                    <div class="pb-4 grid grid-cols-1">
                         <div class="font-medium pb-2 text-slate-600">@lang('Statuses history')</div>
                         <div class="text-sm flex space-x-4 max-h-64 overflow-y-auto soft-scrollbar">
-                            <table class="min-w-full leading-normal mb-5 ">
+                            <table class="min-w-full leading-normal">
                                 <thead>
                                     <tr>
                                         <th
-                                            class="px-5 py-3 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                                            class="px-2 py-1.5 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
                                             @lang('Status')</th>
                                         <th
-                                            class="px-5 py-3 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                                            class="px-2 py-1.5 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
                                             @lang('Employee')</th>
                                         <th
-                                            class="px-5 py-3 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                                            class="px-2 py-1.5 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
                                             @lang('Reason')</th>
                                         <th
-                                            class="px-5 py-3 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
+                                            class="px-2 py-1.5 border-b-2 border-slate-200 bg-slate-100 text-left text-xs font-semibold text-slate-600 uppercase tracking-wider">
                                             @lang('Created')</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     @forelse($taskInfoSection->statuses as $status)
                                         <tr>
-                                            <td class="px-5 py-5 border-b border-slate-200 bg-white text-sm">
-                                                <p class="text-slate-900 whitespace-no-wrap text-left">{{ $status->status_name }}</p>
+                                            <td class="px-2 py-1.5 border-b border-slate-200 bg-white text-sm">
+                                                <p class="text-slate-900 whitespace-no-wrap text-left">
+                                                    {{ $status->status_name }}</p>
                                             </td>
-                                            <td class="px-5 py-5 border-b border-slate-200 bg-white text-sm">
-                                                <p class="text-slate-900 whitespace-no-wrap text-left">{{ $status->creator->name ?? '' }}</p>
+                                            <td class="px-2 py-1.5 border-b border-slate-200 bg-white text-sm">
+                                                <p class="text-slate-900 whitespace-no-wrap text-left">
+                                                    {{ $status->creator->name ?? '' }}</p>
                                             </td>
-                                            <td class="px-5 py-5 border-b border-slate-200 bg-white text-sm">
-                                                <p class="text-slate-900 whitespace-no-wrap text-left">{{ $status->reason }}</p>
+                                            <td class="px-2 py-1.5 border-b border-slate-200 bg-white text-sm">
+                                                <p class="text-slate-900 whitespace-no-wrap text-left">
+                                                    {{ $status->reason }}</p>
                                             </td>
-                                            <td class="px-5 py-5 border-b border-slate-200 bg-white text-sm">
+                                            <td class="px-2 py-1.5 border-b border-slate-200 bg-white text-sm">
                                                 <p class="text-slate-900 whitespace-no-wrap text-left">
                                                     {{ $status->created_at->toDateTimeString() }}</p>
                                             </td>
                                         </tr>
-                                        @empty
-                                        @endforelse
+                                    @empty
+                                    @endforelse
                                 </tbody>
                             </table>
                         </div>
                     </div>
-                    <div class="grid grid-cols-1">
-                        <div>
-                            <livewire:ratt.checklists.checklist :model="$taskInfoSection"
-                                :wire:key="'checklists-'.$taskInfoSection->id" />
-                        </div>
+                    <div class="grid grid-cols-1 pb-4">
+                        <livewire:ratt.checklists.checklist :model="$taskInfoSection"
+                            :wire:key="'checklists-'.$taskInfoSection->id" />
                     </div>
                     @can('attachments-view')
-                        <div class="grid grid-cols-1 p-4 divide-y divide-slate-200">
-                            <div class="font-bold flex justify-between items-center align-middle">
+                        <div class="grid grid-cols-1 divide-y divide-slate-200">
+                            <div class="pb-2 font-bold flex justify-between items-center align-middle">
                                 @lang('Attachments')
                                 @can('attachments-create')
                                     <x-button :label="trans('Add files')" flat slate squared xs
                                         onclick="Livewire.emit('openModal', 'ratt.networks.attach-files', {{ json_encode(['model_id' => $taskInfoSection->id, 'model' => App\Models\NetworkTask::class]) }})" />
                                 @endcan
                             </div>
-                            <div class="pt-4">
-                                <livewire:ratt.networks.attachments :model="$taskInfoSection" />
-                            </div>
+                            <livewire:ratt.networks.attachments :model="$taskInfoSection" />
                         </div>
                     @endcan
                     @can('comments-view')

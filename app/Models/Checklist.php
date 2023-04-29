@@ -17,11 +17,8 @@ use Spatie\Activitylog\LogOptions;
 
 class Checklist extends Model
 {
-    use HasFactory, SoftDeletes, Notifiable, HasTranslations, Userstamps, LogsActivity;
-
-    public $translatable = ['name'];
+    use HasFactory, SoftDeletes, Notifiable, Userstamps, LogsActivity;
     protected $guarded = ['id', 'created_at', 'updated_at'];
-
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
@@ -29,18 +26,15 @@ class Checklist extends Model
             ->setDescriptionForEvent(fn (string $eventName) => "Checklist {$eventName}")
             ->useLogName('ChecklistsLog');
     }
-
     // Relations
     public function user(): BelongsTo
     {
         return $this->belongsTo(User::class)->withTrashed();
     }
-
     public function checklistable(): MorphTo
     {
         return $this->morphTo();
     }
-
     // Attributes
     protected function UpdatedAt(): Attribute
     {
