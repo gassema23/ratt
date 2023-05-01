@@ -75,6 +75,7 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
                     Route::get("/projects", Ratt\Projects\Index::class)->name("projects.index");
                     Route::get("/projects/show/{id}", Ratt\Projects\Show::class)->name("projects.show");
                     Route::get("/networks/show/{id}", Ratt\Networks\Show::class)->name("networks.show");
+                    Route::get("/networks/show/{id}/{parameter}", Ratt\Networks\Show::class)->name("networks.show.params");
                     Route::get("/tasks", Ratt\Tasks\Index::class)->name("tasks.index");
                     Route::get("/scenarios", Ratt\Scenarios\Index::class)->name("scenarios.index");
                 });

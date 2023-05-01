@@ -17,7 +17,7 @@ class Show extends Component
         'openSection' => ['except' => '']
     ];
 
-    public function mount($id)
+    public function mount($id, $parameter = null)
     {
         $this->authorize('networks-view');
         $this->network = Network::with([
@@ -28,6 +28,9 @@ class Show extends Component
             'site.city.region.state.country',
             'networktasks'
         ])->findOrFail($id);
+        if (!is_null($parameter)) {
+            $this->openSection = $parameter;
+        }
         if (is_null($this->openSection)) {
             $this->openSection = 'network';
         }

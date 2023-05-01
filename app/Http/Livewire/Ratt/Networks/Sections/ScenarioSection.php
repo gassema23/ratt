@@ -15,6 +15,7 @@ class ScenarioSection extends Component
     use AuthorizesRequests;
     protected $listeners = [
         'refresh'  => '$refresh',
+        'scenariosListOpen'  => '$refresh',
     ];
     public $scenarios,
         $network,
