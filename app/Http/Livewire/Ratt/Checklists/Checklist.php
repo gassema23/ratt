@@ -41,7 +41,6 @@ class Checklist extends Component
         $this->emit('showChecklist');
         $this->emit('NetworkTaskSection');
     }
-
     public function check($id)
     {
         $this->dialog()->confirm([
@@ -58,7 +57,6 @@ class Checklist extends Component
             ],
         ]);
     }
-
     public function complete($id)
     {
         $check = ModelChecklist::findOrFail($id);

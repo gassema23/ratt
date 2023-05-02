@@ -10,6 +10,7 @@ use App\Http\Livewire\Trix;
 use LivewireUI\Modal\ModalComponent;
 use App\Http\Requests\Networks\NetworkCreateRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class Create extends ModalComponent
 {
@@ -45,12 +46,10 @@ class Create extends ModalComponent
             $this->network_element = $clli->clli;
         }
     }
-
     protected function rules()
     {
         return (new NetworkCreateRequest)->rules($this->project);
     }
-
     public function save()
     {
         $this->authorize('networks-create');
@@ -66,6 +65,20 @@ class Create extends ModalComponent
             'started_at' => $this->started_at,
             'ended_at' => $this->ended_at
         ]);
+        $this->project->planner->notify(new DatabaseNotification(
+            $type = 'info',
+            $message = auth()->user()->name,
+            $messageLong =  trans(' Add a new network on project :number',['number'=>$this->project->project_no]),
+            $href = '/admin/ratt/networks/show/' . $network->id,
+            $hrefText = trans('View')
+        ));
+        $this->project->prime->notify(new DatabaseNotification(
+            $type = 'info',
+            $message = auth()->user()->name,
+            $messageLong =  trans(' Add a new network on project :number',['number'=>$this->project->project_no]),
+            $href = '/admin/ratt/networks/show/' . $network->id,
+            $hrefText = trans('View')
+        ));
         return redirect()->route('admin.ratt.networks.show', $network->id);
     }
     public function render()

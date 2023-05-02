@@ -14,7 +14,6 @@ class Attachments extends Component
     protected $listeners = ['refresh'  => '$refresh'];
     public $model;
     public $collection = 'default';
-
     public function confirm($file)
     {
         $this->dialog()->confirm([
@@ -31,12 +30,10 @@ class Attachments extends Component
             ],
         ]);
     }
-
     public function download(Media $mediaItem)
     {
         return response()->download($mediaItem->getPath(), $mediaItem->file_name);
     }
-
     public function destroy(Media $file)
     {
         $this->authorize('destroy', $file);
@@ -49,7 +46,6 @@ class Attachments extends Component
         $this->emit('refresh');
         $this->emitSelf('AttachmentNetwork');
     }
-
     public function render()
     {
         return view('livewire.ratt.networks.attachments', [

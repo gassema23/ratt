@@ -10,6 +10,7 @@ use Illuminate\Support\Arr;
 use LivewireUI\Modal\ModalComponent;
 use App\Http\Requests\Networks\NetworkUpdateRequest;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
 class Edit extends ModalComponent
 {
@@ -37,12 +38,10 @@ class Edit extends ModalComponent
         $this->network_element = $this->network->network_element;
         $this->site_id = $this->network->site_id;
     }
-
     protected function rules()
     {
         return (new NetworkUpdateRequest)->rules($this->network->id);
     }
-
     public function updatedSiteId($value)
     {
         $this->reset('network_element');
@@ -51,13 +50,27 @@ class Edit extends ModalComponent
             $this->network_element = $clli->clli;
         }
     }
-
     public function save()
     {
         $this->validate();
         $val = $this->validate();
         $arr = Arr::add($val, 'description' , $this->description);
         $this->network->update($arr);
+
+        $this->network->project->planner->notify(new DatabaseNotification(
+            $type = 'info',
+            $message = auth()->user()->name,
+            $messageLong =  trans(' Update network :number',['number'=>$this->network->network_no]),
+            $href = '/admin/ratt/networks/show/' . $this->network->id,
+            $hrefText = trans('View')
+        ));
+        $this->network->project->prime->notify(new DatabaseNotification(
+            $type = 'info',
+            $message = auth()->user()->name,
+            $messageLong =  trans(' Update network :number',['number'=>$this->network->network_no]),
+            $href = '/admin/ratt/networks/show/' . $this->network->id,
+            $hrefText = trans('View')
+        ));
         $this->saved();
     }
 

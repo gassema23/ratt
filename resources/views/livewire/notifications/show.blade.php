@@ -10,11 +10,25 @@
     </x-slot>
     @forelse ($notifications as $notification)
         <x-dropdown.item wire:click="see('{{ $notification->id }}')">
-            <div class="flex items-center">
-                <p class="text-slate-600 text-sm mx-2">
-                    <span class="font-bold">{{ $notification->data['message'] }}</span>
-                    {{ $notification->data['message_long'] }}
-                </p>
+            <div class="flex space-x-4 w-full">
+                <div>
+                    <x-avatar label="AB" />
+                </div>
+                <div class="w-full">
+                    <div class="text-slate-800 font-bold">
+                        {{ $notification->data['message'] }}
+                    </div>
+                    <div>
+                        {{ $notification->data['message_long'] }}
+                    </div>
+                </div>
+                <div>
+                    {{ $notification->created_at->diffForHumans([
+                        'parts' => 1,
+                        'join' => '',
+                        'short' => true
+                    ]) }}
+                </div>
             </div>
         </x-dropdown.item>
     @empty

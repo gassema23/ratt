@@ -7,7 +7,6 @@ use Livewire\WithFileUploads;
 use LivewireUI\Modal\ModalComponent;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-
 class AttachFiles extends ModalComponent
 {
     use HasModal, WithFileUploads, AuthorizesRequests;
@@ -18,7 +17,6 @@ class AttachFiles extends ModalComponent
         $attachment,
         $model_id,
         $m_model;
-
     public function save()
     {
         $this->m_model = new $this->model();
@@ -29,12 +27,10 @@ class AttachFiles extends ModalComponent
                 'max:4800'
             ]
         ]);
-
         $this->m_model->findOrFail($this->model_id)
             ->addMedia($this->attachment)
             ->withCustomProperties(['user_id' => auth()->id()])
             ->toMediaCollection();
-
         $this->saved();
         $this->reset();
     }

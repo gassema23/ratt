@@ -25,7 +25,6 @@ class Comments extends Component
     protected $validationAttributes = [
         'newCommentState.body' => 'comment'
     ];
-
     public function postComment()
     {
         $this->validate([
@@ -39,14 +38,14 @@ class Comments extends Component
                 $type = 'info',
                 $message = auth()->user()->name,
                 $messageLong =  trans(' Add a new comment'),
-                $href = '/admin/networks/show/' . $this->model->id,
+                $href = '/admin/ratt/networks/show/' . $this->model->id,
                 $hrefText = trans('View')
             ));
             $this->model->project->prime->notify(new DatabaseNotification(
                 $type = 'info',
                 $message = auth()->user()->name,
                 $messageLong =  trans(' Add a new comment'),
-                $href = '/admin/networks/show/' . $this->model->id,
+                $href = '/admin/ratt/networks/show/' . $this->model->id,
                 $hrefText = trans('View')
             ));
         }
