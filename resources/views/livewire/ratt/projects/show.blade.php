@@ -33,24 +33,32 @@
                         </div>
                     </x-slot>
                 @endcan
-                <div class="flex flex-col space-y-3">
+                <div class="flex flex-col space-y-2 text-sm">
                     <div class="flex align-middle items-center">
-                        <div class="mr-4">
-                            <x-icon name="location-marker" class="w-5 h-5" />
+                        <div class="mr-2">
+                            <x-icon name="location-marker" class="w-4 h-4" />
                         </div>
-                        <div class="text-sm">{!! $network->locations !!}</div>
+                        <div>{!! $network->locations !!}</div>
                     </div>
                     <div class="flex align-middle items-center">
-                        <div class="mr-4">
-                            <x-icon name="clipboard-list" class="w-5 h-5" />
+                        <div class="mr-2">
+                            <x-icon name="clipboard-list" class="w-4 h-4" />
                         </div>
                         <div>{{ $network->network_element }}</div>
                     </div>
                     <div class="flex align-middle items-center">
-                        <div class="mr-4">
-                            <x-icon name="calendar" class="w-5 h-5" />
+                        <div class="mr-2">
+                            <x-icon name="calendar" class="w-4 h-4" />
                         </div>
                         <div>{{ $network->ended_at->toFormattedDateString() }}</div>
+                    </div>
+                    <div class="flex align-middle items-center">
+                        <div class="mr-2">
+                            <x-icon name="folder-open" class="w-4 h-4" />
+                        </div>
+                        <div>
+                            {{ trans_choice('{0,1} :nb task associate|[2,*] :nb tasks associate', $network->network_task_count, ['nb' => $network->network_task_count]) }}
+                        </div>
                     </div>
                 </div>
             </x-app-card>

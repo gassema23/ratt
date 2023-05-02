@@ -90,11 +90,9 @@ class Network extends Model implements HasMedia
     {
         return $this->hasMany(NetworkTask::class, 'network_id', 'id');
     }
-
     public function networktask(){
         return $this->hasOne(NetworkTask::class, 'network_id', 'id')->oldest();
     }
-
     public function getNetworkTaskCountAttribute(){
         return $this->networktasks()->whereNull('deleted_at')->count();
     }
