@@ -11,16 +11,16 @@
 
 # TELUS BIRI Web Application
 
-The TELUS BIRI Web Application is a Laravel-based web application designed to simplify the everyday work of the TELUS BIRI team. The application provides reliability assessment forms, beat alarms system point, documentations and geographics areas, all in one place. With the TELUS BIRI Web Application, team members can easily access the tools they need to perform their jobs efficiently and effectively.
+The **TELUS BIRI** Web Application is a Laravel-based web application designed to simplify the everyday work of the **TELUS BIRI** team. The application provides reliability assessment forms, beat alarms system point, documentations and geographics areas, all in one place. With the **TELUS BIRI** Web Application, team members can easily access the tools they need to perform their jobs efficiently and effectively.
 
-The main purpose of the TELUS BIRI Web Application is to streamline the processes involved in reliability assessments and beat alarm monitoring, making it easier for team members to access and manage critical information. The application offers a user-friendly interface that simplifies the data entry process and provides real-time updates and notifications to team members.
+The main purpose of the **TELUS BIRI** Web Application is to streamline the processes involved in reliability assessments and beat alarm monitoring, making it easier for team members to access and manage critical information. The application offers a user-friendly interface that simplifies the data entry process and provides real-time updates and notifications to team members.
 
  - Reliability assessment forms: The application provides easy-to-use forms for conducting reliability assessments, making it easier for team members to gather and organize data.
 - Beat alarm system point: The application includes a beat alarm system that allows team members to monitor alarms and alerts in real-time, ensuring that critical issues are addressed promptly.
 - Documentations: The application provides a central repository for storing and accessing critical documents, making it easier for team members to find the information they need.
 - Geographics areas: The application provides a map-based interface for tracking and managing geospatial data, allowing team members to easily visualize and analyze information.
 
-The TELUS BIRI Web Application is designed to serve the needs of the TELUS BIRI team, providing them with the tools they need to perform their jobs effectively and efficiently. With its user-friendly interface and comprehensive feature set, the application helps to simplify the everyday work of team members, enabling them to focus on delivering high-quality service to their customers.
+The **TELUS BIRI** Web Application is designed to serve the needs of the **TELUS BIRI** team, providing them with the tools they need to perform their jobs effectively and efficiently. With its user-friendly interface and comprehensive feature set, the application helps to simplify the everyday work of team members, enabling them to focus on delivering high-quality service to their customers.
 
 ## Requirements
 
