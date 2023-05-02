@@ -2,11 +2,13 @@
 
 namespace App\Http\Livewire\Documentations\Documentations;
 
-use App\Models\Documentation;
 use Livewire\Component;
+use App\Models\Documentation;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Show extends Component
 {
+    use AuthorizesRequests;
     public $documentation;
     protected function getListeners()
     {
@@ -14,6 +16,7 @@ class Show extends Component
     }
     public function mount(Documentation $slug)
     {
+        $this->authorize('documentations-view');
         $this->documentation = $slug->load(['category', 'tagged', 'creator', 'comments']);
     }
     public function render()

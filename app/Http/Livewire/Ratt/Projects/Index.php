@@ -12,7 +12,6 @@ class Index extends Component
     public function render()
     {
         $this->authorize('projects-viewAny');
-
         return view('livewire.ratt.projects.index')
             ->layoutData([
                 'title' => __('Projects'),

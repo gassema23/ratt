@@ -47,7 +47,7 @@ class TaskSection extends Component
     public function render()
     {
         $this->authorize('networks-taskSection');
-        if (auth()->user()->hasRole(['Super-Admin', 'Admin'])) {
+        if (auth()->user()->hasRole(['Super-Admin', 'Admin','Guest'])) {
             $tasks = NetworkTask::with([
                 'network',
                 'task',

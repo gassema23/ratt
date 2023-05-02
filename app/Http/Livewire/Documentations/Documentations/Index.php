@@ -5,9 +5,11 @@ namespace App\Http\Livewire\Documentations\Documentations;
 use Livewire\Component;
 use App\Models\Category;
 use App\Models\Documentation;
+use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Index extends Component
 {
+    use AuthorizesRequests;
     protected $listeners = ['change'];
     public $tag_name = '';
     public function change($name)
@@ -17,6 +19,7 @@ class Index extends Component
     }
     public function render()
     {
+        $this->authorize('documentations-viewAny');
         return view('livewire.documentations.documentations.index', [
             'categories' => Category::has('documentations')->withCount('documentations')->get(),
             'tags' => Documentation::existingTags()
@@ -28,7 +31,7 @@ class Index extends Component
                     'name' => trans('New documentations'),
                     'icon' => 'plus',
                     'route' => 'documentations.documentations.create',
-                    //'permission' => 'documentations-create'
+                    'permission' => 'documentations-create'
                 ]
             ]);
     }

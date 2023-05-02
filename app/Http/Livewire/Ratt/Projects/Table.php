@@ -68,14 +68,14 @@ final class Table extends PowerGridComponent
             ->join('users as primes', 'projects.prime_id', 'primes.id')
             ->join('users as planners', 'projects.planner_id', 'planners.id')
             ->select('projects.*', 'planners.name as plannername', 'primes.name as primename')
-            ->when(auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager']), function ($q) {
+            ->when(auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager','Guest']), function ($q) {
                 $q->withCount('networks');
             })
             ->when(auth()->user()->hasRole(['Manager']), function ($q) {
                 $q->where('prime_id', auth()->user()->id)
                     ->orWhere('planner_id', auth()->user()->id);
             })
-            ->when(!auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager']), function ($q) {
+            ->when(!auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager','Guest']), function ($q) {
                 $q->withCount([
                     'networks' => function ($q1) {
                         $q1->whereHas(

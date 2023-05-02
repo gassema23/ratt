@@ -17,7 +17,8 @@
                         <div class="flex justify-between items-center space-x-4 py-2">
                             <div class="w-1/3 text-sm flex-1 flex flex-row items-center">
                                 <div class="font-medium truncate">
-                                    <a href="#" class="hover:underline" wire:click="taskInfo({{ $task->id }})">
+                                    <a href="#" class="hover:underline"
+                                        wire:click="taskInfo({{ $task->id }})">
                                         {{ $task->task->name }}
                                     </a>
                                 </div>
@@ -64,10 +65,12 @@
                                 </x-slot>
                                 <x-dropdown.item href="#" :label="trans('Activities')"
                                     onclick="Livewire.emit('openModal', 'ratt.networks.sections.history-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
-                                @if ($taskInfoSection->status != 4)
-                                    <x-dropdown.item href="#" :label="trans('Change status')"
-                                        onclick="Livewire.emit('openModal', 'ratt.networks.sections.change-status-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
-                                @endif
+                                @can('networks-assignScenarios')
+                                    @if ($taskInfoSection->status != 4)
+                                        <x-dropdown.item href="#" :label="trans('Change status')"
+                                            onclick="Livewire.emit('openModal', 'ratt.networks.sections.change-status-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
+                                    @endif
+                                @endcan
                                 @can('tasks-update')
                                     <x-dropdown.item href="#" :label="trans('Edit task')"
                                         onclick="Livewire.emit('openModal', 'ratt.networks.sections.task-edit', {{ json_encode([$taskInfoSection->id]) }})" />

@@ -57,7 +57,7 @@ class Create extends ModalComponent
     }
     public function render()
     {
-        //$this->authorize('documentations-create');
+        $this->authorize('documentations-create');
         return view('livewire.documentations.documentations.create', [
             'categories' => Category::orderBy('name')->select('id', 'name')->get()
         ]);

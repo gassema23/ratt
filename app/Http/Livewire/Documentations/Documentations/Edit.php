@@ -31,6 +31,7 @@ class Edit extends ModalComponent
     }
     public function mount($id)
     {
+        $this->authorize('documentations-edit');
         $this->documentation = Documentation::findOrFail($id);
         $this->tags = $this->documentation->tagNames();
     }
@@ -40,6 +41,7 @@ class Edit extends ModalComponent
     }
     public function save()
     {
+        $this->authorize('documentations-edit');
         //$this->authorize('documentations-create');
         $this->validate();
         $this->documentation->update([
