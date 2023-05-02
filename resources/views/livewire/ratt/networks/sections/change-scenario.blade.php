@@ -6,6 +6,10 @@
             </x-slot>
             <x-slot name="content">
                 <x-errors class="my-2" />
+                <div class="flex w-full text-sm space-x-4 border-b border-slate-200 pb-4 mb-4">
+                    <div>@lang('Network started at :date', ['date' => $network->started_at->toFormattedDayDateString()])</div>
+                    <div>@lang('Network ended at :date', ['date' => $network->ended_at->toFormattedDayDateString()])</div>
+                </div>
                 <div class="rounded-lg bg-warning-50 p-4">
                     <div class="flex items-center">
                         <svg class="w-5 h-5 text-warning-400 shrink-0 mr-3" xmlns="http://www.w3.org/2000/svg"

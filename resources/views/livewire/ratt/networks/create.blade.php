@@ -6,6 +6,10 @@
             </x-slot>
             <x-slot name="content">
                 <x-errors class="my-2 " />
+                <div class="flex w-full text-sm space-x-4 border-b border-slate-200 pb-4 mb-4">
+                    <div>@lang('Project started at :date', ['date' => $project->started_at->toFormattedDayDateString()])</div>
+                    <div>@lang('Project ended at :date', ['date' => $project->ended_at->toFormattedDayDateString()])</div>
+                </div>
                 <div class="my-2 grid grid-cols-2 gap-2">
                     <x-input wire:model.defer="network_no" :label="__('Network number')" :hint="trans('Field required (1234567)')" />
                 </div>

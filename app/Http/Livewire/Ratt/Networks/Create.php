@@ -33,7 +33,6 @@ class Create extends ModalComponent
     {
         $this->description = $value;
     }
-
     public function mount($id)
     {
         $this->project = Project::findOrFail($id);

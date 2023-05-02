@@ -33,7 +33,7 @@ class Network extends Model implements HasMedia
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
         'completed_at' => 'datetime',
-        'start_at' => 'date',
+        'started_at' => 'date',
         'ended_at' => 'date',
     ];
     public function getActivitylogOptions(): LogOptions

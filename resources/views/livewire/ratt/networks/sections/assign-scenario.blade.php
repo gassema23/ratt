@@ -6,6 +6,10 @@
             </x-slot>
             <x-slot name="content">
                 <x-errors class="my-2" />
+                <div class="flex w-full text-sm space-x-4 border-b border-slate-200 pb-4 mb-4">
+                    <div>@lang('Network started at :date', ['date' => $network->started_at->toFormattedDayDateString()])</div>
+                    <div>@lang('Network ended at :date', ['date' => $network->ended_at->toFormattedDayDateString()])</div>
+                </div>
                 <div class="grid grid-cols-1 gap-2 my-2">
                     <x-select wire:model="scenario_id" :options="$scenarios" option-value="id" autocomplete="off"
                         option-label="name" :placeholder="__('Make a selection')" :label="__('Scenario')" />
