@@ -7,24 +7,32 @@ use App\Models\Project;
 use Livewire\Component;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use WireUi\Traits\Actions;
+use Illuminate\Database\Eloquent\Builder;
 
 class Show extends Component
 {
     use AuthorizesRequests, Actions;
     protected $listeners = ['refresh'  => '$refresh'];
 
-    public $project;
+    public $project, $networks;
     public function mount($id)
     {
         $this->authorize('projects-view');
-        $this->project = Project::with([
-            'networks',
-            'networks.site',
-            'networks.site.city',
-            'networks.site.city.region',
-            'networks.site.city.region.state',
-            'networks.site.city.region.state.country'
-        ])->findOrFail($id);
+        $this->project = Project::findOrFail($id);
+        $this->networks = Network::with([
+            'project' => function ($q) use ($id) {
+                return $q->where('id', $id);
+            },
+            'site',
+            'site.city',
+            'site.city.region',
+            'site.city.region.state',
+            'site.city.region.state.country'
+        ])->when(!auth()->user()->hasRole(['Super-Admin', 'Admin']), function ($query) {
+            $query->whereHas('networktasks', function ($q) {
+                return $q->where('team_id', auth()->user()->current_team_id)->whereNull('deleted_at');
+            });
+        })->get();
     }
 
     public function acceptFollow(Network $network)

@@ -1,6 +1,6 @@
 <div>
     <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
-        @forelse ($project->networks as $network)
+        @forelse ($networks as $network)
             <x-app-card :title="$network->network_no">
                 @can('networks-view', 'networks-edit', 'networks-delete')
                     <x-slot name="header">

@@ -63,38 +63,32 @@ final class Table extends PowerGridComponent
      */
     public function datasource(): Builder
     {
-        if (auth()->user()->hasRole(['Super-Admin', 'Admin', 'Manager'])) {
-            return Project::query()
-                ->with(['prime', 'planner', 'networks'])
-                ->join('users as primes', 'projects.prime_id', 'primes.id')
-                ->join('users as planners', 'projects.planner_id', 'planners.id')
-                ->select('projects.*', 'planners.name as plannername', 'primes.name as primename');
-        } elseif (auth()->user()->hasRole('Manager')) {
-            return Project::query()
-                ->with(['prime', 'planner', 'networks'])
-                ->join('users as primes', 'projects.prime_id', 'primes.id')
-                ->join('users as planners', 'projects.planner_id', 'planners.id')
-                ->select('projects.*', 'planners.name as plannername', 'primes.name as primename')
-                ->where('prime_id', auth()->user()->id)
-                ->orWhere('planner_id', auth()->user()->id);
-        } else {
-            return Project::query()
-                ->with(['prime', 'planner', 'networks'])
-                ->withCount([
-                    'networks' => function ($q) {
-                        $q->whereHas('networkTasks', function ($query) {
-                            $query->where('team_id', auth()->user()->current_team_id);
-                        }
+        return Project::query()
+            ->with(['prime', 'planner', 'networks'])
+            ->join('users as primes', 'projects.prime_id', 'primes.id')
+            ->join('users as planners', 'projects.planner_id', 'planners.id')
+            ->select('projects.*', 'planners.name as plannername', 'primes.name as primename')
+            ->when(auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager']), function ($q) {
+                $q->withCount('networks');
+            })
+            ->when(auth()->user()->hasRole(['Manager']), function ($q) {
+                $q->where('prime_id', auth()->user()->id)
+                    ->orWhere('planner_id', auth()->user()->id);
+            })
+            ->when(!auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager']), function ($q) {
+                $q->withCount([
+                    'networks' => function ($q1) {
+                        $q1->whereHas(
+                            'networkTasks',
+                            function ($q2) {
+                                $q2->where('team_id', auth()->user()->current_team_id);
+                            }
                         );
                     }
-                ])
-                ->whereHas('networks.networkTasks', function ($query) {
+                ])->whereHas('networks.networkTasks', function ($query) {
                     $query->where('team_id', auth()->user()->current_team_id);
-                })
-                ->join('users as primes', 'projects.prime_id', 'primes.id')
-                ->join('users as planners', 'projects.planner_id', 'planners.id')
-                ->select('projects.*', 'planners.name as plannername', 'primes.name as primename');
-        }
+                });
+            });
     }
 
     /*
@@ -133,12 +127,12 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::eloquent()
             ->addColumn('project_no')
-            ->addColumn('networks_count', fn(Project $model) => $model->networks->count())
-            ->addColumn('plannername', fn(Project $model) => $model->planner->name)
-            ->addColumn('primename', fn(Project $model) => $model->prime->name)
-            ->addColumn('started_at_formatted', fn(Project $model) => Carbon::parse($model->started_at)->format('d/m/Y'))
-            ->addColumn('ended_at_formatted', fn(Project $model) => Carbon::parse($model->ended_at)->format('d/m/Y'))
-            ->addColumn('updated_at_formatted', fn(Project $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('networks_count', fn (Project $model) => $model->networks_count)
+            ->addColumn('plannername', fn (Project $model) => $model->planner->name)
+            ->addColumn('primename', fn (Project $model) => $model->prime->name)
+            ->addColumn('started_at_formatted', fn (Project $model) => Carbon::parse($model->started_at)->format('d/m/Y'))
+            ->addColumn('ended_at_formatted', fn (Project $model) => Carbon::parse($model->ended_at)->format('d/m/Y'))
+            ->addColumn('updated_at_formatted', fn (Project $model) => Carbon::parse($model->updated_at)->diffForHumans());
     }
 
     /*
@@ -220,13 +214,13 @@ final class Table extends PowerGridComponent
     {
         return [
             Rule::button('showrecord')
-                ->when(fn() => !auth()->user()->can('projects-view'))
+                ->when(fn () => !auth()->user()->can('projects-view'))
                 ->hide(),
             Rule::button('editrecord')
-                ->when(fn() => !auth()->user()->can('projects-edit'))
+                ->when(fn () => !auth()->user()->can('projects-edit'))
                 ->hide(),
             Rule::button('deleterecord')
-                ->when(fn() => !auth()->user()->can('projects-delete'))
+                ->when(fn () => !auth()->user()->can('projects-delete'))
                 ->hide(),
         ];
     }

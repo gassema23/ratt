@@ -88,7 +88,7 @@ class Network extends Model implements HasMedia
     }
     public function networktasks(): HasMany
     {
-        return $this->hasMany(NetworkTask::class, 'network_id', 'id')->withTrashed();
+        return $this->hasMany(NetworkTask::class, 'network_id', 'id');
     }
 
     public function networktask(){
