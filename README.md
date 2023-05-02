@@ -11,7 +11,7 @@
 
 # TELUS BIRI Web Application
 
-The **TELUS BIRI** Web Application is a Laravel-based web application designed to simplify the everyday work of the **TELUS BIRI** team. The application provides reliability assessment forms, beat alarms system point, documentations and geographics areas, all in one place. With the **TELUS BIRI** Web Application, team members can easily access the tools they need to perform their jobs efficiently and effectively.
+The <b>TELUS BIRI</b> Web Application is a Laravel-based web application designed to simplify the everyday work of the **TELUS BIRI** team. The application provides reliability assessment forms, beat alarms system point, documentations and geographics areas, all in one place. With the **TELUS BIRI** Web Application, team members can easily access the tools they need to perform their jobs efficiently and effectively.
 
 The main purpose of the **TELUS BIRI** Web Application is to streamline the processes involved in reliability assessments and beat alarm monitoring, making it easier for team members to access and manage critical information. The application offers a user-friendly interface that simplifies the data entry process and provides real-time updates and notifications to team members.
 
