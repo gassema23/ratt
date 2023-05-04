@@ -21,24 +21,20 @@ class Todo extends Component
 
     public function render()
     {
-        $todos = Network::with([
+        $networks = Network::with([
+            'networktasks',
             'networktasks.task',
             'networktasks.checklists',
-        ])
-            ->when(!auth()->user()->hasRole(['Super-Admin', 'Admin']), function ($query) {
-                $query->with('networktasks', function ($q) {
-                    $q->where('team_id', auth()->user()->current_team_id)
-                        ->whereNull('deleted_at');
-                });
-            })
-            ->whereHas('followers', function ($q) {
-                $q->where('user_id', auth()->user()->id);
-            })
-            ->whereNull('completed_at')
-            ->get();
+        ])->when(!auth()->user()->hasRole(['Super-Admin', 'Admin']), function ($query) {
+            $query->whereHas('networktasks', function ($q) {
+                $q->where('team_id', auth()->user()->current_team_id)->whereNull('deleted_at');
+            });
+        })->whereHas('followers', function ($q) {
+            $q->where('user_id', auth()->user()->id);
+        })->whereNull('completed_at')->get();
 
         return view('livewire.ratt.dashboard.todo', [
-            'todos' => $todos
+            'networks' => $networks
         ]);
     }
 }

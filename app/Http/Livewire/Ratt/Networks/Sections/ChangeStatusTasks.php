@@ -12,9 +12,7 @@ use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification
 class ChangeStatusTasks extends ModalComponent
 {
     use AuthorizesRequests, HasModal;
-    public $emits = [
-        'refresh'
-    ];
+    public $emits = ['refresh'];
     public $task, $reason, $status;
     public function mount($id)
     {
@@ -33,20 +31,19 @@ class ChangeStatusTasks extends ModalComponent
         $this->task->network->project->planner->notify(new DatabaseNotification(
             $type = 'info',
             $message = auth()->user()->name,
-            $messageLong =  trans(' Updated status on network :network',['network'=>$this->task->network->network_no]),
-            $href = '/admin/ratt/networks/show/'.$this->task->network->id,
+            $messageLong =  trans(' Updated status on network :network', ['network' => $this->task->network->network_no]),
+            $href = '/admin/ratt/networks/show/' . $this->task->network->id,
             $hrefText = trans('View')
         ));
         $this->task->network->project->prime->notify(new DatabaseNotification(
             $type = 'info',
             $message = auth()->user()->name,
-            $messageLong =  trans(' Updated status on network :network',['network'=>$this->task->network->network_no]),
-            $href = '/admin/ratt/networks/show/'.$this->task->network->id,
+            $messageLong =  trans(' Updated status on network :network', ['network' => $this->task->network->network_no]),
+            $href = '/admin/ratt/networks/show/' . $this->task->network->id,
             $hrefText = trans('View')
         ));
         $this->saved();
     }
-
     public function render()
     {
         $this->authorize('networks-changeStatusTasks');

@@ -1,4 +1,4 @@
-/** Font : Helvetica Now Text */
+/** Font : Assistant */
 @import url("https://fonts.googleapis.com/css2?family=Assistant:wght@200;300;400;500;600;700;800&family=Oswald:wght@200;300;400;500;600;700&display=swap");
 /** Tailwind css base (v.3.2.7) */
 @tailwind base;
@@ -14,6 +14,7 @@
 .pace .pace-progress {
     @apply bg-teal-500 fixed z-[9999] top-0 right-full w-full h-1;
 }
+/*TRIX WYSIWYG */
 trix-toolbar {
     position: -webkit-sticky;
     position: sticky;
@@ -22,7 +23,6 @@ trix-toolbar {
     z-index: 0;
     padding: 1em 0;
 }
-
 trix-toolbar .trix-button-group {
     margin-bottom: 0;
 }
@@ -36,14 +36,13 @@ trix-toolbar .trix-button-group {
 .fc-scroller-liquid-absolute::-webkit-scrollbar-track {
     @apply bg-slate-100 cursor-pointer;
 }
-
+/** MAP */
 .map-responsive {
     overflow: hidden;
     padding-bottom: 56.25%;
     position: relative;
     height: 0;
 }
-
 .map-responsive iframe {
     left: 0;
     top: 0;
@@ -51,7 +50,7 @@ trix-toolbar .trix-button-group {
     width: 100%;
     position: absolute;
 }
-
+/* SIDEBAR */
 #sidebar {
     --tw-translate-x: -100%;
 }
@@ -72,7 +71,6 @@ trix-toolbar .trix-button-group {
     display: block;
     color: white;
 }
-
 @media (min-width: 768px) {
     #sidebar {
         --tw-translate-x: 0;

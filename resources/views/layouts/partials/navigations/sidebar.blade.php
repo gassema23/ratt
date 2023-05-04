@@ -489,6 +489,22 @@
                                     </a>
                                 </li>
                             @endcan
+                            @hasanyrole('Super-Admin|Admin')
+                            <li>
+                                <a href="/log-viewer" @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                ])>
+                                    @lang('Logs')
+                                </a>
+                            </li>
+                        @endhasanyrole
                         </ul>
                     </li>
                 @endcan

@@ -25,7 +25,7 @@
                             </div>
                             <div class="flex text-left text-slate-400 space-x-2 items-center align-middle">
                                 <div class="ml-2">
-                                    <x-badge :label="$task->status_badge" squared :color="$task->status_badge_color" />
+                                    <x-badge :label="$task->status_name" squared :color="$task->status_color" />
                                 </div>
                                 <div class=" text-slate-400">
                                     <x-icon name="chat-alt-2" class="w-5 h-5 inline-block" />
@@ -63,8 +63,6 @@
                                 <x-slot name="trigger">
                                     <x-icon name="dots-horizontal" class="w-4 h-4" />
                                 </x-slot>
-                                <x-dropdown.item href="#" :label="trans('Activities')"
-                                    onclick="Livewire.emit('openModal', 'ratt.networks.sections.history-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
                                 @can('networks-assignScenarios')
                                     @if ($taskInfoSection->status != 4)
                                         <x-dropdown.item href="#" :label="trans('Change status')"
@@ -97,7 +95,7 @@
                         @endif
                     </div>
                     <div class="flex justify-start space-x-2 pb-4">
-                        <x-badge :label="$taskInfoSection->status_badge" squared :color="$taskInfoSection->status_badge_color" />
+                        <x-badge :label="$taskInfoSection->status_name" squared :color="$taskInfoSection->status_color" />
                         <x-badge :label="$taskInfoSection->badgepriorityname" squared :color="$taskInfoSection->badgeprioritycolor" />
                     </div>
                     <div class="flex justify-between pb-4 text-slate-400">
@@ -146,7 +144,7 @@
                                             </td>
                                             <td class="px-2 py-1.5 border-b border-slate-200 bg-white text-sm">
                                                 <p class="text-slate-900 whitespace-no-wrap text-left">
-                                                    {{ $status->reason }}</p>
+                                                    {{ Str::limit($status->reason, 25, '...') }}</p>
                                             </td>
                                             <td class="px-2 py-1.5 border-b border-slate-200 bg-white text-sm">
                                                 <p class="text-slate-900 whitespace-no-wrap text-left">

@@ -27,7 +27,6 @@ class Network extends Model implements HasMedia
         Userstamps,
         LogsActivity,
         Followable;
-
     protected $guarded = ['id', 'created_at', 'updated_at'];
     protected $casts = [
         'created_at' => 'datetime',

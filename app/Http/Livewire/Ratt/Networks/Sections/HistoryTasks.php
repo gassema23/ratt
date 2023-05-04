@@ -10,12 +10,8 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class HistoryTasks extends ModalComponent
 {
     use HasModal, AuthorizesRequests;
-    public $emits = [
-        'refresh'
-    ];
-
+    public $emits = ['refresh'];
     public $activity_id;
-
     public function mount($id)
     {
         $this->authorize('networks-historyTask');
@@ -26,9 +22,8 @@ class HistoryTasks extends ModalComponent
         $this->authorize('networks-historyTask');
         return view('livewire.ratt.networks.sections.history-tasks', [
             'activities' => Activity::where('subject_id', $this->activity_id)
-                ->where('subject_type', 'like', '%Network%')
-                ->orWhere('subject_type', 'like', '%Checklist%')
-                ->orWhere('subject_type', 'like', '%Comment%')
+                ->where('subject_type', 'like', '%NetworkTask%')
+                ->OrWhere('subject_type', 'like', '%Status%')
                 ->paginate(5)
         ]);
     }

@@ -4,22 +4,22 @@
         @push('scripts')
             <script>
                 document.addEventListener('DOMContentLoaded', function() {
+
                     var calendarEl = document.getElementById('calendar');
                     var calendar = new FullCalendar.Calendar(calendarEl, {
                         initialView: 'dayGridMonth',
-                        locale: 'fr',
+                        locale: 'en',
                         eventClick: function(info) {
-                            console.log(info.event)
                             window.$wireui.confirmDialog({
-                                title: 'Are you Sure?',
-                                description: 'You will be redirected to the network page',
+                                title: '{{ __('Are you Sure?') }}',
+                                description: '{{ __('You will be redirected to the network page') }}',
                                 icon: 'question',
                                 accept: {
-                                    label: 'Yes, go ahead!',
+                                    label: '{{ __('Yes, go ahead!') }}',
                                     url: "/admin/networks/show/" + info.event.id
                                 },
                                 reject: {
-                                    label: 'No, cancel',
+                                    label: '{{ __('No, cancel') }}',
                                     method: 'cancel'
                                 }
                             })
@@ -33,6 +33,6 @@
                 });
             </script>
         @endpush
-        <div id='calendar' class=" soft-scrollbar overflow-x-auto"></div>
+        <div id='calendar' class="soft-scrollbar overflow-x-auto"></div>
     </x-card>
 </div>

@@ -19,10 +19,9 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class NetworkTask extends Model implements HasMedia
 {
     use HasFactory, HasTranslations, SoftDeletes, InteractsWithMedia, Userstamps, LogsActivity, HasStatuses;
-
     public $translatable = ['comment'];
-
     protected $guarded = ['id', 'created_at', 'updated_at'];
+    protected $with = ['statuses'];
 
     public function getActivitylogOptions(): LogOptions
     {
@@ -68,26 +67,18 @@ class NetworkTask extends Model implements HasMedia
     {
         return collect(config('biri.App_priority.en'))->where('id', $this->priority)->first()['color'];
     }
-    public function getStatusNameAttribute()
-    {
-        return collect(config('biri.App_statuses.' . App::getLocale()))->where('id', $this->status)->first()['name'];
-    }
-    public function getStatusColorAttribute()
-    {
-        return collect(config('biri.App_statuses.en'))->where('id', $this->status)->first()['color'];
-    }
-    public function getStatusBadgeAttribute()
-    {
-        if ($this->status) {
-            return $this->status_name;
+    public function getStatusNameAttribute() {
+        if($this->status()){
+            return $this->status()->status_name;
+        }else {
+            return 'New';
         }
-        return __('New');
     }
-    public function getStatusBadgeColorAttribute()
-    {
-        if ($this->status) {
-            return $this->status_color;
+    public function getStatusColorAttribute() {
+        if($this->status()){
+            return $this->status()->status_color;
+        }else {
+            return 'slate';
         }
-        return "slate";
     }
 }
