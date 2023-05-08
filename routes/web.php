@@ -8,6 +8,7 @@ use App\Http\Livewire\Geographics;
 use App\Http\Livewire\Documentations;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth as AuthController;
+use App\Http\Livewire\Biri;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Livewire\Dashboard\Dashboard as DashboardDashboard;
 
@@ -80,6 +81,12 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
                     Route::get("/scenarios", Ratt\Scenarios\Index::class)->name("scenarios.index");
                 });
                 /** END RATT */
+                /** BIRI */
+                Route::prefix('biri')->name('biri.')->group(function () {
+                    Route::get('/', Biri\Dashboard::class)->name('dashboard');
+                    Route::get('/activities', Biri\Activities\Index::class)->name('activities.index');
+                });
+                /** END BIRI */
             });
         });
     });

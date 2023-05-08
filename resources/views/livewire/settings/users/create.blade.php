@@ -6,6 +6,10 @@
             </x-slot>
             <x-slot name="content">
                 <x-errors class="my-2 " />
+                <div class="my-2 flex space-x-4">
+                    <x-checkbox id="desn" :label="trans('DESN')" wire:model.defer="desn" />
+                    <x-checkbox id="tech_biri" :label="trans('Technicien')" wire:model.defer="tech_biri" />
+                </div>
                 <div class="my-2 grid grid-cols-2 gap-4">
                     <x-input wire:model.defer="name" :label="__('Full name')" :hint="trans('Field required')" />
                     <x-input wire:model.defer="employe_id" :label="__('Employe ID')" :hint="trans('Field required (T123456)')" />

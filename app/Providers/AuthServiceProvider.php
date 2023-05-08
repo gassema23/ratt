@@ -2,9 +2,10 @@
 
 namespace App\Providers;
 
+use App\Models\User;
 use App\Models\Comment;
 use App\Models\Checklist;
-use App\Models\User;
+use App\Policies\UserPolicy;
 use App\Policies\CommentPolicy;
 use App\Policies\ChecklistPolicy;
 use Illuminate\Support\Facades\Gate;
@@ -20,7 +21,7 @@ class AuthServiceProvider extends ServiceProvider
     protected $policies = [
         Comment::class => CommentPolicy::class,
         Checklist::class => ChecklistPolicy::class,
-        User::class => UserPolicy::class,
+        //User::class => UserPolicy::class,
     ];
 
 

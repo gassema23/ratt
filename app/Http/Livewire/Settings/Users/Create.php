@@ -17,7 +17,7 @@ class Create extends ModalComponent
 {
     use HasModal, AuthorizesRequests;
     public $teams, $roles;
-    public $name, $email, $phone, $role_id, $team_id, $employe_id;
+    public $name, $email, $phone, $role_id, $team_id, $employe_id, $desn, $tech_biri;
 
     public $emits = [
         'refresh',
@@ -28,13 +28,13 @@ class Create extends ModalComponent
     {
         $this->authorize('users-create');
         $this->teams = Team::orderBy('name')
-        ->when(!auth()->user()->hasRole(['Admin', 'Super-Admin']), function ($query) {
-            $query->where('id', auth()->user()->currentTeam->id);
-        })->get();
+            ->when(!auth()->user()->hasRole(['Admin', 'Super-Admin']), function ($query) {
+                $query->where('id', auth()->user()->currentTeam->id);
+            })->get();
         $this->roles = Role::orderBy('name')
-        ->when(!auth()->user()->hasRole(['Admin', 'Super-Admin']), function ($query) {
-            $query->whereNotIn('id', ['1', '2']);
-        })->whereNotIn('id', ['1'])->get();
+            ->when(!auth()->user()->hasRole(['Admin', 'Super-Admin']), function ($query) {
+                $query->whereNotIn('id', ['1', '2']);
+            })->whereNotIn('id', ['1'])->get();
     }
 
     protected function rules()
@@ -51,7 +51,9 @@ class Create extends ModalComponent
             'email' => $this->email,
             'phone' => $this->phone ?? null,
             'employe_id' => $this->employe_id,
-            'password' => md5(config('biri.App_password_temp'))
+            'password' => md5(config('biri.App_password_temp')),
+            'desn' => $this->desn,
+            'tech_biri' => $this->tech_biri,
         ]);
 
         $teamModel = config('teamwork.team_model');

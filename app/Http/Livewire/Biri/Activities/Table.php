@@ -1,37 +1,30 @@
 <?php
 
-namespace App\Http\Livewire\Settings\Users;
+namespace App\Http\Livewire\Biri\Activities;
 
-use App\Models\User;
 use App\Traits\HasDelete;
-use App\Traits\HasInvite;
+use App\Models\BiriActivity;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
-use PowerComponents\LivewirePowerGrid\Traits\Filter;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridEloquent};
 
 final class Table extends PowerGridComponent
 {
-    use ActionButton, HasDelete, HasInvite;
-    public $model = User::class;
-    public $emits = ['refresh'];
-    public $filter_name = '';
+    use ActionButton, HasDelete;
+    public $model = BiriActivity::class;
+    public $emits = [
+        'refresh'
+    ];
     protected function getListeners(): array
     {
         return array_merge(
             parent::getListeners(),
-            ['refresh' => '$refresh'],
-            ['refreshTableUser' => '$refresh'],
-            ['filter_status_table']
+            [
+                'refresh' => '$refresh',
+            ]
         );
-    }
-
-    public function filter_status_table($name)
-    {
-        $this->reset('filter_name');
-        $this->filter_name = $name;
     }
 
     /*
@@ -45,7 +38,9 @@ final class Table extends PowerGridComponent
     {
         return [
             Header::make()->showSearchInput(),
-            Footer::make()->showPerPage()->showRecordCount(),
+            Footer::make()
+                ->showPerPage()
+                ->showRecordCount(),
         ];
     }
 
@@ -60,24 +55,11 @@ final class Table extends PowerGridComponent
     /**
      * PowerGrid datasource.
      *
-     * @return Builder<\App\Models\User>
+     * @return Builder<\App\Models\BiriActivity>
      */
     public function datasource(): Builder
     {
-        if (!is_null(request()->query('filter'))) {
-            if (empty($this->filter_name)) {
-                $this->filter_name = request()->query('filter');
-            }
-        } else {
-            if (empty($this->filter_name)) {
-                $this->filter_name = 'active';
-            }
-        }
-        return User::query()
-            ->with('currentTeam')
-            ->when($this->filter_name, function ($query) {
-                $query->{$this->filter_name}();
-            });
+        return BiriActivity::query();
     }
 
     /*
@@ -112,11 +94,15 @@ final class Table extends PowerGridComponent
     public function addColumns(): PowerGridEloquent
     {
         return PowerGrid::eloquent()
-            ->addColumn('employe_id')
-            ->addColumn('name')
-            ->addColumn('email')
-            ->addColumn('teamname', fn (User $model) => $model->currentTeam->name ?? trans('Pending'))
-            ->addColumn('updated_at_formatted', fn (User $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('technology_name')
+            ->addColumn('equipment_name')
+            ->addColumn('activity_name')
+            ->addColumn('activity_description')
+            ->addColumn('average')
+            ->addColumn('average_actual')
+            ->addColumn('ps50_plan')
+            ->addColumn('ps50_activity')
+            ->addColumn('updated_at_formatted', fn (BiriActivity $model) => $model->updated_at->diffForHumans());
     }
 
     /*
@@ -136,20 +122,31 @@ final class Table extends PowerGridComponent
     public function columns(): array
     {
         return [
-            Column::make(trans('employe id'), 'employe_id')
-                ->sortable()
-                ->searchable(),
-            Column::make(trans('name'), 'name')
-                ->sortable()
-                ->searchable(),
-            Column::make(trans('email address'), 'email')
-                ->sortable()
-                ->searchable(),
-            Column::make(trans('Team'), 'teamname')
-                ->sortable()
-                ->searchable(),
-            Column::make(trans('last update'), 'updated_at_formatted', 'updated_at')
+            Column::make(trans('technology'), 'technology_name')
                 ->searchable()
+                ->sortable(),
+            Column::make(trans('equipment'), 'equipment_name')
+                ->searchable()
+                ->sortable(),
+            Column::make(trans('activity'), 'activity_name')
+                ->searchable()
+                ->sortable(),
+            Column::make(trans('activity desc.'), 'activity_description')
+                ->searchable()
+                ->sortable(),
+            Column::make(trans('avg.'), 'average')
+                ->searchable()
+                ->sortable(),
+            Column::make(trans('actual avg.'), 'average_actual')
+                ->searchable()
+                ->sortable(),
+            Column::make(trans('PS50 plan'), 'ps50_plan')
+                ->searchable()
+                ->sortable(),
+            Column::make(trans('PS50 act.'), 'ps50_activity')
+                ->searchable()
+                ->sortable(),
+            Column::make(trans('Last update'), 'updated_at_formatted', 'updated_at')
                 ->sortable(),
         ];
     }
@@ -163,24 +160,21 @@ final class Table extends PowerGridComponent
     */
 
     /**
-     * PowerGrid User Action Buttons.
+     * PowerGrid BiriActivity Action Buttons.
      *
      * @return array<int, Button>
      */
 
-    public function actions(): array
-    {
-        return [
-            Button::add('showrecord')
-                ->bladeComponent('showrecord', ['id' => 'id', 'route' => 'admin.settings.users.show']),
-            Button::add('editrecord')
-                ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'settings.users.edit']),
-            Button::add('resendinvite')
-                ->bladeComponent('resendinvite', ['id' => 'id']),
-            Button::add('deleterecord')
-                ->bladeComponent('deleterecord', ['id' => 'id']),
-        ];
-    }
+     public function actions(): array
+     {
+         return [
+             Button::add('editrecord')
+                 ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'biri.activities.edit']),
+
+             Button::add('deleterecord')
+                 ->bladeComponent('deleterecord', ['id' => 'id']),
+         ];
+     }
 
     /*
     |--------------------------------------------------------------------------
@@ -191,27 +185,21 @@ final class Table extends PowerGridComponent
     */
 
     /**
-     * PowerGrid User Action Rules.
+     * PowerGrid BiriActivity Action Rules.
      *
      * @return array<int, RuleActions>
      */
 
-    public function actionRules(): array
-    {
-        return [
-            //Hide button edit for ID 1
-            Rule::button('resendinvite')
-                ->when(fn ($user) => !auth()->user()->can('users-edit') || $this->filter_name != 'pending')
-                ->hide(),
-            Rule::button('editrecord')
-                ->when(fn ($user) => !auth()->user()->can('users-edit') || $this->filter_name != 'active')
-                ->hide(),
-            Rule::button('deleterecord')
-                ->when(fn () => !auth()->user()->can('users-delete'))
-                ->hide(),
-            Rule::button('showrecord')
-                ->when(fn () => !auth()->user()->can('users-view'))
-                ->hide(),
-        ];
-    }
+     public function actionRules(): array
+     {
+         return [
+             //Hide button edit for ID 1
+             Rule::button('editrecord')
+                 ->when(fn () => !auth()->user()->can('activities-update'))
+                 ->hide(),
+             Rule::button('deleterecord')
+                 ->when(fn () => !auth()->user()->can('activities-delete'))
+                 ->hide(),
+         ];
+     }
 }

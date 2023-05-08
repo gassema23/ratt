@@ -1,0 +1,716 @@
+Id,Techno,Eqpt_Mod,Act,Act_desc,Avg_single,PS50_Plan,PS50_Act,Avg_Actual
+1,Accès,Adtran - TA1500,DESN,Mise en service,0,0,0,
+2,Accès,Adtran - TA1500,DSUB,Mise en service,0,0,0,
+3,Accès,Adtran - TA1500,DESN,Décomission,0,0,0,
+4,Accès,Adtran - TA1500,DSUB,Décomission,0,0,0,
+5,Accès,Adtran - TA3000,DESN,Mise en service,0,0,0,
+6,Accès,Adtran - TA3000,DSUB,Mise en service,0,0,0,
+7,Accès,Adtran - TA3000,DESN,Décomission,2,0,0,2
+8,Accès,Adtran - TA3000,DSUB,Décomission,0,0,0,
+9,Accès,Adtran - TA3010,DESN,Mise en service,0,0,0,
+10,Accès,Adtran - TA3010,DSUB,Mise en service,0,0,0,
+11,Accès,Adtran - TA3010,DESN,Décomission,0,0,0,
+12,Accès,Adtran - TA3010,DSUB,Décomission,0,0,0,
+13,Accès,Adtran - TA4303,DESN,Mise en service,0,0,0,
+14,Accès,Adtran - TA4303,DSUB,Mise en service,0,0,0,
+15,Accès,Adtran - TA4303,DESN,Décomission,0,0,0,
+16,Accès,Adtran - TA4303,DSUB,Décomission,0,0,0,
+17,Accès,Adtran - TA604/624,DESN,Mise en service,3,3,0,
+18,Accès,Adtran - TA604/624,DSUB,Mise en service,0,0,0,
+19,Accès,Adtran - TA604/624,DESN,Décomission,0,0,0,
+20,Accès,Adtran - TA604/624,DSUB,Décomission,0,0,0,
+21,Accès,Alcatel - 7300,DESN,Décomission,0,0,0,
+22,Accès,Alcatel - 7300,DSUB,Décomission,0,0,0,
+23,Accès,Alcatel - 7330,DESN,Mise en service,0,0,0,
+24,Accès,Alcatel - 7330,DSUB,Mise en service,0,0,0,
+25,Accès,Alcatel - 7330,DESN,Ajout de carte,0,0,0,
+26,Accès,Alcatel - 7330,DSUB,Ajout de carte,0,0,0,
+27,Accès,Alcatel - 7330,DESN,Ajout de facilité,"7,5",10,0,
+28,Accès,Alcatel - 7330,DSUB,Ajout de facilité,"1,5",5,0,
+29,Accès,Alcatel - 7330,DESN,Enlèvement de carte,0,0,0,
+30,Accès,Alcatel - 7330,DSUB,Enlèvement de carte,0,0,0,
+31,Accès,Alcatel - 7330,DESN,Enlèvement de facilité,0,0,0,
+32,Accès,Alcatel - 7330,DSUB,Enlèvement de facilité,0,0,0,
+33,Accès,Alcatel - 7330,DESN,Décomission,"10,1",6,0,8
+34,Accès,Alcatel - 7330,DSUB,Décomission,"8,3",8,0,9
+35,Accès,Alcatel - 7342,DESN,Mise en service,"8,6",10,0,
+36,Accès,Alcatel - 7342,DSUB,Mise en service,"10,1",22,0,
+37,Accès,Alcatel - 7342,DESN,Ajout de carte,"5,2",11,0,6
+38,Accès,Alcatel - 7342,DSUB,Ajout de carte,"7,6",14,0,
+39,Accès,Alcatel - 7342,DESN,Ajout de facilité,0,0,0,
+40,Accès,Alcatel - 7342,DSUB,Ajout de facilité,0,0,0,
+41,Accès,Alcatel - 7342,DESN,Enlèvement de carte,3,3,0,
+42,Accès,Alcatel - 7342,DSUB,Enlèvement de carte,"2,5",3,0,
+43,Accès,Alcatel - 7342,DESN,Enlèvement de facilité,0,0,0,
+44,Accès,Alcatel - 7342,DSUB,Enlèvement de facilité,0,0,0,
+45,Accès,Alcatel - 7342,DESN,Décomission,0,0,0,
+46,Accès,Alcatel - 7342,DSUB,Décomission,0,0,0,
+47,Accès,Alcatel - 7360,DESN,Mise en service,"4,2",10,0,0
+48,Accès,Alcatel - 7360,DSUB,Mise en service,"12,2",21,0,
+49,Accès,Alcatel - 7360,DESN,Ajout de carte,"2,7",8,0,7
+50,Accès,Alcatel - 7360,DSUB,Ajout de carte,"2,1",6,0,1
+51,Accès,Alcatel - 7360,DESN,Ajout de facilité,"1,5",4,0,0
+52,Accès,Alcatel - 7360,DSUB,Ajout de facilité,"2,5",2,0,2
+53,Accès,Alcatel - 7360,DESN,Enlèvement de carte,0,0,0,
+54,Accès,Alcatel - 7360,DSUB,Enlèvement de carte,0,0,0,
+55,Accès,Alcatel - 7360,DESN,Enlèvement de facilité,0,0,0,
+56,Accès,Alcatel - 7360,DSUB,Enlèvement de facilité,0,0,0,
+57,Accès,Alcatel - 7360,DESN,Décomission,0,0,0,
+58,Accès,Alcatel - 7360,DSUB,Décomission,0,0,0,
+59,Accès,EMF,DSUB,Mise en service,"15,3",34,0,
+60,Accès,EMF,DESN,Décomission,0,0,0,
+61,Accès,EMF,DSUB,Décomission,0,0,0,
+62,Accès,EMF,DESN,Mise en service,"10,2",20,0,
+63,Accès,GenBand - G6,DESN,Mise en service,"17,5",16,0,26
+64,Accès,GenBand - G6,DSUB,Mise en service,"41,2",50,0,
+65,Accès,GenBand - G6,DESN,Ajout de carte,0,0,0,
+66,Accès,GenBand - G6,DSUB,Ajout de carte,0,0,0,
+67,Accès,GenBand - G6,DESN,Ajout de facilité,0,0,0,
+68,Accès,GenBand - G6,DSUB,Ajout de facilité,0,0,0,
+69,Accès,GenBand - G6,DESN,Enlèvement de carte,0,0,0,
+70,Accès,GenBand - G6,DSUB,Enlèvement de carte,0,0,0,
+71,Accès,GenBand - G6,DESN,Enlèvement de facilité,0,0,0,
+72,Accès,GenBand - G6,DSUB,Enlèvement de facilité,0,0,0,
+73,Accès,GenBand - G6,DESN,Décomission,0,0,0,
+74,Accès,GenBand - G6,DSUB,Décomission,0,0,0,
+75,Accès,GenBand - G9,DESN,Mise en service,"23,5",26,0,24
+76,Accès,GenBand - G9,DSUB,Mise en service,"52,5",30,0,
+77,Accès,GenBand - G9,DESN,Ajout de carte,0,0,0,
+78,Accès,GenBand - G9,DSUB,Ajout de carte,0,0,0,
+79,Accès,GenBand - G9,DESN,Ajout de facilité,3,3,0,
+80,Accès,GenBand - G9,DSUB,Ajout de facilité,"3,2",5,0,
+81,Accès,GenBand - G9,DESN,Enlèvement de carte,0,0,0,
+82,Accès,GenBand - G9,DSUB,Enlèvement de carte,0,0,0,
+83,Accès,GenBand - G9,DESN,Enlèvement de facilité,"2,4",2,0,
+84,Accès,GenBand - G9,DSUB,Enlèvement de facilité,"2,7",8,0,
+85,Accès,GenBand - G9,DESN,Décomission,0,0,0,
+86,Accès,GenBand - G9,DSUB,Décomission,0,0,0,
+87,Accès,Legacy - Accès,DESN,Décomission,"11,7",12,0,4
+88,Accès,Legacy - Accès,DPSW,Décomission,6,10,0,4
+89,Accès,Multi,DESN,Bon de commande (Sans Matériel),"1,8",6,0,2
+90,Accès,Multi,DSUB,Bon de commande (Sans Matériel),4,5,0,4
+91,Accès,Multi,DESN,Spare,"3,1",6,0,4
+92,Accès,Multi,DUNC,Spare,1,3,0,
+93,Accès,Multi,SRVY,Site Survey,"1,4",2,0,
+94,Accès,Multi,DESN,Tools & TestSet,"2,3",3,0,
+95,Accès,Patch panel - Cuivre,DESN,Mise en service,0,0,0,
+96,Accès,Patch panel - Cuivre,DSUB,Mise en service,10,10,0,
+97,Accès,Patch panel - Cuivre,DESN,Décomission,0,0,0,
+98,Accès,Patch panel - Cuivre,DSUB,Décomission,0,0,0,
+99,Accès,Patch panel - Optique,DESN,Mise en service,"2,5",8,0,15
+100,Accès,Patch panel - Optique,DSUB,Mise en service,"11,1",13,0,
+101,Accès,Patch panel - Optique,DESN,Décomission,0,0,0,
+102,Accès,Patch panel - Optique,DSUB,Décomission,0,0,0,
+103,Accès,RTU / Software,DESN,RTU / Software,"4,1",5,0,2
+104,Accès,Splitters GPON,DESN,Mise en service,"0,4",3,0,0
+105,Accès,Splitters GPON,DFOT,Mise en service,"1,2",4,0,1
+106,Accès,Splitters GPON,DESN,Décomission,0,0,0,
+107,Accès,Splitters GPON,DFOT,Décomission,0,0,0,
+108,Accès,Tellabs - LET,DESN,Mise en service,0,0,0,
+109,Accès,Tellabs - LET,DSUB,Mise en service,0,0,0,
+110,Accès,Tellabs - LET,DESN,Décomission,0,0,0,
+111,Accès,Tellabs - LET,DSUB,Décomission,0,0,0,
+112,Accès,Tellabs - RST,DESN,Mise en service,0,0,0,
+113,Accès,Tellabs - RST,DSUB,Mise en service,0,0,0,
+114,Accès,Tellabs - RST,DESN,Décomission,"1,3",1,0,
+115,Accès,Tellabs - RST,DSUB,Décomission,0,0,0,
+116,Accès,Transition,DESN,Mise en service,"2,5",4,0,0
+117,Accès,Transition,DFOT,Mise en service,"8,6",10,0,
+118,Accès,Transition,DESN,Décomission,0,0,0,
+119,Accès,Transition,DFOT,Décomission,"7,5",11,0,
+120,Accès,Tronçon - Cuivre,DESN,Mise en service,0,0,0,
+121,Accès,Tronçon - Cuivre,DSUB,Mise en service,0,0,0,
+122,Accès,Tronçon - Cuivre,DESN,Décomission,0,0,0,
+123,Accès,Tronçon - Cuivre,DSUB,Décomission,0,0,0,
+124,Accès,Tronçon - Optique,DESN,Mise en service,0,0,0,
+125,Accès,Tronçon - Optique,DSUB,Mise en service,8,8,0,
+126,Accès,Tronçon - Optique,DESN,Décomission,0,0,0,
+127,Accès,Tronçon - Optique,DSUB,Décomission,0,0,0,
+128,Accès,Transition,DESN,Ajout de carte,"1,9",3,0,0
+129,Accès,Transition,DFOT,Ajout de carte,"3,2",4,0,0
+130,Admin,Multi,DESN,Admin - Excluded,0,0,0,
+131,Admin,Multi,DESN,Admin - Incomplet,"4,2",5,0,3
+132,Broadcast,Evertz - 7800,DESN,Mise en service,0,0,0,
+133,Broadcast,Evertz - 7800,DBRD,Mise en service,0,0,0,
+134,Broadcast,Evertz - 7800,DESN,Ajout de carte,0,0,0,
+135,Broadcast,Evertz - 7800,DBRD,Ajout de carte,0,0,0,
+136,Broadcast,Evertz - 7800,DESN,Enlèvement de carte,0,0,0,
+137,Broadcast,Evertz - 7800,DBRD,Enlèvement de carte,0,0,0,
+138,Broadcast,Evertz - 7800,DESN,Décomission,2,2,0,
+139,Broadcast,Evertz - 7800,DBRD,Décomission,"3,5",5,0,
+140,Broadcast,Legacy - Broadcast,DESN,Décomission,"10,5",15,0,
+141,Broadcast,Legacy - Broadcast,DBRD,Décomission,0,0,0,
+142,Broadcast,Multi,DESN,Spare,"8,5",4,0,15
+143,Broadcast,Multi,DUNC,Spare,"3,8",4,0,
+144,Broadcast,Nimbra,DESN,Mise en service,13,5,0,13
+145,Broadcast,Nimbra,DBRD,Mise en service,"10,3",12,0,13
+146,Broadcast,Nimbra,DESN,Décomission,0,0,0,
+147,Broadcast,Nimbra,DBRD,Décomission,0,0,0,0
+148,Broadcast,Tangberg - 1260,DESN,Mise en service,0,0,0,
+149,Broadcast,Tangberg - 1260,DBRD,Mise en service,0,0,0,
+150,Broadcast,Tangberg - 1260,DESN,Ajout de carte,0,0,0,
+151,Broadcast,Tangberg - 1260,DBRD,Ajout de carte,0,0,0,
+152,Broadcast,Tangberg - 1260,DESN,Enlèvement de carte,0,0,0,
+153,Broadcast,Tangberg - 1260,DBRD,Enlèvement de carte,0,0,0,
+154,Broadcast,Tangberg - 1260,DESN,Décomission,0,0,0,
+155,Broadcast,Tangberg - 1260,DBRD,Décomission,0,0,0,
+156,Broadcast,Tangberg - RX1290,DESN,Mise en service,0,0,0,
+157,Broadcast,Tangberg - RX1290,DBRD,Mise en service,0,0,0,
+158,Broadcast,Tangberg - RX1290,DESN,Ajout de carte,0,0,0,
+159,Broadcast,Tangberg - RX1290,DBRD,Ajout de carte,0,0,0,
+160,Broadcast,Tangberg - RX1290,DESN,Enlèvement de carte,0,0,0,
+161,Broadcast,Tangberg - RX1290,DBRD,Enlèvement de carte,0,0,0,
+162,Broadcast,Tangberg - RX1290,DESN,Décomission,0,0,0,
+163,Broadcast,Tangberg - RX1290,DBRD,Décomission,0,0,0,
+164,Broadcast,Oracle SBC 4500,DESN,Mise en service,0,0,0,0
+165,Broadcast,Oracle SBC 4500,DBRD,Mise en service,0,0,0,0
+166,Broadcast,Oracle SBC 4500,DESN,Décomission,"3,8",2,0,0
+167,Broadcast,Oracle SBC 4500,DBRD,Décomission,"5,4",10,0,0
+168,Frame work and support,Bâtis,DFRM,Mise en service,"15,8",8,0,11
+169,Frame work and support,Bâtis,DFRM,Décomission,"20,8",16,0,
+170,Frame work and support,EMF,DFRM,Mise en service,"12,6",24,0,23
+171,Frame work and support,EMF,DFRM,Décomission,0,0,0,
+172,Frame work and support,Frame Work,DFRM,Mise en service,"10,2",18,0,21
+173,Frame work and support,Frame Work,DFRM,Décomission,0,0,0,
+174,Gestion et alarme,Brix - Network Probe,DESN,Mise en service,"2,9",3,0,3
+175,Gestion et alarme,Brix - Network Probe,DPSW,Mise en service,"6,3",5,0,6
+176,Gestion et alarme,Brix - Network Probe,DESN,Décomission,0,0,0,
+177,Gestion et alarme,Brix - Network Probe,DPSW,Décomission,0,0,0,
+178,Gestion et alarme,Corrections Alarmes,DNWM,Correction Type 1 (100 +),45,1,0,
+179,Gestion et alarme,Corrections Alarmes,DNWM,Correction Type 2 (50 - 100),0,0,0,
+180,Gestion et alarme,Corrections Alarmes,DNWM,Correction Type 3 (26- 49),0,0,0,
+181,Gestion et alarme,Corrections Alarmes,DNWM,Correction Type 4 (1- 25),0,0,0,
+182,Gestion et alarme,Juniper - EX2200,DESN,Mise en service,0,0,0,
+183,Gestion et alarme,Juniper - EX2200,DPSW,Mise en service,0,0,0,
+184,Gestion et alarme,Juniper - EX2200,DESN,Décomission,5,8,0,0
+185,Gestion et alarme,Juniper - EX2200,DPSW,Décomission,"7,7",12,0,
+186,Gestion et alarme,Juniper - EX2300,DESN,Mise en service,"4,2",6,0,6
+187,Gestion et alarme,Juniper - EX2300,DPSW,Mise en service,"9,5",7,0,11
+188,Gestion et alarme,Juniper - EX2300,DESN,Décomission,0,0,0,
+189,Gestion et alarme,Juniper - EX2300,DPSW,Décomission,0,0,0,
+190,Gestion et alarme,Juniper - EX2300,DESN,Ajout de facilité,"5,7",6,0,3
+191,Gestion et alarme,Juniper - EX2300,DPSW,Ajout de facilité,"6,7",13,0,27
+192,Gestion et alarme,Juniper - EX4300,DESN,Mise en service,"7,7",13,0,7
+193,Gestion et alarme,Juniper - EX4300,DPSW,Mise en service,9,18,0,
+194,Gestion et alarme,Juniper - EX4300,DESN,Décomission,0,0,0,
+195,Gestion et alarme,Juniper - EX4300,DPSW,Décomission,0,0,0,
+196,Gestion et alarme,Lantronix - SLC8000,DESN,Mise en service,4,6,0,
+197,Gestion et alarme,Lantronix - SLC8000,DPSW,Mise en service,"5,5",16,0,
+198,Gestion et alarme,Lantronix - SLC8000,DESN,Décomission,0,0,0,
+199,Gestion et alarme,Lantronix - SLC8000,DPSW,Décomission,0,0,0,
+200,Gestion et alarme,Legacy - Gestion et alarme,DESN,Décomission,"1,9",4,0,2
+201,Gestion et alarme,Legacy - Gestion et alarme,DPSW,Décomission,"1,4",2,0,
+202,Gestion et alarme,MicroSemi - S600,DESN,Mise en service,"4,8",5,0,10
+203,Gestion et alarme,MicroSemi - S600,DNWM,Mise en service,"12,5",18,0,12
+204,Gestion et alarme,MicroSemi - S600,DESN,Décomission,0,0,0,
+205,Gestion et alarme,MicroSemi - S600,DNWM,Décomission,0,0,0,
+206,Gestion et alarme,MicroSemi - TH5550,DESN,Mise en service,0,0,0,
+207,Gestion et alarme,MicroSemi - TH5550,DNWM,Mise en service,0,0,0,
+208,Gestion et alarme,MicroSemi - TH5550,DESN,Décomission,0,0,0,
+209,Gestion et alarme,MicroSemi - TH5550,DNWM,Décomission,0,0,0,
+210,Gestion et alarme,MicroSemi - TP4100,DESN,Mise en service,"6,2",7,0,13
+211,Gestion et alarme,MicroSemi - TP4100,DNWM,Mise en service,"6,5",8,0,13
+212,Gestion et alarme,MicroSemi - TP4100,DESN,Décomission,0,0,0,
+213,Gestion et alarme,MicroSemi - TP4100,DNWM,Décomission,0,0,0,
+214,Gestion et alarme,MicroSemi - TS3550,DESN,Mise en service,"9,5",10,0,4
+215,Gestion et alarme,MicroSemi - TS3550,DNWM,Mise en service,"9,4",12,0,0
+216,Gestion et alarme,MicroSemi - TS3550,DESN,Décomission,0,0,0,
+217,Gestion et alarme,MicroSemi - TS3550,DNWM,Décomission,0,0,0,
+218,Gestion et alarme,MRV - LX4000,DESN,Mise en service,"1,2",3,0,1
+219,Gestion et alarme,MRV - LX4000,DPSW,Mise en service,7,5,0,11
+220,Gestion et alarme,MRV - LX4000,DESN,Décomission,0,0,0,
+221,Gestion et alarme,MRV - LX4000,DPSW,Décomission,0,0,0,
+222,Gestion et alarme,Multi,DESN,Spare,"1,1",2,0,1
+223,Gestion et alarme,Multi,DPSW,Spare,2,3,0,3
+224,Gestion et alarme,RTU / Software,DESN,RTU / Software,0,0,0,0
+225,Gestion et alarme,Westronics - WS1000,DESN,Mise en service,0,0,0,
+226,Gestion et alarme,Westronics - WS1000,DNWM,Mise en service,0,0,0,
+227,Gestion et alarme,Westronics - WS1000,DESN,Décomission,0,0,0,0
+228,Gestion et alarme,Westronics - WS1000,DNWM,Décomission,2,1,0,2
+229,Gestion et alarme,Westronics - WS1000,DESN,Ajout de carte,"2,2",3,0,
+230,Gestion et alarme,Westronics - WS1000,DNWM,Ajout de carte,6,5,0,
+231,Gestion et alarme,Westronics - WS1000,DESN,Enlèvement de carte,0,0,0,
+232,Gestion et alarme,Westronics - WS1000,DNWM,Enlèvement de carte,0,0,0,
+233,Gestion et alarme,Westronics - WS3500,DESN,Mise en service,"2,4",3,0,2
+234,Gestion et alarme,Westronics - WS3500,DNWM,Mise en service,"8,8",10,0,21
+235,Gestion et alarme,Westronics - WS3500,DESN,Décomission,0,0,0,
+236,Gestion et alarme,Westronics - WS3500,DNWM,Décomission,0,0,0,
+237,Gestion et alarme,Westronics - WS3500,DESN,Ajout de carte,0,0,0,
+238,Gestion et alarme,Westronics - WS3500,DNWM,Ajout de carte,0,0,0,
+239,IP,Netscout - PFS Switch,DESN,Ajout de facilité,,0,0,0
+240,IP,Alcatel - 7450,DESN,Mise en service,"2,9",3,0,3
+241,IP,Alcatel - 7450,DPSW,Mise en service,"5,6",4,0,6
+242,IP,Alcatel - 7450,DESN,Ajout de carte,"8,8",11,0,5
+243,IP,Alcatel - 7450,DPSW,Ajout de carte,"5,2",7,0,6
+244,IP,Alcatel - 7450,DESN,Ajout de facilité,"2,6",2,0,3
+245,IP,Alcatel - 7450,DPSW,Ajout de facilité,"7,7",8,0,4
+246,IP,Alcatel - 7450,DESN,Enlèvement de carte,0,0,0,
+247,IP,Alcatel - 7450,DPSW,Enlèvement de carte,0,0,0,
+248,IP,Alcatel - 7450,DESN,Enlèvement de facilité,0,0,0,
+249,IP,Alcatel - 7450,DPSW,Enlèvement de facilité,0,0,0,
+250,IP,Alcatel - 7450,DESN,Décomission,0,0,0,
+251,IP,Alcatel - 7450,DPSW,Décomission,0,0,0,
+252,IP,Cisco - 5501/5502,DESN,Mise en service,"22,7",20,0,23
+253,IP,Cisco - 5501/5502,DPSW,Mise en service,20,13,0,21
+254,IP,Cisco - 5501/5502,DESN,Ajout de carte,"10,5",11,0,11
+255,IP,Cisco - 5501/5502,DPSW,Ajout de carte,"8,8",9,0,0
+256,IP,Cisco - 5501/5502,DESN,Ajout de facilité,3,4,0,2
+257,IP,Cisco - 5501/5502,DPSW,Ajout de facilité,"4,3",4,0,4
+258,IP,Cisco - 5501/5502,DESN,Enlèvement de carte,0,0,0,
+259,IP,Cisco - 5501/5502,DPSW,Enlèvement de carte,0,0,0,
+260,IP,Cisco - 5501/5502,DESN,Enlèvement de facilité,"3,8",1,0,
+261,IP,Cisco - 5501/5502,DPSW,Enlèvement de facilité,"3,8",1,0,
+262,IP,Cisco - 5501/5502,DESN,Décomission,0,0,0,
+263,IP,Cisco - 5501/5502,DPSW,Décomission,0,0,0,
+264,IP,Cisco - 7609,DESN,Mise en service,"9,5",10,0,10
+265,IP,Cisco - 7609,DPSW,Mise en service,10,15,0,10
+266,IP,Cisco - 7609,DESN,Ajout de carte,0,0,0,
+267,IP,Cisco - 7609,DPSW,Ajout de carte,0,0,0,
+268,IP,Cisco - 7609,DESN,Ajout de facilité,0,0,0,
+269,IP,Cisco - 7609,DPSW,Ajout de facilité,0,0,0,
+270,IP,Cisco - 7609,DESN,Enlèvement de carte,0,0,0,
+271,IP,Cisco - 7609,DPSW,Enlèvement de carte,0,0,0,
+272,IP,Cisco - 7609,DESN,Enlèvement de facilité,0,0,0,
+273,IP,Cisco - 7609,DPSW,Enlèvement de facilité,0,0,0,
+274,IP,Cisco - 7609,DESN,Décomission,0,0,0,
+275,IP,Cisco - 7609,DPSW,Décomission,0,0,0,
+276,IP,Cisco - 9300,DESN,Mise en service,0,0,0,
+277,IP,Cisco - 9300,DPSW,Mise en service,15,10,0,
+278,IP,Cisco - 9300,DESN,Décomission,0,0,0,
+279,IP,Cisco - 9300,DPSW,Décomission,0,0,0,
+280,IP,Cisco - 9400,DESN,Mise en service,0,0,0,
+281,IP,Cisco - 9400,DPSW,Mise en service,15,10,0,
+282,IP,Cisco - 9400,DESN,Décomission,0,0,0,
+283,IP,Cisco - 9400,DPSW,Décomission,0,0,0,
+284,IP,Cisco - ASR920,DESN,Mise en service,0,0,0,
+285,IP,Cisco - ASR920,DPSW,Mise en service,"17,1",12,0,25
+286,IP,Cisco - ASR920,DESN,Décomission,0,0,0,
+287,IP,Cisco - ASR920,DPSW,Décomission,0,0,0,
+288,IP,Clean Sweep,DPSW,Clean Sweep - Enlèvement,"8,3",8,0,2
+289,IP,Juniper - MX480,DESN,Mise en service,"11,6",10,0,12
+290,IP,Juniper - MX480,DPSW,Mise en service,"12,3",14,0,9
+291,IP,Juniper - MX480,DESN,Ajout de carte,"1,9",4,0,3
+292,IP,Juniper - MX480,DPSW,Ajout de carte,"1,9",4,0,2
+293,IP,Juniper - MX480,DESN,Ajout de facilité,1,1,0,
+294,IP,Juniper - MX480,DPSW,Ajout de facilité,"7,5",8,0,
+295,IP,Juniper - MX480,DESN,Enlèvement de carte,0,0,0,
+296,IP,Juniper - MX480,DPSW,Enlèvement de carte,0,0,0,
+297,IP,Juniper - MX480,DESN,Enlèvement de facilité,0,0,0,
+298,IP,Juniper - MX480,DPSW,Enlèvement de facilité,0,0,0,
+299,IP,Juniper - MX480,DESN,Décomission,0,0,0,
+300,IP,Juniper - MX480,DPSW,Décomission,0,0,0,
+301,IP,Juniper - MX960,DESN,Mise en service,12,12,0,12
+302,IP,Juniper - MX960,DPSW,Mise en service,"13,3",14,0,13
+303,IP,Juniper - MX960,DESN,Ajout de carte,"9,2",9,0,5
+304,IP,Juniper - MX960,DPSW,Ajout de carte,"5,8",6,0,2
+305,IP,Juniper - MX960,DESN,Ajout de facilité,"3,9",4,0,4
+306,IP,Juniper - MX960,DPSW,Ajout de facilité,"3,8",5,0,3
+307,IP,Juniper - MX960,DESN,Enlèvement de carte,"3,4",3,0,5
+308,IP,Juniper - MX960,DPSW,Enlèvement de carte,"4,6",4,0,5
+309,IP,Juniper - MX960,DESN,Enlèvement de facilité,"2,5",3,0,3
+310,IP,Juniper - MX960,DPSW,Enlèvement de facilité,"2,4",3,0,3
+311,IP,Juniper - MX960,DESN,Décomission,0,0,0,
+312,IP,Juniper - MX960,DPSW,Décomission,0,0,0,
+313,IP,Juniper - PTX10K1,DESN,Mise en service,"13,2",19,0,0
+314,IP,Juniper - PTX10K1,DPSW,Mise en service,9,16,0,0
+315,IP,Juniper - PTX10K1,DESN,Décomission,0,0,0,
+316,IP,Juniper - PTX10K1,DPSW,Décomission,0,0,0,
+317,IP,Juniper - PTX10K4,DESN,Mise en service,"17,5",20,0,7
+318,IP,Juniper - PTX10K4,DPSW,Mise en service,"16,3",16,0,0
+319,IP,Juniper - PTX10K4,DESN,Ajout de carte,0,0,0,
+320,IP,Juniper - PTX10K4,DPSW,Ajout de carte,0,0,0,
+321,IP,Juniper - PTX10K4,DESN,Ajout de facilité,19,19,0,
+322,IP,Juniper - PTX10K4,DPSW,Ajout de facilité,"9,8",9,0,
+323,IP,Juniper - PTX10K4,DESN,Enlèvement de carte,0,0,0,
+324,IP,Juniper - PTX10K4,DPSW,Enlèvement de carte,0,0,0,
+325,IP,Juniper - PTX10K4,DESN,Enlèvement de facilité,0,0,0,
+326,IP,Juniper - PTX10K4,DPSW,Enlèvement de facilité,0,0,0,
+327,IP,Juniper - PTX10K4,DESN,Décomission,0,0,0,
+328,IP,Juniper - PTX10K4,DPSW,Décomission,0,0,0,
+329,IP,Juniper - PTX5000,DESN,Mise en service,0,0,0,
+330,IP,Juniper - PTX5000,DPSW,Mise en service,0,0,0,
+331,IP,Juniper - PTX5000,DESN,Ajout de carte,"5,1",6,0,5
+332,IP,Juniper - PTX5000,DPSW,Ajout de carte,4,4,0,4
+333,IP,Juniper - PTX5000,DESN,Ajout de facilité,2,6,0,
+334,IP,Juniper - PTX5000,DPSW,Ajout de facilité,"1,9",6,0,
+335,IP,Juniper - PTX5000,DESN,Enlèvement de carte,0,0,0,
+336,IP,Juniper - PTX5000,DPSW,Enlèvement de carte,0,0,0,
+337,IP,Juniper - PTX5000,DESN,Enlèvement de facilité,0,0,0,
+338,IP,Juniper - PTX5000,DPSW,Enlèvement de facilité,0,0,0,
+339,IP,Juniper - PTX5000,DESN,Décomission,0,0,0,
+340,IP,Juniper - PTX5000,DPSW,Décomission,0,0,0,
+341,IP,Juniper - T4000,DESN,Mise en service,0,0,0,0
+342,IP,Juniper - T4000,DPSW,Mise en service,"7,5",5,0,8
+343,IP,Juniper - T4000,DESN,Ajout de carte,0,0,0,
+344,IP,Juniper - T4000,DPSW,Ajout de carte,0,0,0,
+345,IP,Juniper - T4000,DESN,Ajout de facilité,0,0,0,
+346,IP,Juniper - T4000,DPSW,Ajout de facilité,0,0,0,
+347,IP,Juniper - T4000,DESN,Enlèvement de carte,0,0,0,
+348,IP,Juniper - T4000,DPSW,Enlèvement de carte,0,0,0,
+349,IP,Juniper - T4000,DESN,Enlèvement de facilité,0,0,0,
+350,IP,Juniper - T4000,DPSW,Enlèvement de facilité,0,0,0,
+351,IP,Juniper - T4000,DESN,Décomission,0,0,0,
+352,IP,Juniper - T4000,DPSW,Décomission,0,0,0,
+353,IP,Legacy - IP,DESN,Décomission,"3,6",5,0,10
+354,IP,Legacy - IP,DPSW,Décomission,"6,3",6,0,28
+355,IP,Multi,DPSW,Migration de circuits,5,7,0,
+356,IP,Multi,DESN,Bon de commande (Sans Matériel),"6,6",7,0,
+357,IP,Multi,DPSW,Bon de commande (Sans Matériel),"3,5",4,0,
+358,IP,Multi,DESN,Spare,"3,1",4,0,3
+359,IP,Multi,DPSW,Spare,"1,5",3,0,1
+360,IP,Multi,DESN,Migration de circuits,"2,7",4,0,
+361,IP,MXK-319,DESN,Mise en service,0,0,0,
+362,IP,MXK-319,DPSW,Mise en service,0,0,0,
+363,IP,MXK-319,DESN,Ajout de carte,0,0,0,
+364,IP,MXK-319,DPSW,Ajout de carte,0,0,0,
+365,IP,MXK-319,DESN,Ajout de facilité,0,0,0,
+366,IP,MXK-319,DPSW,Ajout de facilité,0,0,0,
+367,IP,MXK-319,DESN,Enlèvement de carte,0,0,0,
+368,IP,MXK-319,DPSW,Enlèvement de carte,0,0,0,
+369,IP,MXK-319,DESN,Enlèvement de facilité,0,0,0,
+370,IP,MXK-319,DPSW,Enlèvement de facilité,0,0,0,
+371,IP,MXK-319,DESN,Décomission,0,0,0,
+372,IP,MXK-319,DPSW,Décomission,0,0,0,
+373,IP,MXK-823,DESN,Mise en service,0,0,0,
+374,IP,MXK-823,DPSW,Mise en service,0,0,0,
+375,IP,MXK-823,DESN,Ajout de carte,0,0,0,
+376,IP,MXK-823,DPSW,Ajout de carte,0,0,0,
+377,IP,MXK-823,DESN,Ajout de facilité,0,0,0,
+378,IP,MXK-823,DPSW,Ajout de facilité,0,0,0,
+379,IP,MXK-823,DESN,Enlèvement de carte,0,0,0,
+380,IP,MXK-823,DPSW,Enlèvement de carte,0,0,0,
+381,IP,MXK-823,DESN,Enlèvement de facilité,0,0,0,
+382,IP,MXK-823,DPSW,Enlèvement de facilité,0,0,0,
+383,IP,MXK-823,DESN,Décomission,0,0,0,
+384,IP,MXK-823,DPSW,Décomission,0,0,0,
+385,IP,Netscout - PFS Switch,DESN,Mise en service,"20,6",21,0,21
+386,IP,Netscout - PFS Switch,DPSW,Mise en service,"15,7",20,0,22
+387,IP,Netscout - PFS Switch,DESN,Décomission,0,0,0,
+388,IP,Netscout - PFS Switch,DPSW,Décomission,0,0,0,
+389,IP,NFV - Cabinet de serveurs,DESN,Mise en service,"1,7",12,0,
+390,IP,NFV - Cabinet de serveurs,DPSW,Mise en service,"3,9",14,0,
+391,IP,NFV - Cabinet de serveurs,DESN,Décomission,0,0,0,
+392,IP,NFV - Cabinet de serveurs,DPSW,Décomission,0,0,0,
+393,IP,NNI,DESN,Mise en service,"8,9",8,0,8
+394,IP,NNI,DPSW,Mise en service,"3,7",7,0,3
+395,IP,NNI,DESN,Ajout de carte,0,0,0,
+396,IP,NNI,DPSW,Ajout de carte,0,0,0,
+397,IP,NNI,DESN,Ajout de facilité,"5,7",6,0,7
+398,IP,NNI,DPSW,Ajout de facilité,"10,5",13,0,17
+399,IP,NNI,DESN,Enlèvement de carte,0,0,0,
+400,IP,NNI,DPSW,Enlèvement de carte,0,0,0,
+401,IP,NNI,DESN,Enlèvement de facilité,2,3,0,
+402,IP,NNI,DPSW,Enlèvement de facilité,"3,5",4,0,
+403,IP,NNI,DESN,Décomission,0,0,0,
+404,IP,NNI,DPSW,Décomission,0,0,0,
+405,IP,Nokia  - 7750,DESN,Mise en service,"8,3",16,0,10
+406,IP,Nokia  - 7750,DPSW,Mise en service,"16,9",16,0,14
+407,IP,Nokia  - 7750,DESN,Ajout de carte,"4,4",5,0,4
+408,IP,Nokia  - 7750,DPSW,Ajout de carte,"4,7",5,0,4
+409,IP,Nokia  - 7750,DESN,Ajout de facilité,"7,5",7,0,4
+410,IP,Nokia  - 7750,DPSW,Ajout de facilité,"11,1",8,0,3
+411,IP,Nokia  - 7750,DESN,Enlèvement de carte,0,0,0,6
+412,IP,Nokia  - 7750,DPSW,Enlèvement de carte,0,0,0,5
+413,IP,Nokia  - 7750,DESN,Enlèvement de facilité,"3,3",2,0,2
+414,IP,Nokia  - 7750,DPSW,Enlèvement de facilité,"4,2",4,0,3
+415,IP,Nokia  - 7750,DESN,Décomission,"4,9",0,0,5
+416,IP,Nokia  - 7750,DPSW,Décomission,"7,1",0,0,7
+417,IP,Nokia - 7950,DESN,Mise en service,0,0,0,
+418,IP,Nokia - 7950,DPSW,Mise en service,0,0,0,
+419,IP,Nokia - 7950,DESN,Ajout de carte,0,0,0,
+420,IP,Nokia - 7950,DPSW,Ajout de carte,0,0,0,
+421,IP,Nokia - 7950,DESN,Ajout de facilité,"9,5",5,0,
+422,IP,Nokia - 7950,DPSW,Ajout de facilité,"6,5",5,0,
+423,IP,Nokia - 7950,DESN,Enlèvement de carte,0,0,0,
+424,IP,Nokia - 7950,DPSW,Enlèvement de carte,0,0,0,
+425,IP,Nokia - 7950,DESN,Enlèvement de facilité,0,0,0,
+426,IP,Nokia - 7950,DPSW,Enlèvement de facilité,0,0,0,
+427,IP,Nokia - 7950,DESN,Décomission,0,0,0,
+428,IP,Nokia - 7950,DPSW,Décomission,0,0,0,
+429,IP,Reliability Assessment,DESN,Reliability Assessment,"6,6",9,0,3
+430,IP,Reliability Assessment,DPSW,Reliability Assessment,"6,4",6,0,6
+431,IP,RTU / Software,DESN,RTU / Software,"0,6",3,0,1
+432,IP,Serveur,DESN,Mise en service,"13,6",15,0,13
+433,IP,Serveur,DPSW,Mise en service,"19,4",18,0,18
+434,IP,Serveur,DESN,Ajout de carte,"17,1",15,0,17
+435,IP,Serveur,DPSW,Ajout de carte,"6,1",7,0,6
+436,IP,Serveur,DESN,Décomission,"5,9",1,0,
+437,IP,Serveur,DPSW,Décomission,"4,3",5,0,
+438,IP,Serveur,DESN,Enlèvement de carte,0,0,0,
+439,IP,Serveur,DPSW,Enlèvement de carte,0,0,0,
+440,IP,VSS Network TAP,DESN,Mise en service,"14,5",12,0,17
+441,IP,VSS Network TAP,DPSW,Mise en service,"9,4",9,0,13
+442,IP,VSS Network TAP,DESN,Décomission,0,0,0,
+443,IP,VSS Network TAP,DPSW,Décomission,0,0,0,
+444,IP,Juniper - SRX 5800,DESN,Mise en service,"13,2",14,0,0
+445,IP,Juniper - SRX 5800,DPSW,Mise en service,"15,3",12,0,0
+446,IP,Juniper - SRX 5800,DESN,Ajout de facilité,10,6,0,0
+447,IP,Juniper - SRX 5800,DPSW,Ajout de facilité,"6,5",6,0,0
+448,IP,Alcatel - 7750,DESN,Mise en service,"8,9",12,0,0
+449,IP,Alcatel - 7750,DPSW,Mise en service,"18,4",17,0,0
+450,IP,Alcatel - 7750,DESN,Ajout de carte,"4,1",5,0,0
+451,IP,Alcatel - 7750,DPSW,Ajout de carte,"3,5",5,0,0
+452,IP,Alcatel - 7750,DESN,Ajout de facilité,"2,1",3,0,0
+453,IP,Alcatel - 7750,DPSW,Ajout de facilité,"3,4",4,0,0
+454,IP,Alcatel - 7750,DESN,Enlèvement de carte,"6,6",2,0,0
+455,IP,Alcatel - 7750,DPSW,Enlèvement de carte,"5,4",2,0,0
+456,IP,Alcatel - 7750,DESN,Enlèvement de facilité,"1,4",3,0,0
+457,IP,Alcatel - 7750,DPSW,Enlèvement de facilité,"2,5",2,0,0
+458,IP,Alcatel - 7750,DESN,Décomission,0,0,0,0
+459,IP,Alcatel - 7750,DPSW,Décomission,0,0,0,0
+460,IP,Juniper - MX10,DESN,Ajout de facilité,0,0,0,0
+461,IP,Juniper - MX10,DPSW,Ajout de facilité,0,0,0,0
+462,IP,Juniper - MX10,DESN,Enlèvement de carte,0,0,0,0
+463,IP,Juniper - MX10,DPSW,Enlèvement de carte,0,0,0,0
+464,IP,Juniper - MX10,DESN,Enlèvement de facilité,0,0,0,0
+465,IP,Juniper - MX10,DPSW,Enlèvement de facilité,0,0,0,0
+466,IP,Juniper - MX10,DESN,Décomission,0,0,0,0
+467,IP,Juniper - MX10,DPSW,Décomission,0,0,0,0
+468,IP,Juniper - MX10,DESN,Ajout de carte,"2,2",2,0,0
+469,IP,Juniper - MX10,DPSW,Ajout de carte,"3,5",3,0,0
+470,IP,Juniper - QFX5120,DESN,Mise en service,10,4,0,0
+471,IP,Juniper - QFX5120,DPSW,Mise en service,"12,5",15,0,0
+472,IP,Cisco - FPR 4145,DESN,Mise en service,10,4,0,0
+473,IP,Cisco - FPR 4145,DPSW,Mise en service,"10,8",15,0,0
+474,IP,Juniper - QFX5120,DESN,Ajout de facilité,5,3,0,0
+475,IP,Juniper - QFX5120,DPSW,Ajout de facilité,"4,4",9,0,0
+476,IP,IneoQuest,DESN,Mise en service,3,1,0,0
+477,IP,IneoQuest,DPSW,Mise en service,6,2,0,0
+478,IP,IneoQuest,DESN,Décomission,0,0,0,0
+479,IP,IneoQuest,DPSW,Décomission,0,0,0,0
+480,IP,Okeford 1500,DESN,Décomission,5,8,0,0
+481,IP,Okeford 1500,DPSW,Décomission,"4,5",5,0,0
+482,IP,Juniper - T1600,DESN,Ajout de facilité,"5,3",6,0,0
+483,IP,Juniper - T1600,DPSW,Ajout de facilité,"2,5",10,0,0
+484,IP,Juniper - PTX10K1,DESN,Ajout de carte,0,0,0,0
+485,IP,Juniper - PTX10K1,DPSW,Ajout de carte,0,0,0,0
+486,IP,Juniper - PTX10K1,DESN,Ajout de facilité,"42,8",45,0,0
+487,IP,Juniper - PTX10K1,DPSW,Ajout de facilité,"15,5",15,0,0
+488,IP,Juniper - PTX10K1,DESN,Enlèvement de carte,0,0,0,0
+489,IP,Juniper - PTX10K1,DPSW,Enlèvement de carte,0,0,0,0
+490,IP,Juniper - PTX10K1,DESN,Enlèvement de facilité,0,0,0,0
+491,IP,Juniper - PTX10K1,DPSW,Enlèvement de facilité,0,0,0,0
+492,IP,Cisco - ASR5000,DESN,Mise en service,15,16,0,0
+493,IP,Cisco - ASR5000,DPSW,Mise en service,30,50,0,0
+494,IP,Cisco - ASR5000,DESN,Décomission,0,0,0,0
+495,IP,Cisco - ASR5000,DPSW,Décomission,0,0,0,0
+496,IP,Palo Alto PA-7000,DESN,Mise en service,15,80,0,0
+497,IP,Palo Alto PA-7000,DPSW,Mise en service,0,0,0,0
+498,IP,Palo Alto PA-7000,DESN,Décomission,0,0,0,0
+499,IP,Palo Alto PA-7000,DPSW,Décomission,0,0,0,0
+500,IP,Palo Alto PA-7000,DESN,Ajout de facilité,0,0,0,0
+501,IP,Palo Alto PA-7000,DPSW,Ajout de facilité,0,0,0,0
+502,IP,Palo Alto PA-7000,DESN,Ajout de carte,0,0,0,0
+503,IP,Palo Alto PA-7000,DPSW,Ajout de carte,0,0,0,0
+504,IP,Palo Alto PA-7000,DESN,Enlèvement de facilité,0,0,0,0
+505,IP,Palo Alto PA-7000,DPSW,Enlèvement de facilité,0,0,0,0
+506,IP,Palo Alto PA-7000,DESN,Enlèvement de carte,0,0,0,0
+507,IP,Palo Alto PA-7000,DPSW,Enlèvement de carte,0,0,0,0
+508,Micro-onde,Compresseur/Deshydrateur,DESN,Mise en service,"0,9",2,0,1
+509,Micro-onde,Compresseur/Deshydrateur,DFOT,Mise en service,"1,1",5,0,1
+510,Micro-onde,Compresseur/Deshydrateur,DESN,Décomission,0,0,0,
+511,Micro-onde,Compresseur/Deshydrateur,DFOT,Décomission,0,0,0,
+512,Micro-onde,Legacy - Micro Onde,DESN,Décomission,0,0,0,
+513,Micro-onde,Legacy - Micro Onde,DFOT,Décomission,"8,5",7,0,10
+514,Micro-onde,Multi,DUNC,Spare,"3,8",6,0,
+515,Micro-onde,Multi,SRVY,Site Survey,2,0,0,
+516,Micro-onde,Nokia - MPR9500,DESN,Mise en service,"17,2",26,0,
+517,Micro-onde,Nokia - MPR9500,DFOT,Mise en service,"28,6",24,0,37
+518,Micro-onde,Nokia - MPR9500,DESN,Ajout de carte,0,0,0,
+519,Micro-onde,Nokia - MPR9500,DFOT,Ajout de carte,0,0,0,
+520,Micro-onde,Nokia - MPR9500,DESN,Ajout de facilité,0,0,0,
+521,Micro-onde,Nokia - MPR9500,DFOT,Ajout de facilité,0,0,0,
+522,Micro-onde,Nokia - MPR9500,DESN,Enlèvement de carte,0,0,0,
+523,Micro-onde,Nokia - MPR9500,DFOT,Enlèvement de carte,0,0,0,
+524,Micro-onde,Nokia - MPR9500,DESN,Enlèvement de facilité,0,0,0,
+525,Micro-onde,Nokia - MPR9500,DFOT,Enlèvement de facilité,0,0,0,
+526,Micro-onde,Nokia - MPR9500,DESN,Décomission,0,0,0,
+527,Micro-onde,Nokia - MPR9500,DFOT,Décomission,0,0,0,
+528,Micro-onde,RTU / Software,DESN,RTU / Software,0,0,0,0
+529,Pouvoir,Atelier Energie - Gros,DESN,Mise en service,0,0,0,
+530,Pouvoir,Atelier Energie - Gros,DPDC,Mise en service,0,0,0,
+531,Pouvoir,Atelier Energie - Gros,DESN,Décomission,0,0,0,
+532,Pouvoir,Atelier Energie - Gros,DPDC,Décomission,0,0,0,
+533,Pouvoir,Atelier Energie - Moyen,DESN,Mise en service,"5,1",5,0,4
+534,Pouvoir,Atelier Energie - Moyen,DPDC,Mise en service,"9,9",14,0,12
+535,Pouvoir,Atelier Energie - Moyen,DESN,Décomission,0,0,0,
+536,Pouvoir,Atelier Energie - Moyen,DPDC,Décomission,0,0,0,
+537,Pouvoir,Atelier Energie - Petit,DESN,Mise en service,0,0,0,
+538,Pouvoir,Atelier Energie - Petit,DPDC,Mise en service,0,0,0,
+539,Pouvoir,Atelier Energie - Petit,DESN,Décomission,0,0,0,
+540,Pouvoir,Atelier Energie - Petit,DPDC,Décomission,0,0,0,
+541,Pouvoir,Batterie - Plomb/Acide,DESN,Mise en service,"2,5",10,0,
+542,Pouvoir,Batterie - Plomb/Acide,DBAT,Mise en service,0,0,0,
+543,Pouvoir,Batterie - Plomb/Acide,DESN,Ajout de cellule,4,4,0,4
+544,Pouvoir,Batterie - Plomb/Acide,DBAT,Ajout de cellule,7,5,0,6
+545,Pouvoir,Batterie - Plomb/Acide,DESN,Décomission,0,0,0,
+546,Pouvoir,Batterie - Plomb/Acide,DBAT,Décomission,0,0,0,
+547,Pouvoir,Batterie - TEL12/180,DESN,Mise en service,"3,6",3,0,4
+548,Pouvoir,Batterie - TEL12/180,DBAT,Mise en service,"10,6",7,0,8
+549,Pouvoir,Batterie - TEL12/180,DESN,Ajout de cellule,"3,3",3,0,2
+550,Pouvoir,Batterie - TEL12/180,DBAT,Ajout de cellule,"5,5",8,0,0
+551,Pouvoir,Batterie - TEL12/180,DESN,Décomission,0,0,0,
+552,Pouvoir,Batterie - TEL12/180,DBAT,Décomission,0,0,0,
+553,Pouvoir,Batterie - VRLA,DESN,Mise en service,"5,3",7,0,
+554,Pouvoir,Batterie - VRLA,DBAT,Mise en service,"16,3",20,0,0
+555,Pouvoir,Batterie - VRLA,DESN,Ajout de cellule,"3,8",5,0,3
+556,Pouvoir,Batterie - VRLA,DBAT,Ajout de cellule,"8,3",9,0,7
+557,Pouvoir,Batterie - VRLA,DESN,Décomission,0,0,0,
+558,Pouvoir,Batterie - VRLA,DBAT,Décomission,0,0,0,
+559,Pouvoir,BDFB,DESN,Mise en service,"10,8",26,0,4
+560,Pouvoir,BDFB,DPDC,Mise en service,"16,3",28,0,14
+561,Pouvoir,BDFB,DESN,Ajout de module,0,0,0,
+562,Pouvoir,BDFB,DPDC,Ajout de module,0,0,0,
+563,Pouvoir,BDFB,DESN,Décomission,0,0,0,
+564,Pouvoir,BDFB,DPDC,Décomission,0,0,0,
+565,Pouvoir,Legacy - Pouvoir,DESN,Décomission,0,0,0,0
+566,Pouvoir,Legacy - Pouvoir,DPDC,Décomission,"7,8",3,0,13
+567,Pouvoir,Multi,DFOT,Spare,"3,5",4,0,
+568,Pouvoir,Panneau distribution DC,DESN,Mise en service,0,0,0,
+569,Pouvoir,Panneau distribution DC,DPDC,Mise en service,"8,3",6,0,8
+570,Pouvoir,Panneau distribution DC,DESN,Décomission,0,0,0,
+571,Pouvoir,Panneau distribution DC,DPDC,Décomission,0,0,0,
+572,Pouvoir,Redresseur,DESN,Mise en service,"3,2",4,0,2
+573,Pouvoir,Redresseur,DPDC,Mise en service,"9,9",10,0,8
+574,Pouvoir,Redresseur,DESN,Décomission,0,0,0,
+575,Pouvoir,Redresseur,DPDC,Décomission,0,0,0,
+576,Pouvoir,Multi,SRVY,Site Survey,"33,2",35,0,0
+577,TM,BBU,DESN,Mise en service,"8,9",10,0,8
+578,TM,BBU,DPSW,Mise en service,"22,1",23,0,12
+579,TM,BBU,DESN,Décomission,0,0,0,
+580,TM,BBU,DPSW,Décomission,0,0,0,
+581,TM,Multi,DPSW,Migration de circuits,"5,1",7,0,
+582,TM,Multi,DESN,Bon de commande (Sans Matériel),"2,5",3,0,1
+583,TM,Multi,DPSW,Bon de commande (Sans Matériel),"7,4",6,0,3
+584,TM,Multi,DESN,Ajout de facilité,"0,6",3,0,1
+585,TM,Multi,DPSW,Ajout de facilité,"4,1",5,0,4
+586,TM,Multi,DESN,Migration de circuits,6,7,0,
+587,TM,Multi,DESN,Enlèvement de facilité,"3,8",4,0,4
+588,TM,Multi,DPSW,Enlèvement de facilité,"6,9",3,0,7
+589,TM,GPS,DESN,Mise en service,"1,9",10,0,0
+590,TM,GPS,DPSW,Mise en service,0,0,0,0
+591,TM,GPS,DESN,Décomission,0,0,0,0
+592,TM,GPS,DPSW,Décomission,0,0,0,0
+593,Transport,Alcatel - 1612,DESN,Décomission,0,0,0,
+594,Transport,Alcatel - 1612,DFOT,Décomission,0,0,0,
+595,Transport,Ciena - 3920,DESN,Mise en service,0,0,0,
+596,Transport,Ciena - 3920,DFOT,Mise en service,0,0,0,
+597,Transport,Ciena - 3920,DESN,Décomission,0,0,0,
+598,Transport,Ciena - 3920,DFOT,Décomission,0,0,0,
+599,Transport,Ciena - 3930,DESN,Mise en service,0,0,0,
+600,Transport,Ciena - 3930,DFOT,Mise en service,0,0,0,
+601,Transport,Ciena - 3930,DESN,Décomission,0,0,0,
+602,Transport,Ciena - 3930,DFOT,Décomission,0,0,0,
+603,Transport,Ciena - 5410,DESN,Mise en service,"2,8",9,0,3
+604,Transport,Ciena - 5410,DFOT,Mise en service,"1,9",9,0,4
+605,Transport,Ciena - 5410,DESN,Ajout de carte,"1,8",4,0,
+606,Transport,Ciena - 5410,DFOT,Ajout de carte,0,0,0,
+607,Transport,Ciena - 5410,DESN,Ajout de facilité,0,0,0,
+608,Transport,Ciena - 5410,DFOT,Ajout de facilité,0,0,0,
+609,Transport,Ciena - 5410,DESN,Enlèvement de carte,0,0,0,
+610,Transport,Ciena - 5410,DFOT,Enlèvement de carte,0,0,0,
+611,Transport,Ciena - 5410,DESN,Enlèvement de facilité,0,0,0,
+612,Transport,Ciena - 5410,DFOT,Enlèvement de facilité,0,0,0,
+613,Transport,Ciena - 5410,DESN,Décomission,0,0,0,
+614,Transport,Ciena - 5410,DFOT,Décomission,0,0,0,
+615,Transport,Ciena - 5430,DESN,Mise en service,"12,4",15,0,
+616,Transport,Ciena - 5430,DFOT,Mise en service,"12,6",13,0,
+617,Transport,Ciena - 5430,DESN,Ajout de carte,"3,4",4,0,
+618,Transport,Ciena - 5430,DFOT,Ajout de carte,"1,9",2,0,
+619,Transport,Ciena - 5430,DESN,Ajout de facilité,"5,7",5,0,5
+620,Transport,Ciena - 5430,DFOT,Ajout de facilité,"3,6",5,0,6
+621,Transport,Ciena - 5430,DESN,Enlèvement de carte,0,0,0,
+622,Transport,Ciena - 5430,DFOT,Enlèvement de carte,0,0,0,
+623,Transport,Ciena - 5430,DESN,Enlèvement de facilité,0,0,0,
+624,Transport,Ciena - 5430,DFOT,Enlèvement de facilité,0,0,0,
+625,Transport,Ciena - 5430,DESN,Décomission,0,0,0,
+626,Transport,Ciena - 5430,DFOT,Décomission,0,0,0,
+627,Transport,Ciena - 6500 CDC,DESN,Mise en service,"6,3",6,0,6
+628,Transport,Ciena - 6500 CDC,DFOT,Mise en service,"20,3",19,0,20
+629,Transport,Ciena - 6500 CDC,DESN,Ajout de carte,"13,6",14,0,16
+630,Transport,Ciena - 6500 CDC,DFOT,Ajout de carte,"2,8",5,0,2
+631,Transport,Ciena - 6500 CDC,DESN,Ajout de facilité,"8,5",1,0,
+632,Transport,Ciena - 6500 CDC,DFOT,Ajout de facilité,0,0,0,
+633,Transport,Ciena - 6500 CDC,DESN,Enlèvement de carte,"3,8",4,0,
+634,Transport,Ciena - 6500 CDC,DFOT,Enlèvement de carte,0,0,0,
+635,Transport,Ciena - 6500 CDC,DESN,Enlèvement de facilité,0,0,0,
+636,Transport,Ciena - 6500 CDC,DFOT,Enlèvement de facilité,0,0,0,
+637,Transport,Ciena - 6500 CDC,DESN,Décommission,0,0,0,
+638,Transport,Ciena - 6500 CDC,DFOT,Décommission,0,0,0,
+639,Transport,Clean Sweep,DFOT,Clean Sweep - Enlèvement,"3,7",5,0,2
+640,Transport,Fujitsu - FW CDS,DESN,Mise en service,"5,9",8,0,5
+641,Transport,Fujitsu - FW CDS,DFOT,Mise en service,"10,5",12,0,4
+642,Transport,Fujitsu - FW CDS,DESN,Ajout de carte,"5,2",6,0,6
+643,Transport,Fujitsu - FW CDS,DFOT,Ajout de carte,"2,8",4,0,6
+644,Transport,Fujitsu - FW CDS,DESN,Ajout de facilité,0,0,0,
+645,Transport,Fujitsu - FW CDS,DFOT,Ajout de facilité,0,0,0,
+646,Transport,Fujitsu - FW CDS,DESN,Enlèvement de carte,0,0,0,
+647,Transport,Fujitsu - FW CDS,DFOT,Enlèvement de carte,0,0,0,
+648,Transport,Fujitsu - FW CDS,DESN,Enlèvement de facilité,0,0,0,
+649,Transport,Fujitsu - FW CDS,DFOT,Enlèvement de facilité,0,0,0,
+650,Transport,Fujitsu - FW CDS,DESN,Décomission,0,0,0,
+651,Transport,Fujitsu - FW CDS,DFOT,Décomission,0,0,0,
+652,Transport,Fujitsu - FW4100,DESN,Mise en service,"7,9",10,0,8
+653,Transport,Fujitsu - FW4100,DFOT,Mise en service,"8,3",10,0,14
+654,Transport,Fujitsu - FW4100,DESN,Ajout de carte,"2,1",4,0,4
+655,Transport,Fujitsu - FW4100,DFOT,Ajout de carte,"4,8",5,0,3
+656,Transport,Fujitsu - FW4100,DESN,Ajout de facilité,"2,5",8,0,3
+657,Transport,Fujitsu - FW4100,DFOT,Ajout de facilité,"10,1",9,0,3
+658,Transport,Fujitsu - FW4100,DESN,Enlèvement de carte,2,4,0,2
+659,Transport,Fujitsu - FW4100,DFOT,Enlèvement de carte,"4,5",2,0,9
+660,Transport,Fujitsu - FW4100,DESN,Enlèvement de facilité,0,0,0,
+661,Transport,Fujitsu - FW4100,DFOT,Enlèvement de facilité,0,0,0,
+662,Transport,Fujitsu - FW4100,DESN,Décomission,0,0,0,0
+663,Transport,Fujitsu - FW4100,DFOT,Décomission,0,0,0,0
+664,Transport,Fujitsu - FW7120,DESN,Mise en service,0,0,0,
+665,Transport,Fujitsu - FW7120,DFOT,Mise en service,0,0,0,
+666,Transport,Fujitsu - FW7120,DESN,Ajout de carte,"4,9",4,0,3
+667,Transport,Fujitsu - FW7120,DFOT,Ajout de carte,"5,7",5,0,6
+668,Transport,Fujitsu - FW7120,DESN,Ajout de facilité,0,0,0,
+669,Transport,Fujitsu - FW7120,DFOT,Ajout de facilité,0,0,0,0
+670,Transport,Fujitsu - FW7120,DESN,Enlèvement de carte,"2,9",3,0,3
+671,Transport,Fujitsu - FW7120,DFOT,Enlèvement de carte,"5,4",5,0,6
+672,Transport,Fujitsu - FW7120,DESN,Enlèvement de facilité,0,0,0,
+673,Transport,Fujitsu - FW7120,DFOT,Enlèvement de facilité,0,0,0,
+674,Transport,Fujitsu - FW7120,DESN,Décomission,0,0,0,
+675,Transport,Fujitsu - FW7120,DFOT,Décomission,0,0,0,
+676,Transport,Fujitsu - FW9500,DESN,Mise en service,"17,1",12,0,11
+677,Transport,Fujitsu - FW9500,DFOT,Mise en service,"9,7",12,0,7
+678,Transport,Fujitsu - FW9500,DESN,Ajout de carte,"5,1",6,0,6
+679,Transport,Fujitsu - FW9500,DFOT,Ajout de carte,"2,5",4,0,2
+680,Transport,Fujitsu - FW9500,DESN,Ajout de facilité,5,5,0,4
+681,Transport,Fujitsu - FW9500,DFOT,Ajout de facilité,5,7,0,3
+682,Transport,Fujitsu - FW9500,DESN,Enlèvement de carte,"1,7",3,0,
+683,Transport,Fujitsu - FW9500,DFOT,Enlèvement de carte,"1,1",2,0,
+684,Transport,Fujitsu - FW9500,DESN,Enlèvement de facilité,"8,6",9,0,4
+685,Transport,Fujitsu - FW9500,DFOT,Enlèvement de facilité,4,4,0,7
+686,Transport,Fujitsu - FW9500,DESN,Décomission,"8,4",9,0,8
+687,Transport,Fujitsu - FW9500,DFOT,Décomission,"5,2",4,0,5
+688,Transport,Legacy - Transport,DESN,Décomission,"3,1",5,0,2
+689,Transport,Legacy - Transport,DFOT,Décomission,"4,5",9,0,2
+690,Transport,MRV - DWDM 40Ch,DESN,Mise en service,"6,9",7,0,5
+691,Transport,MRV - DWDM 40Ch,DFOT,Mise en service,"18,4",14,0,5
+692,Transport,MRV - DWDM 40Ch,DESN,Décomission,"11,5",12,0,12
+693,Transport,MRV - DWDM 40Ch,DFOT,Décomission,0,0,0,0
+694,Transport,Multi,APMD,Fiber Caracterization,"2,2",3,0,1
+695,Transport,Multi,DFOT,Fiber Caracterization,"1,4",3,0,1
+696,Transport,Multi,DESN,Migration de circuits,"2,5",3,0,4
+697,Transport,Multi,DFOT,Migration de circuits,4,4,0,6
+698,Transport,Multi,DESN,Tools & TestSet,"1,5",2,0,1
+699,Transport,Multi,DESN,Spare,"1,1",2,0,1
+700,Transport,Multi,DFOT,Spare,"1,8",2,0,2
+701,Transport,RTU / Software,DESN,RTU / Software,"2,5",3,0,0
+702,Transport,Ciena - 6500,DESN,Mise en service,"7,4",12,0,7
+703,Transport,Ciena - 6500,DFOT,Mise en service,"8,4",17,0,
+704,Transport,Ciena - 6500,DESN,Ajout de carte,4,4,0,
+705,Transport,Ciena - 6500,DFOT,Ajout de carte,"3,7",5,0,
+706,Transport,Ciena - 6500,DESN,Ajout de facilité,"3,3",2,0,0
+707,Transport,Ciena - 6500,DFOT,Ajout de facilité,"3,3",3,0,
+708,Transport,Ciena - 6500,DESN,Enlèvement carte,"5,7",7,0,2
+709,Transport,Ciena - 6500,DFOT,Enlèvement carte,0,0,0,6
+710,Transport,Ciena - 6500,DESN,Enlèvement de facilité,"1,3",2,0,
+711,Transport,Ciena - 6500,DFOT,Enlèvement de facilité,"1,8",1,0,
+712,Transport,Ciena - 6500,DESN,Décommission,"1,1",1,0,
+713,Transport,Ciena - 6500,DFOT,Décommission,0,0,0,
+714,IP,Alcatel - 7950,DESN,Ajout de facilité,0,0,0,
+715,IP,Alcatel - 7950,DPSW,Ajout de facilité,0,0,0,

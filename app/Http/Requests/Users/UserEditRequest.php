@@ -47,6 +47,14 @@ class UserEditRequest extends FormRequest
                     }
                 }
             ],
+            'user.desn' => [
+                'nullable',
+                'boolean'
+            ],
+            'user.tech_biri' => [
+                'nullable',
+                'boolean'
+            ],
         ];
     }
 }

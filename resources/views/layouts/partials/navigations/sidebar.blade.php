@@ -139,6 +139,64 @@
                         </ul>
                     </li>
                 @endcan
+                {{-- RATT --}}
+                @hasrole('Super-Admin')
+                    <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
+                        <a href="#" @class([
+                            'flex',
+                            'items-center',
+                            'py-2',
+                            'px-4',
+                            'transition',
+                            'duration-300',
+                            'hover:bg-slate-700',
+                            'justify-between',
+                            'w-full',
+                            'bg-slate-700' => Route::is('admin.biri.*'),
+                        ]) x-on:click="open = !open">
+                            <div class="flex space-x-2 items-center align-middle">
+                                <x-icon name="academic-cap" class="w-4" />
+                                <span>@lang('BIRI Tools')</span>
+                            </div>
+                            <span class="text-end" :class="{ 'rotated': open }">
+                                <x-icon name="chevron-right" class="h-3" />
+                            </span>
+                        </a>
+                        <ul x-show="open" x-collapse class="bg-slate-700">
+                            <li>
+                                <a href="{{ route('admin.biri.dashboard') }}" @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                    'bg-slate-600' => Route::is('admin.biri.dashboard'),
+                                ])>
+                                    @lang('Dashboard')
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.biri.activities.index') }}" @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                    'bg-slate-600' => Route::is('admin.biri.activities.*'),
+                                ])>
+                                    @lang('Activities')
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                @endcan
+                {{-- Documentations --}}
                 @can('documentations-viewAny', 'categories-viewAny')
                     {{-- Documentations --}}
                     <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
@@ -490,21 +548,21 @@
                                 </li>
                             @endcan
                             @hasanyrole('Super-Admin|Admin')
-                            <li>
-                                <a href="/log-viewer" @class([
-                                    'flex',
-                                    'items-center',
-                                    'py-2',
-                                    'px-4',
-                                    'transition',
-                                    'duration-300',
-                                    'hover:bg-slate-600',
-                                    'pl-10',
-                                ])>
-                                    @lang('Logs')
-                                </a>
-                            </li>
-                        @endhasanyrole
+                                <li>
+                                    <a href="/log-viewer" @class([
+                                        'flex',
+                                        'items-center',
+                                        'py-2',
+                                        'px-4',
+                                        'transition',
+                                        'duration-300',
+                                        'hover:bg-slate-600',
+                                        'pl-10',
+                                    ])>
+                                        @lang('Logs')
+                                    </a>
+                                </li>
+                            @endhasanyrole
                         </ul>
                     </li>
                 @endcan

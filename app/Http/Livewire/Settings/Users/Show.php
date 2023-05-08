@@ -15,22 +15,19 @@ class Show extends Component
     use AuthorizesRequests;
     public $user_id;
     protected $listeners = ['refresh' => '$refresh'];
-
     public function mount($id)
     {
         $this->authorize('users-view');
         $this->user_id = $id;
     }
-
     public function render()
     {
-        $user = User::findOrFail($this->user_id);
+        $user = User::with('roles')->findOrFail($this->user_id);
         $activities = Activity::where('causer_id', $user->id)
         ->with('subject')
             ->latest()
             ->take(10)
             ->get();
-
         $projects = Project::with([
             'networks',
             'networks.networktasks.task',
