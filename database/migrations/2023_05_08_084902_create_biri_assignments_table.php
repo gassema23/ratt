@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('biri_assignments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained();
-            $table->string('network_no');
+            $table->string('network');
             $table->timestamps();
             $table->softDeletes();
             $table->unsignedBigInteger('created_by')->nullable();

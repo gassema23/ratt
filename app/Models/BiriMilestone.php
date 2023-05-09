@@ -46,7 +46,6 @@ class BiriMilestone extends Model
         'rfs_fmo_status' => 'date',
         'clos_fmo_status' => 'date',
     ];
-
     public function isqs()
     {
         return $this->hasMany(BiriIsq::class, 'network', 'network');

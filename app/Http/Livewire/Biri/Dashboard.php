@@ -10,10 +10,15 @@ class Dashboard extends Component
 {
     public function render()
     {
-        $milestones = BiriMilestone::with('isqs')->withCount('isqs')->get();
-        return view('livewire.biri.dashboard')
+        $tables = BiriIsq::orderBy('created_at')
+            ->with(['networkplans', 'milestones'])
+            ->doesnthave('assignation')
+            ->get();
+        return view('livewire.biri.dashboard', [
+            'tables' => $tables
+        ])
             ->layoutData([
-                'title' => trans('BIRI'),
+                'title' => trans('Suivi BIRI'),
             ]);
     }
 }
