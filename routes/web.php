@@ -81,12 +81,6 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
                     Route::get("/scenarios", Ratt\Scenarios\Index::class)->name("scenarios.index");
                 });
                 /** END RATT */
-                /** BIRI */
-                Route::prefix('biri')->name('biri.')->group(function () {
-                    Route::get('/', Biri\Dashboard::class)->name('dashboard');
-                    Route::get('/activities', Biri\Activities\Index::class)->name('activities.index');
-                });
-                /** END BIRI */
             });
         });
     });
