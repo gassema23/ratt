@@ -42,6 +42,11 @@
                                 </div>
                             @endif
                         </div>
+                        @if (isset($description))
+                            <div class="prose prose-slate max-w-none">
+                                {!! $description !!}
+                            </div>
+                        @endif
                     @endif
                 </div>
                 <!-- Replace with your content -->

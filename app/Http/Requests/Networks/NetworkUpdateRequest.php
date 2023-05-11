@@ -13,7 +13,7 @@ class NetworkUpdateRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
-    public function rules($network_id): array
+    public function rules($network_id, $project): array
     {
         return [
             'site_id' => [
@@ -39,11 +39,14 @@ class NetworkUpdateRequest extends FormRequest
             ],
             'network.started_at' => [
                 'required',
-                'date'
+                'after_or_equal:' . $project->started_at,
+                'before:' . $project->ended_at
             ],
             'network.ended_at' => [
                 'required',
-                'date'
+                'date',
+                'after:tomorrow',
+                'before:' . $project->ended_at
             ]
         ];
     }

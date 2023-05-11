@@ -27,17 +27,22 @@ class Create extends ModalComponent
         $started_at,
         $ended_at,
         $project;
-    protected $listeners = [
-        Trix::EVENT_VALUE_UPDATED // trix_value_updated()
-    ];
+
+    protected function getListeners()
+    {
+        return [Trix::EVENT_VALUE_UPDATED];
+    }
+
     public function trix_value_updated($value)
     {
         $this->description = $value;
     }
+
     public function mount($id)
     {
         $this->project = Project::findOrFail($id);
     }
+
     public function updatedSiteId($value)
     {
         $this->reset('network_element');
@@ -46,10 +51,12 @@ class Create extends ModalComponent
             $this->network_element = $clli->clli;
         }
     }
+
     protected function rules()
     {
         return (new NetworkCreateRequest)->rules($this->project);
     }
+
     public function save()
     {
         $this->authorize('networks-create');
@@ -68,19 +75,20 @@ class Create extends ModalComponent
         $this->project->planner->notify(new DatabaseNotification(
             $type = 'info',
             $message = auth()->user()->name,
-            $messageLong =  trans(' Add a new network on project :number',['number'=>$this->project->project_no]),
+            $messageLong =  trans(' Add a new network on project :number', ['number' => $this->project->project_no]),
             $href = '/admin/ratt/networks/show/' . $network->id,
             $hrefText = trans('View')
         ));
         $this->project->prime->notify(new DatabaseNotification(
             $type = 'info',
             $message = auth()->user()->name,
-            $messageLong =  trans(' Add a new network on project :number',['number'=>$this->project->project_no]),
+            $messageLong =  trans(' Add a new network on project :number', ['number' => $this->project->project_no]),
             $href = '/admin/ratt/networks/show/' . $network->id,
             $hrefText = trans('View')
         ));
         return redirect()->route('admin.ratt.networks.show', $network->id);
     }
+
     public function render()
     {
         $this->authorize('networks-create');

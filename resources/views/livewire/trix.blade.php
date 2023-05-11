@@ -1,17 +1,22 @@
 <div wire:ignore>
     <input id="{{ $trixId }}" type="hidden" name="content" value="{{ $value }}">
-    <trix-editor wire:ignore input="{{ $trixId }}"></trix-editor>
+
+    <trix-editor wire:ignore input="{{ $trixId }}" ></trix-editor>
+
     <script>
         var trixEditor = document.getElementById("{{ $trixId }}")
         var mimeTypes = ["image/png", "image/jpeg", "image/jpg"];
+
         addEventListener("trix-blur", function(event) {
             @this.set('value', trixEditor.getAttribute('value'))
         });
+
         addEventListener("trix-file-accept", function(event) {
             if (!mimeTypes.includes(event.file.type)) {
                 return event.preventDefault();
             }
         });
+
         addEventListener("trix-attachment-add", function(event) {
             uploadTrixImage(event.attachment);
         });
@@ -22,7 +27,6 @@
                 'photos',
                 attachment.file,
                 function(uploadedURL) {
-
                     // We need to create a custom event.
                     // This event will create a pause in thread execution until we get the Response URL from the Trix Component @completeUpload
                     const trixUploadCompletedEvent = `trix-upload-completed:${btoa(uploadedURL)}`;

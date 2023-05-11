@@ -9,10 +9,12 @@ use Livewire\Component;
 class TaskSection extends Component
 {
     use AuthorizesRequests;
+
     protected $listeners = [
         'refresh' => '$refresh',
         'taskInfo'
     ];
+
     public $network, $taskInfoSection;
 
     public function mount($network)

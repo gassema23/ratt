@@ -17,17 +17,6 @@ class UsersSeeder extends Seeder
      */
     public function run(): void
     {
-        /*
-        $role = collect(Role::all());
-        $team = collect(Team::all()->modelKeys());
-        $users =  User::factory(50)->create();
-        foreach ($users as $user) {
-            $user->assignRole($role->random());
-            $m_team = $team->random();
-            $user->teams()->attach($m_team);
-            $user->switchTeam($m_team);
-        }
-        */
         $admin = User::factory()->create([
             'name' => 'Role Admin',
             'employe_id' => 'T111111',
@@ -56,7 +45,7 @@ class UsersSeeder extends Seeder
         ]);
         $pm->teams()->attach(4);
         $pm->switchTeam(4);
-        $pm->assignRole('Technician');
+        $pm->assignRole('Guest');
 
         $tech = User::factory()->create([
             'name' => 'Technician BIRI',

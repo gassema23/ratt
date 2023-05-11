@@ -1,5 +1,5 @@
 <div>
-    @if ($network->network_task_count <= 0)
+    @if ($network->networktasks->count() <= 0)
         @can('networks-assignScenarios')
             <div @class(['mb-4'])>
                 @lang('At this time, there are no scenarios associated. Please attempt to add one.')

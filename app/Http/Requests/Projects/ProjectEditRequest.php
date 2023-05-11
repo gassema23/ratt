@@ -16,19 +16,9 @@ class ProjectEditRequest extends FormRequest
     public function rules($project_id): array
     {
         return [
-            'project.name.en' => [
+            'project.name' => [
                 'required',
                 'max:125',
-            ],
-            'project.description.en' => [
-                'nullable'
-            ],
-            'project.name.fr' => [
-                'required',
-                'max:125',
-            ],
-            'project.description.fr ' => [
-                'nullable'
             ],
             'project.prime_id' => [
                 'required'

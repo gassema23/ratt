@@ -7,7 +7,6 @@ use App\Models\Project;
 use Livewire\Component;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use WireUi\Traits\Actions;
-use Illuminate\Database\Eloquent\Builder;
 
 class Show extends Component
 {
@@ -15,24 +14,27 @@ class Show extends Component
     protected $listeners = ['refresh'  => '$refresh'];
 
     public $project, $networks;
+
     public function mount($id)
     {
         $this->authorize('projects-view');
         $this->project = Project::findOrFail($id);
         $this->networks = Network::with([
-            'project' => function ($q) use ($id) {
-                return $q->where('id', $id);
-            },
+            'project',
             'site',
             'site.city',
             'site.city.region',
             'site.city.region.state',
             'site.city.region.state.country'
-        ])->when(!auth()->user()->hasRole(['Super-Admin', 'Admin','Guest']), function ($query) {
-            $query->whereHas('networktasks', function ($q) {
-                return $q->where('team_id', auth()->user()->current_team_id)->whereNull('deleted_at');
-            });
-        })->get();
+        ])
+            ->withCount('networktasks')
+            ->when(!auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest']), function ($query) {
+                $query->whereHas('networktasks', function ($q) {
+                    return $q->where('team_id', auth()->user()->current_team_id)->whereNull('deleted_at');
+                });
+            })
+            ->where('project_id', $id)
+            ->get();
     }
 
     public function acceptFollow(Network $network)
@@ -62,7 +64,7 @@ class Show extends Component
         return view('livewire.ratt.projects.show')
             ->layoutData([
                 'title' => __('Project :number', ['number' => $this->project->project_no]),
-                'subtitle' => trans('The role of communication in successful engineering project management'),
+                'description' => $this->project->description,
                 'action' => [
                     'name' => trans('New network'),
                     'icon' => 'plus',

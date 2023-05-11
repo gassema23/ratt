@@ -26,7 +26,7 @@
                         :hint="trans('Field required')" />
                 </div>
                 <div class="grid grid-cols-2 gap-2 my-2">
-                    <x-input wire:model.defer="network.name" :label="__('Name')" :hint="trans('Field required')" />
+                    <x-input wire:model.defer="network.name" :label="__('Network name')" :hint="trans('Field required')" />
                 </div>
                 <div class="grid grid-cols-1 gap-2 my-2">
                     <livewire:trix :value="$network->description">

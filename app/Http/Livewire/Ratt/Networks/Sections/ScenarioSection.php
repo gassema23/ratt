@@ -13,20 +13,31 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class ScenarioSection extends Component
 {
     use AuthorizesRequests;
+
     protected $listeners = [
         'refresh'  => '$refresh',
         'scenariosListOpen'  => '$refresh',
     ];
+
     public $scenarios, $network, $scenariosData, $scenario_id;
+
     public $inputs = [];
+
     public function mount($id)
     {
         $this->authorize('networks-viewScenarios');
-        $this->network = Network::with('networktasks', 'networktask', 'networktask.scenario')->findOrFail($id);
+
+        $this->network = Network::with([
+            'networktasks',
+            'networktask',
+            'networktask.scenario'
+        ])->findOrFail($id);
+
         $this->scenarios = Scenario::orderBy('name')
             ->select('id', 'name')
             ->get();
     }
+
     public function updatedScenarioId($value)
     {
         $this->reset(['scenariosData', 'inputs']);
@@ -34,10 +45,12 @@ class ScenarioSection extends Component
             ->where('id', $value)
             ->get();
     }
+
     protected function rules()
     {
         return (new AssignScenarioRequest)->rules($this->network);
     }
+
     public function save()
     {
         $this->authorize('networks-assignScenarios');
@@ -54,6 +67,7 @@ class ScenarioSection extends Component
         }
         $this->saved();
     }
+
     public function render()
     {
         return view('livewire.ratt.networks.sections.scenario-section');

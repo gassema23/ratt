@@ -27,7 +27,9 @@ class Network extends Model implements HasMedia
         Userstamps,
         LogsActivity,
         Followable;
+
     protected $guarded = ['id', 'created_at', 'updated_at'];
+
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
@@ -42,6 +44,7 @@ class Network extends Model implements HasMedia
             ->setDescriptionForEvent(fn (string $eventName) => "Network {$eventName}")
             ->useLogName('NetworksLog');
     }
+
     // Attribute Getter / Setter
     protected function NetworkNo(): Attribute
     {
@@ -50,6 +53,7 @@ class Network extends Model implements HasMedia
             set: fn (string $value) => str_replace('#', '', $value, $count)
         );
     }
+
     public function colorPercent($percent)
     {
         if ($percent < 35) {
@@ -60,41 +64,55 @@ class Network extends Model implements HasMedia
             return 'teal';
         }
     }
+
     public function getBadgePriorityNameAttribute()
     {
         return collect(config('biri.App_priority.' . App::getLocale()))->where('id', $this->priority)->first()['name'];
     }
+
     public function getBadgePriorityColorAttribute()
     {
         return collect(config('biri.App_priority.en'))->where('id', $this->priority)->first()['color'];
     }
+
     // Relationships
     public function project(): BelongsTo
     {
         return $this->belongsTo(Project::class)->withTrashed();
     }
+
     public function site(): BelongsTo
     {
         return $this->belongsTo(Site::class)->withTrashed();
     }
+
     public function comments(): MorphMany
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+
     public function followersUsers()
     {
         return $this->followers()->where('user_id', auth()->user()->id)->first();
     }
+
     public function networktasks(): HasMany
     {
         return $this->hasMany(NetworkTask::class, 'network_id', 'id');
     }
-    public function networktask(){
+
+    public function networktask()
+    {
         return $this->hasOne(NetworkTask::class, 'network_id', 'id')->oldest();
     }
-    public function getNetworkTaskCountAttribute(){
+
+
+    public function getNetworkTaskCountAttribute()
+    {
         return $this->networktasks()->whereNull('deleted_at')->count();
     }
+
+
     public function getLocationsAttribute()
     {
         return '<span class="font-medium text-slate-800">' . $this->site->name . '</span><br> ' .

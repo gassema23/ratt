@@ -18,9 +18,6 @@ class ProjectCreateRequest extends FormRequest
                 'required',
                 'max:125',
             ],
-            'description' => [
-                'nullable'
-            ],
             'prime_id' => [
                 'required'
             ],

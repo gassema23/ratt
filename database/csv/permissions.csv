@@ -6,6 +6,8 @@ Categories,categories-update
 Categories,categories-delete
 Categories,categories-restore
 Categories,categories-forceDelete
+Comments,comments-view
+Comments,comments-create
 Documentations,documentations-viewAny
 Documentations,documentations-view
 Documentations,documentations-create
@@ -62,6 +64,7 @@ Networks,networks-historyTask
 Networks,networks-networksSections
 Networks,networks-taskSection
 Networks,networks-networkTimeline
+Networks,networks-viewScenarios
 Projects,projects-viewAny
 Projects,projects-view
 Projects,projects-create

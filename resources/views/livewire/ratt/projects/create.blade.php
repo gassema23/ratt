@@ -22,8 +22,9 @@
                 <div class="grid grid-cols-1 gap-2 my-2">
                     <x-input wire:model.defer="name" :label="__('Project name')" :hint="trans('Field required')" />
                 </div>
+
                 <div class="grid grid-cols-1 gap-2 my-2">
-                    <x-textarea wire:model.defer="description" :label="__('Project description')" />
+                    <livewire:trix>
                 </div>
             </x-slot>
             <x-slot name="action">

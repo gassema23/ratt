@@ -7,8 +7,8 @@
             <x-slot name="content">
                 <x-errors class="my-2 " />
                 <div class="flex w-full text-sm space-x-4 border-b border-slate-200 pb-4 mb-4">
-                    <div>@lang('Project started at :date', ['date' => $project->started_at->toFormattedDayDateString()])</div>
-                    <div>@lang('Project ended at :date', ['date' => $project->ended_at->toFormattedDayDateString()])</div>
+                    <div>@lang('Project started at') <strong>{{ $project->started_at->toFormattedDayDateString() }}</strong></div>
+                    <div>@lang('Project ended at') <strong>{{ $project->ended_at->toFormattedDayDateString() }}</strong></div>
                 </div>
                 <div class="my-2 grid grid-cols-2 gap-2">
                     <x-input wire:model.defer="network_no" :label="__('Network number')" :hint="trans('Field required (1234567)')" />
@@ -24,7 +24,7 @@
                     <x-datetime-picker :label="__('Ended date')" wire:model.defer="ended_at" without-time :hint="trans('Field required')" />
                 </div>
                 <div class="grid grid-cols-2 gap-2 my-2">
-                    <x-input wire:model.defer="name" :label="__('Name')" :hint="trans('Field required')" />
+                    <x-input wire:model.defer="name" :label="__('Network name')" :hint="trans('Field required')" />
                 </div>
                 <div class="grid grid-cols-1 gap-2 my-2">
                     <livewire:trix>

@@ -20,6 +20,8 @@ class RoleSeeder extends Seeder
         //Admin
         $admin = Role::firstOrCreate(['name' => 'Admin']);
         $admin->givePermissionTo([
+            "comments-view",
+            "comments-create",
             "categories-viewAny",
             "categories-view",
             "categories-create",
@@ -83,6 +85,7 @@ class RoleSeeder extends Seeder
             "networks-networksSections",
             "networks-taskSection",
             "networks-networkTimeline",
+            "networks-viewScenarios",
             "projects-viewAny",
             "projects-view",
             "projects-create",
@@ -137,6 +140,8 @@ class RoleSeeder extends Seeder
         // Manager
         $manager = Role::firstOrCreate(['name' => 'Manager']);
         $manager->givePermissionTo([
+            "comments-view",
+            "comments-create",
             "categories-viewAny",
             "categories-view",
             "categories-create",
@@ -182,6 +187,7 @@ class RoleSeeder extends Seeder
             "networks-networksSections",
             "networks-taskSection",
             "networks-networkTimeline",
+            "networks-viewScenarios",
             "projects-viewAny",
             "projects-view",
             "projects-create",
@@ -207,6 +213,8 @@ class RoleSeeder extends Seeder
         // Technicien
         $technicien = Role::firstOrCreate(['name' => 'Technician']);
         $technicien->givePermissionTo([
+            "comments-view",
+            "comments-create",
             "documentations-viewAny",
             "documentations-view",
             "documentations-forceDelete",
@@ -227,6 +235,29 @@ class RoleSeeder extends Seeder
             "networks-historyTask",
             "networks-networksSections",
             "networks-taskSection",
+            "networks-networkTimeline",
+            "networks-viewScenarios",
+            "projects-viewAny",
+            "projects-view",
+            "teams-viewAny",
+            "teams-view",
+            "users-viewAny",
+            "users-view",
+        ]);
+
+        // Guest
+        $technicien = Role::firstOrCreate(['name' => 'Guest']);
+        $technicien->givePermissionTo([
+            "comments-view",
+            "comments-create",
+            "networks-viewAny",
+            "networks-view",
+            "networks-attachFiles",
+            "networks-historyTask",
+            "networks-networksSections",
+            "networks-taskSection",
+            "networks-networkTimeline",
+            "networks-viewScenarios",
             "projects-viewAny",
             "projects-view",
             "teams-viewAny",

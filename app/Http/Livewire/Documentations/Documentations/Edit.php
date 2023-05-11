@@ -15,9 +15,13 @@ use App\Http\Requests\Documentations\DocumentationEditRequest;
 class Edit extends ModalComponent
 {
     use HasModal, AuthorizesRequests, WithFileUploads;
+
     public $emits = ['refresh','refreshDocument'];
+
     public $documentation, $tags, $description;
+
     public $attachment = [];
+
     protected function getListeners()
     {
         return [
@@ -25,31 +29,36 @@ class Edit extends ModalComponent
 
         ];
     }
+
     public function trix_value_updated($value)
     {
         $this->description = $value;
     }
+
     public function mount($id)
     {
         $this->authorize('documentations-edit');
         $this->documentation = Documentation::findOrFail($id);
         $this->tags = $this->documentation->tagNames();
     }
+
     protected function rules()
     {
         return (new DocumentationEditRequest)->rules();
     }
+
     public function save()
     {
         $this->authorize('documentations-edit');
-        //$this->authorize('documentations-create');
         $this->validate();
         $this->documentation->update([
             'name' => $this->documentation->name,
             'category_id' => $this->documentation->category_id,
             'description' => $this->description,
         ]);
+
         $this->documentation->retag($this->tags);
+
         $this->validate([
             'attachment' => [
                 'nullable',
@@ -59,13 +68,16 @@ class Edit extends ModalComponent
                 'max:7800'
             ]
         ]);
+
         foreach ($this->attachment as $file) {
             $this->documentation->addMedia($file)
                 ->withCustomProperties(['user_id' => auth()->id()])
                 ->toMediaCollection();
         }
+
         $this->saved();
     }
+
     public function render()
     {
         return view('livewire.documentations.documentations.edit', [
