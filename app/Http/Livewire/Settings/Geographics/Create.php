@@ -29,6 +29,7 @@ class Create extends ModalComponent
         GeographicType::create($this->validate());
         $this->saved();
     }
+
     public function render()
     {
         $this->authorize('geographicTypes-create');

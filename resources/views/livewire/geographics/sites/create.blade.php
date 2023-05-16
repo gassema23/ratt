@@ -35,22 +35,22 @@
                     <x-input wire:model.defer="name.en" :label="__('Site [EN]')" :hint="trans('Field required')" />
                     <x-input wire:model.defer="name.fr" :label="__('Site [FR]')" />
                 </div>
-                <div class="grid grid-cols-2 gap-2 my-2">
+                <div class="grid grid-cols-2 gap-4 my-2">
                     <x-inputs.phone wire:model.defer="phone_line" :label="__('Phone line')" />
                     <x-inputs.phone wire:model.defer="emergency_line" :label="__('Emergency line')" />
                 </div>
-                <div class="grid grid-cols-3 gap-2 my-2">
+                <div class="grid grid-cols-3 gap-4 my-2">
                     <x-input wire:model.defer="manager" :label="__('Manager')" />
                     <x-input wire:model.defer="plant" :label="__('Plant')" />
                     <x-select wire:loading.attr="disabled" wire:model.defer="type_id" :options="$types"
                         option-value="id" option-label="name" option-description="parent" autocomplete="off"
                         :placeholder="__('Make a selection')" :label="__('Type')" :hint="trans('Field required')" />
                 </div>
-                <div class="grid grid-cols-2 gap-2 my-2">
+                <div class="grid grid-cols-2 gap-4 my-2">
                     <x-textarea wire:model.defer="contact_and_site_access.en" :label="trans('Contact and site access [EN]')" />
                     <x-textarea wire:model.defer="contact_and_site_access.fr" :label="trans('Contact and site access [FR]')" />
                 </div>
-                <div class="grid grid-cols-2 gap-2 my-2">
+                <div class="grid grid-cols-2 gap-4 my-2">
                     <x-textarea wire:model.defer="other_site_information.en" :label="trans('Other site information [EN]')" />
                     <x-textarea wire:model.defer="other_site_information.fr" :label="trans('Other site information [FR]')" />
                 </div>

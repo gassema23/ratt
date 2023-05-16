@@ -42,7 +42,7 @@
                 <div class="my-2 grid grid-cols-1 gap-4">
                     <livewire:trix>
                 </div>
-                <div wire:loading class="flex w-full gap-2">
+                <div wire:loading class="flex w-full gap-4">
                     <svg class="animate-spin w-4 h-4 shrink-0 inline-block" xmlns="http://www.w3.org/2000/svg" fill="none"
                         viewBox="0 0 24 24">
                         <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor"

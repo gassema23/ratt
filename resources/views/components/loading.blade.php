@@ -1,4 +1,4 @@
-<div class="inline-flex w-full gap-2">
+<div class="inline-flex w-full gap-4">
     <svg class="animate-spin w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none"
         viewBox="0 0 24 24" wire:loading >
         <circle class="opacity-25" cx="12" cy="12" r="10"

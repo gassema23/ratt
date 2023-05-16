@@ -13,8 +13,8 @@
                         <a href="#" wire:click="openSection('scenarios')"
                             class="@if ($openSection === 'scenarios') text-teal-600 bg-teal-50 @endif flex items-center py-2 px-4 text-slate-800 hover:text-teal-600 hover:bg-teal-50 w-full justify-between transition-all duration-300 ease-in-out">
                             @lang('Scenarios')
-                            @if ($network->network_task_count > 0)
-                                <x-badge teal squared xs :label="$network->network_task_count" />
+                            @if ($network->networktasks->count() > 0)
+                                <x-badge teal squared xs :label="$network->networktasks->count()" />
                             @endif
                         </a>
                     </li>
@@ -43,7 +43,7 @@
         </div>
 
     </div>
-    <div class=" col-span-6 md:col-span-4 2xl:col-span-5">
+    <div class="col-span-6 md:col-span-4 2xl:col-span-5">
         <x-card>
             @if ($openSection === 'network')
                 @livewire('ratt.networks.sections.network-section', [$network])

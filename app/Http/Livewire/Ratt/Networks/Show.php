@@ -20,14 +20,17 @@ class Show extends Component
     public function mount($id, $parameter = null)
     {
         $this->authorize('networks-view');
+
         $this->network = Network::with([
             'site',
             'site.city',
             'site.city.region',
             'site.city.region.state',
             'site.city.region.state.country',
-            'networktasks'
+            'networktasks',
         ])->findOrFail($id);
+
+
         if (!is_null($parameter)) {
             $this->openSection = $parameter;
         }

@@ -145,7 +145,7 @@
                     </template>
                 </div>
 
-                <div class="grid grid-cols-7 gap-2">
+                <div class="grid grid-cols-7 gap-4">
                     <template x-for="day in weekDays" :key="`week-day.${day}`">
                         <span class="text-secondary-400 text-3xs text-center uppercase pointer-events-none"
                             x-text="day">

@@ -121,7 +121,7 @@
                 role="form">
                 @csrf
                 <div class="form-group">
-                    <div class="grid grid-cols-8 gap-2 items-center justify-center">
+                    <div class="grid grid-cols-8 gap-4 items-center justify-center">
                         <div class="col-span-7">
                             <x-native-select label="Select Status" placeholder="Select one status" :options="['Append new translations', 'Replace existing translations']"
                                 wire:model.defer="replace" name="replace" />

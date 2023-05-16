@@ -2,13 +2,13 @@
 
 use App\Http\Livewire\Auth;
 use App\Http\Livewire\Ratt;
+use App\Http\Livewire\Beat;
 use App\Http\Livewire\Search;
 use App\Http\Livewire\Settings;
 use App\Http\Livewire\Geographics;
 use App\Http\Livewire\Documentations;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth as AuthController;
-use App\Http\Livewire\Biri;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Livewire\Dashboard\Dashboard as DashboardDashboard;
 
@@ -81,6 +81,11 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
                     Route::get("/scenarios", Ratt\Scenarios\Index::class)->name("scenarios.index");
                 });
                 /** END RATT */
+                /** BEAT */
+                Route::prefix('beat')->name('beat.')->group(function () {
+                    Route::get('/settings', Beat\Settings\Index::class)->name('settings.index');
+                });
+                /** END BEAT */
             });
         });
     });

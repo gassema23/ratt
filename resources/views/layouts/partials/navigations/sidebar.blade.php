@@ -13,7 +13,6 @@
                     </a>
                 </li>
                 {{-- BEAT --}}
-                {{--
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                     <a href="#"
                         class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full"
@@ -28,20 +27,13 @@
                     </a>
                     <ul x-show="open" x-collapse class="bg-slate-700">
                         <li>
-                            <a href="#"
+                            <a href="{{ route('admin.beat.settings.index') }}"
                                 class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10">
-                                Settings
-                            </a>
-                        </li>
-                        <li>
-                            <a href="#"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10">
-                                Log Out
+                                @lang('Settings')
                             </a>
                         </li>
                     </ul>
                 </li>
-                 --}}
                 {{-- RATT --}}
                 @can('projects-viewAny', 'scenarios-viewAny', 'tasks-viewAny')
                     <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
@@ -428,7 +420,8 @@
                             'bg-slate-700' =>
                                 Route::is('admin.settings.permissions.*') ||
                                 Route::is('admin.settings.roles.*') ||
-                                Route::is('admin.settings.settings.*'),
+                                Route::is('admin.settings.settings.*') ||
+                                in_array('translations', explode('/', Request::url())),
                         ]) x-on:click="open = !open">
                             <div class="flex space-x-2">
                                 <x-icon name="cog" class="w-4" />
@@ -487,6 +480,24 @@
                                         'bg-slate-600' => Route::is('admin.settings.permissions.*'),
                                     ])>
                                         @lang('Permissions')
+                                    </a>
+                                </li>
+                            @endcan
+
+                            @can('translations-manage')
+                                <li>
+                                    <a href="/admin/translations" @class([
+                                        'flex',
+                                        'items-center',
+                                        'py-2',
+                                        'px-4',
+                                        'transition',
+                                        'duration-300',
+                                        'hover:bg-slate-600',
+                                        'pl-10',
+                                        'bg-slate-600' => in_array('translations', explode('/', Request::url())),
+                                    ])>
+                                        @lang('Translation manager')
                                     </a>
                                 </li>
                             @endcan

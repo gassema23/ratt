@@ -17,9 +17,7 @@
         </div>
     @endif
     @if (isset($content))
-        <div class="px-4 w-full">
-            {{ $content }}
-        </div>
+        <div class="px-4 w-full">{{ $content }}</div>
     @endif
     @if (isset($action))
         <div class="px-6 py-4 border-t border-slate-200 bg-slate-100 justify-end flex space-x-2">

@@ -4,7 +4,7 @@
             <div>
                 <div class="font-medium text-2xl text-slate-800 mb-2">@lang('Project')</div>
                 <x-card>
-                    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-2">
+                    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-6 gap-4">
                         <div
                             class="xl:col-span-1 rounded bg-orange-100 p-4 items-center justify-center align-middle text-center flex w-full flex-col">
                             <div class="mb-3">

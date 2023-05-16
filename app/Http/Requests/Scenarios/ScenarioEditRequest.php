@@ -22,7 +22,7 @@ class ScenarioEditRequest extends FormRequest
                 Rule::unique('scenarios', 'name')->ignore($scenario_id)
             ],
             'scenario.name.fr' => [
-                'required',
+                'nullable',
                 'max:125',
                 Rule::unique('scenarios', 'name')->ignore($scenario_id)
             ],

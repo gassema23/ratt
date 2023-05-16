@@ -10,7 +10,7 @@
                     <div>@lang('Network started at :date', ['date' => $network->started_at->toFormattedDayDateString()])</div>
                     <div>@lang('Network ended at :date', ['date' => $network->ended_at->toFormattedDayDateString()])</div>
                 </div>
-                <div class="grid grid-cols-1 gap-2 my-2">
+                <div class="grid grid-cols-1 gap-4 my-2">
                     <x-select wire:model="scenario_id" :options="$scenarios" option-value="id" autocomplete="off"
                         option-label="name" :placeholder="__('Make a selection')" :label="__('Scenario')" />
                 </div>

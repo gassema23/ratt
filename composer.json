@@ -28,6 +28,7 @@
         "mpociot/versionable": "^4.4",
         "nicolaslopezj/searchable": "1.*",
         "opcodesio/log-viewer": "^2.4",
+        "outhebox/blade-flags": "^1.2",
         "overtrue/laravel-follow": "^5.1",
         "pestopancake/laravel-backpack-database-notifications": "^1.0",
         "power-components/livewire-powergrid": "^3.7",

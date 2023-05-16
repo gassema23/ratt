@@ -16,10 +16,13 @@
                     @foreach ($v_task as $task)
                         <div class="flex justify-between items-center space-x-4 py-2">
                             <div class="w-1/3 text-sm flex-1 flex flex-row items-center">
-                                <div class="font-medium truncate">
-                                    <a href="#" class="hover:underline"
+                                <div class="font-medium truncate w-full">
+                                    <a href="#" class="hover:underline flex justify-between w-full"
                                         wire:click="taskInfo({{ $task->id }})">
-                                        {{ $task->task->name }}
+                                        <span>{{ $task->task->name }}</span>
+                                        @if (!is_null($task->task->parent_id))
+                                            <x-icon name="exclamation-circle" class="w-3 h-3" />
+                                        @endif
                                     </a>
                                 </div>
                             </div>
@@ -57,6 +60,9 @@
                         class="flex justify-between text-slate-500 border-b border-slate-200 text-xs mb-2 pb-2 align-middle items-center">
                         <h3 class="font-medium text-lg">
                             {{ $taskInfoSection->task->name }}
+                            @if (!is_null($taskInfoSection->task->parent_id))
+                                @dump($taskInfoSection->task->parent_id)
+                            @endif
                         </h3>
                         <x-dropdown align="right">
                             <x-dropdown.header :label="trans('Manage taks')">

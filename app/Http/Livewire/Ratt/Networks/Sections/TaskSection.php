@@ -41,7 +41,9 @@ class TaskSection extends Component
                 'checklists as complete_checklists_count' => function ($q) {
                     $q->where('status', 1);
                 }
-            ])->findOrFail($value);
+            ])
+            ->findOrFail($value);
+
         $this->emit('showChecklist');
         $this->emit('refresh');
     }
@@ -49,7 +51,7 @@ class TaskSection extends Component
     public function render()
     {
         $this->authorize('networks-taskSection');
-        if (auth()->user()->hasRole(['Super-Admin', 'Admin','Guest'])) {
+        if (auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest'])) {
             $tasks = NetworkTask::with([
                 'network',
                 'task',

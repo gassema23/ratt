@@ -19,8 +19,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class NetworkTask extends Model implements HasMedia
 {
     use HasFactory, HasTranslations, SoftDeletes, InteractsWithMedia, Userstamps, LogsActivity, HasStatuses;
+
     public $translatable = ['comment'];
+
     protected $guarded = ['id', 'created_at', 'updated_at'];
+
     protected $with = ['statuses'];
 
     public function getActivitylogOptions(): LogOptions
@@ -30,43 +33,53 @@ class NetworkTask extends Model implements HasMedia
             ->setDescriptionForEvent(fn (string $eventName) => "Network task {$eventName}")
             ->useLogName('NetworkTaskLog');
     }
+
     public function network(): BelongsTo
     {
         return $this->belongsTo(Network::class)->withTrashed();
     }
+
     public function task(): BelongsTo
     {
         return $this->belongsTo(Task::class)->withTrashed();
     }
+
     public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class)->withTrashed();
     }
+
     public function scenario(): BelongsTo
     {
         return $this->belongsTo(Scenario::class)->withTrashed();
     }
+
     public function comments(): MorphMany
     {
         return $this->morphMany(Comment::class, 'commentable');
     }
+
     public function checklists(): MorphMany
     {
         return $this->morphMany(Checklist::class, 'checklistable');
     }
+
     public function checklistscompletes()
     {
         return $this->morphMany(Checklist::class, 'checklistable')->where('status', 1);
     }
+
     // Attribute Getter / Setter
     public function getBadgePriorityNameAttribute()
     {
         return collect(config('biri.App_priority.' . App::getLocale()))->where('id', $this->priority)->first()['name'];
     }
+
     public function getBadgePriorityColorAttribute()
     {
         return collect(config('biri.App_priority.en'))->where('id', $this->priority)->first()['color'];
     }
+
     public function getStatusNameAttribute() {
         if($this->status()){
             return $this->status()->status_name;
@@ -74,6 +87,7 @@ class NetworkTask extends Model implements HasMedia
             return 'New';
         }
     }
+
     public function getStatusColorAttribute() {
         if($this->status()){
             return $this->status()->status_color;

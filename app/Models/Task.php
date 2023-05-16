@@ -16,8 +16,11 @@ use Illuminate\Database\Eloquent\Relations\BelongsToMany;
 class Task extends Model
 {
     use HasFactory, HasTranslations, SoftDeletes, Userstamps, LogsActivity, SelfReferenceTrait;
+
     public $translatable = ['name'];
+
     protected $guarded = ['id', 'created_at', 'updated_at'];
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
@@ -25,12 +28,19 @@ class Task extends Model
             ->setDescriptionForEvent(fn (string $eventName) => "Task {$eventName}")
             ->useLogName('TasksLog');
     }
+
     public function team(): BelongsTo
     {
         return $this->belongsTo(Team::class);
     }
+
     public function scenarios(): BelongsToMany
     {
         return $this->belongsToMany(Scenario::class);
+    }
+
+    public function getTaskParentStatusAttribute()
+    {
+        return $this->parent->name;
     }
 }

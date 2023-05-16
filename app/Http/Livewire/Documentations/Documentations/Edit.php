@@ -16,7 +16,7 @@ class Edit extends ModalComponent
 {
     use HasModal, AuthorizesRequests, WithFileUploads;
 
-    public $emits = ['refresh','refreshDocument'];
+    public $emits = ['refresh', 'refreshDocument'];
 
     public $documentation, $tags, $description;
 
@@ -25,7 +25,7 @@ class Edit extends ModalComponent
     protected function getListeners()
     {
         return [
-            Trix::EVENT_VALUE_UPDATED, // trix_value_updated(),
+            Trix::EVENT_VALUE_UPDATED,
 
         ];
     }
@@ -51,6 +51,7 @@ class Edit extends ModalComponent
     {
         $this->authorize('documentations-edit');
         $this->validate();
+
         $this->documentation->update([
             'name' => $this->documentation->name,
             'category_id' => $this->documentation->category_id,

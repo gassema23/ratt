@@ -21,7 +21,7 @@
                         </div>
                     @endforeach
                 </div>
-                <div class="grid grid-cols-1 gap-2 my-2">
+                <div class="grid grid-cols-1 gap-4 my-2">
                     <x-textarea wire:model.defer="description.en" :label="__('Description [EN]')" />
                     <x-textarea wire:model.defer="description.fr" :label="__('Description [FR]')" />
                 </div>
