@@ -33,7 +33,7 @@ module.exports = {
         },
         ...[...Array(100).keys()].flatMap((i) => [`w-[${i * 1}%]`]),
         {
-            pattern: /(max|min)-(w)-(sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl)/,
+            pattern: /(max|min)-(w)-(sm|md|lg|xl|2xl|3xl|4xl|5xl|6xl|7xl|full)/,
             variants: ["sm", "md", "lg", "xl"],
         },
     ],

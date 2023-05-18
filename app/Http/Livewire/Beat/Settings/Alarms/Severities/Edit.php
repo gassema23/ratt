@@ -1,15 +1,16 @@
 <?php
 
-namespace App\Http\Livewire\Beat\Alarms\Categories;
+namespace App\Http\Livewire\Beat\Settings\Alarms\Severities;
+
 
 use App\Traits\HasModal;
 
-use App\Models\AlarmCategory;
 use LivewireUI\Modal\ModalComponent;
-use App\Http\Requests\Alarms\AlarmCategoryEditRequest;
+use App\Http\Requests\Alarms\AlarmSeverityEditRequest;
+use App\Models\AlarmSeverity;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
-class Edit extends  ModalComponent
+class Edit extends ModalComponent
 {
     use HasModal, AuthorizesRequests;
 
@@ -21,25 +22,24 @@ class Edit extends  ModalComponent
 
     public function mount($id)
     {
-        $this->authorize('alarmCategory-edit');
-        $this->alarm = AlarmCategory::findOrFail($id);
+        $this->authorize('alarmSeverity-edit');
+        $this->alarm = AlarmSeverity::findOrFail($id);
     }
 
     protected function rules()
     {
-        return (new AlarmCategoryEditRequest)->rules($this->alarm->id);
+        return (new AlarmSeverityEditRequest)->rules($this->alarm->id);
     }
 
     public function save()
     {
-        $this->authorize('alarmCategory-edit');
+        $this->authorize('alarmSeverity-edit');
         $this->validate();
         $this->alarm->update($this->validate());
         $this->saved();
     }
-
     public function render()
     {
-        return view('livewire.beat.alarms.categories.edit');
+        return view('livewire.beat.settings.alarms.severities.edit');
     }
 }

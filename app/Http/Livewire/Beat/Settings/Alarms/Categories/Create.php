@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Livewire\Beat\Alarms\Categories;
+namespace App\Http\Livewire\Beat\Settings\Alarms\Categories;
 
 use LivewireUI\Modal\ModalComponent;
 use App\Traits\HasModal;
@@ -33,6 +33,7 @@ class Create extends ModalComponent
 
     public function render()
     {
-        return view('livewire.beat.alarms.categories.create');
+        $this->authorize('alarmCategory-create');
+        return view('livewire.beat.settings.alarms.categories.create');
     }
 }

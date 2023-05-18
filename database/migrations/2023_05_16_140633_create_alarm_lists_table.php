@@ -11,9 +11,17 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alarm_categories', function (Blueprint $table) {
+        Schema::create('alarm_lists', function (Blueprint $table) {
             $table->id();
-            $table->string('label');
+            $table->foreignId('alarm_severity_id')->references('id')->on('alarm_severities');
+            $table->foreignId('alarm_type_id')->references('id')->on('alarm_types');
+            $table->string('model');
+            $table->string('item_number', 10);
+            $table->string('ctl')->nullable();
+            $table->string('verb1')->nullable();
+            $table->string('verb2')->nullable();
+            $table->string('io_terminal')->nullable();
+            $table->string('document_code')->nullable();
             $table->text('description')->nullable();
             $table->timestamps();
             $table->softDeletes();
@@ -28,6 +36,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('alarm_categories');
+        Schema::dropIfExists('alarm_lists');
     }
 };

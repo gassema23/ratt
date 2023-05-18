@@ -13,6 +13,7 @@
                     </a>
                 </li>
                 {{-- BEAT --}}
+                @if (config('app.env') !== 'production')
                 <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                     <a href="#"
                         class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full"
@@ -34,6 +35,7 @@
                         </li>
                     </ul>
                 </li>
+                @endif
                 {{-- RATT --}}
                 @can('projects-viewAny', 'scenarios-viewAny', 'tasks-viewAny')
                     <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">

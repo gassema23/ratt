@@ -11,7 +11,7 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alarm_categories', function (Blueprint $table) {
+        Schema::create('alarm_system_types', function (Blueprint $table) {
             $table->id();
             $table->string('label');
             $table->text('description')->nullable();
@@ -28,6 +28,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('alarm_categories');
+        Schema::dropIfExists('alarm_system_types');
     }
 };

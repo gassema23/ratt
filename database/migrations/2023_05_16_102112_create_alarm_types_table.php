@@ -11,8 +11,9 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('alarm_categories', function (Blueprint $table) {
+        Schema::create('alarm_types', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('alarm_category_id')->references('id')->on('alarm_categories');
             $table->string('label');
             $table->text('description')->nullable();
             $table->timestamps();
@@ -28,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('alarm_categories');
+        Schema::dropIfExists('alarm_types');
     }
 };
