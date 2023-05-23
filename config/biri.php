@@ -39,7 +39,7 @@ return [
             [
                 'id' => 2,
                 'name' => 'Majeur',
-                'color' => 'yellow'
+                'color' => 'amber'
             ],
             [
                 'id' => 3,
