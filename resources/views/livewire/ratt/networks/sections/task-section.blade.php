@@ -30,7 +30,12 @@
                             </div>
                             <div class="flex text-left text-slate-400 space-x-2 items-center align-middle">
                                 <div class="ml-2">
+                                    {{
+                                        $task->status_color
+                                    }}
+                                    {{--
                                     <x-badge :label="$task->status_name" squared :color="$task->status_color" />
+                                        --}}
                                 </div>
                                 <div class=" text-slate-400">
                                     <x-icon name="chat-alt-2" class="w-5 h-5 inline-block" />
