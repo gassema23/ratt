@@ -90,6 +90,11 @@ return [
                 'name' => 'Pending',
                 'color' => 'violet'
             ],
+            [
+                'id' => 2,
+                'name' => 'In progress',
+                'color' => 'Yellow'
+            ],
         ],
         'fr' => [
             [
@@ -100,7 +105,7 @@ return [
             [
                 'id' => 2,
                 'name' => 'En cours',
-                'color' => 'yellow'
+                'color' => 'amber'
             ],
             [
                 'id' => 3,
@@ -116,6 +121,11 @@ return [
                 'id' => 5,
                 'name' => 'En att.',
                 'color' => 'violet'
+            ],
+            [
+                'id' => 2,
+                'name' => 'En cours',
+                'color' => 'yellow'
             ],
         ]
     ]
