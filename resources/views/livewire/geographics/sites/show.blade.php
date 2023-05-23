@@ -19,9 +19,7 @@
             </div>
             <div class="md:grid md:grid-cols-2 hover:bg-slate-50 md:space-y-0 space-y-1 p-4 border-b">
                 <p class="text-slate-600 font-medium">@lang('Building type')</p>
-                {{--
-                <p>{{ $site->type->parent[0]->name }}, {{ $site->type->name }}</p>
-                 --}}
+                <p>{{ $site->type->parent->name.', ' ?? '' }} {{ $site->type->name }}</p>
             </div>
             <div class="md:grid md:grid-cols-2 hover:bg-slate-50 md:space-y-0 space-y-1 p-4 border-b">
                 <p class="text-slate-600 font-medium">@lang('Manager')</p>

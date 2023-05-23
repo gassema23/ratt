@@ -23,6 +23,7 @@ class Show extends ModalComponent
             'city.region.state.country'
         ])->findOrFail($id);
     }
+
     public function render()
     {
         return view('livewire.geographics.sites.show');

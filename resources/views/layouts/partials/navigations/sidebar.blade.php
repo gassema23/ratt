@@ -14,27 +14,61 @@
                 </li>
                 {{-- BEAT --}}
                 @if (config('app.env') !== 'production')
-                <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
-                    <a href="#"
-                        class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-700 justify-between w-full"
-                        x-on:click="open = !open">
-                        <div class="flex space-x-2">
-                            <x-icon name="office-building" class="w-4" />
-                            <span>@lang('BEAT')</span>
-                        </div>
-                        <span class="text-end" :class="{ 'rotated': open }">
-                            <x-icon name="chevron-right" class="h-3" />
-                        </span>
-                    </a>
-                    <ul x-show="open" x-collapse class="bg-slate-700">
-                        <li>
-                            <a href="{{ route('admin.beat.settings.index') }}"
-                                class="flex items-center py-2 px-4 transition duration-300 hover:bg-slate-600 pl-10">
-                                @lang('Settings')
-                            </a>
-                        </li>
-                    </ul>
-                </li>
+                    <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
+                        <a href="#" @class([
+                            'flex',
+                            'items-center',
+                            'py-2',
+                            'px-4',
+                            'transition',
+                            'duration-300',
+                            'hover:bg-slate-700',
+                            'justify-between',
+                            'w-full',
+                            'bg-slate-700' => Route::is('admin.beat.*'),
+                        ]) x-on:click="open = !open">
+                            <div class="flex space-x-2">
+                                <x-icon name="office-building" class="w-4" />
+                                <span>@lang('BEAT')</span>
+                            </div>
+                            <span class="text-end" :class="{ 'rotated': open }">
+                                <x-icon name="chevron-right" class="h-3" />
+                            </span>
+                        </a>
+                        <ul x-show="open" x-collapse class="bg-slate-700">
+                            <li>
+                                <a href="{{ route('admin.beat.alarms.systems.index') }}"
+                                @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                    'bg-slate-600' => Route::is('admin.beat.alarms.systems.*'),
+                                ])>
+                                    <span>@lang('Systems')</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.beat.settings.index') }}" @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                    'bg-slate-600' => Route::is('admin.beat.settings.*'),
+                                ])>
+                                    @lang('Settings')
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
                 @endif
                 {{-- RATT --}}
                 @can('projects-viewAny', 'scenarios-viewAny', 'tasks-viewAny')
@@ -177,17 +211,18 @@
                             @endcan
                             @can('categories-viewAny')
                                 <li>
-                                    <a href="{{ route('admin.documentations.categories.index') }}" @class([
-                                        'flex',
-                                        'items-center',
-                                        'py-2',
-                                        'px-4',
-                                        'transition',
-                                        'duration-300',
-                                        'hover:bg-slate-600',
-                                        'pl-10',
-                                        'bg-slate-600' => Route::is('admin.documentations.categories.*'),
-                                    ])>
+                                    <a href="{{ route('admin.documentations.categories.index') }}"
+                                        @class([
+                                            'flex',
+                                            'items-center',
+                                            'py-2',
+                                            'px-4',
+                                            'transition',
+                                            'duration-300',
+                                            'hover:bg-slate-600',
+                                            'pl-10',
+                                            'bg-slate-600' => Route::is('admin.documentations.categories.*'),
+                                        ])>
                                         @lang('Categories')
                                     </a>
                                 </li>

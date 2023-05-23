@@ -15,8 +15,10 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 class SiteType extends Model
 {
     use HasFactory, HasTranslations, SoftDeletes, CascadeSoftDeletes, Userstamps, LogsActivity;
+
     public $translatable = ['name', 'description'];
     protected $guarded = ['id', 'created_at', 'updated_at'];
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
@@ -24,10 +26,12 @@ class SiteType extends Model
             ->setDescriptionForEvent(fn(string $eventName) => "Site Type {$eventName}")
             ->useLogName('SiteTypesLog');
     }
+
     public function childrens(): HasMany
     {
         return $this->hasMany(self::class, 'parent_id');
     }
+
     public function parent(): BelongsTo
     {
         return $this->belongsTo(self::class, 'parent_id');

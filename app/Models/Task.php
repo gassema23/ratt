@@ -43,4 +43,10 @@ class Task extends Model
     {
         return $this->parent->name;
     }
+
+
+    public function parent()
+    {
+        return $this->belongsTo(Task::class, 'parent_id', 'id');
+    }
 }

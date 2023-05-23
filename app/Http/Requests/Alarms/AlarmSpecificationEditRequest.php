@@ -5,7 +5,7 @@ namespace App\Http\Requests\Alarms;
 use Illuminate\Foundation\Http\FormRequest;
 use Illuminate\Validation\Rule;
 
-class AlarmSwitchTypeEditRequest extends FormRequest
+class AlarmSpecificationEditRequest extends FormRequest
 {
 
     /**
@@ -19,12 +19,12 @@ class AlarmSwitchTypeEditRequest extends FormRequest
             'alarm.label.en' => [
                 'required',
                 'max:125',
-                Rule::unique('alarm_switch_types', 'label')->ignore($alarm_id)
+                Rule::unique('alarm_specifications', 'label')->ignore($alarm_id)
             ],
             'alarm.label.fr' => [
                 'nullable',
                 'max:125',
-                Rule::unique('alarm_switch_types', 'label')->ignore($alarm_id)
+                Rule::unique('alarm_specifications', 'label')->ignore($alarm_id)
             ],
             'alarm.description.en'=>[
                 'nullable'

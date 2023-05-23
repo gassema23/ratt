@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Http\Livewire\Beat\Settings\Alarms\Categories;
+namespace App\Http\Livewire\Beat\Alarms\Systems;
 
 use App\Traits\HasDelete;
-use App\Models\AlarmCategory;
+use App\Models\AlarmSystem;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
@@ -14,7 +14,7 @@ final class Table extends PowerGridComponent
 {
     use ActionButton, HasDelete;
 
-    public $model = AlarmCategory::class;
+    public $model = AlarmSystem::class;
 
     public $emits = [
         'refresh'
@@ -39,7 +39,12 @@ final class Table extends PowerGridComponent
     */
     public function setUp(): array
     {
+        $this->showCheckBox();
+
         return [
+            Exportable::make('export')
+                ->striped()
+                ->type(Exportable::TYPE_XLS, Exportable::TYPE_CSV),
             Header::make()->showSearchInput(),
             Footer::make()
                 ->showPerPage()
@@ -58,11 +63,14 @@ final class Table extends PowerGridComponent
     /**
      * PowerGrid datasource.
      *
-     * @return Builder<\App\Models\AlarmCategory>
+     * @return Builder<\App\Models\AlarmSystem>
      */
     public function datasource(): Builder
     {
-        return AlarmCategory::query();
+        return AlarmSystem::query()
+            ->with(['site', 'systemType'])
+            ->join('sites', 'alarm_systems.site_id', '=', 'sites.id')
+            ->select('alarm_systems.*', 'sites.clli as site_clli', 'sites.name as site_name');
     }
 
     /*
@@ -80,7 +88,15 @@ final class Table extends PowerGridComponent
      */
     public function relationSearch(): array
     {
-        return [];
+        return [
+            'site' => [
+                'name', '
+                clli'
+            ],
+            'systemType' => [
+                'label'
+            ]
+        ];
     }
 
     /*
@@ -97,8 +113,12 @@ final class Table extends PowerGridComponent
     public function addColumns(): PowerGridEloquent
     {
         return PowerGrid::eloquent()
-            ->addColumn('label')
-            ->addColumn('updated_at_formatted', fn (AlarmCategory $model) => $model->updated_at->diffForHumans());
+            ->addColumn('site_name', fn (AlarmSystem $model) => $model->site->name)
+            ->addColumn('site_clli', fn (AlarmSystem $model) => $model->site->clli)
+            ->addColumn('network_element', fn (AlarmSystem $model) => $model->network_element)
+            ->addColumn('location_number')
+            ->addColumn('ipv4')
+            ->addColumn('updated_at_formatted', fn (AlarmSystem $model) => $model->updated_at->diffForHumans());
     }
 
     /*
@@ -118,7 +138,19 @@ final class Table extends PowerGridComponent
     public function columns(): array
     {
         return [
-            Column::make(trans('name'), 'label')
+            Column::make(trans('Site'), 'site_name')
+                ->sortable()
+                ->searchable(),
+            Column::make(trans('clli'), 'site_clli')
+                ->sortable()
+                ->searchable(),
+            Column::make(trans('network element'), 'network_element')
+                ->sortable()
+                ->searchable(),
+            Column::make(trans('location number'), 'location_number')
+                ->sortable()
+                ->searchable(),
+            Column::make(trans('ipv4'), 'ipv4')
                 ->sortable()
                 ->searchable(),
             Column::make(trans('Last update'), 'updated_at_formatted', 'updated_at')
@@ -135,20 +167,20 @@ final class Table extends PowerGridComponent
     */
 
     /**
-     * PowerGrid AlarmCategory Action Buttons.
+     * PowerGrid AlarmSystem Action Buttons.
      *
      * @return array<int, Button>
      */
 
-    public function actions(): array
-    {
-        return [
-            Button::add('editrecord')
-                ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'beat.settings.alarms.categories.edit']),
-            Button::add('deleterecord')
-                ->bladeComponent('deleterecord', ['id' => 'id']),
-        ];
-    }
+     public function actions(): array
+     {
+         return [
+             Button::add('editrecord')
+                 ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'beat.alarms.systems.edit']),
+             Button::add('deleterecord')
+                 ->bladeComponent('deleterecord', ['id' => 'id']),
+         ];
+     }
 
     /*
     |--------------------------------------------------------------------------
@@ -159,20 +191,20 @@ final class Table extends PowerGridComponent
     */
 
     /**
-     * PowerGrid AlarmCategory Action Rules.
+     * PowerGrid AlarmSystem Action Rules.
      *
      * @return array<int, RuleActions>
      */
 
-    public function actionRules(): array
-    {
-        return [
-            Rule::button('editrecord')
-                ->when(fn () => !auth()->user()->can('alarmCategory-update'))
-                ->hide(),
-            Rule::button('deleterecord')
-                ->when(fn () => !auth()->user()->can('alarmCategory-delete'))
-                ->hide(),
-        ];
-    }
+     public function actionRules(): array
+     {
+         return [
+             Rule::button('editrecord')
+                 ->when(fn () => !auth()->user()->can('alarmSystem-update'))
+                 ->hide(),
+             Rule::button('deleterecord')
+                 ->when(fn () => !auth()->user()->can('alarmSystem-delete'))
+                 ->hide(),
+         ];
+     }
 }

@@ -17,12 +17,14 @@
                         <div class="flex justify-between items-center space-x-4 py-2">
                             <div class="w-1/3 text-sm flex-1 flex flex-row items-center">
                                 <div class="font-medium truncate w-full">
-                                    <a href="#" class="hover:underline flex justify-between w-full"
+                                    <a href="#" class="hover:underline flex justify-start w-full items-center"
                                         wire:click="taskInfo({{ $task->id }})">
-                                        <span>{{ $task->task->name }}</span>
                                         @if (!is_null($task->task->parent_id))
-                                            <x-icon name="exclamation-circle" class="w-3 h-3" />
+                                            <x-tooltip>
+                                                @lang('This task relies on: :dependency', ['dependency' => $task->task->parent->name])
+                                            </x-tooltip>
                                         @endif
+                                        <span>{{ $task->task->name }}</span>
                                     </a>
                                 </div>
                             </div>
@@ -60,10 +62,12 @@
                         class="flex justify-between text-slate-500 border-b border-slate-200 text-xs mb-2 pb-2 align-middle items-center">
                         <h3 class="font-medium text-lg">
                             {{ $taskInfoSection->task->name }}
-                            @if (!is_null($taskInfoSection->task->parent_id))
-                                @dump($taskInfoSection->task->parent_id)
-                            @endif
                         </h3>
+                        <span>
+                            @if (!is_null($taskInfoSection->task->parent_id))
+                                @lang('This task relies on: :dependency', ['dependency' => $taskInfoSection->task->parent->name])
+                            @endif
+                        </span>
                         <x-dropdown align="right">
                             <x-dropdown.header :label="trans('Manage taks')">
                                 <x-slot name="trigger">
@@ -82,7 +86,7 @@
                             </x-dropdown.header>
                         </x-dropdown>
                     </div>
-                    <div class="font-medium ">
+                    <div class="font-medium">
                         @if (auth()->user()->id === $taskInfoSection->network->project->planner_id ||
                                 auth()->user()->id === $taskInfoSection->network->project->prime_id ||
                                 auth()->user()->hasRole('Super-Admin'))

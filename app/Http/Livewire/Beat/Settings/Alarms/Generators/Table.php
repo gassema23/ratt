@@ -1,10 +1,10 @@
 <?php
 
-namespace App\Http\Livewire\Beat\Settings\Alarms\Categories;
+namespace App\Http\Livewire\Beat\Settings\Alarms\Generators;
 
 use App\Traits\HasDelete;
-use App\Models\AlarmCategory;
 use Illuminate\Support\Carbon;
+use App\Models\AlarmGeneratorType;
 use Illuminate\Database\Eloquent\Builder;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
@@ -14,11 +14,9 @@ final class Table extends PowerGridComponent
 {
     use ActionButton, HasDelete;
 
-    public $model = AlarmCategory::class;
+    public $model = AlarmGeneratorType::class;
 
-    public $emits = [
-        'refresh'
-    ];
+    public $emits = ['refresh'];
 
     protected function getListeners(): array
     {
@@ -58,11 +56,11 @@ final class Table extends PowerGridComponent
     /**
      * PowerGrid datasource.
      *
-     * @return Builder<\App\Models\AlarmCategory>
+     * @return Builder<\App\Models\AlarmGeneratorType>
      */
     public function datasource(): Builder
     {
-        return AlarmCategory::query();
+        return AlarmGeneratorType::query();
     }
 
     /*
@@ -98,7 +96,7 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::eloquent()
             ->addColumn('label')
-            ->addColumn('updated_at_formatted', fn (AlarmCategory $model) => $model->updated_at->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (AlarmGeneratorType $model) => $model->updated_at->diffForHumans());
     }
 
     /*
@@ -118,9 +116,10 @@ final class Table extends PowerGridComponent
     public function columns(): array
     {
         return [
-            Column::make(trans('name'), 'label')
+            Column::make(trans('generator type'), 'label')
                 ->sortable()
-                ->searchable(),
+                ->searchable()
+                ->bodyAttribute('max-w-xl break-words', 'white-space: normal!important'),
             Column::make(trans('Last update'), 'updated_at_formatted', 'updated_at')
                 ->sortable(),
         ];
@@ -135,7 +134,7 @@ final class Table extends PowerGridComponent
     */
 
     /**
-     * PowerGrid AlarmCategory Action Buttons.
+     * PowerGrid AlarmGeneratorType Action Buttons.
      *
      * @return array<int, Button>
      */
@@ -143,8 +142,10 @@ final class Table extends PowerGridComponent
     public function actions(): array
     {
         return [
+            Button::add('modalshowrecord')
+                ->bladeComponent('modalshowrecord', ['id' => 'id', 'route' => 'beat.settings.alarms.generators.show']),
             Button::add('editrecord')
-                ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'beat.settings.alarms.categories.edit']),
+                ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'beat.settings.alarms.generators.edit']),
             Button::add('deleterecord')
                 ->bladeComponent('deleterecord', ['id' => 'id']),
         ];
@@ -159,7 +160,7 @@ final class Table extends PowerGridComponent
     */
 
     /**
-     * PowerGrid AlarmCategory Action Rules.
+     * PowerGrid AlarmGeneratorType Action Rules.
      *
      * @return array<int, RuleActions>
      */
@@ -168,10 +169,10 @@ final class Table extends PowerGridComponent
     {
         return [
             Rule::button('editrecord')
-                ->when(fn () => !auth()->user()->can('alarmCategory-update'))
+                ->when(fn () => !auth()->user()->can('alarmGeneratorType-update'))
                 ->hide(),
             Rule::button('deleterecord')
-                ->when(fn () => !auth()->user()->can('alarmCategory-delete'))
+                ->when(fn () => !auth()->user()->can('alarmGeneratorType-delete'))
                 ->hide(),
         ];
     }
