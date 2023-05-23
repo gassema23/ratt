@@ -28,6 +28,11 @@ return [
                 'id' => 4,
                 'name' => 'Low',
                 'color' => 'teal'
+            ],
+            [
+                'id' => 2,
+                'name' => 'Major',
+                'color' => 'yellow'
             ]
         ],
         'fr' => [
@@ -50,7 +55,12 @@ return [
                 'id' => 4,
                 'name' => 'Bas',
                 'color' => 'teal'
-            ]
+            ],
+            [
+                'id' => 5,
+                'name' => 'Majeur',
+                'color' => 'yellow'
+            ],
         ]
     ],
     'App_statuses' => [

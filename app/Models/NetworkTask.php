@@ -77,10 +77,7 @@ class NetworkTask extends Model implements HasMedia
 
     public function getBadgePriorityColorAttribute()
     {
-        return $this->priority;
-        /**
         return collect(config('biri.App_priority.en'))->where('id', $this->priority)->first()['color'];
-        */
     }
 
     public function getStatusNameAttribute() {
