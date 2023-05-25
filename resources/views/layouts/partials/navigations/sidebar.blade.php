@@ -379,7 +379,7 @@
                     </li>
                 @endcan
                 {{-- Employees --}}
-                @can('employees-viewAny', 'teams-viewAny')
+                @can('users-viewAny', 'teams-viewAny')
                     <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                         <a href="#" @class([
                             'flex',

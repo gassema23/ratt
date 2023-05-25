@@ -2,20 +2,22 @@
 
 namespace App\Http\Livewire\Ratt\Networks\Sections;
 
+use Livewire\Component;
+use WireUi\Traits\Actions;
 use App\Models\NetworkTask;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
-use Livewire\Component;
+use Spatie\Activitylog\Models\Activity;
 
 class TaskSection extends Component
 {
-    use AuthorizesRequests;
+    use AuthorizesRequests, Actions;
 
     protected $listeners = [
         'refresh' => '$refresh',
         'taskInfo'
     ];
 
-    public $network, $taskInfoSection;
+    public $network, $taskInfoSection, $taskInfoSectionLogActivities;
 
     public function mount($network)
     {
@@ -43,6 +45,38 @@ class TaskSection extends Component
                 }
             ])
             ->findOrFail($value);
+
+            $this->taskInfoSectionLogActivities = Activity::where('event','=','taskCompleted')->get()->last();
+
+        $this->emit('showChecklist');
+        $this->emit('refresh');
+    }
+
+    public function markAsCompleted($id)
+    {
+        $this->dialog()->confirm([
+            'title'       => trans('Are you Sure?'),
+            'description' => trans('Are you sure to complete this task?'),
+            'acceptLabel' => trans('Yes!'),
+            'method'      => 'confirmComplete',
+            'params'    => $id
+        ]);
+    }
+
+    public function confirmComplete($id)
+    {
+        $network = NetworkTask::findOrFail($id);
+
+
+        $network->update([
+            "is_completed" => now()
+        ]);
+
+        activity()
+            ->causedBy(auth()->user())
+            ->performedOn($network)
+            ->event('networkTaskCompleted')
+            ->log('Mark as completed');
 
         $this->emit('showChecklist');
         $this->emit('refresh');

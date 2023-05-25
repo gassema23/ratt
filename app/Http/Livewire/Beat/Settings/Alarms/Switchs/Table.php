@@ -98,7 +98,7 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::eloquent()
             ->addColumn('label')
-            ->addColumn('updated_at_formatted', fn (AlarmSwitchType $model) => $model->updated_at->format('Y-m-d H:i'));
+            ->addColumn('updated_at_formatted', fn (AlarmSwitchType $model) => $model->updated_at->toFormattedDayDateString());
     }
 
     /*

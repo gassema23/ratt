@@ -26,6 +26,12 @@ class NetworkTask extends Model implements HasMedia
 
     protected $with = ['statuses'];
 
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+        'is_completed' => 'datetime',
+    ];
+
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
@@ -80,19 +86,35 @@ class NetworkTask extends Model implements HasMedia
         return collect(config('biri.App_priority.en'))->where('id', $this->priority)->first()['color'];
     }
 
-    public function getStatusNameAttribute() {
-        if($this->status()){
+    public function getStatusNameAttribute()
+    {
+        if ($this->status()) {
             return $this->status()->status_name;
-        }else {
+        } else {
             return 'New';
         }
     }
 
-    public function getStatusColorAttribute() {
-        if($this->status()){
+    public function getStatusColorAttribute()
+    {
+        if ($this->status()) {
             return $this->status()->status_color;
-        }else {
+        } else {
             return 'slate';
         }
+    }
+
+    public function getCompleteLinkAttribute()
+    {
+        if (
+            auth()->user()->id === $this->network->project->planner_id ||
+            auth()->user()->id === $this->network->project->prime_id ||
+            auth()->user()->hasRole(['Super-Admin', 'Admin']) &&
+            is_null($this->is_completed) &&
+            $this->status == 4
+        ) {
+            return true;
+        }
+        return false;
     }
 }

@@ -1,5 +1,5 @@
 @props(['header', 'footer'])
-<div>
+<div class="relative">
     <x-card >
         <div class="flex justify-between">
             <div class="font-bold text-slate-600 text-lg">{{ $title }}</div>

@@ -56,9 +56,26 @@
                         <x-icon name="folder-open" class="w-4 h-4" />
                     </div>
                     <div>
-                        {{ trans_choice('{0,1} :nb task associate|[2,*] :nb tasks associate', $network->networktasks_count, ['nb' => $network->networktasks_count]) }}
+                        <div>
+                            {{ trans_choice('{0,1} :nb task associate|[2,*] :nb tasks associate', $network->networktasks->count(), ['nb' => $network->networktasks->count()]) }}
+                        </div>
+
+                        @if ($network->networktasks->count() > 0)
+                            <div>
+                                @lang('Network completion')
+                                <span
+                                    class="font-medium pl-1">{{ number_format(($network->networktasks_count / $network->networktasks->count()) * 100,2) }}%</span>
+                            </div>
+                        @endif
                     </div>
                 </div>
+                @if ($network->networktasks->count() > 0)
+                    <div class="bg-slate-100 absolute bottom-0 left-0 right-0">
+                        <div
+                            class="bg-teal-200 p-1 w-[{{ (number_format(($network->networktasks_count / $network->networktasks->count()) * 100,2) }}%]">
+                        </div>
+                    </div>
+                @endif
             </div>
         </x-app-card>
     @empty

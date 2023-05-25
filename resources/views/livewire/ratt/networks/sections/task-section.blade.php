@@ -17,7 +17,14 @@
                         <div class="flex justify-between items-center space-x-4 py-2">
                             <div class="w-1/3 text-sm flex-1 flex flex-row items-center">
                                 <div class="font-medium truncate w-full">
-                                    <a href="#" class="hover:underline flex justify-start w-full items-center"
+                                    <a href="#" @class([
+                                        'hover:underline' => is_null($task->is_completed),
+                                        'flex',
+                                        'justify-start',
+                                        'w-full',
+                                        'items-center',
+                                        'line-through' => !is_null($task->is_completed),
+                                    ])
                                         wire:click="taskInfo({{ $task->id }})">
                                         @if (!is_null($task->task->parent_id))
                                             <x-tooltip>
@@ -30,7 +37,11 @@
                             </div>
                             <div class="flex text-left text-slate-400 space-x-2 items-center align-middle">
                                 <div class="ml-2">
-                                    <x-badge :label="$task->status_name" squared :color="$task->status_color" />
+                                    @if (is_null($task->is_completed))
+                                        <x-badge :label="$task->status_name" squared :color="$task->status_color" />
+                                    @else
+                                        <x-badge :label="trans('Completed')" squared color="violet" />
+                                    @endif
                                 </div>
                                 <div class=" text-slate-400">
                                     <x-icon name="chat-alt-2" class="w-5 h-5 inline-block" />
@@ -69,45 +80,53 @@
                             @endif
                         </span>
                         <x-dropdown align="right">
-                            <x-dropdown.header :label="trans('Manage taks')">
+                            <x-dropdown.header :label="trans('Manage tasks')">
                                 <x-slot name="trigger">
                                     <x-icon name="dots-horizontal" class="w-4 h-4" />
                                 </x-slot>
-                                @can('networks-assignScenarios')
-                                    @if ($taskInfoSection->status != 4)
-                                        <x-dropdown.item href="#" :label="trans('Change status')"
-                                            onclick="Livewire.emit('openModal', 'ratt.networks.sections.change-status-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
-                                    @endif
-                                @endcan
-                                @can('tasks-update')
-                                    <x-dropdown.item href="#" :label="trans('Edit task')"
-                                        onclick="Livewire.emit('openModal', 'ratt.networks.sections.task-edit', {{ json_encode([$taskInfoSection->id]) }})" />
-                                @endcan
+                                @if ($taskInfoSection->complete_link)
+                                    <x-dropdown.item href="#" :label="trans('Mark as completed')"
+                                        wire:click="markAsCompleted({{ $taskInfoSection->id }})" />
+                                @endif
+                                @if (is_null($taskInfoSection->is_completed))
+                                    @can('networks-assignScenarios')
+                                        @if ($taskInfoSection->status != 4)
+                                            <x-dropdown.item href="#" :label="trans('Change status')"
+                                                onclick="Livewire.emit('openModal', 'ratt.networks.sections.change-status-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
+                                        @endif
+                                    @endcan
+                                    @can('tasks-update')
+                                        <x-dropdown.item href="#" :label="trans('Edit task')"
+                                            onclick="Livewire.emit('openModal', 'ratt.networks.sections.task-edit', {{ json_encode([$taskInfoSection->id]) }})" />
+                                    @endcan
+                                @endif
                             </x-dropdown.header>
                         </x-dropdown>
                     </div>
-                    <div class="font-medium">
-                        @if (auth()->user()->id === $taskInfoSection->network->project->planner_id ||
-                                auth()->user()->id === $taskInfoSection->network->project->prime_id ||
-                                auth()->user()->hasRole('Super-Admin'))
-                            @if (
-                                $taskInfoSection->complete_checklists_count === $taskInfoSection->checklists_count &&
-                                    $taskInfoSection->checklists_count > 0)
-                                @if (is_null($taskInfoSection->is_complete) &&
-                                        auth()->user()->hasRole(['Super-Admin', 'Admin']))
-                                    @if ($taskInfoSection->status == 4)
-                                        <x-button :label="trans('Mark as complete')" sm squared flat />
-                                    @endif
-                                @else
-                                    <x-badge :label="trans('Complete')" squared color="teal" />
-                                @endif
-                            @endif
-                        @endif
-                    </div>
                     <div class="flex justify-start space-x-2 pb-4">
-                        <x-badge :label="$taskInfoSection->status_name" squared :color="$taskInfoSection->status_color" />
+                        @if (is_null($task->is_completed))
+                            <x-badge :label="$taskInfoSection->status_name" squared :color="$taskInfoSection->status_color" />
+                        @else
+                            <x-badge :label="trans('Completed')" squared color="violet" />
+                        @endif
+
                         <x-badge :label="$taskInfoSection->badgepriorityname" squared :color="$taskInfoSection->badgeprioritycolor" />
                     </div>
+                    @if (!is_null($taskInfoSection->is_completed))
+                        <div class="pb-4 grid grid-cols-1">
+                            <div class="font-medium mb-2 pb-2 text-slate-600 border-b border-slate-200">
+                                @lang('Completed task')</div>
+                            <div class="grid grid-cols-6 gap-4 text-sm pb-1">
+                                <div class="font-medium">@lang('Completed on')</div>
+                                <div>{{ $taskInfoSectionLogActivities->created_at }}</div>
+                            </div>
+                            <div class="grid grid-cols-6 gap-4 text-sm pb-1">
+                                <div class="font-medium">@lang('Completed by')</div>
+                                <div>{{$taskInfoSectionLogActivities->causer->name}}</div>
+                            </div>
+
+                        </div>
+                    @endif
                     <div class="flex justify-between pb-4 text-slate-400">
                         <div class="grid grid-cols-1">
                             <div class="font-medium text-slate-600">@lang('Assign to')</div>
