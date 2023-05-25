@@ -72,7 +72,7 @@
                 @if ($network->networktasks->count() > 0)
                     <div class="bg-slate-100 absolute bottom-0 left-0 right-0">
                         <div
-                            class="bg-teal-200 p-1 w-[{{ number_format(($network->networktasks_count / $network->networktasks->count()) * 100,2) }}%]">
+                            class="bg-teal-200 py-1 w-[{{ ($network->networktasks_count / $network->networktasks->count()) * 100 }}%]">
                         </div>
                     </div>
                 @endif
