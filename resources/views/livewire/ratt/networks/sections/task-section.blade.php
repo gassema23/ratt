@@ -116,11 +116,11 @@
                         <div class="pb-4 grid grid-cols-1">
                             <div class="font-medium mb-2 pb-2 text-slate-600 border-b border-slate-200">
                                 @lang('Completed task')</div>
-                            <div class="grid grid-cols-6 gap-4 text-sm pb-1">
+                            <div class="grid grid-cols-4 gap-4 text-sm pb-1">
                                 <div class="font-medium">@lang('Completed on')</div>
                                 <div>{{ $taskInfoSectionLogActivities->created_at ?? '' }}</div>
                             </div>
-                            <div class="grid grid-cols-6 gap-4 text-sm pb-1">
+                            <div class="grid grid-cols-4 gap-4 text-sm pb-1">
                                 <div class="font-medium">@lang('Completed by')</div>
                                 <div>{{$taskInfoSectionLogActivities->causer->name ?? ''}}</div>
                             </div>
