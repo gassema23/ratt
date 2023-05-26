@@ -104,7 +104,7 @@
                         </x-dropdown>
                     </div>
                     <div class="flex justify-start space-x-2 pb-4">
-                        @if (is_null($task->is_completed))
+                        @if (is_null($taskInfoSection->is_completed))
                             <x-badge :label="$taskInfoSection->status_name" squared :color="$taskInfoSection->status_color" />
                         @else
                             <x-badge :label="trans('Completed')" squared color="violet" />
