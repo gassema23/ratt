@@ -46,7 +46,10 @@ class TaskSection extends Component
             ])
             ->findOrFail($value);
 
-            $this->taskInfoSectionLogActivities = Activity::where('event','=','taskCompleted')->get()->last();
+        $this->taskInfoSectionLogActivities = Activity::where('event', '=', 'networkTaskCompleted')
+            ->where('subject_id', $value)
+            ->orderBy('created_at','desc')
+            ->first();
 
         $this->emit('showChecklist');
         $this->emit('refresh');
