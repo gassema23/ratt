@@ -118,11 +118,11 @@
                                 @lang('Completed task')</div>
                             <div class="grid grid-cols-6 gap-4 text-sm pb-1">
                                 <div class="font-medium">@lang('Completed on')</div>
-                                <div>{{ $taskInfoSectionLogActivities->created_at }}</div>
+                                <div>{{ $taskInfoSectionLogActivities->created_at ?? '' }}</div>
                             </div>
                             <div class="grid grid-cols-6 gap-4 text-sm pb-1">
                                 <div class="font-medium">@lang('Completed by')</div>
-                                <div>{{$taskInfoSectionLogActivities->causer->name}}</div>
+                                <div>{{$taskInfoSectionLogActivities->causer->name ?? ''}}</div>
                             </div>
 
                         </div>
