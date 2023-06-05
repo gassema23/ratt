@@ -111,13 +111,8 @@ final class Table extends PowerGridComponent
             ->addColumn('alarm_type', fn (AlarmList $model) => $model->type->label)
             ->addColumn('model')
             ->addColumn('item_number')
-            ->addColumn('description')
             ->addColumn('alarm_severity', fn (AlarmList $model) => $model->severity->label)
-            ->addColumn('ctl')
-            ->addColumn('verb1')
-            ->addColumn('verb2')
-            ->addColumn('io_terminal')
-            ->addColumn('updated_at_formatted', fn (AlarmList $model) => $model->updated_at->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (AlarmList $model) => $model->updated_at->format('Y-m-d H:i'));
     }
 
     /*
@@ -146,22 +141,7 @@ final class Table extends PowerGridComponent
             Column::make(trans('item number'), 'item_number')
                 ->sortable()
                 ->searchable(),
-            Column::make(trans('information'), 'description')
-                ->sortable()
-                ->searchable(),
             Column::make(trans('severity'), 'alarm_severity')
-                ->sortable()
-                ->searchable(),
-            Column::make(trans('ctl'), 'ctl')
-                ->sortable()
-                ->searchable(),
-            Column::make(trans('verb 1'), 'verb1')
-                ->sortable()
-                ->searchable(),
-            Column::make(trans('verb 2'), 'verb2')
-                ->sortable()
-                ->searchable(),
-            Column::make(trans('i/o terminal'), 'io_terminal')
                 ->sortable()
                 ->searchable(),
             Column::make(trans('Last update'), 'updated_at_formatted', 'updated_at')
@@ -187,6 +167,8 @@ final class Table extends PowerGridComponent
     public function actions(): array
     {
         return [
+            Button::add('modalshowrecord')
+                ->bladeComponent('modalshowrecord', ['id' => 'id', 'route' => 'beat.settings.alarms.lists.show']),
             Button::add('editrecord')
                 ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'beat.settings.alarms.lists.edit']),
             Button::add('deleterecord')

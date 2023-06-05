@@ -37,6 +37,22 @@
                         </a>
                         <ul x-show="open" x-collapse class="bg-slate-700">
                             <li>
+                                <a href="{{ route('admin.beat.alarms.alarms.index') }}"
+                                @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                    'bg-slate-600' => Route::is('admin.beat.alarms.alarms.*'),
+                                ])>
+                                    <span>@lang('Alarms')</span>
+                                </a>
+                            </li>
+                            <li>
                                 <a href="{{ route('admin.beat.alarms.systems.index') }}"
                                 @class([
                                     'flex',

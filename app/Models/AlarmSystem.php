@@ -38,6 +38,6 @@ class AlarmSystem extends Model
 
     public function systemType(): BelongsTo
     {
-        return $this->belongsTo(AlarmSystemType::class);
+        return $this->belongsTo(AlarmSystemType::class, 'alarm_system_type_id', 'id');
     }
 }

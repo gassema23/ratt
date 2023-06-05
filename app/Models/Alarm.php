@@ -5,17 +5,14 @@ namespace App\Models;
 use Spatie\Activitylog\LogOptions;
 use Wildside\Userstamps\Userstamps;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class AlarmSystemType extends Model
+class Alarm extends Model
 {
-    use HasFactory, SoftDeletes, Userstamps, LogsActivity, HasTranslations;
-    public $translatable = ['label', 'description'];
-
+    use HasFactory, SoftDeletes, Userstamps, LogsActivity;
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
     protected $casts = [
@@ -27,12 +24,12 @@ class AlarmSystemType extends Model
     {
         return LogOptions::defaults()
             ->logAll()
-            ->setDescriptionForEvent(fn (string $eventName) => "Alarm System Type {$eventName}")
-            ->useLogName('AlarmSystemTypesLog');
+            ->setDescriptionForEvent(fn (string $eventName) => "Alarms {$eventName}")
+            ->useLogName('AlarmsLog');
     }
 
-    public function alarms(): HasMany
+    public function AlarmSystem(): BelongsTo
     {
-        //return $this->hasMany(Alarm::class,'id','id');
+        return $this->belongsTo(AlarmSystem::class);
     }
 }

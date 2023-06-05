@@ -20,7 +20,7 @@ class Edit extends ModalComponent
 
     public function mount($team)
     {
-        $this->authorize('teams-edit');
+        $this->authorize('teams-update');
         $this->team = Team::findOrFail($team);
         $this->users = User::role(['Admin', 'Super-Admin'])->orderBy('name')->select('id', 'name', 'employe_id as description')->get();
     }
@@ -32,7 +32,7 @@ class Edit extends ModalComponent
 
     public function save()
     {
-        $this->authorize('teams-edit');
+        $this->authorize('teams-update');
         $this->validate();
         $this->team->update($this->validate());
         $this->saved();

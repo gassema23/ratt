@@ -85,6 +85,7 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
                 Route::prefix('beat')->name('beat.')->group(function () {
                     Route::get('/settings', Beat\Settings\Index::class)->name('settings.index');
                     Route::prefix('alarms')->name('alarms.')->group(function () {
+                        Route::get('/alarms', Beat\Alarms\Alarms\Index::class)->name('alarms.index');
                         Route::get('/systems', Beat\Alarms\Systems\Index::class)->name('systems.index');
                     });
                 });

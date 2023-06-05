@@ -70,7 +70,8 @@ final class Table extends PowerGridComponent
         return AlarmSystem::query()
             ->with(['site', 'systemType'])
             ->join('sites', 'alarm_systems.site_id', '=', 'sites.id')
-            ->select('alarm_systems.*', 'sites.clli as site_clli', 'sites.name as site_name');
+            ->join('alarm_system_types', 'alarm_systems.alarm_system_type_id', '=', 'alarm_system_types.id')
+            ->select('alarm_systems.*', 'sites.clli as site_clli', 'sites.name as site_name', 'alarm_system_types.label as system_type_label');
     }
 
     /*
@@ -113,6 +114,7 @@ final class Table extends PowerGridComponent
     public function addColumns(): PowerGridEloquent
     {
         return PowerGrid::eloquent()
+            ->addColumn('system_type_label', fn (AlarmSystem $model) => $model->systemType->label)
             ->addColumn('site_name', fn (AlarmSystem $model) => $model->site->name)
             ->addColumn('site_clli', fn (AlarmSystem $model) => $model->site->clli)
             ->addColumn('network_element', fn (AlarmSystem $model) => $model->network_element)
@@ -138,6 +140,9 @@ final class Table extends PowerGridComponent
     public function columns(): array
     {
         return [
+            Column::make(trans('system type'), 'system_type_label')
+                ->sortable()
+                ->searchable(),
             Column::make(trans('Site'), 'site_name')
                 ->sortable()
                 ->searchable(),
@@ -172,15 +177,17 @@ final class Table extends PowerGridComponent
      * @return array<int, Button>
      */
 
-     public function actions(): array
-     {
-         return [
-             Button::add('editrecord')
-                 ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'beat.alarms.systems.edit']),
-             Button::add('deleterecord')
-                 ->bladeComponent('deleterecord', ['id' => 'id']),
-         ];
-     }
+    public function actions(): array
+    {
+        return [
+            Button::add('modalshowrecord')
+                ->bladeComponent('modalshowrecord', ['id' => 'id', 'route' => 'beat.alarms.systems.show']),
+            Button::add('editrecord')
+                ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'beat.alarms.systems.edit']),
+            Button::add('deleterecord')
+                ->bladeComponent('deleterecord', ['id' => 'id']),
+        ];
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -196,15 +203,15 @@ final class Table extends PowerGridComponent
      * @return array<int, RuleActions>
      */
 
-     public function actionRules(): array
-     {
-         return [
-             Rule::button('editrecord')
-                 ->when(fn () => !auth()->user()->can('alarmSystem-update'))
-                 ->hide(),
-             Rule::button('deleterecord')
-                 ->when(fn () => !auth()->user()->can('alarmSystem-delete'))
-                 ->hide(),
-         ];
-     }
+    public function actionRules(): array
+    {
+        return [
+            Rule::button('editrecord')
+                ->when(fn () => !auth()->user()->can('alarmSystem-update'))
+                ->hide(),
+            Rule::button('deleterecord')
+                ->when(fn () => !auth()->user()->can('alarmSystem-delete'))
+                ->hide(),
+        ];
+    }
 }
