@@ -8,7 +8,7 @@
                 wire:click="$emit('openModal', 'ratt.networks.sections.assign-scenario',{{ json_encode([$network->id]) }})" />
         @endcan
     @else
-        @can('networks-assignScenarios')
+        @can('networks-changeScenarios')
             <div class="my-2 pb-2 border-b border-slate-200 w-full flex items-center align-middle justify-between">
                 <span class="font-bold uppercase text-lg">{{ $network->networktask->scenario->name }}</span>
                 <x-button squared xs :label="trans('Change scenario')"

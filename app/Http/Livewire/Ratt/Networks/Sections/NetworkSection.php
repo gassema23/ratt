@@ -12,12 +12,15 @@ class NetworkSection extends Component
         'refresh'  => '$refresh',
         'refreshAttachmentNetwork'  => '$refresh',
     ];
+
     public $network;
+
     public function mount($network)
     {
         $this->authorize('networks-networksSections');
         $this->network = $network;
     }
+
     public function render()
     {
         $this->authorize('networks-networksSections');

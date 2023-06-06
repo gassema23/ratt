@@ -13,7 +13,7 @@
                     </a>
                 </li>
                 {{-- BEAT --}}
-                @if (config('app.env') !== 'production')
+                @if (config('app.env') !== 'production' && auth()->user()->hasRole('Super-Admin'))
                     <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                         <a href="#" @class([
                             'flex',

@@ -53,13 +53,16 @@ final class Table extends PowerGridComponent
     */
 
     /**
-    * PowerGrid datasource.
-    *
-    * @return Builder<\App\Models\Team>
-    */
+     * PowerGrid datasource.
+     *
+     * @return Builder<\App\Models\Team>
+     */
     public function datasource(): Builder
     {
-        return Team::query();
+        return Team::query()
+            ->with('user')
+            ->leftjoin('users', 'teams.owner_id', '=', 'users.id')
+            ->select('teams.*', 'users.name as ownername');
     }
 
     /*
@@ -77,7 +80,11 @@ final class Table extends PowerGridComponent
      */
     public function relationSearch(): array
     {
-        return [];
+        return [
+            'user' => [
+                'name'
+            ]
+        ];
     }
 
     /*
@@ -95,7 +102,8 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::eloquent()
             ->addColumn('name')
-            ->addColumn('updated_at_formatted', fn(Team $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('ownername', fn (Team $model) => $model->user->name ?? '')
+            ->addColumn('updated_at_formatted', fn (Team $model) => Carbon::parse($model->updated_at)->diffForHumans());
     }
     /*
     |--------------------------------------------------------------------------
@@ -106,7 +114,7 @@ final class Table extends PowerGridComponent
     |
     */
 
-     /**
+    /**
      * PowerGrid Columns.
      *
      * @return array<int, Column>
@@ -115,6 +123,9 @@ final class Table extends PowerGridComponent
     {
         return [
             Column::make(trans('team'), 'name')
+                ->sortable()
+                ->searchable(),
+            Column::make(trans('owner'), 'ownername')
                 ->sortable()
                 ->searchable(),
             Column::make(trans('last update'), 'updated_at_formatted', 'updated_at')
@@ -131,22 +142,22 @@ final class Table extends PowerGridComponent
     |
     */
 
-     /**
+    /**
      * PowerGrid Team Action Buttons.
      *
      * @return array<int, Button>
      */
 
-     public function actions(): array
-     {
-         return [
-             Button::add('editrecord')
-                 ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'settings.teams.edit']),
+    public function actions(): array
+    {
+        return [
+            Button::add('editrecord')
+                ->bladeComponent('editrecord', ['id' => 'id', 'route' => 'settings.teams.edit']),
 
-             Button::add('deleterecord')
-                 ->bladeComponent('deleterecord', ['id' => 'id']),
-         ];
-     }
+            Button::add('deleterecord')
+                ->bladeComponent('deleterecord', ['id' => 'id']),
+        ];
+    }
 
     /*
     |--------------------------------------------------------------------------
@@ -156,22 +167,22 @@ final class Table extends PowerGridComponent
     |
     */
 
-     /**
+    /**
      * PowerGrid Team Action Rules.
      *
      * @return array<int, RuleActions>
      */
 
-     public function actionRules(): array
-     {
-         return [
-             //Hide button edit for ID 1
-             Rule::button('editrecord')
-                 ->when(fn() => !auth()->user()->can('teams-update'))
-                 ->hide(),
-             Rule::button('deleterecord')
-                 ->when(fn() => !auth()->user()->can('teams-delete'))
-                 ->hide(),
-         ];
-     }
+    public function actionRules(): array
+    {
+        return [
+            //Hide button edit for ID 1
+            Rule::button('editrecord')
+                ->when(fn () => !auth()->user()->can('teams-update'))
+                ->hide(),
+            Rule::button('deleterecord')
+                ->when(fn () => !auth()->user()->can('teams-delete'))
+                ->hide(),
+        ];
+    }
 }

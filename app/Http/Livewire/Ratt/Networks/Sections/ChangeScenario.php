@@ -21,7 +21,7 @@ class ChangeScenario extends ModalComponent
     public $emits = ['refresh'];
     public function mount($id)
     {
-        $this->authorize('networks-assignScenarios');
+        $this->authorize('networks-changeScenarios');
         $this->network = Network::findOrFail($id);
         $this->scenarios = Scenario::orderBy('name')
             ->select('id', 'name')
@@ -43,7 +43,7 @@ class ChangeScenario extends ModalComponent
     }
     public function save()
     {
-        $this->authorize('networks-assignScenarios');
+        $this->authorize('networks-changeScenarios');
         $this->validate();
         DB::transaction(function () {
             NetworkTask::where('network_id', $this->network->id)->delete();
@@ -62,7 +62,7 @@ class ChangeScenario extends ModalComponent
     }
     public function render()
     {
-        $this->authorize('networks-assignScenarios');
+        $this->authorize('networks-changeScenarios');
         return view('livewire.ratt.networks.sections.change-scenario');
     }
 }

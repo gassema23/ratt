@@ -1,5 +1,5 @@
 <footer class="text-slate-400 pt-4 mt-2">
-    <div class="container mt-2 pt-2 mx-auto flex items-center sm:flex-row flex-col border-t border-slate-200 align-middle px-8">
+    <div class="mt-2 pt-2 mx-auto flex items-center sm:flex-row flex-col border-t border-slate-200 align-middle px-8">
         <div class="flex title-font font-medium items-center md:justify-start justify-center text-slate-400">
             <span class="ml-3 mr-1 text-lg">{{ settings()->get('title_'. App::getLocale()) }}</span>
             <span class="text-sm mx-1 text-slate-400 pt-2">{{ config('biri.App_phase') }}</span>

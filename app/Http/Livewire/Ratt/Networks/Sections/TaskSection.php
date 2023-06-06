@@ -57,6 +57,7 @@ class TaskSection extends Component
 
     public function markAsCompleted($id)
     {
+        $this->authorize('networks-markAsCompleted');
         $this->dialog()->confirm([
             'title'       => trans('Are you Sure?'),
             'description' => trans('Are you sure to complete this task?'),

@@ -28,7 +28,12 @@ class Show extends Component
             'site.city.region.state',
             'site.city.region.state.country',
             'networktasks',
-        ])->findOrFail($id);
+        ])
+        ->when(!auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest']) && !auth()->user()->is_planner, function ($query) {
+            $query->with('networktasks', function ($q) {
+                return $q->where('team_id', auth()->user()->currentTeam->id)->whereNull('deleted_at');
+            });
+        })->findOrFail($id);
 
 
         if (!is_null($parameter)) {

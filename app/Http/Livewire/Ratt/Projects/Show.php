@@ -28,13 +28,13 @@ class Show extends Component
             'site.city.region.state.country'
         ])
             ->withCount([
-                'networktasks'=> function($q){
+                'networktasks' => function ($q) {
                     $q->whereNotNull('is_completed');
                 }
             ])
-            ->when(!auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest']) && auth()->user()->current_team_id !== 5, function ($query) {
-                $query->whereHas('networktasks', function ($q) {
-                    return $q->where('team_id', auth()->user()->current_team_id)->whereNull('deleted_at');
+            ->when(!auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest']) && !auth()->user()->is_planner, function ($query) {
+                $query->with('networktasks', function ($q) {
+                    return $q->where('team_id', auth()->user()->currentTeam->id)->whereNull('deleted_at');
                 });
             })
             ->where('project_id', $id)

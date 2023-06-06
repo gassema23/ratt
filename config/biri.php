@@ -88,12 +88,12 @@ return [
             [
                 'id' => 5,
                 'name' => 'Pending',
-                'color' => 'violet'
+                'color' => 'orange'
             ],
             [
                 'id' => 2,
                 'name' => 'In progress',
-                'color' => 'Yellow'
+                'color' => 'yellow'
             ],
         ],
         'fr' => [
@@ -120,7 +120,7 @@ return [
             [
                 'id' => 5,
                 'name' => 'En att.',
-                'color' => 'violet'
+                'color' => 'orange'
             ],
             [
                 'id' => 2,

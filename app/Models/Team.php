@@ -10,7 +10,7 @@ use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\BelongsToMany;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
 class Team extends TeamworkTeam
 {
@@ -21,11 +21,17 @@ class Team extends TeamworkTeam
     {
         return LogOptions::defaults()
             ->logAll()
-            ->setDescriptionForEvent(fn(string $eventName) => "Team {$eventName}")
+            ->setDescriptionForEvent(fn (string $eventName) => "Team {$eventName}")
             ->useLogName('TeamsLog');
     }
+
     public function tasks(): HasMany
     {
         return $this->hasMany(Task::class);
+    }
+
+    public function user(): BelongsTo
+    {
+        return $this->belongsTo(User::class, 'owner_id');
     }
 }

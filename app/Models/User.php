@@ -59,10 +59,12 @@ class User extends Authenticatable //implements MustVerifyEmail
         'email_verified_at' => 'datetime',
         'd_name' => FullName::class,
     ];
+
     protected function authorizedToApprove(\Approval\Models\Modification $mod): bool
     {
         return auth()->user()->hasRole(['Super-Admin', 'Admin']);
     }
+
     protected function authorizedToDisapprove(\Approval\Models\Modification $mod): bool
     {
         return auth()->user()->hasRole(['Super-Admin', 'Admin']);
@@ -97,37 +99,55 @@ class User extends Authenticatable //implements MustVerifyEmail
             ]
         ]);
     }
+
     // Scope
     public function scopePrime(Builder $query): void
     {
         $query->where('current_team_id', 4);
     }
+
     public function scopePlanner(Builder $query): void
     {
         $query->where('current_team_id', 5);
     }
+
     public function scopeCountActive($query)
     {
         return $query->whereNotNull('email_verified_at')->count();
     }
+
     public function scopeCountInnactive($query)
     {
         return $query->whereNull('email_verified_at')->count();
     }
+
     public function scopeActive($query)
     {
         return $query->whereNotNull('email_verified_at');
     }
+
     public function scopePending($query)
     {
         return $query->whereNull('email_verified_at');
     }
+
     public function primes(): HasMany
     {
         return $this->hasMany(Project::class, 'prime_id');
     }
+
     public function planners(): HasMany
     {
         return $this->hasMany(Project::class, 'planner_id');
+    }
+
+    public function getIsPrimeAttribute()
+    {
+        return $this->currentTeam->id === 4;
+    }
+
+    public function getIsPlannerAttribute()
+    {
+        return $this->currentTeam->id === 5;
     }
 }
