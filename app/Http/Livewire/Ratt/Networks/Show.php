@@ -20,21 +20,18 @@ class Show extends Component
     public function mount($id, $parameter = null)
     {
         $this->authorize('networks-view');
-
         $this->network = Network::with([
             'site',
             'site.city',
             'site.city.region',
             'site.city.region.state',
-            'site.city.region.state.country',
-            'networktasks',
+            'site.city.region.state.country'
         ])
-        ->when(!auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest']) && !auth()->user()->is_planner, function ($query) {
-            $query->with('networktasks', function ($q) {
-                return $q->where('team_id', auth()->user()->currentTeam->id)->whereNull('deleted_at');
-            });
-        })->findOrFail($id);
-
+            ->when(!auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest']) && !auth()->user()->is_planner, function ($query) {
+                $query->with('networktasks', function ($q) {
+                    return $q->where('team_id', auth()->user()->currentTeam->id)->whereNull('deleted_at');
+                });
+            })->findOrFail($id);
 
         if (!is_null($parameter)) {
             $this->openSection = $parameter;
@@ -44,9 +41,21 @@ class Show extends Component
         }
     }
 
-    public function openSection($name)
+    public function openSection($name, $network)
     {
-        $this->resetExcept('network');
+        $this->reset();
+        $this->network = Network::with([
+            'site',
+            'site.city',
+            'site.city.region',
+            'site.city.region.state',
+            'site.city.region.state.country'
+        ])
+            ->when(!auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest']) && !auth()->user()->is_planner, function ($query) {
+                $query->with('networktasks', function ($q) {
+                    return $q->where('team_id', auth()->user()->currentTeam->id)->whereNull('deleted_at');
+                });
+            })->findOrFail($network);
         $this->openSection = $name;
         $this->emit(ucfirst($name) . 'Section');
     }

@@ -1,4 +1,3 @@
-
 @if (
     (is_null($data->is_completed)) ||
         auth()->user()->hasAnyDirectPermission(['networks-markAsCompleted', 'networks-changeStatusTasks', 'tasks-update']) ||
@@ -9,7 +8,7 @@
                 <x-icon name="dots-horizontal" class="w-4 h-4" />
             </x-slot>
             @if (auth()->user()->can('networks-markAsCompleted') || auth()->user()->is_planner)
-                @if ($data->complete_link && is_null($data->is_completed))
+                @if ($data->complete_link)
                     <x-dropdown.item href="#" :label="trans('Mark as completed')" wire:click="markAsCompleted({{ $data->id }})" />
                 @endif
             @endcan

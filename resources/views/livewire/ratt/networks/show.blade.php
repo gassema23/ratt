@@ -4,13 +4,13 @@
             <x-card>
                 <ul class="space-y-1">
                     <li>
-                        <a href="#" wire:click="openSection('network')"
+                        <a href="#" wire:click="openSection('network', {{ $network->id }})"
                             class="@if ($openSection === 'network') text-teal-600 bg-teal-50 @endif flex items-center py-2 px-4 text-slate-800 hover:text-teal-600 hover:bg-teal-50 w-full justify-between transition-all duration-300 ease-in-out">
                             @lang('Network')
                         </a>
                     </li>
                     <li>
-                        <a href="#" wire:click="openSection('scenarios')"
+                        <a href="#" wire:click="openSection('scenarios', {{ $network->id }})"
                             class="@if ($openSection === 'scenarios') text-teal-600 bg-teal-50 @endif flex items-center py-2 px-4 text-slate-800 hover:text-teal-600 hover:bg-teal-50 w-full justify-between transition-all duration-300 ease-in-out">
                             @lang('Scenarios')
                             @if ($network->networktasks->count() > 0)
@@ -19,22 +19,23 @@
                         </a>
                     </li>
                     <li>
-                        <a href="#" wire:click="openSection('timeline')" @class([
-                            'flex',
-                            'items-center',
-                            'py-2',
-                            'px-4',
-                            'text-slate-800',
-                            'hover:text-teal-600',
-                            'hover:bg-teal-50',
-                            'w-full',
-                            'justify-between',
-                            'transition-all',
-                            'duration-300',
-                            'ease-in-out',
-                            'text-teal-600' => $openSection === 'timeline',
-                            'bg-teal-50' => $openSection === 'timeline',
-                        ])>
+                        <a href="#" wire:click="openSection('timeline',{{ $network->id }})"
+                            @class([
+                                'flex',
+                                'items-center',
+                                'py-2',
+                                'px-4',
+                                'text-slate-800',
+                                'hover:text-teal-600',
+                                'hover:bg-teal-50',
+                                'w-full',
+                                'justify-between',
+                                'transition-all',
+                                'duration-300',
+                                'ease-in-out',
+                                'text-teal-600' => $openSection === 'timeline',
+                                'bg-teal-50' => $openSection === 'timeline',
+                            ])>
                             @lang('Timeline activities')
                         </a>
                     </li>
