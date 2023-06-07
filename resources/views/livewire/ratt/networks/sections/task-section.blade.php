@@ -79,44 +79,7 @@
                                 @lang('This task relies on: :dependency', ['dependency' => $taskInfoSection->task->parent->name])
                             @endif
                         </span>
-                        @if (
-                                is_null($taskInfoSection->is_completed) &&
-                                $taskInfoSection->complete_link
-                            )
-                            @if (
-                                    auth()->user()->can('networks-markAsCompleted') ||
-                                    auth()->user()->can('tasks-update') ||
-                                    auth()->user()->is_planner ||
-                                    auth()->user()->can('networks-changeStatusTasks')
-                                )
-                                <x-dropdown align="right">
-                                    <x-dropdown.header :label="trans('Manage tasks')">
-                                        <x-slot name="trigger">
-                                            <x-icon name="dots-horizontal" class="w-4 h-4" />
-                                        </x-slot>
-                                        @if(auth()->user()->can('networks-markAsCompleted') || auth()->user()->is_planner)
-                                            @if ($taskInfoSection->complete_link && is_null($taskInfoSection->is_completed))
-                                                <x-dropdown.item href="#" :label="trans('Mark as completed')"
-                                                    wire:click="markAsCompleted({{ $taskInfoSection->id }})" />
-                                            @endif
-                                        @endcan
-                                        @if (is_null($taskInfoSection->is_completed))
-                                            @if ($taskInfoSection->status != 4)
-                                                @if (auth()->user()->is_planner ||
-                                                        auth()->user()->can('networks-changeStatusTasks'))
-                                                    <x-dropdown.item href="#" :label="trans('Change status')"
-                                                        onclick="Livewire.emit('openModal', 'ratt.networks.sections.change-status-tasks', {{ json_encode([$taskInfoSection->id]) }})" />
-                                                @endif
-                                            @endif
-                                            @can('tasks-update')
-                                                <x-dropdown.item href="#" :label="trans('Edit task')"
-                                                    onclick="Livewire.emit('openModal', 'ratt.networks.sections.task-edit', {{ json_encode([$taskInfoSection->id]) }})" />
-                                            @endcan
-                                        @endif
-                                    </x-dropdown.header>
-                                </x-dropdown>
-                            @endif
-                        @endif
+                        <x-taskSectionDropdown :data="$taskInfoSection" />
                     </div>
                     <div class="flex justify-start space-x-2 pb-4">
                         @if (is_null($taskInfoSection->is_completed))
