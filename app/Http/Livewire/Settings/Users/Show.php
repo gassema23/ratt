@@ -15,6 +15,7 @@ class Show extends Component
     use AuthorizesRequests;
     public $user_id;
     protected $listeners = ['refresh' => '$refresh'];
+
     public function mount($id)
     {
         $this->authorize('users-view');

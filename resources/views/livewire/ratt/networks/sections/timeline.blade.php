@@ -43,5 +43,5 @@
             });
         }
     </script>
-    <div id="timeline" style=" height:100%"></div>
+    <div id="timeline" class="min-h-full"></div>
 </div>

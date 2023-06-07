@@ -201,16 +201,16 @@ final class Table extends PowerGridComponent
         return [
             //Hide button edit for ID 1
             Rule::button('resendinvite')
-                ->when(fn ($user) => !auth()->user()->can('users-edit') || $this->filter_name != 'pending')
+                ->when(fn ($user) => !auth()->user()->can('users-update') || $this->filter_name != 'pending')
                 ->hide(),
             Rule::button('editrecord')
-                ->when(fn ($user) => !auth()->user()->can('users-edit') || $this->filter_name != 'active')
+                ->when(fn ($user) => !auth()->user()->can('users-update') || $this->filter_name != 'active')
                 ->hide(),
             Rule::button('deleterecord')
                 ->when(fn () => !auth()->user()->can('users-delete'))
                 ->hide(),
             Rule::button('showrecord')
-                ->when(fn () => !auth()->user()->can('users-view'))
+                ->when(fn () => !auth()->user()->can('users-view') || $this->filter_name != 'active')
                 ->hide(),
         ];
     }
