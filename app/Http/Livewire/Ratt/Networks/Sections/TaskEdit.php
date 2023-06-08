@@ -13,15 +13,25 @@ class TaskEdit extends ModalComponent
     use AuthorizesRequests, HasModal;
     public $networkTask, $status, $reason;
     public $emits = ['refresh'];
-    public function mount($id)
+
+    public function mount($id, $completed = false)
     {
+
+        if ($completed) {
+            dump('OK');
+        } else {
+            dump('NON');
+        }
+
         $this->authorize('tasks-update');
         $this->networkTask = NetworkTask::with(['task'])->findOrFail($id);
     }
+
     protected function rules()
     {
         return (new TaskEditRequest)->rules();
     }
+
     public function save()
     {
         $this->authorize('tasks-update');
@@ -39,6 +49,7 @@ class TaskEdit extends ModalComponent
         }
         $this->saved();
     }
+
     public function render()
     {
         return view('livewire.ratt.networks.sections.task-edit');
