@@ -42,7 +42,7 @@
             // set a padding value to cover the height of title and axis values
             var paddingHeight = 40;
             // set the height to be covered by the rows
-            var rowHeight = data.getNumberOfRows() * 15;
+            var rowHeight = dataTable.getNumberOfRows() * 15;
             // set the total chart height
             var chartHeight = rowHeight + paddingHeight;
             chart.draw(dataTable, {

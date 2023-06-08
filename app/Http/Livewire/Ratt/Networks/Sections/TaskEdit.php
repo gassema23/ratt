@@ -14,7 +14,7 @@ class TaskEdit extends ModalComponent
     public $networkTask, $status, $reason;
     public $emits = ['refresh'];
 
-    public function mount($id, $completed = false)
+    public function mount($id)
     {
 
         if ($completed) {

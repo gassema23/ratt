@@ -12,50 +12,90 @@
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8">
             <div class="divide-y divide-slate-200">
                 @foreach ($tasks->groupBy('team.name') as $k_task => $v_task)
-                    <div class="font-medium pb-2 text-lg">{{ $k_task }}</div>
-                    @foreach ($v_task as $task)
-                        <div class="flex justify-between items-center space-x-4 py-2">
+                    <div class="font-medium py-2 text-lg">{{ $k_task }}</div>
+                    @foreach ($v_task as $networkTask)
+                        <div @class([
+                            'flex',
+                            'justify-between',
+                            'items-center',
+                            'space-x-4',
+                            'px-2',
+                            'py-1.5',
+                            'bg-teal-50' => !is_null($networkTask->is_completed),
+                            'bg-slate-50' =>
+                                $networkTask->status_name == 'New' &&
+                                is_null($networkTask->is_completed),
+                        ])>
                             <div class="w-1/3 text-sm flex-1 flex flex-row items-center">
-                                <div class="font-medium truncate w-full">
-                                    <a href="#" @class([
-                                        'hover:underline' => is_null($task->is_completed),
-                                        'flex',
-                                        'justify-start',
-                                        'w-full',
-                                        'items-center',
-                                        'line-through' => !is_null($task->is_completed),
-                                    ])
-                                        wire:click="taskInfo({{ $task->id }})">
-                                        @if (!is_null($task->task->parent_id))
-                                            <x-tooltip>
-                                                @lang('This task relies on: :dependency', ['dependency' => $task->task->parent->name])
-                                            </x-tooltip>
+                                <div @class(['font-medium', 'truncate', 'w-full'])>
+                                    @if (!is_null($networkTask->task->parent))
+                                        @if (!is_null($networkTask->task->parent->networkTask->is_completed) || !is_null($networkTask->is_completed))
+                                            <a href="#" @class([
+                                                'hover:underline',
+                                                'flex',
+                                                'justify-start',
+                                                'w-full',
+                                                'items-center',
+                                                'font-bold' => !is_null($networkTask->is_completed),
+                                                'text-teal-500' => !is_null($networkTask->is_completed),
+                                            ])
+                                                wire:click="taskInfo({{ $networkTask->id }})">
+                                                @if (!is_null($networkTask->task->parent_id))
+                                                    <x-tooltip>
+                                                        @lang('This task relies on: :dependency.', ['dependency' => $networkTask->task->parent->name])
+                                                    </x-tooltip>
+                                                @endif
+                                                <span>{{ $networkTask->task->name }}</span>
+                                            </a>
+                                        @else
+                                            <div class="flex justify-start w-full items-center">
+                                                @if (!is_null($networkTask->task->parent_id))
+                                                    <x-tooltip>@lang('This task relies on: :dependency. The related task need to be completed.', ['dependency' => $networkTask->task->parent->name])</x-tooltip>
+                                                @endif
+                                                <span class="text-red-500">{{ $networkTask->task->name }}</span>
+                                            </div>
                                         @endif
-                                        <span>{{ $task->task->name }}</span>
-                                    </a>
+                                    @else
+                                        <a href="#" @class([
+                                            'hover:underline',
+                                            'flex',
+                                            'justify-start',
+                                            'w-full',
+                                            'items-center',
+                                            'font-bold' => !is_null($networkTask->is_completed),
+                                            'text-teal-500' => !is_null($networkTask->is_completed),
+                                        ])
+                                            wire:click="taskInfo({{ $networkTask->id }})">
+                                            @if (!is_null($networkTask->task->parent_id))
+                                                <x-tooltip>
+                                                    @lang('This task relies on: :dependency', ['dependency' => $networkTask->task->parent->name])
+                                                </x-tooltip>
+                                            @endif
+                                            <span>{{ $networkTask->task->name }}</span>
+                                        </a>
+                                    @endif
                                 </div>
                             </div>
                             <div class="flex text-left text-slate-400 space-x-2 items-center align-middle">
                                 <div class="ml-2">
-                                    @if (is_null($task->is_completed))
-                                        <x-badge :label="$task->status_name" squared :color="$task->status_color" />
+                                    @if (is_null($networkTask->is_completed))
+                                        <x-badge :label="$networkTask->status_name" squared :color="$networkTask->status_color" />
                                     @else
                                         <x-badge :label="trans('Completed')" squared color="violet" />
                                     @endif
                                 </div>
                                 <div class=" text-slate-400">
                                     <x-icon name="chat-alt-2" class="w-5 h-5 inline-block" />
-                                    {{ $task->comments_count }}
+                                    {{ $networkTask->comments_count }}
                                 </div>
                                 <div class=" text-slate-400">
                                     <x-icon name="clipboard-list" class="w-5 h-5 inline-block" />
-                                    {{ $task->complete_checklists_count }}/{{ $task->checklists_count }}
+                                    {{ $networkTask->complete_checklists_count }}/{{ $networkTask->checklists_count }}
                                 </div>
                             </div>
                         </div>
                     @endforeach
                 @endforeach
-                {{ $tasks->links() }}
             </div>
             <div class="flex justify-end w-full py-2 -mb-px mt-5 " wire:loading>
                 <svg class="animate-spin w-4 h-4 shrink-0" xmlns="http://www.w3.org/2000/svg" fill="none"

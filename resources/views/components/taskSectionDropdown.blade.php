@@ -28,7 +28,7 @@
 </x-dropdown>
 @else
 @hasanyrole(['Super-Admin', 'Admin'])
-    <x-button squared xs :label="trans('Roll back status')"
-        onclick="Livewire.emit('openModal', 'ratt.networks.sections.task-edit', {{ json_encode([$data->id, true]) }})" />
+    <x-button squared xs negative outline :label="trans('Roll back status')"
+    wire:click="rollback({{ $data->id }})" />
 @endhasanyrole
 @endif

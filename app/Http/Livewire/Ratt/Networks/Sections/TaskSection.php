@@ -19,12 +19,24 @@ class TaskSection extends Component
 
     public $network, $taskInfoSection, $taskInfoSectionLogActivities;
 
+    /**
+     * mount
+     *
+     * @param  mixed $network
+     * @return void
+     */
     public function mount($network)
     {
         $this->authorize('networks-taskSection');
         $this->network = $network;
     }
 
+    /**
+     * taskInfo
+     *
+     * @param  mixed $value
+     * @return void
+     */
     public function taskInfo($value)
     {
         $this->reset('taskInfoSection');
@@ -48,13 +60,69 @@ class TaskSection extends Component
 
         $this->taskInfoSectionLogActivities = Activity::where('event', '=', 'networkTaskCompleted')
             ->where('subject_id', $value)
-            ->orderBy('created_at','desc')
+            ->orderBy('created_at', 'desc')
             ->first();
 
         $this->emit('showChecklist');
         $this->emit('refresh');
     }
 
+    /**
+     * rollback
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function rollback($id)
+    {
+        if (!auth()->user()->hasAnyRole(['Super-Admin', 'Admin'])) {
+            return abort(403);
+        }
+        $this->dialog()->confirm([
+            'title'       => trans('Are you Sure?'),
+            'description' => trans('Are you sure to rollback this task?'),
+            'acceptLabel' => trans('Yes!'),
+            'method'      => 'confirmRollback',
+            'params'    => $id
+        ]);
+    }
+
+    /**
+     * confirmRollback
+     *
+     * @param  mixed $id
+     * @return void
+     */
+    public function confirmRollback($id)
+    {
+        $network = NetworkTask::findOrFail($id);
+        $network->update([
+            "is_completed" => null
+        ]);
+        activity()
+            ->causedBy(auth()->user())
+            ->performedOn($network)
+            ->event('networkTaskRollback')
+            ->log('Rollback task');
+
+        $this->notification()->send([
+            'title' => trans('Success'),
+            'description' => trans('Data has successfully rollback!'),
+            'icon' => 'success'
+        ]);
+
+        $this->emit('showChecklist');
+        $this->emit('refresh');
+
+        //dd($network);///
+    }
+
+    /**
+     * markAsCompleted
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function markAsCompleted($id)
     {
         $this->authorize('networks-markAsCompleted');
@@ -67,10 +135,15 @@ class TaskSection extends Component
         ]);
     }
 
+    /**
+     * confirmComplete
+     *
+     * @param  mixed $id
+     * @return void
+     */
     public function confirmComplete($id)
     {
         $network = NetworkTask::findOrFail($id);
-
 
         $network->update([
             "is_completed" => now()
@@ -82,10 +155,20 @@ class TaskSection extends Component
             ->event('networkTaskCompleted')
             ->log('Mark as completed');
 
+        $this->notification()->send([
+            'title' => trans('Success'),
+            'description' => trans('Data is now set as completed!'),
+            'icon' => 'success'
+        ]);
         $this->emit('showChecklist');
         $this->emit('refresh');
     }
 
+    /**
+     * render
+     *
+     * @return void
+     */
     public function render()
     {
         $this->authorize('networks-taskSection');
@@ -105,7 +188,7 @@ class TaskSection extends Component
                     }
                 ])
                 ->where('network_id', '=', $this->network->id)
-                ->paginate(12);
+                ->get();
         } elseif (
             auth()->user()->hasRole('Manager') &&
             auth()->user()->currentTeam->getTranslation('name', 'en') === 'Planner'
@@ -125,7 +208,7 @@ class TaskSection extends Component
                     }
                 ])
                 ->where('network_id', '=', $this->network->id)
-                ->paginate(12);
+                ->get();
         } else {
             $tasks = NetworkTask::with([
                 'network',
@@ -143,7 +226,7 @@ class TaskSection extends Component
                 ])
                 ->where('network_id', '=', $this->network->id)
                 ->where('team_id', auth()->user()->current_team_id)
-                ->paginate(12);
+                ->get();
         }
 
         return view('livewire.ratt.networks.sections.task-section', [
