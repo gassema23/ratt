@@ -121,7 +121,7 @@ final class Table extends PowerGridComponent
         return PowerGrid::eloquent()
             ->addColumn('countryname', fn (Site $model) => $model->city->region->state->country->name)
             ->addColumn('statename', fn (Site $model) => $model->city->region->state->name)
-            ->addColumn('regionname', fn (Site $model) => $model->city->region->state->name)
+            ->addColumn('regionname', fn (Site $model) => $model->city->region->name)
             ->addColumn('cityname', fn (Site $model) => $model->city->name)
             ->addColumn('clli', fn (Site $model) => $model->clli)
             ->addColumn('updated_at_formatted', fn (Site $model) => Carbon::parse($model->updated_at)->diffForHumans());
@@ -144,23 +144,23 @@ final class Table extends PowerGridComponent
     public function columns(): array
     {
         return [
-            Column::make(trans('country'), 'countryname')
+            Column::make(trans('country'), 'countryname','countries.name')
                 ->searchable()
                 ->sortable()
                 ->makeInputText(),
-            Column::make(trans('state'), 'statename')
+            Column::make(trans('state'), 'statename','states.name')
                 ->searchable()
                 ->sortable()
                 ->makeInputText(),
-            Column::make(trans('region'), 'regionname')
+            Column::make(trans('region'), 'regionname','regions.name')
                 ->searchable()
                 ->sortable()
                 ->makeInputText(),
-            Column::make(trans('city'), 'cityname')
+            Column::make(trans('city'), 'cityname','cities.name')
                 ->searchable()
                 ->sortable()
                 ->makeInputText(),
-            Column::make(trans('clli'), 'clli')
+            Column::make(trans('clli'), 'clli','sites.clli')
                 ->searchable()
                 ->sortable()
                 ->makeInputText(),
