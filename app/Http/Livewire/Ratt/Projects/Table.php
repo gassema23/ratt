@@ -126,7 +126,7 @@ final class Table extends PowerGridComponent
     public function addColumns(): PowerGridEloquent
     {
         return PowerGrid::eloquent()
-            ->addColumn('project_no')
+            ->addColumn('project_no', fn (Project $model) => 'P-'.$model->project_no)
             ->addColumn('networks_count', fn (Project $model) => $model->networks_count)
             ->addColumn('plannername', fn (Project $model) => $model->planner->name)
             ->addColumn('primename', fn (Project $model) => $model->prime->name)

@@ -48,7 +48,11 @@ class Edit extends ModalComponent
     public function save()
     {
         $this->authorize('projects-edit');
+
+        $this->project->project_no = str_replace('P-', '', $this->project->project_no);
+
         $this->validate();
+
         $this->project->update(
             [
                 'planner_id' => $this->project->planner_id,

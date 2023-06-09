@@ -45,7 +45,12 @@ class Create extends ModalComponent
 
     public function save()
     {
+        $this->authorize('projects-create');
+
+        $this->project_no = str_replace('P-', '', $this->project_no);
+
         $this->validate();
+
         $project = Project::create([
             'planner_id' => $this->planner_id,
             'prime_id' => $this->prime_id,
@@ -56,6 +61,7 @@ class Create extends ModalComponent
             'started_at' => $this->started_at,
             'ended_at' => $this->ended_at,
         ]);
+
         return redirect()->route('admin.ratt.projects.show', $project->id);
     }
 

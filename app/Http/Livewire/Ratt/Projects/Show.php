@@ -67,7 +67,7 @@ class Show extends Component
     {
         return view('livewire.ratt.projects.show')
             ->layoutData([
-                'title' => __('Project :number', ['number' => $this->project->project_no]),
+                'title' => __('Project P-:number', ['number' => $this->project->project_no]),
                 'description' => $this->project->description,
                 'action' => [
                     'name' => trans('New network'),

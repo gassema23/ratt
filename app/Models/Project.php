@@ -17,8 +17,11 @@ use Illuminate\Database\Eloquent\Factories\HasFactory;
 class Project extends Model
 {
     use HasFactory, SoftDeletes, CascadeSoftDeletes, Userstamps, LogsActivity;
+
     protected $cascadeDeletes = ['networks'];
+
     protected $guarded = ['id', 'created_at', 'updated_at'];
+
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
@@ -33,6 +36,8 @@ class Project extends Model
             ->setDescriptionForEvent(fn (string $eventName) => "Project {$eventName}")
             ->useLogName('ProjectsLog');
     }
+
+    /*
     protected function ProjectNo(): Attribute
     {
         return Attribute::make(
@@ -40,28 +45,34 @@ class Project extends Model
             set: fn (string $value) => str_replace('P-', '', $value, $count)
         );
     }
+    */
     // Attribute Getter / Setter
     public function getBadgePriorityNameAttribute()
     {
         return collect(config('biri.App_priority.' . App::getLocale()))->where('id', $this->priority)->first()['name'];
     }
+
     public function getBadgePriorityColorAttribute()
     {
         return collect(config('biri.App_priority.en'))->where('id', $this->priority)->first()['color'];
     }
+
     // Relationships
     public function prime(): BelongsTo
     {
         return $this->belongsTo(User::class, 'prime_id')->withTrashed();
     }
+
     public function getPrimesAttribute()
     {
         return $this->prime()->select('name', 'id')->distinct();
     }
+
     public function planner(): BelongsTo
     {
         return $this->belongsTo(User::class, 'planner_id')->withTrashed();
     }
+
     public function networks(): HasMany
     {
         return $this->hasMany(Network::class)->withTrashed();

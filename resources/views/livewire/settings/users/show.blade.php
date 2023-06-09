@@ -30,7 +30,7 @@
                             <div class="text-slate-600 font-medium">
                                 <a href="{{ route('admin.ratt.projects.show', $project->id) }}"
                                     class="text-teal-500 hover:underline">
-                                    {{ $project->project_no }}
+                                    {{ 'P-'.$project->project_no }}
                                 </a>
                             </div>
                             @foreach ($project->networks as $network)

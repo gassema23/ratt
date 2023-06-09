@@ -43,9 +43,9 @@ return [
 
         'close_modal_on_click_away' => false,
 
-        'close_modal_on_escape' => false,
+        'close_modal_on_escape' => true,
 
-        'close_modal_on_escape_is_forceful' => false,
+        'close_modal_on_escape_is_forceful' => true,
 
         'dispatch_close_event' => true,
 

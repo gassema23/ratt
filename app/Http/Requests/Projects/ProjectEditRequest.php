@@ -28,18 +28,19 @@ class ProjectEditRequest extends FormRequest
             ],
             'project.project_no' => [
                 'required',
+                "unique:projects,project_no,{$project_id},id,deleted_at,NULL",
                 function ($attribute, $value, $fail) {
-                    $pattern = 'P-\d{7}\.\d{2}';
+                    $pattern = '\d{7}\.\d{2}';
                     $regex = '/^(' . $pattern . ')$/u';
                     if ($value != '' && !preg_match($regex, $value)) {
                         $fail(__('The project number is invalid'));
                     }
                 },
-                Rule::unique('projects', 'project_no')->ignore($project_id)
             ],
             'project.started_at' => [
                 'required',
-                'date'
+                'date',
+                'after_or_equal:project.started_at'
             ],
             'project.ended_at' => [
                 'required',

@@ -13,7 +13,7 @@
                         option-label="name" option-description="employe_id" :placeholder="__('Make a selection')" :label="__('Planner')" :hint="trans('Field required')" />
                 </div>
                 <div class="grid grid-cols-1 gap-4 my-2">
-                    <x-input wire:model.defer="project.project_no" :label="__('Project number')" :hint="trans('Field required (P-123456.01)')" />
+                    <x-input prefix="P-" wire:model.defer="project.project_no" :label="__('Project number')" :hint="trans('Field required (P-123456.01)')" />
                 </div>
                 <div class="grid grid-cols-2 gap-4 my-2">
                     <x-datetime-picker :label="__('Started date')" wire:model.defer="project.started_at" without-time :hint="trans('Field required')" />

@@ -75,14 +75,14 @@ class Create extends ModalComponent
         $this->project->planner->notify(new DatabaseNotification(
             $type = 'info',
             $message = auth()->user()->name,
-            $messageLong =  trans(' Add a new network on project :number', ['number' => $this->project->project_no]),
+            $messageLong =  trans(' Add a new network on project P-:number', ['number' => $this->project->project_no]),
             $href = '/admin/ratt/networks/show/' . $network->id,
             $hrefText = trans('View')
         ));
         $this->project->prime->notify(new DatabaseNotification(
             $type = 'info',
             $message = auth()->user()->name,
-            $messageLong =  trans(' Add a new network on project :number', ['number' => $this->project->project_no]),
+            $messageLong =  trans(' Add a new network on project P-:number', ['number' => $this->project->project_no]),
             $href = '/admin/ratt/networks/show/' . $network->id,
             $hrefText = trans('View')
         ));
