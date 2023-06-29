@@ -26,7 +26,7 @@
                       <ul class="flex flex-col divide-y divide-slate-200 text-xs">
                           <li class="inline-flex items-center gap-x-2 py-1.5 px-2 font-medium text-slate-500">
                               <span class="font-medium">@lang('Network number:')</span>
-                              {{ $network->network_no }}
+                              {{ $network->network_no  }}
                           </li>
                           <li class="inline-flex items-center gap-x-2 py-1.5 px-2 font-medium text-slate-500">
                               <span class="font-medium">@lang('Network element:')</span>
