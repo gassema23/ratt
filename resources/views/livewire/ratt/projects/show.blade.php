@@ -13,7 +13,7 @@
                                     <x-dropdown.item :label="trans('Show')"
                                         href="{{ route('admin.ratt.networks.show', $network->id) }}" />
                                 @endcan
-                                @can('networks-edit')
+                                @can('networks-update')
                                     <x-dropdown.item href="#" :label="trans('Edit')"
                                         onclick="Livewire.emit('openModal', 'ratt.networks.edit', {{ json_encode([$network->id]) }})" />
                                 @endcan
@@ -43,7 +43,13 @@
                     <div class="mr-2">
                         <x-icon name="clipboard-list" class="w-4 h-4" />
                     </div>
-                    <div>{{ $network->network_element }}</div>
+                    <div class="flex flex-col">
+                        @forelse ($network->tag_names as $tag)
+                            <div>{{ Str::upper($tag) }}</div>
+                            @empty
+                            <div>@lang('Network element is empty')</div>
+                        @endforelse
+                    </div>
                 </div>
                 <div class="flex align-middle items-center">
                     <div class="mr-2">
@@ -64,7 +70,7 @@
                             <div>
                                 @lang('Network completion')
                                 <span
-                                    class="font-medium pl-1">{{ number_format(($network->networktasks_count / $network->networktasks->count()) * 100,2) }}%</span>
+                                    class="font-medium pl-1">{{ number_format(($network->networktasks_count / $network->networktasks->count()) * 100, 2) }}%</span>
                             </div>
                         @endif
                     </div>

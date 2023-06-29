@@ -29,7 +29,10 @@
                             <div class="w-1/3 text-sm flex-1 flex flex-row items-center">
                                 <div @class(['font-medium', 'truncate', 'w-full'])>
                                     @if (!is_null($networkTask->task->parent))
+                                        @dump($networkTask->task->parent->networkTask)
+                                        @dump($networkTask->task->parent->networkTask->task->name)
                                         @if (!is_null($networkTask->task->parent->networkTask->is_completed) || !is_null($networkTask->is_completed))
+                                            @dump('2e IF')
                                             <a href="#" @class([
                                                 'hover:underline',
                                                 'flex',
@@ -160,7 +163,8 @@
                     </div>
                     <div class="pb-4 grid grid-cols-1">
                         <div class="font-medium pb-2 text-slate-600">@lang('Statuses history')</div>
-                        <div class="text-sm flex space-x-4 max-h-64 overflow-y-auto soft-scrollbar">
+                        <div
+                            class="text-sm flex space-x-4 max-h-64 overflow-hidden hover:overflow-auto soft-scrollbar transition-all ease-in-out duration-500">
                             <table class="min-w-full leading-normal">
                                 <thead>
                                     <tr>

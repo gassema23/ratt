@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Networks;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class NetworkCreateRequest extends FormRequest
 {
@@ -26,11 +27,6 @@ class NetworkCreateRequest extends FormRequest
             ],
             'priority' => [
                 'nullable'
-            ],
-            'network_element' => [
-                'required',
-                'max:15',
-                'unique:networks,network_element'
             ],
             'network_no' => [
                 'required',

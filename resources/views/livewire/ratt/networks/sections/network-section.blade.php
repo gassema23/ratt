@@ -30,7 +30,7 @@
                           </li>
                           <li class="inline-flex items-center gap-x-2 py-1.5 px-2 font-medium text-slate-500">
                               <span class="font-medium">@lang('Network element:')</span>
-                              {{ $network->network_element }}
+                              {{ $network->network_element_lists }}
                           </li>
                           <li class="inline-flex items-center gap-x-2 py-1.5 px-2 font-medium text-slate-500">
                               <span class="font-medium">@lang('City:')</span>

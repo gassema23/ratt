@@ -2,7 +2,9 @@
 
 namespace App\Models;
 
+use Conner\Tagging\Taggable;
 use Spatie\MediaLibrary\HasMedia;
+use Conner\Tagging\TaggingUtility;
 use Spatie\Activitylog\LogOptions;
 use Illuminate\Support\Facades\App;
 use Wildside\Userstamps\Userstamps;
@@ -17,6 +19,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
+use Illuminate\Database\Eloquent\Collection;
 
 class Network extends Model implements HasMedia
 {
@@ -26,7 +29,8 @@ class Network extends Model implements HasMedia
         InteractsWithMedia,
         Userstamps,
         LogsActivity,
-        Followable;
+        Followable,
+        Taggable;
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
@@ -46,6 +50,7 @@ class Network extends Model implements HasMedia
     }
 
     // Attribute Getter / Setter
+
     protected function NetworkNo(): Attribute
     {
         return Attribute::make(
@@ -106,10 +111,20 @@ class Network extends Model implements HasMedia
         return $this->hasOne(NetworkTask::class, 'network_id', 'id')->oldest();
     }
 
-
     public function getNetworkTaskCountAttribute()
     {
         return $this->networktasks()->whereNull('deleted_at')->count();
+    }
+
+    public static function existingTags(): Collection
+    {
+        $model = TaggingUtility::taggedModelString();
+        return $model::query()
+            ->distinct()
+            ->join('tagging_tags', 'tag_slug', '=', 'tagging_tags.slug')
+            ->where('taggable_type', '=', (new static)->getMorphClass())
+            ->orderBy('count', 'DESC')
+            ->get(['tag_slug as slug', 'tag_name as name', 'tagging_tags.count as count']);
     }
 
 
@@ -120,5 +135,10 @@ class Network extends Model implements HasMedia
             $this->site->city->name . ', ' .
             $this->site->city->region->state->name . ', ' .
             $this->site->city->region->state->country->name;
+    }
+
+    public function getNetworkElementListsAttribute()
+    {
+        return collect($this->networkelements)->pluck('network_element')->implode(', ');
     }
 }

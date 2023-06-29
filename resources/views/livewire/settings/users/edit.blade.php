@@ -15,7 +15,7 @@
                     <x-input wire:model.defer="user.employe_id" :label="__('Employe ID')" :hint="trans('Field required')" />
                 </div>
                 <div class="my-2 grid grid-cols-2 gap-4">
-                    <x-input wire:model.defer="user.email" :label="__('Email')" :hint="trans('Field required')" />
+                    <x-input wire:model.defer="user.email" :label="__('Email')" :hint="trans('Field required')" suffix="@telus.com" />
                     <x-input wire:model.defer="user.phone" :label="__('Phone')" />
                 </div>
                 <div class="my-2 grid grid-cols-2 gap-4">

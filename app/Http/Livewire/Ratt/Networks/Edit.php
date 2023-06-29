@@ -8,6 +8,7 @@ use App\Traits\HasModal;
 use App\Http\Livewire\Trix;
 use LivewireUI\Modal\ModalComponent;
 use App\Http\Requests\Networks\NetworkUpdateRequest;
+use App\Models\NetworkElement;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Pestopancake\LaravelBackpackNotifications\Notifications\DatabaseNotification;
 
@@ -21,9 +22,11 @@ class Edit extends ModalComponent
 
     public $network,
         $sites,
-        $network_element,
         $site_id,
+        $tags,
         $description;
+    public $inputs = [];
+    public $i = 1;
 
     protected function getListeners()
     {
@@ -38,36 +41,28 @@ class Edit extends ModalComponent
     public function mount($id)
     {
         $this->authorize('networks-update');
-        $this->network = Network::findOrFail($id);
+        $this->network = Network::with("networkelements")->findOrFail($id);
         $this->sites = Site::orderBy('name')->select('id', 'name', 'clli')->get();
-        $this->network_element = $this->network->network_element;
         $this->site_id = $this->network->site_id;
+
+
+        $this->tags = $this->network->tagNames();
     }
 
     protected function rules()
     {
-        return (new NetworkUpdateRequest)->rules($this->network->id, $this->network->project);
-    }
-
-    public function updatedSiteId($value)
-    {
-        $this->reset('network_element');
-        if ($value) {
-            $clli = Site::findOrFail($value);
-            $this->network_element = $clli->clli;
-        }
+        return (new NetworkUpdateRequest)->rules($this->network);
     }
 
     public function save()
     {
         $this->validate();
-        dd($this->description);
 
         $this->network->update(
             [
                 'site_id' => $this->site_id,
                 'network_no' => $this->network->network_no,
-                'network_element' => $this->network_element,
+                'network_element'=>'',
                 'name' => $this->network->name,
                 'description' => $this->description ?? null,
                 'priority' => $this->priority ?? 3,
@@ -75,6 +70,8 @@ class Edit extends ModalComponent
                 'ended_at' => $this->network->ended_at
             ]
         );
+
+        $this->network->retag($this->tags);
 
         $this->network->project->planner->notify(new DatabaseNotification(
             $type = 'info',

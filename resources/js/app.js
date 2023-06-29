@@ -1,6 +1,9 @@
 import "./bootstrap";
 import "../pace/pace";
 import { Carousel, initTE } from "tw-elements";
+import 'livewire-sortable';
+
+
 initTE({
     Carousel,
 });

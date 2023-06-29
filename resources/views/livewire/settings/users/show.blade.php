@@ -25,7 +25,7 @@
                 </x-card>
                 <x-card>
                     <div class="font-bold text-slate-600">@lang('Projects')</div>
-                    <div class="flex flex-col mt-4">
+                    <div class="flex flex-col mt-4 max-h-80 overflow-hidden hover:overflow-auto soft-scrollbar transition-all ease-in-out duration-500">
                         @foreach ($projects as $project)
                             <div class="text-slate-600 font-medium">
                                 <a href="{{ route('admin.ratt.projects.show', $project->id) }}"

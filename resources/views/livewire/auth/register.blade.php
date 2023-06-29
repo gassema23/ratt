@@ -14,7 +14,7 @@
         </div>
         <!-- Email Address -->
         <div class="my-2">
-            <x-input :label="trans('Email address')" wire:model.defer="email" />
+            <x-input :label="trans('Email address')" wire:model.defer="email" suffix="@telus.com" />
         </div>
         <!-- Password -->
         <div class="my-2 grid grid-cols-2 gap-4">

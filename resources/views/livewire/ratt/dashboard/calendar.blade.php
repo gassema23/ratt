@@ -33,6 +33,6 @@
                 });
             </script>
         @endpush
-        <div id='calendar' class="soft-scrollbar overflow-x-auto"></div>
+        <div id='calendar' class="overflow-hidden hover:overflow-auto soft-scrollbar transition-all ease-in-out duration-500"></div>
     </x-card>
 </div>

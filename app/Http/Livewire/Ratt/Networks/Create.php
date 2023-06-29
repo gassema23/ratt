@@ -20,13 +20,15 @@ class Create extends ModalComponent
         $site_id,
         $technology_id,
         $network_no,
-        $network_element,
         $name,
         $description,
         $priority,
         $started_at,
         $ended_at,
         $project;
+    public $tags = [];
+    public $inputs = [];
+    public $i = 1;
 
     protected function getListeners()
     {
@@ -43,15 +45,6 @@ class Create extends ModalComponent
         $this->project = Project::findOrFail($id);
     }
 
-    public function updatedSiteId($value)
-    {
-        $this->reset('network_element');
-        if ($value) {
-            $clli = Site::findOrFail($value);
-            $this->network_element = $clli->clli;
-        }
-    }
-
     protected function rules()
     {
         return (new NetworkCreateRequest)->rules($this->project);
@@ -65,13 +58,15 @@ class Create extends ModalComponent
             'project_id' => $this->project->id,
             'site_id' => $this->site_id,
             'network_no' => $this->network_no,
-            'network_element' => $this->network_element,
             'name' => $this->name,
             'description' => $this->description ?? null,
             'priority' => $this->priority ?? 3,
             'started_at' => $this->started_at,
             'ended_at' => $this->ended_at
         ]);
+
+        $network->tag($this->tags);
+
         $this->project->planner->notify(new DatabaseNotification(
             $type = 'info',
             $message = auth()->user()->name,
@@ -86,6 +81,7 @@ class Create extends ModalComponent
             $href = '/admin/ratt/networks/show/' . $network->id,
             $hrefText = trans('View')
         ));
+
         return redirect()->route('admin.ratt.networks.show', $network->id);
     }
 

@@ -23,6 +23,7 @@ class RegisterRequest extends FormRequest
             'email'      => [
                 'required',
                 'email',
+                'regex:/(.*)@telus\.com/i',
                 Rule::unique('users', 'email')->ignore($user_id)
             ],
             'phone'   => [

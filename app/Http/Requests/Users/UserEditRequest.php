@@ -23,6 +23,7 @@ class UserEditRequest extends FormRequest
             'user.email'      => [
                 'required',
                 'email',
+                'regex:/(.*)@telus\.com/i',
                 Rule::unique('users', 'email')->ignore($user_id)
             ],
             'user.phone'   => [

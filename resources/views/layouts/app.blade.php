@@ -49,7 +49,7 @@
                         @endif
                     @endif
                 </div>
-                <!-- Replace with your content -->
+                <!-- Your content -->
                 <div>
                     <div class="grid grid-cols-1 lg:grid-cols-6 gap-4">
                         @if (isset($sidebar))
@@ -65,7 +65,7 @@
                 </div>
             </div>
             @include('layouts.partials.content-footer')
-            <!-- /End replace -->
+            <!-- /End content -->
         </div>
     </main>
 </div>

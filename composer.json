@@ -14,6 +14,7 @@
         "browner12/helpers": "^3.5",
         "cloudcake/laravel-approval": "^1.1",
         "codezero/laravel-unique-translation": "^4.1",
+        "doctrine/dbal": "^3.6",
         "dyrynda/laravel-cascade-soft-deletes": "^4.3",
         "fedeisas/laravel-mail-css-inliner": "^5.2",
         "guzzlehttp/guzzle": "^7.5",

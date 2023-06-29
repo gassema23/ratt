@@ -18,7 +18,7 @@ class NetworkSection extends Component
     public function mount($network)
     {
         $this->authorize('networks-networksSections');
-        $this->network = $network;
+        $this->network = $network->load('networkelements');
     }
 
     public function render()

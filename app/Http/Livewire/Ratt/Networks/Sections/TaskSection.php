@@ -148,7 +148,7 @@ class TaskSection extends Component
         $network->update([
             "is_completed" => now()
         ]);
-
+dd($network);
         activity()
             ->causedBy(auth()->user())
             ->performedOn($network)
@@ -160,6 +160,7 @@ class TaskSection extends Component
             'description' => trans('Data is now set as completed!'),
             'icon' => 'success'
         ]);
+
         $this->emit('showChecklist');
         $this->emit('refresh');
     }
@@ -178,7 +179,9 @@ class TaskSection extends Component
                 'task',
                 'comments',
                 'team',
-                'statuses'
+                'statuses',
+                'task.parent',
+                'task.networkTask'
             ])
                 ->withCount([
                     'comments',
@@ -191,14 +194,16 @@ class TaskSection extends Component
                 ->get();
         } elseif (
             auth()->user()->hasRole('Manager') &&
-            auth()->user()->currentTeam->getTranslation('name', 'en') === 'Planner'
+            auth()->user()->is_planner
         ) {
             $tasks = NetworkTask::with([
                 'network',
                 'task',
                 'comments',
                 'team',
-                'statuses'
+                'statuses',
+                'task.parent',
+                'task.networkTask'
             ])
                 ->withCount([
                     'comments',
@@ -215,7 +220,9 @@ class TaskSection extends Component
                 'task',
                 'comments',
                 'team',
-                'statuses'
+                'statuses',
+                'task.parent',
+                'task.networkTask'
             ])
                 ->withCount([
                     'comments',

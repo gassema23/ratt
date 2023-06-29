@@ -11,7 +11,7 @@
         <form method="POST" action="{{ route('verification.send') }}">
             @csrf
             <div>
-                <x-button type="submit" squared slate :label="trans('Resend Verification Email')"/>
+                <x-button type="submit" squared slate :label="trans('Resend Verification Email')" suffix="@telus.com"/>
             </div>
         </form>
         <form method="POST" action="{{ route('logout') }}">

@@ -47,7 +47,8 @@ class Show extends Component
                     'projects' => $projects,
                     'user' => $user
                 ])->layoutData([
-                'header' => trans(':Name profil', ['name' => $user->name]),
+                'title' => trans(':Name', ['name' => $user->name]),
+                'subtitle' => trans('Here you can find employee informations.'),
             ]);
     }
 }

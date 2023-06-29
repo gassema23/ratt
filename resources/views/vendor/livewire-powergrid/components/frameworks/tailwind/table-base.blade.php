@@ -17,7 +17,7 @@
                     </div>
                 @endif
             @endif
-            <div class="my-3 bg-white relative overflow-x-auto soft-scrollbar" style="{{ $theme->table->divStyle }}">
+            <div class="my-3 bg-white relative overflow-hidden hover:overflow-auto soft-scrollbar transition-all ease-in-out duration-500" style="{{ $theme->table->divStyle }}">
                 @include($table)
             </div>
             @include($theme->footer->view)

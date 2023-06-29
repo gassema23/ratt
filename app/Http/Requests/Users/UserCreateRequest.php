@@ -23,6 +23,7 @@ class UserCreateRequest extends FormRequest
             'email'      => [
                 'required',
                 'email',
+                'regex:/(.*)@telus\.com/i',
                 Rule::unique('users')
             ],
             'phone'   => [
@@ -52,6 +53,12 @@ class UserCreateRequest extends FormRequest
             ],
             'team_id' => [
                 'required'
+            ],
+            'desn' => [
+                'nullable'
+            ],
+            'tech_biri' => [
+                'nullable'
             ]
         ];
     }

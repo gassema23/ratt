@@ -1,6 +1,7 @@
 @if (is_null($data->is_completed) ||
         auth()->user()->hasAnyDirectPermission(['networks-markAsCompleted', 'networks-changeStatusTasks', 'tasks-update']) ||
         auth()->user()->is_planner)
+
     <x-dropdown align="right">
         <x-dropdown.header :label="trans('Manage tasks')">
             <x-slot name="trigger">

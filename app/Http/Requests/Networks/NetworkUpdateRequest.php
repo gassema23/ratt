@@ -13,7 +13,7 @@ class NetworkUpdateRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
-    public function rules($network_id, $project): array
+    public function rules($network): array
     {
         return [
             'site_id' => [
@@ -26,27 +26,22 @@ class NetworkUpdateRequest extends FormRequest
             'network.priority' => [
                 'nullable'
             ],
-            'network_element' => [
-                'required',
-                'max:15',
-                Rule::unique('networks', 'network_element')->ignore($network_id)
-            ],
             'network.network_no' => [
                 'required',
                 'min:6',
                 'max:10',
-                Rule::unique('networks', 'network_no')->ignore($network_id)
+                Rule::unique('networks', 'network_no')->ignore($network->id)
             ],
             'network.started_at' => [
                 'required',
-                'after_or_equal:' . $project->started_at,
-                'before:' . $project->ended_at
+                'after_or_equal:' . $network->project->started_at,
+                'before:' . $network->project->ended_at
             ],
             'network.ended_at' => [
                 'required',
                 'date',
                 'after:tomorrow',
-                'before:' . $project->ended_at
+                'before:' . $network->project->ended_at
             ]
         ];
     }

@@ -52,8 +52,8 @@ class Create extends ModalComponent
             'phone' => $this->phone ?? null,
             'employe_id' => $this->employe_id,
             'password' => md5(config('biri.App_password_temp')),
-            'desn' => $this->desn,
-            'tech_biri' => $this->tech_biri,
+            'desn' => $this->desn ?? 0,
+            'tech_biri' => $this->tech_biri ?? 0,
         ]);
 
         $teamModel = config('teamwork.team_model');

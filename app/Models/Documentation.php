@@ -60,6 +60,7 @@ class Documentation extends Model implements HasMedia
     {
         return 'slug';
     }
+
     public static function existingTags(): Collection
     {
         $model = TaggingUtility::taggedModelString();

@@ -25,7 +25,8 @@ class Show extends Component
             'site.city',
             'site.city.region',
             'site.city.region.state',
-            'site.city.region.state.country'
+            'site.city.region.state.country',
+            'tagged'
         ])
             ->withCount([
                 'networktasks' => function ($q) {
@@ -36,6 +37,9 @@ class Show extends Component
                 $query->with('networktasks', function ($q) {
                     return $q->where('team_id', auth()->user()->currentTeam->id)->whereNull('deleted_at');
                 });
+            })
+            ->when(auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest']) && !auth()->user()->is_planner, function ($query) {
+                $query->with('networktasks');
             })
             ->where('project_id', $id)
             ->get();

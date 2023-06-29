@@ -6,7 +6,7 @@
         <x-flash-messages class="my-2" />
         <!-- Email Address -->
         <div class="my-2">
-            <x-input :label="trans('Email address')" wire:model.defer="email" :value="old('email')" />
+            <x-input :label="trans('Email address')" wire:model.defer="email" :value="old('email')" suffix="@telus.com" />
         </div>
         <!-- Password -->
         <div class="my-2">
@@ -14,10 +14,12 @@
         </div>
         <!-- Password -->
         <div class="flex items-center my-2">
-            <input id="remember" type="checkbox" value="" class="w-4 h-4 text-teal-600 bg-slate-100 border-slate-300 rounded focus:ring-teal-500 focus:ring-2">
+            <input id="remember" type="checkbox" value=""
+                class="w-4 h-4 text-teal-600 bg-slate-100 border-slate-300 rounded focus:ring-teal-500 focus:ring-2">
             <label for="remember" class="ml-2 text-sm font-medium text-slate-900">@lang('Remember me')</label>
         </div>
-        <div class="flex flex-col space-y-4 xl:flex-row xl:items-center xl:justify-between py-4 my-4 border-b border-slate-200">
+        <div
+            class="flex flex-col space-y-4 xl:flex-row xl:items-center xl:justify-between py-4 my-4 border-b border-slate-200">
             @if (Route::has('password.request'))
                 <a class="text-teal-600 hover:underline text-sm" href="{{ route('password.request') }}">
                     @lang('Forgot your password?')
