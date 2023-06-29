@@ -12,7 +12,7 @@
           <div class="grid grid-cols-1 lg:grid-cols-6 gap-4">
               <div class="col-span-4">
                   <div class="prose prose-slate max-w-none">
-                      {!! $network->description !!}
+                      {!! $network->description ?? '' !!}
                   </div>
                   @can('comments-view')
                       <div class="my-4">
