@@ -8,13 +8,17 @@ use App\Traits\HasInvite;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
 use PowerComponents\LivewirePowerGrid\Traits\Filter;
+use PowerComponents\LivewirePowerGrid\Traits\WithExport;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridEloquent};
 
 final class Table extends PowerGridComponent
 {
-    use ActionButton, HasDelete, HasInvite;
+    use ActionButton, HasDelete, HasInvite, WithExport;
+
+    public bool $deferLoading = true;
+    public string $loadingComponent = 'components.table-loading';
     public $model = User::class;
     public $emits = ['refresh'];
     public $filter_name = '';

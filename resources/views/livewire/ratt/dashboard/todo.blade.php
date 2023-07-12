@@ -6,7 +6,7 @@
                 <div class="font-bold mb-2 flex justify-between align-middle items-center">
                     <a href="#" class=" hover:underline" @click="open = !open;" :aria-controls="$id('collapse')"
                         :aria-expanded="open" @keydown.escape.prevent.stop="open = false">
-                        {{ $network->network_element . ' / ' . $network->network_no . ' (' . $network->networktasks->count() . ')' }}
+                        {{ $network->network_element_lists.' / '.$network->network_no . ' (' . $network->networktasks->count() . ')' }}
                     </a>
                     <div x-cloak :class="open && 'rotate-180'"
                         class=" transform transition-transform duration-300 ease-linear">
@@ -20,9 +20,9 @@
                             <div class="w-1/3 text-sm flex-1 flex flex-row items-center">
                                 <div class="font-medium truncate">
                                     <a href="{{ route('admin.ratt.networks.show.params', [
-                                            'id' => $network->id,
-                                            'parameter' => 'scenarios'
-                                        ]) }}"
+                                        'id' => $network->id,
+                                        'parameter' => 'scenarios',
+                                    ]) }}"
                                         class=" hover:underline">
                                         {{ $networktask->task->name }}
                                     </a>

@@ -13,14 +13,13 @@
     <!-- Scripts -->
     @livewireScripts
     @wireUiScripts
-    @powerGridScripts
     <!-- Vite compile -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
     <!-- CSS -->
     @livewireStyles
-    @powerGridStyles
     <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
     <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+
 </head>
 
 <body class="font-sans antialiased bg-slate-50 text-slate-600 soft-scrollbar overflow-y-auto">

@@ -6,15 +6,22 @@ use App\Models\Country;
 use App\Traits\HasDelete;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use PowerComponents\LivewirePowerGrid\Traits\WithExport;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridEloquent};
 
 final class Table extends PowerGridComponent
 {
-    use ActionButton, HasDelete;
+    use ActionButton, HasDelete, WithExport;
     public $model = Country::class;
     public $emits = ['refresh'];
+
+
+
+    public bool $deferLoading = true;
+    public string $loadingComponent = 'components.table-loading';
+
     protected function getListeners(): array
     {
         return array_merge(

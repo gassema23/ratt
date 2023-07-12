@@ -2,17 +2,21 @@
 
 namespace App\Http\Livewire\Settings\Technologies;
 
+use App\Traits\HasDelete;
 use App\Models\Technology;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
-use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
+use PowerComponents\LivewirePowerGrid\Traits\WithExport;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
+use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridEloquent};
-use App\Traits\HasDelete;
 
 final class Table extends PowerGridComponent
 {
-    use ActionButton, HasDelete;
+    use ActionButton, HasDelete, WithExport;
+
+    public bool $deferLoading = true;
+    public string $loadingComponent = 'components.table-loading';
     public $model = Technology::class;
     public $emits = [
         'refresh'

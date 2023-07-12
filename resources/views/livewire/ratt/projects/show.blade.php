@@ -44,11 +44,7 @@
                         <x-icon name="clipboard-list" class="w-4 h-4" />
                     </div>
                     <div class="flex flex-col">
-                        @forelse ($network->tag_names as $tag)
-                            <div>{{ Str::upper($tag) }}</div>
-                            @empty
-                            <div>@lang('Network element is empty')</div>
-                        @endforelse
+                        {{ $network->network_element_lists }}
                     </div>
                 </div>
                 <div class="flex align-middle items-center">

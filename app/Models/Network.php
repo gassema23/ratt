@@ -2,6 +2,7 @@
 
 namespace App\Models;
 
+use Illuminate\Support\Str;
 use Conner\Tagging\Taggable;
 use Spatie\MediaLibrary\HasMedia;
 use Conner\Tagging\TaggingUtility;
@@ -11,6 +12,7 @@ use Wildside\Userstamps\Userstamps;
 use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Spatie\MediaLibrary\InteractsWithMedia;
+use Illuminate\Database\Eloquent\Collection;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Overtrue\LaravelFollow\Traits\Followable;
 use Dyrynda\Database\Support\CascadeSoftDeletes;
@@ -19,7 +21,6 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\MorphMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Collection;
 
 class Network extends Model implements HasMedia
 {
@@ -139,6 +140,6 @@ class Network extends Model implements HasMedia
 
     public function getNetworkElementListsAttribute()
     {
-        return collect($this->networkelements)->pluck('network_element')->implode(', ');
+        return Str::upper(collect($this->tag_names)->implode(', '));
     }
 }

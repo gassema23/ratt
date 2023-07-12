@@ -13,6 +13,10 @@ use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Heade
 final class Table extends PowerGridComponent
 {
     use ActionButton, HasDelete;
+
+    public bool $deferLoading = true;
+    public string $loadingComponent = 'components.table-loading';
+
     public $model = Category::class;
     public $emits = [
         'refresh'

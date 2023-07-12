@@ -6,13 +6,20 @@ use App\Models\Project;
 use App\Traits\HasDelete;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use PowerComponents\LivewirePowerGrid\Responsive;
+use PowerComponents\LivewirePowerGrid\Filters\Filter;
+use PowerComponents\LivewirePowerGrid\Traits\WithExport;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridEloquent};
 
 final class Table extends PowerGridComponent
 {
-    use ActionButton, HasDelete;
+    use ActionButton, HasDelete, WithExport;
+
+    public bool $deferLoading = true;
+    public string $loadingComponent = 'components.table-loading';
+
     public $model = Project::class;
     public $emits = [
         'refresh'
@@ -38,6 +45,7 @@ final class Table extends PowerGridComponent
     {
         $this->showCheckBox();
         return [
+            Responsive::make(),
             Exportable::make(trans('Projects') . '-' . Carbon::parse(now())->timestamp)
                 ->striped()
                 ->type(Exportable::TYPE_XLS, Exportable::TYPE_CSV),
@@ -68,14 +76,14 @@ final class Table extends PowerGridComponent
             ->join('users as primes', 'projects.prime_id', 'primes.id')
             ->join('users as planners', 'projects.planner_id', 'planners.id')
             ->select('projects.*', 'planners.name as plannername', 'primes.name as primename')
-            ->when(auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager','Guest']), function ($q) {
+            ->when(auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager', 'Guest']), function ($q) {
                 $q->withCount('networks');
             })
             ->when(auth()->user()->hasRole(['Manager']), function ($q) {
                 $q->where('prime_id', auth()->user()->id)
                     ->orWhere('planner_id', auth()->user()->id);
             })
-            ->when(!auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager','Guest']), function ($q) {
+            ->when(!auth()->user()->hasRole(['Manager', 'Super-Admin', 'Admin', 'Manager', 'Guest']), function ($q) {
                 $q->withCount([
                     'networks' => function ($q1) {
                         $q1->whereHas(
@@ -126,7 +134,7 @@ final class Table extends PowerGridComponent
     public function addColumns(): PowerGridEloquent
     {
         return PowerGrid::eloquent()
-            ->addColumn('project_no', fn (Project $model) => 'P-'.$model->project_no)
+            ->addColumn('project_no', fn (Project $model) => 'P-' . $model->project_no)
             ->addColumn('networks_count', fn (Project $model) => $model->networks_count)
             ->addColumn('plannername', fn (Project $model) => $model->planner->name)
             ->addColumn('primename', fn (Project $model) => $model->prime->name)
@@ -154,11 +162,14 @@ final class Table extends PowerGridComponent
         return [
             Column::make(trans('project no'), 'project_no')
                 ->sortable()
-                ->searchable()
-                ->makeInputText(),
+                ->searchable(),
             Column::make(trans('nb. network'), 'networks_count'),
-            Column::make(trans('planner'), 'plannername'),
-            Column::make(trans('project manager'), 'primename'),
+            Column::make(trans('planner'), 'plannername')
+                ->searchable()
+                ->sortable(),
+            Column::make(trans('project manager'), 'primename')
+                ->searchable()
+                ->sortable(),
             Column::make(trans('started date'), 'started_at_formatted', 'started_at')
                 ->searchable()
                 ->sortable(),
@@ -167,6 +178,14 @@ final class Table extends PowerGridComponent
                 ->sortable(),
             Column::make(trans('Last update'), 'updated_at_formatted', 'updated_at')
                 ->sortable(),
+        ];
+    }
+
+    public function filters(): array
+    {
+        return [
+            Filter::inputText(trans('project no'), 'project_no')
+                ->operators(['contains', 'is', 'is_not']),
         ];
     }
 
@@ -217,7 +236,7 @@ final class Table extends PowerGridComponent
                 ->when(fn () => !auth()->user()->can('projects-view'))
                 ->hide(),
             Rule::button('editrecord')
-                ->when(fn () => !auth()->user()->can('projects-edit'))
+                ->when(fn () => !auth()->user()->can('projects-update'))
                 ->hide(),
             Rule::button('deleterecord')
                 ->when(fn () => !auth()->user()->can('projects-delete'))

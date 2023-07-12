@@ -2,7 +2,8 @@ import "./bootstrap";
 import "../pace/pace";
 import { Carousel, initTE } from "tw-elements";
 import 'livewire-sortable';
-
+import "./../../vendor/power-components/livewire-powergrid/dist/powergrid";
+import "./../../vendor/power-components/livewire-powergrid/dist/powergrid.css";
 
 initTE({
     Carousel,

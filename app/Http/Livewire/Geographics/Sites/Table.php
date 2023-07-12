@@ -7,13 +7,18 @@ use App\Models\Country;
 use App\Traits\HasDelete;
 use Illuminate\Support\Carbon;
 use Illuminate\Database\Eloquent\Builder;
+use PowerComponents\LivewirePowerGrid\Traits\WithExport;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridEloquent};
 
 final class Table extends PowerGridComponent
 {
-    use ActionButton, HasDelete;
+    use ActionButton, HasDelete, WithExport;
+
+    public bool $deferLoading = true;
+    public string $loadingComponent = 'components.table-loading';
+
     public $model = Site::class;
     public $emits = [
         'refresh'
@@ -146,24 +151,19 @@ final class Table extends PowerGridComponent
         return [
             Column::make(trans('country'), 'countryname','countries.name')
                 ->searchable()
-                ->sortable()
-                ->makeInputText(),
+                ->sortable(),
             Column::make(trans('state'), 'statename','states.name')
                 ->searchable()
-                ->sortable()
-                ->makeInputText(),
+                ->sortable(),
             Column::make(trans('region'), 'regionname','regions.name')
                 ->searchable()
-                ->sortable()
-                ->makeInputText(),
+                ->sortable(),
             Column::make(trans('city'), 'cityname','cities.name')
                 ->searchable()
-                ->sortable()
-                ->makeInputText(),
+                ->sortable(),
             Column::make(trans('clli'), 'clli','sites.clli')
                 ->searchable()
-                ->sortable()
-                ->makeInputText(),
+                ->sortable(),
             Column::make(trans('Last update'), 'updated_at_formatted', 'updated_at')
                 ->sortable(),
         ];

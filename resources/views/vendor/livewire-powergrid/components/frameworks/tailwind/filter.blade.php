@@ -1,92 +1,105 @@
 @props([
-    'makeFilters' => null,
-    'checkbox' => null,
     'columns' => null,
-    'actions' => null,
     'theme' => null,
     'tableName' => null,
-    'enabledFilters' => null,
-    'inputTextOptions' => [],
+    'filtersFromColumns' => null,
 ])
-<div class="w-full my-3 dark:bg-slate-800">
-    <div x-data={show:true} class="">
-        <div class="px-4 py-3 cursor-pointer bg-slate-100 border border-slate-200 dark:border-slate-600 dark:bg-slate-600"
-             @click="show=!show">
-            <button
-                class="appearance-none text-left text-base font-medium text-slate-500 focus:outline-none dark:text-slate-300"
-                type="button">
-                {{ trans('livewire-powergrid::datatable.buttons.filter') }}
-            </button>
-        </div>
-        <div x-show="show"
-             class="border-l border-b border-r border-slate-200 dark:border-slate-600 px-2 py-4 dark:border-0 dark:bg-slate-700">
-            <div>
-                @php
-                    $customConfig = [];
-                @endphp
-                <div class="md:flex md:flex-wrap">
-                    @foreach(data_get($makeFilters, 'date_picker', []) as $field => $date)
-                        <div class="flex flex-col mb-2 md:w-1/2 lg:w-1/4">
+<div
+    x-data="{ open: @entangle('showFilters') }"
+    class="mt-2 md:mt-0"
+>
+    <div
+        x-show="open"
+        x-cloak
+        x-transition:enter="transform duration-100"
+        x-transition:enter-start="opacity-0 scale-90"
+        x-transition:enter-end="opacity-100 scale-100"
+        x-transition:leave="transform duration-100"
+        x-transition:leave-start="opacity-100 scale-100"
+        x-transition:leave-end="opacity-0 scale-90"
+        class="py-3"
+    >
+        @php
+            $customConfig = [];
+        @endphp
+        <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 2xl:grid-cols-6 gap-3">
+            @foreach ($filtersFromColumns as $filters)
+                @foreach ($filters as $filter)
+                    @if (str(data_get($filter, 'className'))->contains('FilterMultiSelect'))
+                        <div class="{{ data_get($filter, 'baseClass') }}">
+                            <x-livewire-powergrid::inputs.select
+                                :inline="false"
+                                :tableName="$tableName"
+                                :filter="$filter"
+                                :theme="$theme->filterMultiSelect"
+                                :initialValues="data_get(data_get($filters, 'multi_select'), data_get($filter, 'field'), [])"
+                            />
+                        </div>
+                    @endif
+                    @if (str(data_get($filter, 'className'))->contains('FilterDateTimePicker'))
+                        <div class="{{ data_get($filter, 'baseClass') }}">
                             @includeIf($theme->filterDatePicker->view, [
-                                 'inline'    => false,
-                                 'date'      => $date,
-                                 'tableName' => $tableName,
-                                 'classAttr' => 'w-full',
-                                 'theme'     => $theme->filterDatePicker,
+                                'filter' => $filter,
+                                'tableName' => $tableName,
+                                'classAttr' => 'w-full',
+                                'theme' => $theme->filterDatePicker,
                             ])
                         </div>
-                    @endforeach
-                    @foreach(data_get($makeFilters, 'select', []) as $field => $select)
-                        <div class="flex flex-col mb-2 md:w-1/2 lg:w-1/4">
+                    @endif
+                    @if (str(data_get($filter, 'className'))->contains('FilterDatePicker'))
+                        <div class="{{ data_get($filter, 'baseClass') }}">
+                            @includeIf($theme->filterDatePicker->view, [
+                                'filter' => $filter,
+                                'tableName' => $tableName,
+                                'classAttr' => 'w-full',
+                                'theme' => $theme->filterDatePicker,
+                            ])
+                        </div>
+                    @endif
+                    @if (str(data_get($filter, 'className'))->contains(['FilterSelect', 'FilterEnumSelect']))
+                        <div class="{{ data_get($filter, 'baseClass') }}">
                             @includeIf($theme->filterSelect->view, [
-                                 'inline' => false,
-                                 'select' => $select,
-                                 'theme'  => $theme->filterSelect,
+                                'filter' => $filter,
+                                'theme' => $theme->filterSelect,
                             ])
                         </div>
-                    @endforeach
-                    @foreach(data_get($makeFilters, 'number', []) as $field => $number)
-                        <div class="flex flex-col mb-2 md:w-1/2 lg:w-1/4">
+                    @endif
+                    @if (str(data_get($filter, 'className'))->contains('FilterNumber'))
+                        <div class="{{ data_get($filter, 'baseClass') }}">
                             @includeIf($theme->filterNumber->view, [
-                                'inline' => false,
-                                'number' => $number,
-                                'theme'  => $theme->filterNumber,
+                                'filter' => $filter,
+                                'theme' => $theme->filterNumber,
                             ])
                         </div>
-                    @endforeach
-                    @foreach(data_get($makeFilters, 'input_text', []) as $field => $inputText)
-                        <div class="flex flex-col mb-2 md:w-1/2 lg:w-1/4">
+                    @endif
+                    @if (str(data_get($filter, 'className'))->contains('FilterInputText'))
+                        <div class="{{ data_get($filter, 'baseClass') }}">
                             @includeIf($theme->filterInputText->view, [
-                                 'inline'           => false,
-                                 'enabledFilters'   => $enabledFilters,
-                                 'inputTextOptions' => $inputTextOptions,
-                                 'enabledFilters'   => $enabledFilters,
-                                 'theme'            => $theme->filterInputText,
+                                'filter' => $filter,
+                                'theme' => $theme->filterInputText,
                             ])
                         </div>
-                    @endforeach
-                    @foreach(data_get($makeFilters, 'boolean', []) as $field => $booleanFilter)
-                        <div class="flex flex-col mb-2 md:w-1/2 lg:w-1/4">
+                    @endif
+                    @if (str(data_get($filter, 'className'))->contains('FilterBoolean'))
+                        <div class="{{ data_get($filter, 'baseClass') }}">
                             @includeIf($theme->filterBoolean->view, [
-                                 'inline'         => false,
-                                 'booleanFilter'  => $booleanFilter,
-                                 'tableName'      => $tableName,
-                                 'theme'          => $theme->filterBoolean,
+                                'filter' => $filter,
+                                'theme' => $theme->filterBoolean,
                             ])
                         </div>
-                    @endforeach
-                    @foreach(data_get($makeFilters, 'multi_select', []) as $field => $multiSelect)
-                        <div class="flex flex-col mb-2 md:w-1/2 lg:w-1/4">
-                            @includeIf($theme->filterMultiSelect->view, [
-                                'inline'         => false,
-                                'multiSelect'    => $multiSelect,
-                                'tableName'      => $tableName,
-                                'theme'          => $theme->filterBoolean,
-                            ])
+                    @endif
+                    @if (str(data_get($filter, 'className'))->contains('FilterDynamic'))
+                        <div class="{{ data_get($filter, 'baseClass') }}">
+                            <x-dynamic-component
+                                :component="data_get($filter, 'component', '')"
+                                :attributes="new \Illuminate\View\ComponentAttributeBag(
+                                    data_get($filter, 'attributes', []),
+                                )"
+                            />
                         </div>
-                    @endforeach
-                </div>
-            </div>
+                    @endif
+                @endforeach
+            @endforeach
         </div>
     </div>
 </div>

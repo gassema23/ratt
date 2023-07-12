@@ -6,13 +6,17 @@ use App\Traits\HasDelete;
 use Illuminate\Support\Carbon;
 use Spatie\Permission\Models\Role;
 use Illuminate\Database\Eloquent\Builder;
+use PowerComponents\LivewirePowerGrid\Traits\WithExport;
 use PowerComponents\LivewirePowerGrid\Traits\ActionButton;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridEloquent};
 
 final class Table extends PowerGridComponent
 {
-    use ActionButton, HasDelete;
+    use ActionButton, HasDelete, WithExport;
+
+    public bool $deferLoading = true;
+    public string $loadingComponent = 'components.table-loading';
     public $model = Role::class;
     public $emits = [
         'refresh'

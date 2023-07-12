@@ -34,7 +34,7 @@ class Edit extends ModalComponent
 
     public function mount($id)
     {
-        $this->authorize('projects-edit');
+        $this->authorize('projects-update');
         $this->project = Project::findOrFail($id);
         $this->primes = User::Prime()->get();
         $this->planners = User::Planner()->get();
@@ -47,7 +47,7 @@ class Edit extends ModalComponent
 
     public function save()
     {
-        $this->authorize('projects-edit');
+        $this->authorize('projects-update');
 
         $this->project->project_no = str_replace('P-', '', $this->project->project_no);
 

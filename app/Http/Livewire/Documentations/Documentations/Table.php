@@ -19,6 +19,9 @@ final class Table extends PowerGridComponent
     public $tag_name;
     public $emits = ['refresh'];
 
+    public bool $deferLoading = true;
+    public string $loadingComponent = 'components.table-loading';
+
     protected function getListeners(): array
     {
         return array_merge(

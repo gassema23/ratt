@@ -2,7 +2,10 @@ const defaultTheme = require("tailwindcss/defaultTheme");
 const plugin = require("tailwindcss/plugin");
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-    presets: [require("./vendor/wireui/wireui/tailwind.config.js")],
+    presets: [
+        require("./vendor/wireui/wireui/tailwind.config.js"),
+        require("./vendor/power-components/livewire-powergrid/tailwind.config.js"),
+],
     content: [
         "./vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php",
         "./storage/framework/views/*.php",
@@ -24,6 +27,10 @@ module.exports = {
         //MAILS
         "./resources/views/mails/**/*.blade.php",
         "./node_modules/tw-elements/dist/js/**/*.js",
+        // Powergrid
+        './app/Http/Livewire/**/*Table.php',
+        './vendor/power-components/livewire-powergrid/resources/views/**/*.php',
+        './vendor/power-components/livewire-powergrid/src/Themes/Tailwind.php'
     ],
     safelist: [
         {
@@ -37,6 +44,7 @@ module.exports = {
             variants: ["sm", "md", "lg", "xl"],
         },
     ],
+    darkMode: 'class',
     theme: {
         extend: {
             fontFamily: {

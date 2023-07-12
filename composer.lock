@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "a63a354b6c11a78b08ab5f4484e6a01c",
+    "content-hash": "38908135eb19b5f89b3461e1280fe994",
     "packages": [
         {
             "name": "backpack/crud",
@@ -4586,36 +4586,33 @@
         },
         {
             "name": "openspout/openspout",
-            "version": "v4.13.1",
+            "version": "v4.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/openspout/openspout.git",
-                "reference": "dd73318406b1fffdeaa333a32e175149d28224f7"
+                "reference": "1f5d8500f3fdcc023543293f052a8beb4a92de78"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/openspout/openspout/zipball/dd73318406b1fffdeaa333a32e175149d28224f7",
-                "reference": "dd73318406b1fffdeaa333a32e175149d28224f7",
+                "url": "https://api.github.com/repos/openspout/openspout/zipball/1f5d8500f3fdcc023543293f052a8beb4a92de78",
+                "reference": "1f5d8500f3fdcc023543293f052a8beb4a92de78",
                 "shasum": ""
             },
             "require": {
                 "ext-dom": "*",
-                "ext-fileinfo": "*",
                 "ext-filter": "*",
                 "ext-libxml": "*",
                 "ext-xmlreader": "*",
                 "ext-zip": "*",
-                "php": "~8.0.0 || ~8.1.0 || ~8.2.0"
+                "php": "~8.0.0 || ~8.1.0"
             },
             "require-dev": {
-                "ext-zlib": "*",
-                "friendsofphp/php-cs-fixer": "^3.8.0",
-                "infection/infection": "^0.26.10",
-                "phpbench/phpbench": "^1.2.5",
-                "phpstan/phpstan": "^1.6.8",
-                "phpstan/phpstan-phpunit": "^1.1.1",
-                "phpstan/phpstan-strict-rules": "^1.2.3",
-                "phpunit/phpunit": "^9.5.20"
+                "friendsofphp/php-cs-fixer": "^3.7.0",
+                "phpbench/phpbench": "^1.2",
+                "phpstan/phpstan": "^1.4.10",
+                "phpstan/phpstan-phpunit": "^1.0.0",
+                "phpstan/phpstan-strict-rules": "^1.1.0",
+                "phpunit/phpunit": "^9.5.19"
             },
             "suggest": {
                 "ext-iconv": "To handle non UTF-8 CSV files (if \"php-intl\" is not already installed or is too limited)",
@@ -4663,7 +4660,7 @@
             ],
             "support": {
                 "issues": "https://github.com/openspout/openspout/issues",
-                "source": "https://github.com/openspout/openspout/tree/v4.13.1"
+                "source": "https://github.com/openspout/openspout/tree/v4.0.0"
             },
             "funding": [
                 {
@@ -4675,7 +4672,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-03-30T15:40:03+00:00"
+            "time": "2022-03-24T13:54:39+00:00"
         },
         {
             "name": "outhebox/blade-flags",
@@ -5140,35 +5137,37 @@
         },
         {
             "name": "power-components/livewire-powergrid",
-            "version": "v3.7.8",
+            "version": "v4.8.5",
             "source": {
                 "type": "git",
                 "url": "https://github.com/Power-Components/livewire-powergrid.git",
-                "reference": "0e94bd7aa0488f569433d228e5b81ffe762ccb05"
+                "reference": "9562baa33d6f5ee04eaebb605dda686c130f69c4"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/Power-Components/livewire-powergrid/zipball/0e94bd7aa0488f569433d228e5b81ffe762ccb05",
-                "reference": "0e94bd7aa0488f569433d228e5b81ffe762ccb05",
+                "url": "https://api.github.com/repos/Power-Components/livewire-powergrid/zipball/9562baa33d6f5ee04eaebb605dda686c130f69c4",
+                "reference": "9562baa33d6f5ee04eaebb605dda686c130f69c4",
                 "shasum": ""
             },
             "require": {
-                "doctrine/dbal": "^3.1|2.12.1",
-                "illuminate/support": "^8.18|^9.0|^10.0",
-                "livewire/livewire": "^2.10",
-                "openspout/openspout": "^4.6",
-                "php": "^8.0"
+                "doctrine/dbal": "^3.6.2|2.12.1",
+                "illuminate/support": "^9.0|^10.0",
+                "livewire/livewire": "^2.12.3",
+                "php": "^8.1"
             },
             "require-dev": {
-                "composer/composer": "^2.1",
-                "friendsofphp/php-cs-fixer": "^3.13.1",
-                "laradumps/laradumps": "^1.9",
-                "nunomaduro/larastan": "^1.0 | ^2.4",
-                "orchestra/testbench": "^6.17 | ^7.0 | ^8.0",
-                "pestphp/pest": "^1.21",
-                "pestphp/pest-plugin-faker": "^1.0",
-                "pestphp/pest-plugin-livewire": "^1.0",
-                "phpunit/phpunit": "^9.5"
+                "composer/composer": "^2.5.5",
+                "laradumps/laradumps": "^1.12.1",
+                "laravel/pint": "^1.10",
+                "nunomaduro/larastan": "^2.6.0",
+                "orchestra/testbench": "^7.0 | ^8.5.3",
+                "pestphp/pest": "^2.6.1",
+                "pestphp/pest-plugin-faker": "^2.0",
+                "pestphp/pest-plugin-livewire": "^2.0",
+                "spaze/phpstan-disallowed-calls": "^2.14.2"
+            },
+            "suggest": {
+                "openspout/openspout": "Required to export XLS and CSV"
             },
             "type": "library",
             "extra": {
@@ -5195,13 +5194,18 @@
                     "name": "Luan Freitas",
                     "email": "luanfreitasgoncalves@gmail.com",
                     "role": "Developer"
+                },
+                {
+                    "name": "DanSysAnalyst",
+                    "email": "daniel@sysanalyst.eu",
+                    "role": "Developer"
                 }
             ],
             "description": "PowerGrid generates Advanced Datatables using Laravel Livewire.",
             "homepage": "https://github.com/power-components/livewire-powergrid",
             "support": {
                 "issues": "https://github.com/Power-Components/livewire-powergrid/issues",
-                "source": "https://github.com/Power-Components/livewire-powergrid/tree/v3.7.8"
+                "source": "https://github.com/Power-Components/livewire-powergrid/tree/v4.8.5"
             },
             "funding": [
                 {
@@ -5209,7 +5213,7 @@
                     "type": "github"
                 }
             ],
-            "time": "2023-04-12T09:11:36+00:00"
+            "time": "2023-07-10T22:22:45+00:00"
         },
         {
             "name": "prologue/alerts",
