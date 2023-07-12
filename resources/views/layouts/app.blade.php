@@ -43,14 +43,14 @@
                             @endif
                         </div>
                         @if (isset($description))
-                            <div class="prose prose-slate max-w-none">
+                            <div class="prose prose-slate max-w-none my-4">
                                 {!! $description !!}
                             </div>
                         @endif
                     @endif
                 </div>
                 <!-- Your content -->
-                <div>
+                <div class=" my-4">
                     <div class="grid grid-cols-1 lg:grid-cols-6 gap-4">
                         @if (isset($sidebar))
                             <div class="col-span-1">

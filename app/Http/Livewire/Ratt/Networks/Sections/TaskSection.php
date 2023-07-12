@@ -5,6 +5,7 @@ namespace App\Http\Livewire\Ratt\Networks\Sections;
 use Livewire\Component;
 use WireUi\Traits\Actions;
 use App\Models\NetworkTask;
+use App\Models\Team;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 use Spatie\Activitylog\Models\Activity;
 
@@ -125,7 +126,10 @@ class TaskSection extends Component
      */
     public function markAsCompleted($id)
     {
-        $this->authorize('networks-markAsCompleted');
+        if (!auth()->user()->is_prime) {
+            $this->authorize('networks-markAsCompleted');
+        }
+
         $this->dialog()->confirm([
             'title'       => trans('Are you Sure?'),
             'description' => trans('Are you sure to complete this task?'),
@@ -148,7 +152,6 @@ class TaskSection extends Component
         $network->update([
             "is_completed" => now()
         ]);
-dd($network);
         activity()
             ->causedBy(auth()->user())
             ->performedOn($network)
@@ -157,7 +160,7 @@ dd($network);
 
         $this->notification()->send([
             'title' => trans('Success'),
-            'description' => trans('Data is now set as completed!'),
+            'description' => trans('Tasks is now set as completed!'),
             'icon' => 'success'
         ]);
 
@@ -172,69 +175,42 @@ dd($network);
      */
     public function render()
     {
+        $network_id = $this->network->id;
         $this->authorize('networks-taskSection');
-        if (auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest'])) {
-            $tasks = NetworkTask::with([
-                'network',
-                'task',
-                'comments',
-                'team',
-                'statuses',
-                'task.parent',
-                'task.networkTask'
-            ])
-                ->withCount([
-                    'comments',
-                    'checklists',
-                    'checklists as complete_checklists_count' => function ($q) {
-                        $q->where('status', 1);
-                    }
-                ])
-                ->where('network_id', '=', $this->network->id)
-                ->get();
-        } elseif (
-            auth()->user()->hasRole('Manager') &&
-            auth()->user()->is_planner
-        ) {
-            $tasks = NetworkTask::with([
-                'network',
-                'task',
-                'comments',
-                'team',
-                'statuses',
-                'task.parent',
-                'task.networkTask'
-            ])
-                ->withCount([
-                    'comments',
-                    'checklists',
-                    'checklists as complete_checklists_count' => function ($q) {
-                        $q->where('status', 1);
-                    }
-                ])
-                ->where('network_id', '=', $this->network->id)
-                ->get();
-        } else {
-            $tasks = NetworkTask::with([
-                'network',
-                'task',
-                'comments',
-                'team',
-                'statuses',
-                'task.parent',
-                'task.networkTask'
-            ])
-                ->withCount([
-                    'comments',
-                    'checklists',
-                    'checklists as complete_checklists_count' => function ($q) {
-                        $q->where('status', 1);
-                    }
-                ])
-                ->where('network_id', '=', $this->network->id)
-                ->where('team_id', auth()->user()->current_team_id)
-                ->get();
-        }
+        $query = NetworkTask::with([
+            'network',
+            'task.parent',
+            'comments',
+            'team',
+            'task',
+            'task.networktask',
+            'task.parent.networktask' =>
+            function ($q) use ($network_id) {
+                $q->where('network_id', $network_id);
+            }
+        ])->withCount([
+            'comments', 'checklists', 'checklists as complete_checklists_count' => function ($q) {
+                $q->where('status', 1);
+            }
+        ]);
+
+        $query->when(
+            (auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest'])) ||
+                (auth()->user()->hasRole('Manager') && auth()->user()->is_planner),
+            function ($q) use ($network_id) {
+                return $q->where('network_id', $network_id);
+            }
+        );
+        $query->when(
+            (!auth()->user()->hasRole(['Super-Admin', 'Admin', 'Guest'])) ||
+                (auth()->user()->hasRole('Manager') && !auth()->user()->is_planner),
+            function ($q) use ($network_id) {
+                return $q->where('network_id', $network_id)
+                    ->where('team_id', auth()->user()->current_team_id);
+            }
+        );
+
+        $tasks = $query->get();
 
         return view('livewire.ratt.networks.sections.task-section', [
             'tasks' => $tasks

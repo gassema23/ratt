@@ -44,7 +44,6 @@ class Task extends Model
         return $this->hasOne(NetworkTask::class);
     }
 
-
     public function getTaskParentStatusAttribute()
     {
         return $this->parent->name;

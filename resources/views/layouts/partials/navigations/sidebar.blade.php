@@ -408,7 +408,7 @@
                             'justify-between',
                             'w-full',
                             'bg-slate-700' =>
-                                Route::is('admin.settings.employees.*') ||
+                                Route::is('admin.settings.users.*') ||
                                 Route::is('admin.settings.teams.*'),
                         ]) x-on:click="open = !open">
                             <div class="flex space-x-2">

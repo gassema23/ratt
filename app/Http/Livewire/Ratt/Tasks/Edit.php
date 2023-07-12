@@ -23,7 +23,6 @@ class Edit extends ModalComponent
         $this->task = Task::findOrFail($id);
         $this->parents = Task::orderBy('name')
             ->select('id', 'name')
-            ->whereNull('parent_id')
             ->whereNotIn('id', [$id])
             ->get();
         $this->teams = Team::orderBy('name')

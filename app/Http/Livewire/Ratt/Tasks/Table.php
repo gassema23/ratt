@@ -60,7 +60,7 @@ final class Table extends PowerGridComponent
     public function datasource(): Builder
     {
         return Task::query()
-            ->with(['team', 'parent'])
+            ->with(['team', 'parent', 'scenarios'])
             ->join('teams', 'tasks.team_id', '=', 'teams.id')
             ->leftJoin('tasks as parents', 'tasks.team_id', '=', 'parents.id')
             ->select('tasks.*', 'teams.name as teamname', 'parents.name as parentname');
@@ -82,8 +82,9 @@ final class Table extends PowerGridComponent
     public function relationSearch(): array
     {
         return [
-            'team' => ['name '],
-            'parent' => ['name '],
+            'team' => ['name'],
+            'parent' => ['name'],
+            'scenarios' => ['name'],
         ];
     }
 
@@ -101,10 +102,11 @@ final class Table extends PowerGridComponent
     public function addColumns(): PowerGridEloquent
     {
         return PowerGrid::eloquent()
+            ->addColumn('scenarioname', fn (Task $model) => implode(', ', collect($model->scenarios)->pluck('name')->toArray()))
             ->addColumn('name')
-            ->addColumn('parentname', fn(Task $model) => $model->parent->name ?? '')
-            ->addColumn('teamname', fn(Task $model) => $model->team->name)
-            ->addColumn('updated_at_formatted', fn(Task $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('parentname', fn (Task $model) => $model->parent->name ?? '')
+            ->addColumn('teamname', fn (Task $model) => $model->team->name)
+            ->addColumn('updated_at_formatted', fn (Task $model) => Carbon::parse($model->updated_at)->diffForHumans());
     }
 
     /*
@@ -124,6 +126,8 @@ final class Table extends PowerGridComponent
     public function columns(): array
     {
         return [
+            Column::make(trans('scenarios'), 'scenarioname')
+                ->searchable(),
             Column::make(trans('name'), 'name')
                 ->sortable()
                 ->searchable(),
@@ -180,12 +184,11 @@ final class Table extends PowerGridComponent
     {
         return [
             Rule::button('editrecord')
-                ->when(fn() => !auth()->user()->can('tasks-update'))
+                ->when(fn () => !auth()->user()->can('tasks-update'))
                 ->hide(),
             Rule::button('deleterecord')
-                ->when(fn() => !auth()->user()->can('tasks-delete'))
+                ->when(fn () => !auth()->user()->can('tasks-delete'))
                 ->hide(),
         ];
     }
-
 }

@@ -29,10 +29,8 @@
                             <div class="w-1/3 text-sm flex-1 flex flex-row items-center">
                                 <div @class(['font-medium', 'truncate', 'w-full'])>
                                     @if (!is_null($networkTask->task->parent))
-                                        @dump($networkTask->task->parent->networkTask)
-                                        @dump($networkTask->task->parent->networkTask->task->name)
-                                        @if (!is_null($networkTask->task->parent->networkTask->is_completed) || !is_null($networkTask->is_completed))
-                                            @dump('2e IF')
+                                        @if (!is_null($networkTask->task->parent->networktask->is_completed) ||
+                                        !is_null($networkTask->is_completed) && !is_null($networkTask->task->parent->status))
                                             <a href="#" @class([
                                                 'hover:underline',
                                                 'flex',

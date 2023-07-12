@@ -12,7 +12,6 @@ use App\Http\Controllers\Auth as AuthController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Livewire\Dashboard\Dashboard as DashboardDashboard;
 use App\Http\Livewire\DragDropList;
-use App\Http\Livewire\Test;
 
 /*
 |--------------------------------------------------------------------------

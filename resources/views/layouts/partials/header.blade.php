@@ -33,6 +33,6 @@
     @include('layouts.partials.navigations.main')
     {{-- Go to top btn --}}
     <button x-data="topBtn" @click="scrolltoTop" id="topButton"
-        class="fixed z-10 hidden p-2 bg-slate-800 rounded-full shadow-md bottom-16 right-10 bg-opacity-60 hover:bg-opacity-100 text-slate-400 transition ease-in-out duration-500">
+        class="fixed z-10 hidden p-2 bg-slate-800 rounded-full shadow-md bottom-24 right-10 bg-opacity-60 hover:bg-opacity-100 text-slate-400 transition ease-in-out duration-500">
         <x-icon name="chevron-up" class="w-5 h-5" />
     </button>
