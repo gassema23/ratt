@@ -39,17 +39,27 @@
                                         </thead>
                                         <tbody>
                                             @foreach ($v as $key => $task)
-                                                <tr class="border-b dark:border-neutral-500" wire:key="field-{{ $task->id }}">
+                                                <tr class="border-b dark:border-neutral-500"
+                                                    wire:key="field-{{ $task->id }}">
                                                     <td class="whitespace-nowrap px-6 py-4 font-medium truncate">
-                                                        <x-checkbox id="task-{{ $task->id }}" :label="$task->name"
-                                                            wire:model.defer="inputs.{{ $task->id }}.task" value="{{ $task->id }}" />
+                                                        <div class="flex justify-between">
+                                                            <x-checkbox id="task-{{ $task->id }}" :label="$task->name"
+                                                                wire:model.defer="inputs.{{ $task->id }}.task"
+                                                                value="{{ $task->id }}" />
+
+                                                            @if (!is_null($task->parent))
+                                                                <x-badge xs squared info :label="trans('This task relies on: :dependency.', ['dependency' => $task->parent->name])" />
+                                                            @endif
+                                                        </div>
                                                     </td>
                                                     <td class="whitespace-nowrap px-6 py-4">
-                                                        <x-input type="date" wire:model.defer="inputs.{{ $task->id }}.duedate" />
+                                                        <x-input type="date"
+                                                            wire:model.defer="inputs.{{ $task->id }}.duedate" />
                                                     </td>
                                                     <td class="whitespace-nowrap px-6 py-4">
                                                         <x-native-select :placeholder="__('Make a selection')" :options="config('biri.App_priority.' . App::getLocale())"
-                                                            wire:model.defer="inputs.{{ $task->id }}.priority" option-value="id" option-label="name" />
+                                                            wire:model.defer="inputs.{{ $task->id }}.priority"
+                                                            option-value="id" option-label="name" />
                                                     </td>
                                                 </tr>
                                             @endforeach

@@ -18,6 +18,7 @@ class AssignScenario extends ModalComponent
     public $scenarios, $network, $scenariosData, $scenario_id;
     public $inputs = [];
     public $emits = ['refresh'];
+
     public function mount($id)
     {
         $this->authorize('networks-assignScenarios');
@@ -26,22 +27,41 @@ class AssignScenario extends ModalComponent
             ->select('id', 'name')
             ->get();
     }
+
     public function updatedScenarioId($value)
     {
         $this->reset(['scenariosData', 'inputs']);
         $this->scenariosData = Scenario::with([
             'tasks',
             'tasks.team'
-        ])
-            ->where('id', $value)
-            ->get();
+        ])->where('id', $value)->get();
+
+        foreach ($this->scenariosData as $scenario) {
+            foreach ($scenario->tasks->groupBy('team.name') as $k => $v) {
+                foreach ($v as $key => $task) {
+                    $this->inputs[$task->id]['priority'] = 4;
+                    $i = 10;
+                    $date = $this->network->ended_at->subWeekdays(10)->format('Y-m-d');
+                    if ($this->network->ended_at->subWeekdays(10)->format('Y-m-d') <  $this->network->started_at->format('Y-m-d')) {
+                        while ($this->network->ended_at->subWeekdays($i)->format('Y-m-d') < $this->network->started_at->format('Y-m-d') ) {
+                            $date   = $this->network->ended_at->subWeekdays($i)->format('Y-m-d');
+                            $i --;
+                        }
+                    }
+                    $this->inputs[$task->id]['duedate'] = $date;
+                }
+            }
+        }
     }
+
     protected function rules()
     {
         return (new AssignScenarioRequest)->rules($this->network);
     }
+
     public function save()
     {
+        dd($this->validate());
         $this->authorize('networks-assignScenarios');
         $this->validate();
         foreach ($this->inputs as $data) {
@@ -56,6 +76,7 @@ class AssignScenario extends ModalComponent
         }
         $this->saved();
     }
+
     public function render()
     {
         $this->authorize('networks-assignScenarios');
