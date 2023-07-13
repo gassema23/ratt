@@ -58,6 +58,7 @@ class Create extends ModalComponent
             'project_id' => $this->project->id,
             'site_id' => $this->site_id,
             'network_no' => $this->network_no,
+            'network_element'=>'',
             'name' => $this->name,
             'description' => $this->description ?? null,
             'priority' => $this->priority ?? 3,
