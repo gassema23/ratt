@@ -87,6 +87,7 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
                 /** END RATT */
                 /** BEAT */
                 Route::prefix('beat')->name('beat.')->group(function () {
+                    Route::get('/', Beat\Dashboard::class)->name('dashboard');
                     Route::get('/settings', Beat\Settings\Index::class)->name('settings.index');
                     Route::prefix('alarms')->name('alarms.')->group(function () {
                         Route::get('/alarms', Beat\Alarms\Alarms\Index::class)->name('alarms.index');

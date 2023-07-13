@@ -19,11 +19,11 @@ class CustomTheme extends Tailwind
             ->tdAction('')
             ->tr('')
             ->trFilters('bg-white dark:bg-slate-700')
-            ->th('font-bold uppercase text-sm px-2 pr-4 py-3 text-left text-slate-700 tracking-wider whitespace-nowrap dark:text-slate-300')
+            ->th('font-semibold uppercase px-2 pr-4 py-3 text-left text-slate-700 tracking-wider whitespace-nowrap dark:text-slate-300')
             ->tbody('text-slate-800')
             ->trBody('border border-slate-100 dark:border-slate-400 hover:bg-slate-50 dark:bg-slate-700 dark:odd:bg-slate-800 dark:odd:hover:bg-slate-900 dark:hover:bg-slate-700')
             ->tdBody('px-3 py-2 whitespace-nowrap dark:text-slate-200')
-            ->tdBodyTotalColumns('px-3 py-2 whitespace-nowrap dark:text-slate-200 text-sm text-slate-600 text-right space-y-2');
+            ->tdBodyTotalColumns('px-3 py-2 whitespace-nowrap dark:text-slate-200  text-slate-600 text-right space-y-2');
     }
 
     public function footer(): Footer
@@ -37,7 +37,7 @@ class CustomTheme extends Tailwind
     {
         return Theme::actions()
             ->headerBtn('block w-full bg-slate-50 text-slate-700 border border-slate-200 rounded py-2 px-3 leading-tight focus:outline-none focus:bg-white focus:border-slate-600 dark:border-slate-500 dark:bg-slate-600 2xl:dark:placeholder-slate-300 dark:text-slate-200 dark:text-slate-300')
-            ->rowsBtn('focus:outline-none text-sm py-2.5 px-5 rounded border');
+            ->rowsBtn('focus:outline-none  py-2.5 px-5 rounded border');
     }
 
     public function cols(): Cols

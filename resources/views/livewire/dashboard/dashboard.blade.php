@@ -1,4 +1,4 @@
-<div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 xl:grid-cols-6 gap-4">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-4">
     @can('projects-viewAny', 'scenarios-viewAny', 'tasks-viewAny')
         <x-card>
             <div class="flex flex-col justify-between h-full">
@@ -15,8 +15,8 @@
                         </p>
                     </div>
                     <div>
-                        <div class="p-1 rounded-full bg-slate-900 shadow-sm">
-                            <img src="{{ asset('favicon/favicon-32x32.png') }}" alt="" class="h-6">
+                        <div class="p-1 w-8 h-8 align-middle rounded-full bg-slate-900 shadow-sm">
+                            <img src="{{ asset('favicon/favicon-32x32.png') }}" alt="" class="w-full">
                         </div>
                     </div>
                 </div>
@@ -36,20 +36,20 @@
                             @lang('BEAT')
                         </h4>
                         <p class="">
-                            @lang('Title...')
+                            @lang('TELUS Location and Alarms Database')
                         </p>
                         <p class="text-xs text-slate-500">
-                            @lang('Description here...')
+                            @lang('Allows you to view and edit information about TELUS alarms')
                         </p>
                     </div>
                     <div>
-                        <div class="p-1 rounded-full bg-green-500 text-slate-50 shadow-sm">
-                            <x-icon name="office-building" class="w-6" />
+                        <div class="p-1 w-8 h-8 align-middle rounded-full bg-green-500 text-slate-50 shadow-sm">
+                            <x-icon name="office-building" class="w-full" />
                         </div>
                     </div>
                 </div>
                 <div class="flex justify-end">
-                    <x-button squared xs :label="trans('Go to dashboard')" href="{{ route('admin.ratt.dashboard') }}" />
+                    <x-button squared xs :label="trans('Go to dashboard')" href="{{ route('admin.beat.dashboard') }}" />
                 </div>
             </div>
         </x-card>
@@ -69,8 +69,8 @@
                         </p>
                     </div>
                     <div>
-                        <div class="p-1 rounded-full bg-cyan-500 text-slate-50 shadow-sm">
-                            <x-icon name="clipboard-list" class="w-6" />
+                        <div class="p-1 w-8 h-8 align-middle rounded-full bg-cyan-500 text-slate-50 shadow-sm">
+                            <x-icon name="clipboard-list" class="w-full" />
                         </div>
                     </div>
                 </div>
