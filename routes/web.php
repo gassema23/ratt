@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Livewire\Auth;
+use App\Http\Livewire\Biri;
 use App\Http\Livewire\Ratt;
 use App\Http\Livewire\Beat;
 use App\Http\Livewire\Search;
@@ -41,7 +42,6 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
             Route::get('password/confirm', Auth\Passwords\Confirm::class)->name('password.confirm');
             // ADMIN
             Route::middleware(['verified'])->prefix("admin")->name("admin.")->group(function () {
-
 
                 Route::get('/', DashboardDashboard::class)->name('dashboard');
                 Route::get('search', Search::class)->name('search');
@@ -92,6 +92,18 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
                     Route::prefix('alarms')->name('alarms.')->group(function () {
                         Route::get('/alarms', Beat\Alarms\Alarms\Index::class)->name('alarms.index');
                         Route::get('/systems', Beat\Alarms\Systems\Index::class)->name('systems.index');
+                    });
+                });
+                /** END BEAT */
+                /** BEAT */
+                Route::prefix('biri')->name('biri.')->group(function () {
+                    Route::get('/', Biri\Dashboard::class)->name('dashboard');
+                    Route::prefix('settings')->name('settings.')->group(function () {
+                        Route::get('/technologies', Biri\Technologies\Index::class)->name('technologies.index');
+                        Route::get('/equipments', Biri\Equipments\Index::class)->name('equipments.index');
+                        Route::get('/category-activities', Biri\CategoryActivities\Index::class)->name('category-activities.index');
+                        Route::get('/activities', Biri\Activities\Index::class)->name('activities.index');
+                        Route::get('/isq', Biri\Isq\Index::class)->name('isq.index');
                     });
                 });
                 /** END BEAT */

@@ -14,7 +14,7 @@ return new class extends Migration
         Schema::create('alarm_alarm_specifications', function (Blueprint $table) {
             $table->foreignId('alarm_id')->references('id')->on('alarms');
             $table->foreignId('alarm_specification_id')->references('id')->on('alarm_specifications');
-            $table->string('vaule');
+            $table->string('value');
             $table->timestamps();
             $table->softDeletes();
             $table->unsignedBigInteger('created_by')->nullable();

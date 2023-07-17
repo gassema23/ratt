@@ -104,7 +104,7 @@ final class Table extends PowerGridComponent
             ->addColumn('statename', fn (State $state) => $state->name)
             ->addColumn('abbrname', fn (State $state) => $state->abbr)
             ->addColumn('typename', fn (State $state) => ucfirst(strtolower($state->type->name)))
-            ->addColumn('updated_at_formatted', fn (State $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (State $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
     /*
     |--------------------------------------------------------------------------

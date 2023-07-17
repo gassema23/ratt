@@ -124,7 +124,7 @@ final class Table extends PowerGridComponent
             ->addColumn('slug')
             ->addColumn('categoryname', fn (Documentation $model) => $model->category->name)
             ->addColumn('tagsname', fn (Documentation $model) => implode(' ',$model->tagsPills($this->tag_name)))
-            ->addColumn('updated_at_formatted', fn (Documentation $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (Documentation $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

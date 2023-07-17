@@ -110,7 +110,7 @@ final class Table extends PowerGridComponent
             ->addColumn('name')
             ->addColumn('parentname', fn (Task $model) => $model->parent->name ?? '')
             ->addColumn('teamname', fn (Task $model) => $model->team->name)
-            ->addColumn('updated_at_formatted', fn (Task $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (Task $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

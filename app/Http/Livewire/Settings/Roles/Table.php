@@ -100,7 +100,7 @@ final class Table extends PowerGridComponent
         return PowerGrid::eloquent()
             ->addColumn('name')
             ->addColumn('permissions_count')
-            ->addColumn('updated_at_formatted', fn (Role $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (Role $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

@@ -8,25 +8,25 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Translatable\HasTranslations;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class Technology extends Model
+class BiriTechnology extends Model
 {
-    use HasFactory, HasTranslations, SoftDeletes, Userstamps, LogsActivity;
-    public $translatable = ['name'];
+    use HasFactory, SoftDeletes, Userstamps, LogsActivity, HasTranslations;
+    public $translatable = ['label', 'description'];
+
     protected $guarded = ['id', 'created_at', 'updated_at'];
+
+    protected $casts = [
+        'created_at' => 'datetime',
+        'updated_at' => 'datetime',
+    ];
 
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
             ->logAll()
-            ->setDescriptionForEvent(fn (string $eventName) => "Technology {$eventName}")
-            ->useLogName('TechnologiesLog');
-    }
-    // Relations
-    public function networks(): HasMany
-    {
-        return $this->hasMany(Network::class);
+            ->setDescriptionForEvent(fn (string $eventName) => "Biri technologies {$eventName}")
+            ->useLogName('BiriTechnologiesLog');
     }
 }

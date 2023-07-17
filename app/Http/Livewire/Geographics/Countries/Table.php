@@ -105,7 +105,7 @@ final class Table extends PowerGridComponent
             ->addColumn('region')
             ->addColumn('sub_region')
             ->addColumn('capital')
-            ->addColumn('updated_at_formatted', fn (Country $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (Country $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

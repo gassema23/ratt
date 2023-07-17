@@ -12,8 +12,155 @@
                         <span>@lang('Dashboard')</span>
                     </a>
                 </li>
+                {{-- BIRI --}}
+                @if (config('app.env') !== 'production' &&
+                        auth()->user()->hasRole('Super-Admin'))
+                    <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
+                        <a href="#" @class([
+                            'flex',
+                            'items-center',
+                            'py-2',
+                            'px-4',
+                            'transition',
+                            'duration-300',
+                            'hover:bg-slate-700',
+                            'justify-between',
+                            'w-full',
+                            'bg-slate-700' => Route::is('admin.biri.*'),
+                        ]) x-on:click="open = !open">
+                            <div class="flex space-x-2">
+                                <x-icon name="calendar" class="w-4" />
+                                <span>@lang('Suivi BIRI')</span>
+                            </div>
+                            <span class="text-end" :class="{ 'rotated': open }">
+                                <x-icon name="chevron-right" class="h-3" />
+                            </span>
+                        </a>
+                        <ul x-show="open" x-collapse class="bg-slate-700">
+                            <li>
+                                <a href="{{ route('admin.biri.dashboard') }}" @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                    'bg-slate-600' => Route::is('admin.biri.dashboard'),
+                                ])>
+                                    <span>@lang('Dashboard')</span>
+                                </a>
+                            </li>
+                            <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
+                                <a href="#" @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'pl-10',
+                                    'pr-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-500',
+                                    'justify-between',
+                                    'w-full',
+                                    'bg-slate-600' => Route::is('admin.biri.settings.*'),
+                                ]) x-on:click="open = !open">
+                                    <div class="flex space-x-2">
+                                        <span>@lang('Settings')</span>
+                                    </div>
+                                    <span class="text-end" :class="{ 'rotated': open }">
+                                        <x-icon name="chevron-right" class="h-3" />
+                                    </span>
+                                </a>
+                                <ul x-show="open" x-collapse class="bg-slate-700">
+                                    <li>
+                                        <a href="{{ route('admin.biri.settings.isq.index') }}" @class([
+                                            'flex',
+                                            'items-center',
+                                            'py-2',
+                                            'px-12',
+                                            'transition',
+                                            'duration-300',
+                                            'hover:bg-slate-600',
+                                            'pl-10',
+                                            'bg-slate-600' => Route::is('admin.biri.settings.isq.*'),
+                                        ])>
+                                            <span>@lang('ISQ003')</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('admin.biri.settings.activities.index') }}"
+                                            @class([
+                                                'flex',
+                                                'items-center',
+                                                'py-2',
+                                                'px-12',
+                                                'transition',
+                                                'duration-300',
+                                                'hover:bg-slate-600',
+                                                'pl-10',
+                                                'bg-slate-600' => Route::is('admin.settings.biri.activities.*'),
+                                            ])>
+                                            <span>@lang('Activities')</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('admin.biri.settings.category-activities.index') }}"
+                                            @class([
+                                                'flex',
+                                                'items-center',
+                                                'py-2',
+                                                'px-12',
+                                                'transition',
+                                                'duration-300',
+                                                'hover:bg-slate-600',
+                                                'pl-10',
+                                                'bg-slate-600' => Route::is('admin.biri.settings.category-activities.*'),
+                                            ])>
+                                            <span>@lang('Category activities')</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('admin.biri.settings.equipments.index') }}"
+                                            @class([
+                                                'flex',
+                                                'items-center',
+                                                'py-2',
+                                                'px-12',
+                                                'transition',
+                                                'duration-300',
+                                                'hover:bg-slate-600',
+                                                'pl-10',
+                                                'bg-slate-600' => Route::is('admin.biri.settings.equipments.*'),
+                                            ])>
+                                            <span>@lang('Equipments')</span>
+                                        </a>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('admin.biri.settings.technologies.index') }}"
+                                            @class([
+                                                'flex',
+                                                'items-center',
+                                                'py-2',
+                                                'px-12',
+                                                'transition',
+                                                'duration-300',
+                                                'hover:bg-slate-600',
+                                                'pl-10',
+                                                'bg-slate-600' => Route::is('admin.biri.settings.technologies.*'),
+                                            ])>
+                                            <span>@lang('Technologies')</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                @endif
                 {{-- BEAT --}}
-                @if (config('app.env') !== 'production' && auth()->user()->hasRole('Super-Admin'))
+                @if (config('app.env') !== 'production' &&
+                        auth()->user()->hasRole('Super-Admin'))
                     <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                         <a href="#" @class([
                             'flex',
@@ -37,8 +184,7 @@
                         </a>
                         <ul x-show="open" x-collapse class="bg-slate-700">
                             <li>
-                                <a href="{{ route('admin.beat.dashboard') }}"
-                                @class([
+                                <a href="{{ route('admin.beat.dashboard') }}" @class([
                                     'flex',
                                     'items-center',
                                     'py-2',
@@ -53,8 +199,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.beat.alarms.alarms.index') }}"
-                                @class([
+                                <a href="{{ route('admin.beat.alarms.alarms.index') }}" @class([
                                     'flex',
                                     'items-center',
                                     'py-2',
@@ -69,8 +214,7 @@
                                 </a>
                             </li>
                             <li>
-                                <a href="{{ route('admin.beat.alarms.systems.index') }}"
-                                @class([
+                                <a href="{{ route('admin.beat.alarms.systems.index') }}" @class([
                                     'flex',
                                     'items-center',
                                     'py-2',
@@ -392,17 +536,18 @@
                             @endcan
                             @can('siteTypes-viewAny')
                                 <li>
-                                    <a href="{{ route('admin.geographics.sites.types.index') }}" @class([
-                                        'flex',
-                                        'items-center',
-                                        'py-2',
-                                        'px-4',
-                                        'transition',
-                                        'duration-300',
-                                        'hover:bg-slate-600',
-                                        'pl-10',
-                                        'bg-slate-600' => Route::is('admin.geographics.sites.types.*'),
-                                    ])>
+                                    <a href="{{ route('admin.geographics.sites.types.index') }}"
+                                        @class([
+                                            'flex',
+                                            'items-center',
+                                            'py-2',
+                                            'px-4',
+                                            'transition',
+                                            'duration-300',
+                                            'hover:bg-slate-600',
+                                            'pl-10',
+                                            'bg-slate-600' => Route::is('admin.geographics.sites.types.*'),
+                                        ])>
                                         @lang('Sites types')
                                     </a>
                                 </li>

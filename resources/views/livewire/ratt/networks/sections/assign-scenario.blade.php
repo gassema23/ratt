@@ -48,7 +48,9 @@
                                                                 value="{{ $task->id }}" />
 
                                                             @if (!is_null($task->parent))
-                                                                <x-badge xs squared info :label="trans('This task relies on: :dependency.', ['dependency' => $task->parent->name])" />
+                                                                <x-badge xs squared info :label="trans('This task relies on: :dependency.', [
+                                                                    'dependency' => $task->parent->name,
+                                                                ])" />
                                                             @endif
                                                         </div>
                                                     </td>

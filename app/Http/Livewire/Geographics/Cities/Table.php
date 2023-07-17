@@ -124,7 +124,7 @@ final class Table extends PowerGridComponent
             ->addColumn('regionname', fn (City $model) => $model->region->name)
             ->addColumn('cityname', fn (City $model) => $model->name)
             ->addColumn('clli')
-            ->addColumn('updated_at_formatted', fn (City $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (City $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

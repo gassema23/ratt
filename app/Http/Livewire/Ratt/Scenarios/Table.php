@@ -103,7 +103,7 @@ final class Table extends PowerGridComponent
         return PowerGrid::eloquent()
             ->addColumn('name')
             ->addColumn('tasks_count', fn (Scenario $model) => $model->tasks_count)
-            ->addColumn('updated_at_formatted', fn (Scenario $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (Scenario $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

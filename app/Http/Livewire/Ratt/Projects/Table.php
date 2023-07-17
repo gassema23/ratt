@@ -140,7 +140,7 @@ final class Table extends PowerGridComponent
             ->addColumn('primename', fn (Project $model) => $model->prime->name)
             ->addColumn('started_at_formatted', fn (Project $model) => Carbon::parse($model->started_at)->format('d/m/Y'))
             ->addColumn('ended_at_formatted', fn (Project $model) => Carbon::parse($model->ended_at)->format('d/m/Y'))
-            ->addColumn('updated_at_formatted', fn (Project $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (Project $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

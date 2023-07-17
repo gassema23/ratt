@@ -108,7 +108,7 @@ final class Table extends PowerGridComponent
         return PowerGrid::eloquent()
             ->addColumn('name')
             ->addColumn('parentname', fn (SiteType $model) => $model->parent->name ?? '')
-            ->addColumn('updated_at_formatted', fn (SiteType $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (SiteType $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

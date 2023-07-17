@@ -16,18 +16,26 @@ class TechnologyEditRequest extends FormRequest
     public function rules($technology_id): array
     {
         return [
-            'technology.name.en' => [
+            'technology.label.en' => [
                 'required',
                 'string',
                 'max:125',
-                Rule::unique('technologies', 'name')->ignore($technology_id)
+                Rule::unique('biri_technologies', 'label')->ignore($technology_id),
             ],
-            'technology.name.fr' => [
+            'technology.label.fr' => [
                 'nullable',
                 'string',
                 'max:125',
-                Rule::unique('technologies', 'name')->ignore($technology_id)
-            ]
+                Rule::unique('biri_technologies', 'label')->ignore($technology_id),
+            ],
+            'technology.description.en' => [
+                'nullable',
+                'max:32768',
+            ],
+            'technology.description.fr' => [
+                'nullable',
+                'max:32768',
+            ],
         ];
     }
 }

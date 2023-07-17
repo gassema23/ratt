@@ -3,6 +3,7 @@
 namespace App\Http\Requests\Activities;
 
 use Illuminate\Foundation\Http\FormRequest;
+use Illuminate\Validation\Rule;
 
 class ActivityEditRequest extends FormRequest
 {
@@ -12,32 +13,43 @@ class ActivityEditRequest extends FormRequest
      *
      * @return array<string, \Illuminate\Contracts\Validation\Rule|array|string>
      */
-    public function rules(): array
+    public function rules($activity_id): array
     {
         return [
-            'biri_activity.technology_name' => [
-                'required'
+            'activity.technology_id' => [
+                'required',
             ],
-            'biri_activity.equipment_name' => [
-                'required'
+            'activity.equipment_id' => [
+                'required',
             ],
-            'biri_activity.activity_name' => [
-                'required'
+            'activity.category_id' => [
+                'required',
             ],
-            'biri_activity.activity_description' => [
-                'required'
+            'activity.description.en' => [
+                'required',
+                'max:32768',
+                Rule::unique('biri_activities', 'description')->ignore($activity_id),
             ],
-            'biri_activity.average' => [
-                'nullable'
+            'activity.description.fr' => [
+                'nullable',
+                'max:32768',
+                Rule::unique('biri_activities', 'description')->ignore($activity_id),
             ],
-            'biri_activity.average_actual' => [
-                'nullable'
+            'activity.avg_single' => [
+                'nullable',
+                'decimal:0,2'
             ],
-            'biri_activity.ps50_plan' => [
-                'nullable'
+            'activity.ps50_plan' => [
+                'nullable',
+                'decimal:0,2'
             ],
-            'biri_activity.ps50_activity' => [
-                'nullable'
+            'activity.ps50_act' => [
+                'nullable',
+                'decimal:0,2'
+            ],
+            'activity.avg_actual' => [
+                'nullable',
+                'decimal:0,2'
             ],
         ];
     }

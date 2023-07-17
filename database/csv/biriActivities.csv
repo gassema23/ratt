@@ -1,0 +1,718 @@
+Id,Techno,Eqpt_Mod,Act,,Act_desc,Avg_single,PS50_Plan,PS50_Act,Avg_Actual
+1,1,1,DESN,1,Mise en service,0,0,0,
+2,1,1,DSUB,2,Mise en service,0,0,0,
+3,1,1,DESN,1,Décomission,0,0,0,
+4,1,1,DSUB,2,Décomission,0,0,0,
+5,1,2,DESN,1,Mise en service,0,0,0,
+6,1,2,DSUB,2,Mise en service,0,0,0,
+7,1,2,DESN,1,Décomission,2,0,0,2
+8,1,2,DSUB,2,Décomission,0,0,0,
+9,1,3,DESN,1,Mise en service,0,0,0,
+10,1,3,DSUB,2,Mise en service,0,0,0,
+11,1,3,DESN,1,Décomission,0,0,0,
+12,1,3,DSUB,2,Décomission,0,0,0,
+13,1,4,DESN,1,Mise en service,0,0,0,
+14,1,4,DSUB,2,Mise en service,0,0,0,
+15,1,4,DESN,1,Décomission,0,0,0,
+16,1,4,DSUB,2,Décomission,0,0,0,
+17,1,5,DESN,1,Mise en service,3,3,0,
+18,1,5,DSUB,2,Mise en service,0,0,0,
+19,1,5,DESN,1,Décomission,0,0,0,
+20,1,5,DSUB,2,Décomission,0,0,0,
+21,1,6,DESN,1,Décomission,0,0,0,
+22,1,6,DSUB,2,Décomission,0,0,0,
+23,1,7,DESN,1,Mise en service,0,0,0,
+24,1,7,DSUB,2,Mise en service,0,0,0,
+25,1,7,DESN,1,Ajout de carte,0,0,0,
+26,1,7,DSUB,2,Ajout de carte,0,0,0,
+27,1,7,DESN,1,Ajout de facilité,7.5,10,0,
+28,1,7,DSUB,2,Ajout de facilité,1.5,5,0,
+29,1,7,DESN,1,Enlèvement de carte,0,0,0,
+30,1,7,DSUB,2,Enlèvement de carte,0,0,0,
+31,1,7,DESN,1,Enlèvement de facilité,0,0,0,
+32,1,7,DSUB,2,Enlèvement de facilité,0,0,0,
+33,1,7,DESN,1,Décomission,10.1,6,0,8
+34,1,7,DSUB,2,Décomission,8.3,8,0,9
+35,1,8,DESN,1,Mise en service,8.6,10,0,
+36,1,8,DSUB,2,Mise en service,10.1,22,0,
+37,1,8,DESN,1,Ajout de carte,5.2,11,0,6
+38,1,8,DSUB,2,Ajout de carte,7.6,14,0,
+39,1,8,DESN,1,Ajout de facilité,0,0,0,
+40,1,8,DSUB,2,Ajout de facilité,0,0,0,
+41,1,8,DESN,1,Enlèvement de carte,3,3,0,
+42,1,8,DSUB,2,Enlèvement de carte,2.5,3,0,
+43,1,8,DESN,1,Enlèvement de facilité,0,0,0,
+44,1,8,DSUB,2,Enlèvement de facilité,0,0,0,
+45,1,8,DESN,1,Décomission,0,0,0,
+46,1,8,DSUB,2,Décomission,0,0,0,
+47,1,9,DESN,1,Mise en service,4.2,10,0,0
+48,1,9,DSUB,2,Mise en service,12.2,21,0,
+49,1,9,DESN,1,Ajout de carte,2.7,8,0,7
+50,1,9,DSUB,2,Ajout de carte,2.1,6,0,1
+51,1,9,DESN,1,Ajout de facilité,1.5,4,0,0
+52,1,9,DSUB,2,Ajout de facilité,2.5,2,0,2
+53,1,9,DESN,1,Enlèvement de carte,0,0,0,
+54,1,9,DSUB,2,Enlèvement de carte,0,0,0,
+55,1,9,DESN,1,Enlèvement de facilité,0,0,0,
+56,1,9,DSUB,2,Enlèvement de facilité,0,0,0,
+57,1,9,DESN,1,Décomission,0,0,0,
+58,1,9,DSUB,2,Décomission,0,0,0,
+59,1,10,DSUB,2,Mise en service,15.3,34,0,
+60,1,10,DESN,1,Décomission,0,0,0,
+61,1,10,DSUB,2,Décomission,0,0,0,
+62,1,10,DESN,1,Mise en service,10.2,20,0,
+63,1,11,DESN,1,Mise en service,17.5,16,0,26
+64,1,11,DSUB,2,Mise en service,41.2,50,0,
+65,1,11,DESN,1,Ajout de carte,0,0,0,
+66,1,11,DSUB,2,Ajout de carte,0,0,0,
+67,1,11,DESN,1,Ajout de facilité,0,0,0,
+68,1,11,DSUB,2,Ajout de facilité,0,0,0,
+69,1,11,DESN,1,Enlèvement de carte,0,0,0,
+70,1,11,DSUB,2,Enlèvement de carte,0,0,0,
+71,1,11,DESN,1,Enlèvement de facilité,0,0,0,
+72,1,11,DSUB,2,Enlèvement de facilité,0,0,0,
+73,1,11,DESN,1,Décomission,0,0,0,
+74,1,11,DSUB,2,Décomission,0,0,0,
+75,1,12,DESN,1,Mise en service,23.5,26,0,24
+76,1,12,DSUB,2,Mise en service,52.5,30,0,
+77,1,12,DESN,1,Ajout de carte,0,0,0,
+78,1,12,DSUB,2,Ajout de carte,0,0,0,
+79,1,12,DESN,1,Ajout de facilité,3,3,0,
+80,1,12,DSUB,2,Ajout de facilité,3.2,5,0,
+81,1,12,DESN,1,Enlèvement de carte,0,0,0,
+82,1,12,DSUB,2,Enlèvement de carte,0,0,0,
+83,1,12,DESN,1,Enlèvement de facilité,2.4,2,0,
+84,1,12,DSUB,2,Enlèvement de facilité,2.7,8,0,
+85,1,12,DESN,1,Décomission,0,0,0,
+86,1,12,DSUB,2,Décomission,0,0,0,
+87,1,13,DESN,1,Décomission,11.7,12,0,4
+88,1,13,DPSW,3,Décomission,6,10,0,4
+89,1,14,DESN,1,Bon de commande (Sans Matériel),1.8,6,0,2
+90,1,14,DSUB,2,Bon de commande (Sans Matériel),4,5,0,4
+91,1,14,DESN,1,Spare,3.1,6,0,4
+92,1,14,DUNC,4,Spare,1,3,0,
+93,1,14,SRVY,5,Site Survey,1.4,2,0,
+94,1,14,DESN,1,Tools & TestSet,2.3,3,0,
+95,1,15,DESN,1,Mise en service,0,0,0,
+96,1,15,DSUB,2,Mise en service,10,10,0,
+97,1,15,DESN,1,Décomission,0,0,0,
+98,1,15,DSUB,2,Décomission,0,0,0,
+99,1,16,DESN,1,Mise en service,2.5,8,0,15
+100,1,16,DSUB,2,Mise en service,11.1,13,0,
+101,1,16,DESN,1,Décomission,0,0,0,
+102,1,16,DSUB,2,Décomission,0,0,0,
+103,1,17,DESN,1,RTU / Software,4.1,5,0,2
+104,1,18,DESN,1,Mise en service,0.4,3,0,0
+105,1,18,DFOT,6,Mise en service,1.2,4,0,1
+106,1,18,DESN,1,Décomission,0,0,0,
+107,1,18,DFOT,6,Décomission,0,0,0,
+108,1,19,DESN,1,Mise en service,0,0,0,
+109,1,19,DSUB,2,Mise en service,0,0,0,
+110,1,19,DESN,1,Décomission,0,0,0,
+111,1,19,DSUB,2,Décomission,0,0,0,
+112,1,20,DESN,1,Mise en service,0,0,0,
+113,1,20,DSUB,2,Mise en service,0,0,0,
+114,1,20,DESN,1,Décomission,1.3,1,0,
+115,1,20,DSUB,2,Décomission,0,0,0,
+116,1,21,DESN,1,Mise en service,2.5,4,0,0
+117,1,21,DFOT,6,Mise en service,8.6,10,0,
+118,1,21,DESN,1,Décomission,0,0,0,
+119,1,21,DFOT,6,Décomission,7.5,11,0,
+120,1,22,DESN,1,Mise en service,0,0,0,
+121,1,22,DSUB,2,Mise en service,0,0,0,
+122,1,22,DESN,1,Décomission,0,0,0,
+123,1,22,DSUB,2,Décomission,0,0,0,
+124,1,23,DESN,1,Mise en service,0,0,0,
+125,1,23,DSUB,2,Mise en service,8,8,0,
+126,1,23,DESN,1,Décomission,0,0,0,
+127,1,23,DSUB,2,Décomission,0,0,0,
+128,1,21,DESN,1,Ajout de carte,1.9,3,0,0
+129,1,21,DFOT,6,Ajout de carte,3.2,4,0,0
+130,10,14,DESN,1,Admin - Excluded,0,0,0,
+131,10,14,DESN,1,Admin - Incomplet,4.2,5,0,3
+132,2,24,DESN,1,Mise en service,0,0,0,
+133,2,24,DBRD,7,Mise en service,0,0,0,
+134,2,24,DESN,1,Ajout de carte,0,0,0,
+135,2,24,DBRD,7,Ajout de carte,0,0,0,
+136,2,24,DESN,1,Enlèvement de carte,0,0,0,
+137,2,24,DBRD,7,Enlèvement de carte,0,0,0,
+138,2,24,DESN,1,Décomission,2,2,0,
+139,2,24,DBRD,7,Décomission,3.5,5,0,
+140,2,25,DESN,1,Décomission,10.5,15,0,
+141,2,25,DBRD,7,Décomission,0,0,0,
+142,2,14,DESN,1,Spare,8.5,4,0,15
+143,2,14,DUNC,4,Spare,3.8,4,0,
+144,2,26,DESN,1,Mise en service,13,5,0,13
+145,2,26,DBRD,7,Mise en service,10.3,12,0,13
+146,2,26,DESN,1,Décomission,0,0,0,
+147,2,26,DBRD,7,Décomission,0,0,0,0
+148,2,27,DESN,1,Mise en service,0,0,0,
+149,2,27,DBRD,7,Mise en service,0,0,0,
+150,2,27,DESN,1,Ajout de carte,0,0,0,
+151,2,27,DBRD,7,Ajout de carte,0,0,0,
+152,2,27,DESN,1,Enlèvement de carte,0,0,0,
+153,2,27,DBRD,7,Enlèvement de carte,0,0,0,
+154,2,27,DESN,1,Décomission,0,0,0,
+155,2,27,DBRD,7,Décomission,0,0,0,
+156,2,28,DESN,1,Mise en service,0,0,0,
+157,2,28,DBRD,7,Mise en service,0,0,0,
+158,2,28,DESN,1,Ajout de carte,0,0,0,
+159,2,28,DBRD,7,Ajout de carte,0,0,0,
+160,2,28,DESN,1,Enlèvement de carte,0,0,0,
+161,2,28,DBRD,7,Enlèvement de carte,0,0,0,
+162,2,28,DESN,1,Décomission,0,0,0,
+163,2,28,DBRD,7,Décomission,0,0,0,
+164,2,29,DESN,1,Mise en service,0,0,0,0
+165,2,29,DBRD,7,Mise en service,0,0,0,0
+166,2,29,DESN,1,Décomission,3.8,2,0,0
+167,2,29,DBRD,7,Décomission,5.4,10,0,0
+168,3,30,DFRM,8,Mise en service,15.8,8,0,11
+169,3,30,DFRM,8,Décomission,20.8,16,0,
+170,3,10,DFRM,8,Mise en service,12.6,24,0,23
+171,3,10,DFRM,8,Décomission,0,0,0,
+172,3,31,DFRM,8,Mise en service,10.2,18,0,21
+173,3,31,DFRM,8,Décomission,0,0,0,
+174,4,32,DESN,1,Mise en service,2.9,3,0,3
+175,4,32,DPSW,3,Mise en service,6.3,5,0,6
+176,4,32,DESN,1,Décomission,0,0,0,
+177,4,32,DPSW,3,Décomission,0,0,0,
+178,4,33,DNWM,9,Correction Type 1 (100 +),45,1,0,
+179,4,33,DNWM,9,Correction Type 2 (50 - 100),0,0,0,
+180,4,33,DNWM,9,Correction Type 3 (26- 49),0,0,0,
+181,4,33,DNWM,9,Correction Type 4 (1- 25),0,0,0,
+182,4,34,DESN,1,Mise en service,0,0,0,
+183,4,34,DPSW,3,Mise en service,0,0,0,
+184,4,34,DESN,1,Décomission,5,8,0,0
+185,4,34,DPSW,3,Décomission,7.7,12,0,
+186,4,35,DESN,1,Mise en service,4.2,6,0,6
+187,4,35,DPSW,3,Mise en service,9.5,7,0,11
+188,4,35,DESN,1,Décomission,0,0,0,
+189,4,35,DPSW,3,Décomission,0,0,0,
+190,4,35,DESN,1,Ajout de facilité,5.7,6,0,3
+191,4,35,DPSW,3,Ajout de facilité,6.7,13,0,27
+192,4,36,DESN,1,Mise en service,7.7,13,0,7
+193,4,36,DPSW,3,Mise en service,9,18,0,
+194,4,36,DESN,1,Décomission,0,0,0,
+195,4,36,DPSW,3,Décomission,0,0,0,
+196,4,37,DESN,1,Mise en service,4,6,0,
+197,4,37,DPSW,3,Mise en service,5.5,16,0,
+198,4,37,DESN,1,Décomission,0,0,0,
+199,4,37,DPSW,3,Décomission,0,0,0,
+200,4,38,DESN,1,Décomission,1.9,4,0,2
+201,4,38,DPSW,3,Décomission,1.4,2,0,
+202,4,39,DESN,1,Mise en service,4.8,5,0,10
+203,4,39,DNWM,9,Mise en service,12.5,18,0,12
+204,4,39,DESN,1,Décomission,0,0,0,
+205,4,39,DNWM,9,Décomission,0,0,0,
+206,4,40,DESN,1,Mise en service,0,0,0,
+207,4,40,DNWM,9,Mise en service,0,0,0,
+208,4,40,DESN,1,Décomission,0,0,0,
+209,4,40,DNWM,9,Décomission,0,0,0,
+210,4,41,DESN,1,Mise en service,6.2,7,0,13
+211,4,41,DNWM,9,Mise en service,6.5,8,0,13
+212,4,41,DESN,1,Décomission,0,0,0,
+213,4,41,DNWM,9,Décomission,0,0,0,
+214,4,42,DESN,1,Mise en service,9.5,10,0,4
+215,4,42,DNWM,9,Mise en service,9.4,12,0,0
+216,4,42,DESN,1,Décomission,0,0,0,
+217,4,42,DNWM,9,Décomission,0,0,0,
+218,4,43,DESN,1,Mise en service,1.2,3,0,1
+219,4,43,DPSW,3,Mise en service,7,5,0,11
+220,4,43,DESN,1,Décomission,0,0,0,
+221,4,43,DPSW,3,Décomission,0,0,0,
+222,4,14,DESN,1,Spare,1.1,2,0,1
+223,4,14,DPSW,3,Spare,2,3,0,3
+224,4,17,DESN,1,RTU / Software,0,0,0,0
+225,4,44,DESN,1,Mise en service,0,0,0,
+226,4,44,DNWM,9,Mise en service,0,0,0,
+227,4,44,DESN,1,Décomission,0,0,0,0
+228,4,44,DNWM,9,Décomission,2,1,0,2
+229,4,44,DESN,1,Ajout de carte,2.2,3,0,
+230,4,44,DNWM,9,Ajout de carte,6,5,0,
+231,4,44,DESN,1,Enlèvement de carte,0,0,0,
+232,4,44,DNWM,9,Enlèvement de carte,0,0,0,
+233,4,45,DESN,1,Mise en service,2.4,3,0,2
+234,4,45,DNWM,9,Mise en service,8.8,10,0,21
+235,4,45,DESN,1,Décomission,0,0,0,
+236,4,45,DNWM,9,Décomission,0,0,0,
+237,4,45,DESN,1,Ajout de carte,0,0,0,
+238,4,45,DNWM,9,Ajout de carte,0,0,0,
+239,5,46,DESN,1,Ajout de facilité,,0,0,0
+240,5,47,DESN,1,Mise en service,2.9,3,0,3
+241,5,47,DPSW,3,Mise en service,5.6,4,0,6
+242,5,47,DESN,1,Ajout de carte,8.8,11,0,5
+243,5,47,DPSW,3,Ajout de carte,5.2,7,0,6
+244,5,47,DESN,1,Ajout de facilité,2.6,2,0,3
+245,5,47,DPSW,3,Ajout de facilité,7.7,8,0,4
+246,5,47,DESN,1,Enlèvement de carte,0,0,0,
+247,5,47,DPSW,3,Enlèvement de carte,0,0,0,
+248,5,47,DESN,1,Enlèvement de facilité,0,0,0,
+249,5,47,DPSW,3,Enlèvement de facilité,0,0,0,
+250,5,47,DESN,1,Décomission,0,0,0,
+251,5,47,DPSW,3,Décomission,0,0,0,
+252,5,48,DESN,1,Mise en service,22.7,20,0,23
+253,5,48,DPSW,3,Mise en service,20,13,0,21
+254,5,48,DESN,1,Ajout de carte,10.5,11,0,11
+255,5,48,DPSW,3,Ajout de carte,8.8,9,0,0
+256,5,48,DESN,1,Ajout de facilité,3,4,0,2
+257,5,48,DPSW,3,Ajout de facilité,4.3,4,0,4
+258,5,48,DESN,1,Enlèvement de carte,0,0,0,
+259,5,48,DPSW,3,Enlèvement de carte,0,0,0,
+260,5,48,DESN,1,Enlèvement de facilité,3.8,1,0,
+261,5,48,DPSW,3,Enlèvement de facilité,3.8,1,0,
+262,5,48,DESN,1,Décomission,0,0,0,
+263,5,48,DPSW,3,Décomission,0,0,0,
+264,5,49,DESN,1,Mise en service,9.5,10,0,10
+265,5,49,DPSW,3,Mise en service,10,15,0,10
+266,5,49,DESN,1,Ajout de carte,0,0,0,
+267,5,49,DPSW,3,Ajout de carte,0,0,0,
+268,5,49,DESN,1,Ajout de facilité,0,0,0,
+269,5,49,DPSW,3,Ajout de facilité,0,0,0,
+270,5,49,DESN,1,Enlèvement de carte,0,0,0,
+271,5,49,DPSW,3,Enlèvement de carte,0,0,0,
+272,5,49,DESN,1,Enlèvement de facilité,0,0,0,
+273,5,49,DPSW,3,Enlèvement de facilité,0,0,0,
+274,5,49,DESN,1,Décomission,0,0,0,
+275,5,49,DPSW,3,Décomission,0,0,0,
+276,5,50,DESN,1,Mise en service,0,0,0,
+277,5,50,DPSW,3,Mise en service,15,10,0,
+278,5,50,DESN,1,Décomission,0,0,0,
+279,5,50,DPSW,3,Décomission,0,0,0,
+280,5,51,DESN,1,Mise en service,0,0,0,
+281,5,51,DPSW,3,Mise en service,15,10,0,
+282,5,51,DESN,1,Décomission,0,0,0,
+283,5,51,DPSW,3,Décomission,0,0,0,
+284,5,52,DESN,1,Mise en service,0,0,0,
+285,5,52,DPSW,3,Mise en service,17.1,12,0,25
+286,5,52,DESN,1,Décomission,0,0,0,
+287,5,52,DPSW,3,Décomission,0,0,0,
+288,5,53,DPSW,3,Clean Sweep - Enlèvement,8.3,8,0,2
+289,5,54,DESN,1,Mise en service,11.6,10,0,12
+290,5,54,DPSW,3,Mise en service,12.3,14,0,9
+291,5,54,DESN,1,Ajout de carte,1.9,4,0,3
+292,5,54,DPSW,3,Ajout de carte,1.9,4,0,2
+293,5,54,DESN,1,Ajout de facilité,1,1,0,
+294,5,54,DPSW,3,Ajout de facilité,7.5,8,0,
+295,5,54,DESN,1,Enlèvement de carte,0,0,0,
+296,5,54,DPSW,3,Enlèvement de carte,0,0,0,
+297,5,54,DESN,1,Enlèvement de facilité,0,0,0,
+298,5,54,DPSW,3,Enlèvement de facilité,0,0,0,
+299,5,54,DESN,1,Décomission,0,0,0,
+300,5,54,DPSW,3,Décomission,0,0,0,
+301,5,55,DESN,1,Mise en service,12,12,0,12
+302,5,55,DPSW,3,Mise en service,13.3,14,0,13
+303,5,55,DESN,1,Ajout de carte,9.2,9,0,5
+304,5,55,DPSW,3,Ajout de carte,5.8,6,0,2
+305,5,55,DESN,1,Ajout de facilité,3.9,4,0,4
+306,5,55,DPSW,3,Ajout de facilité,3.8,5,0,3
+307,5,55,DESN,1,Enlèvement de carte,3.4,3,0,5
+308,5,55,DPSW,3,Enlèvement de carte,4.6,4,0,5
+309,5,55,DESN,1,Enlèvement de facilité,2.5,3,0,3
+310,5,55,DPSW,3,Enlèvement de facilité,2.4,3,0,3
+311,5,55,DESN,1,Décomission,0,0,0,
+312,5,55,DPSW,3,Décomission,0,0,0,
+313,5,56,DESN,1,Mise en service,13.2,19,0,0
+314,5,56,DPSW,3,Mise en service,9,16,0,0
+315,5,56,DESN,1,Décomission,0,0,0,
+316,5,56,DPSW,3,Décomission,0,0,0,
+317,5,57,DESN,1,Mise en service,17.5,20,0,7
+318,5,57,DPSW,3,Mise en service,16.3,16,0,0
+319,5,57,DESN,1,Ajout de carte,0,0,0,
+320,5,57,DPSW,3,Ajout de carte,0,0,0,
+321,5,57,DESN,1,Ajout de facilité,19,19,0,
+322,5,57,DPSW,3,Ajout de facilité,9.8,9,0,
+323,5,57,DESN,1,Enlèvement de carte,0,0,0,
+324,5,57,DPSW,3,Enlèvement de carte,0,0,0,
+325,5,57,DESN,1,Enlèvement de facilité,0,0,0,
+326,5,57,DPSW,3,Enlèvement de facilité,0,0,0,
+327,5,57,DESN,1,Décomission,0,0,0,
+328,5,57,DPSW,3,Décomission,0,0,0,
+329,5,58,DESN,1,Mise en service,0,0,0,
+330,5,58,DPSW,3,Mise en service,0,0,0,
+331,5,58,DESN,1,Ajout de carte,5.1,6,0,5
+332,5,58,DPSW,3,Ajout de carte,4,4,0,4
+333,5,58,DESN,1,Ajout de facilité,2,6,0,
+334,5,58,DPSW,3,Ajout de facilité,1.9,6,0,
+335,5,58,DESN,1,Enlèvement de carte,0,0,0,
+336,5,58,DPSW,3,Enlèvement de carte,0,0,0,
+337,5,58,DESN,1,Enlèvement de facilité,0,0,0,
+338,5,58,DPSW,3,Enlèvement de facilité,0,0,0,
+339,5,58,DESN,1,Décomission,0,0,0,
+340,5,58,DPSW,3,Décomission,0,0,0,
+341,5,59,DESN,1,Mise en service,0,0,0,0
+342,5,59,DPSW,3,Mise en service,7.5,5,0,8
+343,5,59,DESN,1,Ajout de carte,0,0,0,
+344,5,59,DPSW,3,Ajout de carte,0,0,0,
+345,5,59,DESN,1,Ajout de facilité,0,0,0,
+346,5,59,DPSW,3,Ajout de facilité,0,0,0,
+347,5,59,DESN,1,Enlèvement de carte,0,0,0,
+348,5,59,DPSW,3,Enlèvement de carte,0,0,0,
+349,5,59,DESN,1,Enlèvement de facilité,0,0,0,
+350,5,59,DPSW,3,Enlèvement de facilité,0,0,0,
+351,5,59,DESN,1,Décomission,0,0,0,
+352,5,59,DPSW,3,Décomission,0,0,0,
+353,5,60,DESN,1,Décomission,3.6,5,0,10
+354,5,60,DPSW,3,Décomission,6.3,6,0,28
+355,5,14,DPSW,3,Migration de circuits,5,7,0,
+356,5,14,DESN,1,Bon de commande (Sans Matériel),6.6,7,0,
+357,5,14,DPSW,3,Bon de commande (Sans Matériel),3.5,4,0,
+358,5,14,DESN,1,Spare,3.1,4,0,3
+359,5,14,DPSW,3,Spare,1.5,3,0,1
+360,5,14,DESN,1,Migration de circuits,2.7,4,0,
+361,5,61,DESN,1,Mise en service,0,0,0,
+362,5,61,DPSW,3,Mise en service,0,0,0,
+363,5,61,DESN,1,Ajout de carte,0,0,0,
+364,5,61,DPSW,3,Ajout de carte,0,0,0,
+365,5,61,DESN,1,Ajout de facilité,0,0,0,
+366,5,61,DPSW,3,Ajout de facilité,0,0,0,
+367,5,61,DESN,1,Enlèvement de carte,0,0,0,
+368,5,61,DPSW,3,Enlèvement de carte,0,0,0,
+369,5,61,DESN,1,Enlèvement de facilité,0,0,0,
+370,5,61,DPSW,3,Enlèvement de facilité,0,0,0,
+371,5,61,DESN,1,Décomission,0,0,0,
+372,5,61,DPSW,3,Décomission,0,0,0,
+373,5,62,DESN,1,Mise en service,0,0,0,
+374,5,62,DPSW,3,Mise en service,0,0,0,
+375,5,62,DESN,1,Ajout de carte,0,0,0,
+376,5,62,DPSW,3,Ajout de carte,0,0,0,
+377,5,62,DESN,1,Ajout de facilité,0,0,0,
+378,5,62,DPSW,3,Ajout de facilité,0,0,0,
+379,5,62,DESN,1,Enlèvement de carte,0,0,0,
+380,5,62,DPSW,3,Enlèvement de carte,0,0,0,
+381,5,62,DESN,1,Enlèvement de facilité,0,0,0,
+382,5,62,DPSW,3,Enlèvement de facilité,0,0,0,
+383,5,62,DESN,1,Décomission,0,0,0,
+384,5,62,DPSW,3,Décomission,0,0,0,
+385,5,46,DESN,1,Mise en service,20.6,21,0,21
+386,5,46,DPSW,3,Mise en service,15.7,20,0,22
+387,5,46,DESN,1,Décomission,0,0,0,
+388,5,46,DPSW,3,Décomission,0,0,0,
+389,5,63,DESN,1,Mise en service,1.7,12,0,
+390,5,63,DPSW,3,Mise en service,3.9,14,0,
+391,5,63,DESN,1,Décomission,0,0,0,
+392,5,63,DPSW,3,Décomission,0,0,0,
+393,5,64,DESN,1,Mise en service,8.9,8,0,8
+394,5,64,DPSW,3,Mise en service,3.7,7,0,3
+395,5,64,DESN,1,Ajout de carte,0,0,0,
+396,5,64,DPSW,3,Ajout de carte,0,0,0,
+397,5,64,DESN,1,Ajout de facilité,5.7,6,0,7
+398,5,64,DPSW,3,Ajout de facilité,10.5,13,0,17
+399,5,64,DESN,1,Enlèvement de carte,0,0,0,
+400,5,64,DPSW,3,Enlèvement de carte,0,0,0,
+401,5,64,DESN,1,Enlèvement de facilité,2,3,0,
+402,5,64,DPSW,3,Enlèvement de facilité,3.5,4,0,
+403,5,64,DESN,1,Décomission,0,0,0,
+404,5,64,DPSW,3,Décomission,0,0,0,
+405,5,65,DESN,1,Mise en service,8.3,16,0,10
+406,5,65,DPSW,3,Mise en service,16.9,16,0,14
+407,5,65,DESN,1,Ajout de carte,4.4,5,0,4
+408,5,65,DPSW,3,Ajout de carte,4.7,5,0,4
+409,5,65,DESN,1,Ajout de facilité,7.5,7,0,4
+410,5,65,DPSW,3,Ajout de facilité,11.1,8,0,3
+411,5,65,DESN,1,Enlèvement de carte,0,0,0,6
+412,5,65,DPSW,3,Enlèvement de carte,0,0,0,5
+413,5,65,DESN,1,Enlèvement de facilité,3.3,2,0,2
+414,5,65,DPSW,3,Enlèvement de facilité,4.2,4,0,3
+415,5,65,DESN,1,Décomission,4.9,0,0,5
+416,5,65,DPSW,3,Décomission,7.1,0,0,7
+417,5,66,DESN,1,Mise en service,0,0,0,
+418,5,66,DPSW,3,Mise en service,0,0,0,
+419,5,66,DESN,1,Ajout de carte,0,0,0,
+420,5,66,DPSW,3,Ajout de carte,0,0,0,
+421,5,66,DESN,1,Ajout de facilité,9.5,5,0,
+422,5,66,DPSW,3,Ajout de facilité,6.5,5,0,
+423,5,66,DESN,1,Enlèvement de carte,0,0,0,
+424,5,66,DPSW,3,Enlèvement de carte,0,0,0,
+425,5,66,DESN,1,Enlèvement de facilité,0,0,0,
+426,5,66,DPSW,3,Enlèvement de facilité,0,0,0,
+427,5,66,DESN,1,Décomission,0,0,0,
+428,5,66,DPSW,3,Décomission,0,0,0,
+429,5,67,DESN,1,Reliability Assessment,6.6,9,0,3
+430,5,67,DPSW,3,Reliability Assessment,6.4,6,0,6
+431,5,17,DESN,1,RTU / Software,0.6,3,0,1
+432,5,63,DESN,1,Mise en service,13.6,15,0,13
+433,5,63,DPSW,3,Mise en service,19.4,18,0,18
+434,5,63,DESN,1,Ajout de carte,17.1,15,0,17
+435,5,63,DPSW,3,Ajout de carte,6.1,7,0,6
+436,5,63,DESN,1,Décomission,5.9,1,0,
+437,5,63,DPSW,3,Décomission,4.3,5,0,
+438,5,63,DESN,1,Enlèvement de carte,0,0,0,
+439,5,63,DPSW,3,Enlèvement de carte,0,0,0,
+440,5,69,DESN,1,Mise en service,14.5,12,0,17
+441,5,69,DPSW,3,Mise en service,9.4,9,0,13
+442,5,69,DESN,1,Décomission,0,0,0,
+443,5,69,DPSW,3,Décomission,0,0,0,
+444,5,70,DESN,1,Mise en service,13.2,14,0,0
+445,5,70,DPSW,3,Mise en service,15.3,12,0,0
+446,5,70,DESN,1,Ajout de facilité,10,6,0,0
+447,5,70,DPSW,3,Ajout de facilité,6.5,6,0,0
+448,5,71,DESN,1,Mise en service,8.9,12,0,0
+449,5,71,DPSW,3,Mise en service,18.4,17,0,0
+450,5,71,DESN,1,Ajout de carte,4.1,5,0,0
+451,5,71,DPSW,3,Ajout de carte,3.5,5,0,0
+452,5,71,DESN,1,Ajout de facilité,2.1,3,0,0
+453,5,71,DPSW,3,Ajout de facilité,3.4,4,0,0
+454,5,71,DESN,1,Enlèvement de carte,6.6,2,0,0
+455,5,71,DPSW,3,Enlèvement de carte,5.4,2,0,0
+456,5,71,DESN,1,Enlèvement de facilité,1.4,3,0,0
+457,5,71,DPSW,3,Enlèvement de facilité,2.5,2,0,0
+458,5,71,DESN,1,Décomission,0,0,0,0
+459,5,71,DPSW,3,Décomission,0,0,0,0
+460,5,72,DESN,1,Ajout de facilité,0,0,0,0
+461,5,72,DPSW,3,Ajout de facilité,0,0,0,0
+462,5,72,DESN,1,Enlèvement de carte,0,0,0,0
+463,5,72,DPSW,3,Enlèvement de carte,0,0,0,0
+464,5,72,DESN,1,Enlèvement de facilité,0,0,0,0
+465,5,72,DPSW,3,Enlèvement de facilité,0,0,0,0
+466,5,72,DESN,1,Décomission,0,0,0,0
+467,5,72,DPSW,3,Décomission,0,0,0,0
+468,5,72,DESN,1,Ajout de carte,2.2,2,0,0
+469,5,72,DPSW,3,Ajout de carte,3.5,3,0,0
+470,5,73,DESN,1,Mise en service,10,4,0,0
+471,5,73,DPSW,3,Mise en service,12.5,15,0,0
+472,5,74,DESN,1,Mise en service,10,4,0,0
+473,5,74,DPSW,3,Mise en service,10.8,15,0,0
+474,5,73,DESN,1,Ajout de facilité,5,3,0,0
+475,5,73,DPSW,3,Ajout de facilité,4.4,9,0,0
+476,5,75,DESN,1,Mise en service,3,1,0,0
+477,5,75,DPSW,3,Mise en service,6,2,0,0
+478,5,75,DESN,1,Décomission,0,0,0,0
+479,5,75,DPSW,3,Décomission,0,0,0,0
+480,5,76,DESN,1,Décomission,5,8,0,0
+481,5,76,DPSW,3,Décomission,4.5,5,0,0
+482,5,77,DESN,1,Ajout de facilité,5.3,6,0,0
+483,5,77,DPSW,3,Ajout de facilité,2.5,10,0,0
+484,5,56,DESN,1,Ajout de carte,0,0,0,0
+485,5,56,DPSW,3,Ajout de carte,0,0,0,0
+486,5,56,DESN,1,Ajout de facilité,42.8,45,0,0
+487,5,56,DPSW,3,Ajout de facilité,15.5,15,0,0
+488,5,56,DESN,1,Enlèvement de carte,0,0,0,0
+489,5,56,DPSW,3,Enlèvement de carte,0,0,0,0
+490,5,56,DESN,1,Enlèvement de facilité,0,0,0,0
+491,5,56,DPSW,3,Enlèvement de facilité,0,0,0,0
+492,5,78,DESN,1,Mise en service,15,16,0,0
+493,5,78,DPSW,3,Mise en service,30,50,0,0
+494,5,78,DESN,1,Décomission,0,0,0,0
+495,5,78,DPSW,3,Décomission,0,0,0,0
+496,5,79,DESN,1,Mise en service,15,80,0,0
+497,5,79,DPSW,3,Mise en service,0,0,0,0
+498,5,79,DESN,1,Décomission,0,0,0,0
+499,5,79,DPSW,3,Décomission,0,0,0,0
+500,5,79,DESN,1,Ajout de facilité,0,0,0,0
+501,5,79,DPSW,3,Ajout de facilité,0,0,0,0
+502,5,79,DESN,1,Ajout de carte,0,0,0,0
+503,5,79,DPSW,3,Ajout de carte,0,0,0,0
+504,5,79,DESN,1,Enlèvement de facilité,0,0,0,0
+505,5,79,DPSW,3,Enlèvement de facilité,0,0,0,0
+506,5,79,DESN,1,Enlèvement de carte,0,0,0,0
+507,5,79,DPSW,3,Enlèvement de carte,0,0,0,0
+508,6,80,DESN,1,Mise en service,0.9,2,0,1
+509,6,80,DFOT,6,Mise en service,1.1,5,0,1
+510,6,80,DESN,1,Décomission,0,0,0,
+511,6,80,DFOT,6,Décomission,0,0,0,
+512,6,81,DESN,1,Décomission,0,0,0,
+513,6,81,DFOT,6,Décomission,8.5,7,0,10
+514,6,14,DUNC,4,Spare,3.8,6,0,
+515,6,14,SRVY,5,Site Survey,2,0,0,
+516,6,82,DESN,1,Mise en service,17.2,26,0,
+517,6,82,DFOT,6,Mise en service,28.6,24,0,37
+518,6,82,DESN,1,Ajout de carte,0,0,0,
+519,6,82,DFOT,6,Ajout de carte,0,0,0,
+520,6,82,DESN,1,Ajout de facilité,0,0,0,
+521,6,82,DFOT,6,Ajout de facilité,0,0,0,
+522,6,82,DESN,1,Enlèvement de carte,0,0,0,
+523,6,82,DFOT,6,Enlèvement de carte,0,0,0,
+524,6,82,DESN,1,Enlèvement de facilité,0,0,0,
+525,6,82,DFOT,6,Enlèvement de facilité,0,0,0,
+526,6,82,DESN,1,Décomission,0,0,0,
+527,6,82,DFOT,6,Décomission,0,0,0,
+528,6,17,DESN,1,RTU / Software,0,0,0,0
+529,7,83,DESN,1,Mise en service,0,0,0,
+530,7,83,DPDC,10,Mise en service,0,0,0,
+531,7,83,DESN,1,Décomission,0,0,0,
+532,7,83,DPDC,10,Décomission,0,0,0,
+533,7,84,DESN,1,Mise en service,5.1,5,0,4
+534,7,84,DPDC,10,Mise en service,9.9,14,0,12
+535,7,84,DESN,1,Décomission,0,0,0,
+536,7,84,DPDC,10,Décomission,0,0,0,
+537,7,85,DESN,1,Mise en service,0,0,0,
+538,7,85,DPDC,10,Mise en service,0,0,0,
+539,7,85,DESN,1,Décomission,0,0,0,
+540,7,85,DPDC,10,Décomission,0,0,0,
+541,7,86,DESN,1,Mise en service,2.5,10,0,
+542,7,86,DBAT,11,Mise en service,0,0,0,
+543,7,86,DESN,1,Ajout de cellule,4,4,0,4
+544,7,86,DBAT,11,Ajout de cellule,7,5,0,6
+545,7,86,DESN,1,Décomission,0,0,0,
+546,7,86,DBAT,11,Décomission,0,0,0,
+547,7,87,DESN,1,Mise en service,3.6,3,0,4
+548,7,87,DBAT,11,Mise en service,10.6,7,0,8
+549,7,87,DESN,1,Ajout de cellule,3.3,3,0,2
+550,7,87,DBAT,11,Ajout de cellule,5.5,8,0,0
+551,7,87,DESN,1,Décomission,0,0,0,
+552,7,87,DBAT,11,Décomission,0,0,0,
+553,7,88,DESN,1,Mise en service,5.3,7,0,
+554,7,88,DBAT,11,Mise en service,16.3,20,0,0
+555,7,88,DESN,1,Ajout de cellule,3.8,5,0,3
+556,7,88,DBAT,11,Ajout de cellule,8.3,9,0,7
+557,7,88,DESN,1,Décomission,0,0,0,
+558,7,88,DBAT,11,Décomission,0,0,0,
+559,7,89,DESN,1,Mise en service,10.8,26,0,4
+560,7,89,DPDC,10,Mise en service,16.3,28,0,14
+561,7,89,DESN,1,Ajout de module,0,0,0,
+562,7,89,DPDC,10,Ajout de module,0,0,0,
+563,7,89,DESN,1,Décomission,0,0,0,
+564,7,89,DPDC,10,Décomission,0,0,0,
+565,7,90,DESN,1,Décomission,0,0,0,0
+566,7,90,DPDC,10,Décomission,7.8,3,0,13
+567,7,14,DFOT,6,Spare,3.5,4,0,
+568,7,91,DESN,1,Mise en service,0,0,0,
+569,7,91,DPDC,10,Mise en service,8.3,6,0,8
+570,7,91,DESN,1,Décomission,0,0,0,
+571,7,91,DPDC,10,Décomission,0,0,0,
+572,7,92,DESN,1,Mise en service,3.2,4,0,2
+573,7,92,DPDC,10,Mise en service,9.9,10,0,8
+574,7,92,DESN,1,Décomission,0,0,0,
+575,7,92,DPDC,10,Décomission,0,0,0,
+576,7,14,SRVY,5,Site Survey,33.2,35,0,0
+577,8,93,DESN,1,Mise en service,8.9,10,0,8
+578,8,93,DPSW,3,Mise en service,22.1,23,0,12
+579,8,93,DESN,1,Décomission,0,0,0,
+580,8,93,DPSW,3,Décomission,0,0,0,
+581,8,14,DPSW,3,Migration de circuits,5.1,7,0,
+582,8,14,DESN,1,Bon de commande (Sans Matériel),2.5,3,0,1
+583,8,14,DPSW,3,Bon de commande (Sans Matériel),7.4,6,0,3
+584,8,14,DESN,1,Ajout de facilité,0.6,3,0,1
+585,8,14,DPSW,3,Ajout de facilité,4.1,5,0,4
+586,8,14,DESN,1,Migration de circuits,6,7,0,
+587,8,14,DESN,1,Enlèvement de facilité,3.8,4,0,4
+588,8,14,DPSW,3,Enlèvement de facilité,6.9,3,0,7
+589,8,94,DESN,1,Mise en service,1.9,10,0,0
+590,8,94,DPSW,3,Mise en service,0,0,0,0
+591,8,94,DESN,1,Décomission,0,0,0,0
+592,8,94,DPSW,3,Décomission,0,0,0,0
+593,9,95,DESN,1,Décomission,0,0,0,
+594,9,95,DFOT,6,Décomission,0,0,0,
+595,9,96,DESN,1,Mise en service,0,0,0,
+596,9,96,DFOT,6,Mise en service,0,0,0,
+597,9,96,DESN,1,Décomission,0,0,0,
+598,9,96,DFOT,6,Décomission,0,0,0,
+599,9,97,DESN,1,Mise en service,0,0,0,
+600,9,97,DFOT,6,Mise en service,0,0,0,
+601,9,97,DESN,1,Décomission,0,0,0,
+602,9,97,DFOT,6,Décomission,0,0,0,
+603,9,98,DESN,1,Mise en service,2.8,9,0,3
+604,9,98,DFOT,6,Mise en service,1.9,9,0,4
+605,9,98,DESN,1,Ajout de carte,1.8,4,0,
+606,9,98,DFOT,6,Ajout de carte,0,0,0,
+607,9,98,DESN,1,Ajout de facilité,0,0,0,
+608,9,98,DFOT,6,Ajout de facilité,0,0,0,
+609,9,98,DESN,1,Enlèvement de carte,0,0,0,
+610,9,98,DFOT,6,Enlèvement de carte,0,0,0,
+611,9,98,DESN,1,Enlèvement de facilité,0,0,0,
+612,9,98,DFOT,6,Enlèvement de facilité,0,0,0,
+613,9,98,DESN,1,Décomission,0,0,0,
+614,9,98,DFOT,6,Décomission,0,0,0,
+615,9,99,DESN,1,Mise en service,12.4,15,0,
+616,9,99,DFOT,6,Mise en service,12.6,13,0,
+617,9,99,DESN,1,Ajout de carte,3.4,4,0,
+618,9,99,DFOT,6,Ajout de carte,1.9,2,0,
+619,9,99,DESN,1,Ajout de facilité,5.7,5,0,5
+620,9,99,DFOT,6,Ajout de facilité,3.6,5,0,6
+621,9,99,DESN,1,Enlèvement de carte,0,0,0,
+622,9,99,DFOT,6,Enlèvement de carte,0,0,0,
+623,9,99,DESN,1,Enlèvement de facilité,0,0,0,
+624,9,99,DFOT,6,Enlèvement de facilité,0,0,0,
+625,9,99,DESN,1,Décomission,0,0,0,
+626,9,99,DFOT,6,Décomission,0,0,0,
+627,9,100,DESN,1,Mise en service,6.3,6,0,6
+628,9,100,DFOT,6,Mise en service,20.3,19,0,20
+629,9,100,DESN,1,Ajout de carte,13.6,14,0,16
+630,9,100,DFOT,6,Ajout de carte,2.8,5,0,2
+631,9,100,DESN,1,Ajout de facilité,8.5,1,0,
+632,9,100,DFOT,6,Ajout de facilité,0,0,0,
+633,9,100,DESN,1,Enlèvement de carte,3.8,4,0,
+634,9,100,DFOT,6,Enlèvement de carte,0,0,0,
+635,9,100,DESN,1,Enlèvement de facilité,0,0,0,
+636,9,100,DFOT,6,Enlèvement de facilité,0,0,0,
+637,9,100,DESN,1,Décommission,0,0,0,
+638,9,100,DFOT,6,Décommission,0,0,0,
+639,9,53,DFOT,6,Clean Sweep - Enlèvement,3.7,5,0,2
+640,9,101,DESN,1,Mise en service,5.9,8,0,5
+641,9,101,DFOT,6,Mise en service,10.5,12,0,4
+642,9,101,DESN,1,Ajout de carte,5.2,6,0,6
+643,9,101,DFOT,6,Ajout de carte,2.8,4,0,6
+644,9,101,DESN,1,Ajout de facilité,0,0,0,
+645,9,101,DFOT,6,Ajout de facilité,0,0,0,
+646,9,101,DESN,1,Enlèvement de carte,0,0,0,
+647,9,101,DFOT,6,Enlèvement de carte,0,0,0,
+648,9,101,DESN,1,Enlèvement de facilité,0,0,0,
+649,9,101,DFOT,6,Enlèvement de facilité,0,0,0,
+650,9,101,DESN,1,Décomission,0,0,0,
+651,9,101,DFOT,6,Décomission,0,0,0,
+652,9,102,DESN,1,Mise en service,7.9,10,0,8
+653,9,102,DFOT,6,Mise en service,8.3,10,0,14
+654,9,102,DESN,1,Ajout de carte,2.1,4,0,4
+655,9,102,DFOT,6,Ajout de carte,4.8,5,0,3
+656,9,102,DESN,1,Ajout de facilité,2.5,8,0,3
+657,9,102,DFOT,6,Ajout de facilité,10.1,9,0,3
+658,9,102,DESN,1,Enlèvement de carte,2,4,0,2
+659,9,102,DFOT,6,Enlèvement de carte,4.5,2,0,9
+660,9,102,DESN,1,Enlèvement de facilité,0,0,0,
+661,9,102,DFOT,6,Enlèvement de facilité,0,0,0,
+662,9,102,DESN,1,Décomission,0,0,0,0
+663,9,102,DFOT,6,Décomission,0,0,0,0
+664,9,103,DESN,1,Mise en service,0,0,0,
+665,9,103,DFOT,6,Mise en service,0,0,0,
+666,9,103,DESN,1,Ajout de carte,4.9,4,0,3
+667,9,103,DFOT,6,Ajout de carte,5.7,5,0,6
+668,9,103,DESN,1,Ajout de facilité,0,0,0,
+669,9,103,DFOT,6,Ajout de facilité,0,0,0,0
+670,9,103,DESN,1,Enlèvement de carte,2.9,3,0,3
+671,9,103,DFOT,6,Enlèvement de carte,5.4,5,0,6
+672,9,103,DESN,1,Enlèvement de facilité,0,0,0,
+673,9,103,DFOT,6,Enlèvement de facilité,0,0,0,
+674,9,103,DESN,1,Décomission,0,0,0,
+675,9,103,DFOT,6,Décomission,0,0,0,
+676,9,104,DESN,1,Mise en service,17.1,12,0,11
+677,9,104,DFOT,6,Mise en service,9.7,12,0,7
+678,9,104,DESN,1,Ajout de carte,5.1,6,0,6
+679,9,104,DFOT,6,Ajout de carte,2.5,4,0,2
+680,9,104,DESN,1,Ajout de facilité,5,5,0,4
+681,9,104,DFOT,6,Ajout de facilité,5,7,0,3
+682,9,104,DESN,1,Enlèvement de carte,1.7,3,0,
+683,9,104,DFOT,6,Enlèvement de carte,1.1,2,0,
+684,9,104,DESN,1,Enlèvement de facilité,8.6,9,0,4
+685,9,104,DFOT,6,Enlèvement de facilité,4,4,0,7
+686,9,104,DESN,1,Décomission,8.4,9,0,8
+687,9,104,DFOT,6,Décomission,5.2,4,0,5
+688,9,105,DESN,1,Décomission,3.1,5,0,2
+689,9,105,DFOT,6,Décomission,4.5,9,0,2
+690,9,106,DESN,1,Mise en service,6.9,7,0,5
+691,9,106,DFOT,6,Mise en service,18.4,14,0,5
+692,9,106,DESN,1,Décomission,11.5,12,0,12
+693,9,106,DFOT,6,Décomission,0,0,0,0
+694,9,14,APMD,12,Fiber Caracterization,2.2,3,0,1
+695,9,14,DFOT,6,Fiber Caracterization,1.4,3,0,1
+696,9,14,DESN,1,Migration de circuits,2.5,3,0,4
+697,9,14,DFOT,6,Migration de circuits,4,4,0,6
+698,9,14,DESN,1,Tools & TestSet,1.5,2,0,1
+699,9,14,DESN,1,Spare,1.1,2,0,1
+700,9,14,DFOT,6,Spare,1.8,2,0,2
+701,9,17,DESN,1,RTU / Software,2.5,3,0,0
+702,9,100,DESN,1,Mise en service,7.4,12,0,7
+703,9,100,DFOT,6,Mise en service,8.4,17,0,
+704,9,100,DESN,1,Ajout de carte,4,4,0,
+705,9,100,DFOT,6,Ajout de carte,3.7,5,0,
+706,9,100,DESN,1,Ajout de facilité,3.3,2,0,0
+707,9,100,DFOT,6,Ajout de facilité,3.3,3,0,
+708,9,100,DESN,1,Enlèvement carte,5.7,7,0,2
+709,9,100,DFOT,6,Enlèvement carte,0,0,0,6
+710,9,100,DESN,1,Enlèvement de facilité,1.3,2,0,
+711,9,100,DFOT,6,Enlèvement de facilité,1.8,1,0,
+712,9,100,DESN,1,Décommission,1.1,1,0,
+713,9,100,DFOT,6,Décommission,0,0,0,
+714,5,108,DESN,1,Ajout de facilité,0,0,0,
+715,5,108,DPSW,3,Ajout de facilité,0,0,0,
+716,5,109,DESN,1,Ajout de facilité,0,0,0,
+717,5,109,DPSW,3,Ajout de facilité,0,0,0,

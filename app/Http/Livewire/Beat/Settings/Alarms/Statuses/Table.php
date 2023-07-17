@@ -104,7 +104,7 @@ final class Table extends PowerGridComponent
         return PowerGrid::eloquent()
 
             ->addColumn('label')
-            ->addColumn('updated_at_formatted', fn (AlarmStatus $model) => $model->updated_at->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (AlarmStatus $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

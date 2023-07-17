@@ -124,7 +124,7 @@ final class Table extends PowerGridComponent
             ->addColumn('network_element', fn (AlarmSystem $model) => $model->network_element)
             ->addColumn('location_number')
             ->addColumn('ipv4')
-            ->addColumn('updated_at_formatted', fn (AlarmSystem $model) => $model->updated_at->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (AlarmSystem $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

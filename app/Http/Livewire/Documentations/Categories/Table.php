@@ -98,7 +98,7 @@ final class Table extends PowerGridComponent
     {
         return PowerGrid::eloquent()
             ->addColumn('name')
-            ->addColumn('updated_at_formatted', fn (Category $model) => Carbon::parse($model->updated_at)->diffForHumans());
+            ->addColumn('updated_at_formatted', fn (Category $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*

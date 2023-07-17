@@ -6,6 +6,7 @@ use Livewire\Component;
 use App\Models\Category;
 use App\Models\Documentation;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
+use Illuminate\Support\Facades\Log;
 
 class Index extends Component
 {
@@ -19,6 +20,7 @@ class Index extends Component
     }
     public function render()
     {
+        Log::info("Documentations list viewed by User:".auth()->user()->name.'(ID:'.auth()->user()->id.')');
         $this->authorize('documentations-viewAny');
         return view('livewire.documentations.documentations.index', [
             'categories' => Category::has('documentations')->withCount('documentations')->get(),
