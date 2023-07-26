@@ -17,12 +17,6 @@ class Index extends Component
             ->layoutData([
                 'title' => __('ISQ003'),
                 'subtitle' => trans('Network Master Data Infoset.'),
-                'action' => [
-                    'name' => trans('Upload new file'),
-                    'icon' => 'upload',
-                    'route' => 'biri.isq.edit',
-                    'permission' => 'biri-isq-create'
-                ]
             ]);
     }
 }

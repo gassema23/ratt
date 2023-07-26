@@ -13,8 +13,7 @@
                     </a>
                 </li>
                 {{-- BIRI --}}
-                @if (config('app.env') !== 'production' &&
-                        auth()->user()->hasRole('Super-Admin'))
+                @if (auth()->user()->hasRole('Super-Admin'))
                     <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                         <a href="#" @class([
                             'flex',
@@ -30,7 +29,7 @@
                         ]) x-on:click="open = !open">
                             <div class="flex space-x-2">
                                 <x-icon name="calendar" class="w-4" />
-                                <span>@lang('Suivi BIRI')</span>
+                                <span>@lang('BIRI tracking')</span>
                             </div>
                             <span class="text-end" :class="{ 'rotated': open }">
                                 <x-icon name="chevron-right" class="h-3" />
@@ -50,6 +49,21 @@
                                     'bg-slate-600' => Route::is('admin.biri.dashboard'),
                                 ])>
                                     <span>@lang('Dashboard')</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="{{ route('admin.biri.assignments.index') }}" @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                    'bg-slate-600' => Route::is('admin.biri.assignments'),
+                                ])>
+                                    <span>@lang('Assignments')</span>
                                 </a>
                             </li>
                             <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
@@ -87,6 +101,20 @@
                                             'bg-slate-600' => Route::is('admin.biri.settings.isq.*'),
                                         ])>
                                             <span>@lang('ISQ003')</span>
+                                        </a>
+                                    </li><li>
+                                        <a href="{{ route('admin.biri.settings.milestones.index') }}" @class([
+                                            'flex',
+                                            'items-center',
+                                            'py-2',
+                                            'px-12',
+                                            'transition',
+                                            'duration-300',
+                                            'hover:bg-slate-600',
+                                            'pl-10',
+                                            'bg-slate-600' => Route::is('admin.biri.settings.milestones.*'),
+                                        ])>
+                                            <span>@lang('PS44B')</span>
                                         </a>
                                     </li>
                                     <li>

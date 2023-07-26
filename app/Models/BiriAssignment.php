@@ -8,9 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
-use Illuminate\Database\Eloquent\Relations\HasOne;
+use Illuminate\Database\Eloquent\Relations\BelongsTo;
 
-class BiriIsqMasterData extends Model
+class BiriAssignment extends Model
 {
     use HasFactory, SoftDeletes, Userstamps, LogsActivity;
 
@@ -19,23 +19,20 @@ class BiriIsqMasterData extends Model
     protected $casts = [
         'created_at' => 'datetime',
         'updated_at' => 'datetime',
-        'created_date' => 'date',
-        'order_start' => 'date',
-        'order_end' => 'date',
-        'updated_date' => 'date',
-        'version_date' => 'datetime',
+        'desn_req' => 'date',
+        'fich_eng_req' => 'date',
     ];
 
     public function getActivitylogOptions(): LogOptions
     {
         return LogOptions::defaults()
             ->logAll()
-            ->setDescriptionForEvent(fn (string $eventName) => "Biri ISQ003 {$eventName}")
-            ->useLogName('BiriISQ003Log');
+            ->setDescriptionForEvent(fn (string $eventName) => "Biri Assignment {$eventName}")
+            ->useLogName('BiriAssignmentLog');
     }
 
-    public function assignment(): HasOne
+    public function isq(): BelongsTo
     {
-        return $this->hasOne(BiriAssignment::class, 'network_no', 'network_no');
+        return $this->belongsTo(BiriIsqMasterData::class, 'network_no', 'network_no');
     }
 }

@@ -14,7 +14,7 @@ class CustomTheme extends Tailwind
     {
         return Theme::table(' min-w-full dark:bg-slate-600')
             ->div('soft-scrollbar my-3 overflow-x-auto bg-white   overflow-y-auto relative')
-            ->thead(' bg-slate-50 dark:bg-slate-800')
+            ->thead(' bg-slate-100 dark:bg-slate-800')
             ->thAction('!font-bold text-right')
             ->tdAction('text-right')
             ->tr('')

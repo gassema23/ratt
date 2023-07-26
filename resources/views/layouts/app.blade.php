@@ -20,6 +20,7 @@
                             </div>
                             @if (!empty($action))
                                 <div class="mr-1 my-4">
+
                                     @if (isset($action['permission']))
                                         @can($action['permission'])
                                             @if (isset($action['id']))

@@ -15,6 +15,7 @@ use Mpociot\Teamwork\Traits\UserHasTeams;
 use Overtrue\LaravelFollow\Traits\Follower;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Askdkc\LivewireCsv\Concerns\HasCsvImports;
 use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Yadahan\AuthenticationLog\AuthenticationLogable;
@@ -34,7 +35,8 @@ class User extends Authenticatable //implements MustVerifyEmail
         LogsActivity,
         Follower,
         AuthenticationLogable,
-        ApprovesChanges;
+        ApprovesChanges,
+        HasCsvImports;
     /**
      * The attributes that are mass assignable.
      *

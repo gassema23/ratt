@@ -61,7 +61,6 @@ class AssignScenario extends ModalComponent
 
     public function save()
     {
-        dd($this->validate());
         $this->authorize('networks-assignScenarios');
         $this->validate();
         foreach ($this->inputs as $data) {

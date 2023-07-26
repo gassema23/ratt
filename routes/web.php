@@ -98,12 +98,18 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
                 /** BEAT */
                 Route::prefix('biri')->name('biri.')->group(function () {
                     Route::get('/', Biri\Dashboard::class)->name('dashboard');
+                    Route::prefix('assignments')->name('assignments.')->group(function () {
+                        Route::get('/', Biri\Assignments\Index::class)->name('index');
+                    });
                     Route::prefix('settings')->name('settings.')->group(function () {
                         Route::get('/technologies', Biri\Technologies\Index::class)->name('technologies.index');
                         Route::get('/equipments', Biri\Equipments\Index::class)->name('equipments.index');
                         Route::get('/category-activities', Biri\CategoryActivities\Index::class)->name('category-activities.index');
                         Route::get('/activities', Biri\Activities\Index::class)->name('activities.index');
                         Route::get('/isq', Biri\Isq\Index::class)->name('isq.index');
+                        Route::get('/isq/show/{id}', Biri\Isq\Show::class)->name('isq.show');
+                        Route::get('/milestones', Biri\Milestones\Index::class)->name('milestones.index');
+                        Route::get('/milestones/show/{id}', Biri\Milestones\Show::class)->name('milestones.show');
                     });
                 });
                 /** END BEAT */

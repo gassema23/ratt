@@ -120,7 +120,7 @@ final class Table extends PowerGridComponent
     public function columns(): array
     {
         return [
-            Column::make(trans('technology'), 'label'),
+            Column::make(trans('technology'), 'label')->sortable()->searchable(),
             Column::make(trans('Last update'), 'updated_at_formatted', 'updated_at')
                 ->sortable(),
         ];

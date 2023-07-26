@@ -149,13 +149,17 @@ final class Table extends PowerGridComponent
     {
         return [
             Column::make(trans('technology'), 'technology_name')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
             Column::make(trans('equipment'), 'equipment_name')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
             Column::make(trans('category'), 'category_name')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
             Column::make(trans('activity'), 'description')
-                ->sortable(),
+                ->sortable()
+                ->searchable(),
             Column::make(trans('avg. single'), 'avg_single'),
             Column::make(trans('ps50 plan'), 'ps50_plan'),
             Column::make(trans('ps50 activity'), 'ps50_act'),

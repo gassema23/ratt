@@ -12,8 +12,6 @@ class Index extends Component
     use AuthorizesRequests;
     public function render()
     {
-
-
         Log::info("Activities list viewed by User:".auth()->user()->name.'(ID:'.auth()->user()->id.')');
         $this->authorize('biri-category-activities-viewAny');
         return view('livewire.biri.category-activities.index')

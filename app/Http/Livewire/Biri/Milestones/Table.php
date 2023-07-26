@@ -1,36 +1,19 @@
 <?php
 
-namespace App\Http\Livewire\Biri\Isq;
+namespace App\Http\Livewire\Biri\Milestones;
 
-use App\Traits\HasDelete;
+use App\Models\BiriMilestone;
 use Illuminate\Support\Carbon;
-use App\Models\BiriIsqMasterData;
 use Illuminate\Database\Eloquent\Builder;
-use PowerComponents\LivewirePowerGrid\Filters\Filter;
 use PowerComponents\LivewirePowerGrid\Rules\{Rule, RuleActions};
 use PowerComponents\LivewirePowerGrid\Traits\{ActionButton, WithExport};
+use PowerComponents\LivewirePowerGrid\Filters\Filter;
 use PowerComponents\LivewirePowerGrid\{Button, Column, Exportable, Footer, Header, PowerGrid, PowerGridComponent, PowerGridColumns};
 
 final class Table extends PowerGridComponent
 {
-    use ActionButton, WithExport, HasDelete;
-
-    public bool $deferLoading = true;
-    public string $loadingComponent = 'components.table-loading';
-
-    public $model = BiriIsqMasterData::class;
-    public $emits = [
-        'refresh'
-    ];
-    protected function getListeners(): array
-    {
-        return array_merge(
-            parent::getListeners(),
-            [
-                'refresh' => '$refresh',
-            ]
-        );
-    }
+    use ActionButton;
+    use WithExport;
 
     /*
     |--------------------------------------------------------------------------
@@ -65,11 +48,11 @@ final class Table extends PowerGridComponent
     /**
      * PowerGrid datasource.
      *
-     * @return Builder<\App\Models\BiriIsqMasterData>
+     * @return Builder<\App\Models\BiriMilestone>
      */
     public function datasource(): Builder
     {
-        return BiriIsqMasterData::query();
+        return BiriMilestone::query();
     }
 
     /*
@@ -106,9 +89,10 @@ final class Table extends PowerGridComponent
         return PowerGrid::columns()
             ->addColumn('project_no')
             ->addColumn('network_no')
-            ->addColumn('network_header')
-            ->addColumn('division')
-            ->addColumn('version_date_formatted', fn (BiriIsqMasterData $model) => $model->version_date->format('Y-m-d H:i:s'));
+            ->addColumn('network_header_tech')
+            ->addColumn('wbs_element')
+            ->addColumn('dapp_mist_formatted', fn (BiriMilestone $model) => $model->dapp_mist->format('Y-m-d'))
+            ->addColumn('updated_at_formatted', fn (BiriMilestone $model) => $model->updated_at->format('Y-m-d H:i:s'));
     }
 
     /*
@@ -131,8 +115,9 @@ final class Table extends PowerGridComponent
             Column::make('project', 'project_no')->sortable()->searchable(),
             Column::make('network', 'network_no')->sortable()->searchable(),
             Column::make('sap header', 'network_header')->sortable()->searchable(),
-            Column::make('division', 'division')->sortable()->searchable(),
-            Column::make('Version date', 'version_date_formatted', 'version_date')->sortable(),
+            Column::make('wbs element', 'wbs_element')->sortable()->searchable(),
+            Column::make('DAPP', 'dapp_mist_formatted', 'dapp_mist')->sortable()->searchable(),
+            Column::make('Last update', 'updated_at_formatted', 'updated_at')->sortable(),
         ];
     }
 
@@ -155,16 +140,17 @@ final class Table extends PowerGridComponent
     */
 
     /**
-     * PowerGrid BiriIsqMasterData Action Buttons.
+     * PowerGrid BiriMilestone Action Buttons.
      *
      * @return array<int, Button>
      */
+
 
     public function actions(): array
     {
         return [
             Button::add('modalshowrecord')
-                ->bladeComponent('modalshowrecord', ['id' => 'id', 'route' => 'biri.isq.show']),
+                ->bladeComponent('modalshowrecord', ['id' => 'id', 'route' => 'biri.milestones.show']),
             Button::add('editrecord')
                 ->bladeComponent('deleterecord', ['id' => 'id']),
         ];
@@ -179,7 +165,7 @@ final class Table extends PowerGridComponent
     */
 
     /**
-     * PowerGrid BiriIsqMasterData Action Rules.
+     * PowerGrid BiriMilestone Action Rules.
      *
      * @return array<int, RuleActions>
      */
@@ -189,13 +175,13 @@ final class Table extends PowerGridComponent
         return [
             //Hide button edit for ID 1
             Rule::button('modalshowrecord')
-                ->when(fn () => !auth()->user()->can('biri-isq-view'))
+                ->when(fn () => !auth()->user()->can('biri-milestones-view'))
                 ->hide(),
             Rule::button('editrecord')
-                ->when(fn () => !auth()->user()->can('biri-isq-update'))
+                ->when(fn () => !auth()->user()->can('biri-milestones-update'))
                 ->hide(),
             Rule::button('deleterecord')
-                ->when(fn () => !auth()->user()->can('biri-isq-delete'))
+                ->when(fn () => !auth()->user()->can('biri-milestones-delete'))
                 ->hide(),
         ];
     }
