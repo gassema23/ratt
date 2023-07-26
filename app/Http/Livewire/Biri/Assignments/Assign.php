@@ -10,6 +10,7 @@ use App\Models\BiriIsqMasterData;
 use App\Models\BiriCategoryActivity;
 use LivewireUI\Modal\ModalComponent;
 use App\Http\Requests\BiriAssignmentRequest;
+use App\Models\BiriAssignment;
 use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 
 class Assign extends ModalComponent
@@ -49,6 +50,25 @@ class Assign extends ModalComponent
     protected function rules()
     {
         return (new BiriAssignmentRequest())->rules();
+    }
+
+    public function save()
+    {
+        $this->authorize('biri-category-activities-update');
+        $this->validate();
+        $assign = BiriAssignment::create([
+            'desn_user_id' => $this->desn_user_id,
+            'tech_user_id' => $this->tech_user_id,
+            'network_no' => $this->isq->network_no,
+            'fox_order' => $this->fox_order ?? '',
+            'priority' => $this->priority,
+            'technology_id' => $this->technology_id,
+            'equipment_id' => $this->equipment_id,
+            'activity_id' => $this->activity_id,
+            'equipment_id' => $this->desn_req,
+            'equipment_id' => $this->fich_eng_req,
+        ]);
+        $this->saved();
     }
 
     public function render()

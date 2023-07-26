@@ -15,12 +15,35 @@ class BiriAssignmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'desn_user_id'=>[
+            'desn_user_id' => [
                 'required'
             ],
-            'desn_req'=>[
+            'desn_req' => [
                 'date',
                 'after:yesterday'
+            ],
+            'tech_user_id' => [
+                'required'
+            ],
+            'fich_eng_req' => [
+                'date',
+                'after:yesterday'
+            ],
+            'fox_order' => [
+                'nullable'
+            ],
+            'priority' => [
+                'required',
+                'numeric'
+            ],
+            'technology_id' => [
+                'required'
+            ],
+            'equipment_id' => [
+                'required'
+            ],
+            'activity_id' => [
+                'required'
             ]
         ];
     }
