@@ -13,8 +13,8 @@
         </a>
     </div>
     <nav>
-        <div class="flex flex-row space-x-4 items-center align-middle">
-            <div>
+        <div class="flex flex-row space-x-4 items-center align-middle ">
+            <div class="mt-2">
                 @livewire('notifications.show')
             </div>
             <div>

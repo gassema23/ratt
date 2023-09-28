@@ -36,12 +36,6 @@ class BiriAssignmentRequest extends FormRequest
                 'required',
                 'numeric'
             ],
-            'technology_id' => [
-                'required'
-            ],
-            'equipment_id' => [
-                'required'
-            ],
             'activity_id' => [
                 'required'
             ]

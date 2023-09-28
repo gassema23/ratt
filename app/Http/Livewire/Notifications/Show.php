@@ -7,6 +7,8 @@ use Livewire\Component;
 class Show extends Component
 {
 
+    protected $listeners = ['refresh' => '$refresh'];
+
     public function see($id)
     {
         $notification = auth()->user()->notifications()->where('id', $id)->first();

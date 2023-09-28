@@ -5,16 +5,14 @@ namespace App\Models;
 use Spatie\Activitylog\LogOptions;
 use Wildside\Userstamps\Userstamps;
 use Illuminate\Database\Eloquent\Model;
-use Spatie\Translatable\HasTranslations;
 use Spatie\Activitylog\Traits\LogsActivity;
 use Illuminate\Database\Eloquent\SoftDeletes;
-use Illuminate\Database\Eloquent\Relations\HasMany;
+use Illuminate\Database\Eloquent\Casts\Attribute;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 
-class BiriEquipment extends Model
+class BiriAssignmentData extends Model
 {
-    use HasFactory, SoftDeletes, Userstamps, LogsActivity, HasTranslations;
-    public $translatable = ['label', 'description'];
+    use HasFactory, SoftDeletes, Userstamps, LogsActivity;
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
 
@@ -27,12 +25,15 @@ class BiriEquipment extends Model
     {
         return LogOptions::defaults()
             ->logAll()
-            ->setDescriptionForEvent(fn (string $eventName) => "Biri equipments {$eventName}")
-            ->useLogName('BiriEquipmentsLog');
+            ->setDescriptionForEvent(fn (string $eventName) => "Biri Assignment data {$eventName}")
+            ->useLogName('BiriAssignmentDataLog');
     }
 
-    public function activities(): HasMany
+    protected function datas(): Attribute
     {
-        return $this->hasMany(BiriActivity::class, 'equipment_id', 'id');
+        return Attribute::make(
+            get: fn ($value) => json_decode($value, true),
+            set: fn ($value) => json_encode($value),
+        );
     }
 }

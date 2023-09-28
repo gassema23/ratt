@@ -38,4 +38,14 @@ class BiriIsqMasterData extends Model
     {
         return $this->hasOne(BiriAssignment::class, 'network_no', 'network_no');
     }
+
+    public function getClliNameAttribute()
+    {
+        $arr = explode(':', $this->network_header);
+        if (count($arr) > 0 && isset($arr[1])) {
+            return $arr[1];
+        } else {
+            return 'N/A';
+        }
+    }
 }

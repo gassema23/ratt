@@ -11,17 +11,11 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::dropIfExists('biri_assignments');
-        Schema::create('biri_assignments', function (Blueprint $table) {
+        Schema::create('biri_assignment_data', function (Blueprint $table) {
             $table->id();
-            $table->foreignId('desn_user_id')->references('id')->on('users');
-            $table->foreignId('tech_user_id')->references('id')->on('users');
-            $table->string('network_no')->index();
-            $table->string('fox_order')->nullable();
-            $table->integer('priority')->default(0);
-            $table->foreignId('activity_id')->references('id')->on('biri_activities');
-            $table->date('desn_req');
-            $table->date('fich_eng_req');
+            $table->foreignId('assignment_id')->references('id')->on('biri_assignments');
+            $table->foreignId('user_id')->references('id')->on('users');
+            $table->json('datas');
             $table->timestamps();
             $table->softDeletes();
             $table->unsignedBigInteger('created_by')->nullable();
@@ -35,6 +29,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('biri_assignments');
+        Schema::dropIfExists('biri_assignment_data');
     }
 };

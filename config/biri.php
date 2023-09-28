@@ -12,7 +12,7 @@ return [
             [
                 'id' => 1,
                 'name' => 'Critical',
-                'color' => 'red'
+                'color' => 'rose'
             ],
             [
                 'id' => 2,
@@ -39,7 +39,7 @@ return [
             [
                 'id' => 1,
                 'name' => 'Critique',
-                'color' => 'red'
+                'color' => 'rose'
             ],
             [
                 'id' => 2,
@@ -68,7 +68,7 @@ return [
             [
                 'id' => 1,
                 'name' => 'Cancel',
-                'color' => 'red'
+                'color' => 'rose'
             ],
             [
                 'id' => 2,
@@ -100,7 +100,7 @@ return [
             [
                 'id' => 1,
                 'name' => 'Annulé',
-                'color' => 'red'
+                'color' => 'rose'
             ],
             [
                 'id' => 2,
@@ -126,6 +126,104 @@ return [
                 'id' => 2,
                 'name' => 'En cours',
                 'color' => 'yellow'
+            ],
+        ]
+    ],
+    'App_desn_statuses' => [
+        'en' => [
+            [
+                'id' => 0,
+                'name' => 'Completed',
+                'color' => 'teal'
+            ],
+            [
+                'id' => 1,
+                'name' => 'Canceled',
+                'color' => 'rose'
+            ],
+            [
+                'id' => 2,
+                'name' => 'On hold',
+                'color' => 'orange'
+            ],
+            [
+                'id' => 3,
+                'name' => 'Ready tech.',
+                'color' => 'teal'
+            ],
+            [
+                'id' => 4,
+                'name' => 'Ambush',
+                'color' => 'amber'
+            ],
+            [
+                'id' => 5,
+                'name' => 'In progress',
+                'color' => 'yellow'
+            ],
+            [
+                'id' => 6,
+                'name' => 'Analysis',
+                'color' => 'purple'
+            ],
+            [
+                'id' => 7,
+                'name' => 'Analysis in progress',
+                'color' => 'indigo'
+            ],
+            [
+                'id' => 8,
+                'name' => 'Reject',
+                'color' => 'pink'
+            ],
+            [
+                'id' => 9,
+                'name' => 'Go kick off',
+                'color' => 'cyan'
+            ],
+            [
+                'id' => 10,
+                'name' => 'Unassigned',
+                'color' => 'slate'
+            ],
+            [
+                'id' => 11,
+                'name' => 'Technician project',
+                'color' => 'slate'
+            ],
+        ]
+    ],
+    'App_tech_statuses' => [
+        'en' => [
+            [
+                'id' => 0,
+                'name' => 'Completed',
+                'color' => 'teal'
+            ],
+            [
+                'id' => 1,
+                'name' => 'Canceled',
+                'color' => 'rose'
+            ],
+            [
+                'id' => 2,
+                'name' => 'On hold',
+                'color' => 'orange'
+            ],
+            [
+                'id' => 4,
+                'name' => 'Ambush',
+                'color' => 'amber'
+            ],
+            [
+                'id' => 5,
+                'name' => 'In progress',
+                'color' => 'yellow'
+            ],
+            [
+                'id' => 5,
+                'name' => 'Approbation',
+                'color' => 'purple'
             ],
         ]
     ]

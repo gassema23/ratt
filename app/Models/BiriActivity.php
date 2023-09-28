@@ -14,6 +14,7 @@ use Illuminate\Database\Eloquent\Relations\BelongsTo;
 class BiriActivity extends Model
 {
     use HasFactory, SoftDeletes, Userstamps, LogsActivity, HasTranslations;
+
     public $translatable = ['description'];
 
     protected $guarded = ['id', 'created_at', 'updated_at'];
@@ -33,16 +34,16 @@ class BiriActivity extends Model
 
     public function category(): BelongsTo
     {
-        return $this->belongsTo(BiriCategoryActivity::class);
-    }
-
-    public function equipment(): BelongsTo
-    {
-        return $this->belongsTo(BiriEquipment::class);
+        return $this->belongsTo(BiriCategoryActivity::class, 'category_id', 'id');
     }
 
     public function technology(): BelongsTo
     {
-        return $this->belongsTo(BiriTechnology::class);
+        return $this->belongsTo(BiriTechnology::class, 'technology_id', 'id');
+    }
+
+    public function equipment(): BelongsTo
+    {
+        return $this->belongsTo(BiriEquipment::class, 'equipment_id', 'id');
     }
 }

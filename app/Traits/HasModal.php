@@ -28,4 +28,16 @@ trait HasModal
         $this->resetPage();
         $this->close();
     }
+
+    public function savedWithoutClose()
+    {
+        $this->notification()->send([
+            'title' => trans('Success'),
+            'description' => trans('Data saved successfully!'),
+            'icon' => 'success'
+        ]);
+        foreach ($this->emits as $emit) {
+            $this->emit($emit);
+        }
+    }
 }

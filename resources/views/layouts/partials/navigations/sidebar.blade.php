@@ -66,6 +66,21 @@
                                     <span>@lang('Assignments')</span>
                                 </a>
                             </li>
+                            <li>
+                                <a href="{{ route('admin.biri.assignments.trackings.index') }}" @class([
+                                    'flex',
+                                    'items-center',
+                                    'py-2',
+                                    'px-4',
+                                    'transition',
+                                    'duration-300',
+                                    'hover:bg-slate-600',
+                                    'pl-10',
+                                    'bg-slate-600' => Route::is('admin.biri.assignments.trackings'),
+                                ])>
+                                    <span>@lang('Network Tracking')</span>
+                                </a>
+                            </li>
                             <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                                 <a href="#" @class([
                                     'flex',
@@ -89,31 +104,34 @@
                                 </a>
                                 <ul x-show="open" x-collapse class="bg-slate-700">
                                     <li>
-                                        <a href="{{ route('admin.biri.settings.isq.index') }}" @class([
-                                            'flex',
-                                            'items-center',
-                                            'py-2',
-                                            'px-12',
-                                            'transition',
-                                            'duration-300',
-                                            'hover:bg-slate-600',
-                                            'pl-10',
-                                            'bg-slate-600' => Route::is('admin.biri.settings.isq.*'),
-                                        ])>
+                                        <a href="{{ route('admin.biri.settings.isq.index') }}"
+                                            @class([
+                                                'flex',
+                                                'items-center',
+                                                'py-2',
+                                                'px-12',
+                                                'transition',
+                                                'duration-300',
+                                                'hover:bg-slate-600',
+                                                'pl-10',
+                                                'bg-slate-600' => Route::is('admin.biri.settings.isq.*'),
+                                            ])>
                                             <span>@lang('ISQ003')</span>
                                         </a>
-                                    </li><li>
-                                        <a href="{{ route('admin.biri.settings.milestones.index') }}" @class([
-                                            'flex',
-                                            'items-center',
-                                            'py-2',
-                                            'px-12',
-                                            'transition',
-                                            'duration-300',
-                                            'hover:bg-slate-600',
-                                            'pl-10',
-                                            'bg-slate-600' => Route::is('admin.biri.settings.milestones.*'),
-                                        ])>
+                                    </li>
+                                    <li>
+                                        <a href="{{ route('admin.biri.settings.milestones.index') }}"
+                                            @class([
+                                                'flex',
+                                                'items-center',
+                                                'py-2',
+                                                'px-12',
+                                                'transition',
+                                                'duration-300',
+                                                'hover:bg-slate-600',
+                                                'pl-10',
+                                                'bg-slate-600' => Route::is('admin.biri.settings.milestones.*'),
+                                            ])>
                                             <span>@lang('PS44B')</span>
                                         </a>
                                     </li>

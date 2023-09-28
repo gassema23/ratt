@@ -12,7 +12,6 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Auth as AuthController;
 use Mcamara\LaravelLocalization\Facades\LaravelLocalization;
 use App\Http\Livewire\Dashboard\Dashboard as DashboardDashboard;
-use App\Http\Livewire\DragDropList;
 
 /*
 |--------------------------------------------------------------------------
@@ -36,7 +35,6 @@ Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewP
         Route::post('logout', [AuthController\LogoutController::class, 'logout'])->name('logout');
 
         Route::middleware('auth')->group(function () {
-            Route::get('test-drag', DragDropList::class)->name('test-drag');
             Route::get('email/verify', Auth\Verify::class)->middleware('throttle:6,1')->name('verification.notice');
             Route::get('email/verify/{id}/{hash}', AuthController\EmailVerificationController::class)->middleware('signed')->name('verification.verify');
             Route::get('password/confirm', Auth\Passwords\Confirm::class)->name('password.confirm');
