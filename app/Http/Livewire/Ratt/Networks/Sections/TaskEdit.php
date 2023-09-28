@@ -17,12 +17,6 @@ class TaskEdit extends ModalComponent
     public function mount($id)
     {
 
-        if ($completed) {
-            dump('OK');
-        } else {
-            dump('NON');
-        }
-
         $this->authorize('tasks-update');
         $this->networkTask = NetworkTask::with(['task'])->findOrFail($id);
     }
