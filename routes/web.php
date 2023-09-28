@@ -24,6 +24,11 @@ use App\Http\Livewire\Dashboard\Dashboard as DashboardDashboard;
 |
 */
 
+
+
+
+
+
 Route::redirect('/', 'login', 301);
 
 Route::middleware(['localeSessionRedirect', 'localizationRedirect', 'localeViewPath'])
