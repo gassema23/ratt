@@ -14,6 +14,7 @@
                 </li>
                 {{-- BIRI --}}
                 @if (auth()->user()->hasRole('Super-Admin'))
+                {{--
                     <li class="group" x-data="{ open: false }" x-on:click.outside="open = false">
                         <a href="#" @class([
                             'flex',
@@ -200,9 +201,11 @@
                                         </a>
                                     </li>
                                 </ul>
+
                             </li>
                         </ul>
                     </li>
+                    --}}
                 @endif
                 {{-- BEAT --}}
                 @if (config('app.env') !== 'production' &&

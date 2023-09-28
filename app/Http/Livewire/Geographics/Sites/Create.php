@@ -16,6 +16,7 @@ use Illuminate\Foundation\Auth\Access\AuthorizesRequests;
 class Create extends ModalComponent
 {
     use HasModal, AuthorizesRequests;
+
     public $name,
         $clli,
         $areas,
@@ -37,9 +38,11 @@ class Create extends ModalComponent
         $emergency_line,
         $phone_line,
         $address;
+
     public $emits = [
         'refresh'
     ];
+
     public function updatedCountryId()
     {
         $this->reset([
@@ -55,6 +58,7 @@ class Create extends ModalComponent
             ->where('country_id', $this->country_id)
             ->get();
     }
+
     public function updatedStateId()
     {
         $this->reset([
@@ -68,6 +72,7 @@ class Create extends ModalComponent
             ->where('state_id', $this->state_id)
             ->get();
     }
+
     public function updatedRegionId()
     {
         $this->reset(['cities', 'city_id']);
@@ -76,10 +81,12 @@ class Create extends ModalComponent
             ->where('region_id', $this->region_id)
             ->get();
     }
+
     protected function rules()
     {
         return (new SiteCreateRequest)->rules();
     }
+
     public function save()
     {
         $this->authorize('sites-create');
@@ -87,13 +94,14 @@ class Create extends ModalComponent
         Site::create($this->validate());
         $this->saved();
     }
+
     public function render()
     {
         $this->authorize('sites-create');
+
         return view('livewire.geographics.sites.create', [
             'countries' => Country::orderBy('name')->select('id', 'name')->get(),
-            'types' => SiteType::orderBy('name')
-                ->with('parent')
+            'types' => SiteType::with('parent')
                 ->join('site_types as parent_types', 'parent_types.id', '=', 'site_types.parent_id')
                 ->select('site_types.id', 'site_types.name', 'parent_types.name->' . app()->getLocale() . ' as parent')
                 ->whereNotNull('site_types.parent_id')

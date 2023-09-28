@@ -17,10 +17,13 @@ class AlarmCategoriesSeeder extends Seeder
         $transRow = true;
         while (($data = fgetcsv($csvData, 555, ',')) !== false) {
             if (!$transRow) {
+
                 AlarmCategory::create([
                     'label' => $data[0],
                     'description' => $data[1]
                 ]);
+
+
             }
             $transRow = false;
         }

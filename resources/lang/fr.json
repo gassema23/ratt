@@ -244,5 +244,9 @@
     "Task name [EN]": "Titre de la tâche [EN]",
     "Task name [FR]": "Titre de la tâche [FR]",
     "Manage tasks": "Gérer les tâches",
-    "Try to add more task": "Essayez d'ajouter plus de tâches"
+    "Try to add more task": "Essayez d'ajouter plus de tâches",
+    " Add a new comment": "Ajouter un commentaire",
+    "...": "...",
+    " Updated status": "Mise à jour du status",
+    "A fresh verification link has been sent to your email address.": "Un nouveau lien de vérification a été envoyé à votre adresse e-mail."
 }
